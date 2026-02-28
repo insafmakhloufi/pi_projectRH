@@ -1,0 +1,566 @@
+/*
+ * CareerLink Dark Glass Theme - Wizard/Form Styles
+ * Appended only - does not modify existing styles
+ */
+
+/* ========================================
+   DASHBOARD ROOT WITH GRADIENT BACKGROUND
+   ======================================== */
+.dash-root {
+    -fx-background-color: linear-gradient(to bottom, #0B1F44, #123B7A, #0B2E62);
+    -fx-padding: 40;
+}
+
+/* ========================================
+   MAIN GLASS FORM CARD
+   ======================================== */
+.form-card {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 25, 0, 0, 10);
+}
+
+/* ========================================
+   FORM TYPOGRAPHY
+   ======================================== */
+.form-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-text-fill: white;
+}
+
+.form-subtitle {
+    -fx-font-size: 14px;
+    -fx-font-weight: 400;
+    -fx-text-fill: rgba(255, 255, 255, 0.7);
+}
+
+.form-event-id {
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+    -fx-text-fill: rgba(255, 255, 255, 0.5);
+}
+
+.field-caption {
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-text-fill: rgba(255, 255, 255, 0.9);
+}
+
+/* ========================================
+   FORM SEPARATOR
+   ======================================== */
+.form-separator {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-pref-height: 1;
+}
+
+/* ========================================
+   FIELD INPUTS - GLASS STYLE
+   ======================================== */
+.field-input {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.4);
+    -fx-font-size: 14px;
+    -fx-padding: 12 16;
+}
+
+.field-input:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-effect: dropshadow(gaussian, rgba(100, 150, 255, 0.2), 8, 0, 0, 2);
+}
+
+.field-input:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-border-color: #4A9EFF;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(74, 158, 255, 0.3), 12, 0, 0, 3);
+}
+
+/* ComboBox specific styling */
+.field-input.combo-box {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+}
+
+.field-input.combo-box:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.field-input.combo-box:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ComboBox list styling */
+.combo-box-popup .list-view {
+    -fx-background-color: rgba(11, 31, 68, 0.95);
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-radius: 8;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 8 12;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: rgba(74, 158, 255, 0.2);
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: rgba(74, 158, 255, 0.4);
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+.btn-secondary {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.25);
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-border-color: rgba(255, 255, 255, 0.35);
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.1), 6, 0, 0, 2);
+}
+
+.btn-secondary:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to right, #4A9EFF, #2563EB);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-padding: 10 24;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(74, 158, 255, 0.3), 8, 0, 0, 3);
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to right, #5AA8FF, #3672EB);
+    -fx-effect: dropshadow(gaussian, rgba(74, 158, 255, 0.5), 12, 0, 0, 4);
+}
+
+.btn-primary:pressed {
+    -fx-background-color: linear-gradient(to right, #3A8EEF, #1D4ED8);
+}
+
+/* ========================================
+   IMAGE PREVIEW
+   ======================================== */
+.image-preview {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-width: 1;
+}
+
+/* ========================================
+   SCROLLPANE STYLING (if needed)
+   ======================================== */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 4;
+}
+
+.scroll-pane .scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 4;
+}
+
+.scroll-pane .scroll-bar .thumb:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   ANIMATION TRANSITIONS
+   ======================================== */
+.field-input {
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.btn-secondary,
+.btn-primary {
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+.form-card {
+    -fx-max-width: 600;
+    -fx-pref-width: 500;
+}
+
+@media (max-width: 600) {
+    .dash-root {
+        -fx-padding: 20;
+    }
+    
+    .form-card {
+        -fx-max-width: infinity;
+        -fx-pref-width: infinity;
+    }
+}
+
+/* ========================================
+    DASHBOARD SIDEBAR (FLOATING ICON BAR)
+    ======================================== */
+.side-bar-float{
+    -fx-background-color: rgba(255,255,255,0.14);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.22);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 26, 0.25, 0, 12);
+    -fx-min-width: 90;
+    -fx-pref-width: 90;
+}
+
+.side-ico-btn{
+    -fx-min-width: 56;
+    -fx-min-height: 56;
+    -fx-max-width: 56;
+    -fx-max-height: 56;
+    -fx-background-radius: 18;
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+    -fx-cursor: hand;
+}
+
+.side-ico-btn:hover{
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-border-color: rgba(255,255,255,0.30);
+}
+
+.side-ico-active{
+    -fx-background-color: rgba(78,168,255,0.30);
+    -fx-border-color: rgba(78,168,255,0.55);
+    -fx-effect: dropshadow(gaussian, rgba(78,168,255,0.25), 18, 0.25, 0, 8);
+}
+
+.side-ico-danger{
+    -fx-background-color: rgba(239,68,68,0.18);
+    -fx-border-color: rgba(239,68,68,0.35);
+}
+
+/* ========================================
+    EVENTS PAGE (BLUE GLASS UI)
+    ======================================== */
+.events-root{
+    -fx-background-color: linear-gradient(to bottom right, #0B1F44, #123B7A, #0B2E62);
+}
+
+.events-header{
+    -fx-background-color: rgba(11,31,68,0.80);
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-border-width: 0 0 1 0;
+}
+
+.events-title{
+    -fx-font-size: 20px;
+    -fx-font-weight: 900;
+    -fx-text-fill: rgba(255,255,255,0.95);
+}
+
+.events-search{
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-prompt-text-fill: rgba(255,255,255,0.55);
+    -fx-padding: 10 12 10 12;
+}
+
+.events-search:focused{
+    -fx-border-color: rgba(78,168,255,0.85);
+    -fx-effect: dropshadow(gaussian, rgba(78,168,255,0.25), 16, 0.25, 0, 6);
+}
+
+.events-btn{
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-font-weight: 800;
+    -fx-padding: 10 16 10 16;
+    -fx-cursor: hand;
+}
+
+.events-btn-primary{
+    -fx-background-color: linear-gradient(to right, #4EA8FF, #2563EB);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(78,168,255,0.35), 12, 0.25, 0, 4);
+}
+
+.events-btn-primary:hover{
+    -fx-effect: dropshadow(gaussian, rgba(78,168,255,0.55), 16, 0.25, 0, 6);
+}
+
+.events-btn-ghost{
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-border-color: rgba(255,255,255,0.22);
+    -fx-border-width: 1;
+}
+
+.events-btn-ghost:hover{
+    -fx-background-color: rgba(255,255,255,0.14);
+    -fx-border-color: rgba(255,255,255,0.30);
+}
+
+.events-bg{
+    -fx-background-color: transparent;
+}
+
+.events-shell{
+    -fx-background-color: transparent;
+}
+
+.events-glass-card{
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 22, 0.28, 0, 10);
+}
+
+.events-card-title{
+    -fx-font-size: 14px;
+    -fx-font-weight: 900;
+    -fx-text-fill: rgba(255,255,255,0.95);
+}
+
+.events-field-label{
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-text-fill: rgba(255,255,255,0.80);
+}
+
+.events-field{
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-text-fill: rgba(255,255,255,0.92);
+}
+
+/* Keep ScrollPane fully transparent (including viewport/content) */
+.events-scroll,
+.events-scroll .viewport,
+.events-scroll .content{
+    -fx-background-color: transparent;
+}
+
+.events-scroll{
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+.events-grid{
+    -fx-padding: 2;
+}
+
+/* ========================================
+    EVENT CARDS (override app.css for glass style)
+    ======================================== */
+.event-card{
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 18, 0.28, 0, 8);
+}
+
+.event-card:hover{
+    -fx-border-color: rgba(78,168,255,0.55);
+    -fx-effect: dropshadow(gaussian, rgba(78,168,255,0.22), 26, 0.30, 0, 14);
+}
+
+.event-title{
+    -fx-font-size: 17px;
+    -fx-font-weight: 900;
+    -fx-text-fill: rgba(255,255,255,0.95);
+}
+
+.event-date,
+.event-location{
+    -fx-text-fill: rgba(255,255,255,0.72);
+}
+
+.chip{
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.14);
+    -fx-text-fill: rgba(255,255,255,0.80);
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+    -fx-padding: 6 10 6 10;
+}
+
+.badge{
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-weight: 800;
+    -fx-font-size: 11px;
+    -fx-padding: 6 10 6 10;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.16);
+}
+
+.badge-type{
+    -fx-background-color: rgba(78,168,255,0.18);
+    -fx-border-color: rgba(78,168,255,0.30);
+}
+
+/* Status badges: controller adds class name equal to statut value */
+.badge.PUBLIE, .PUBLIE{
+    -fx-background-color: rgba(16,185,129,0.18);
+    -fx-border-color: rgba(16,185,129,0.35);
+}
+
+.badge.BROUILLON, .BROUILLON{
+    -fx-background-color: rgba(245,158,11,0.18);
+    -fx-border-color: rgba(245,158,11,0.35);
+}
+
+.badge.ANNULE, .ANNULE{
+    -fx-background-color: rgba(239,68,68,0.18);
+    -fx-border-color: rgba(239,68,68,0.35);
+}
+
+.badge.TERMINE, .TERMINE{
+    -fx-background-color: rgba(168,85,247,0.18);
+    -fx-border-color: rgba(168,85,247,0.35);
+}
+
+/* Buttons inside cards (controller uses these classes) */
+.primary-btn{
+    -fx-background-color: rgba(78,168,255,0.95);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 12;
+    -fx-padding: 8 12 8 12;
+}
+
+.outline-btn{
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-weight: 900;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255,255,255,0.20);
+    -fx-border-width: 1;
+    -fx-padding: 8 12 8 12;
+}
+
+.danger-btn{
+    -fx-background-color: rgba(239,68,68,0.20);
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-weight: 900;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(239,68,68,0.35);
+    -fx-border-width: 1;
+    -fx-padding: 8 12 8 12;
+}
+
+/* ========================================
+    EVENT PUBLICATIONS (BLUE GLASS)
+    ======================================== */
+.pubs-cover{
+    -fx-background-color: linear-gradient(to bottom right, rgba(11,31,68,0.85), rgba(18,59,122,0.75));
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(255,255,255,0.14);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 26, 0.25, 0, 10);
+}
+
+.pubs-cover-overlay{
+    -fx-background-color: linear-gradient(to top, rgba(11,31,68,0.85), rgba(11,31,68,0.10));
+}
+
+.pubs-feed-scroll,
+.pubs-feed-scroll .viewport,
+.pubs-feed-scroll .content{
+    -fx-background-color: transparent;
+}
+
+.pubs-feed{
+    -fx-padding: 18 18 26 18;
+}
+
+.events-root .fab{
+    -fx-background-color: #123B7A;
+    -fx-text-fill: rgba(255,255,255,0.95);
+    -fx-effect: dropshadow(gaussian, rgba(18,59,122,0.45), 18, 0.25, 0, 8);
+}
+
+.events-root .fab:hover{
+    -fx-background-color: #1A4A97;
+}
+
+.events-root .fab:pressed{
+    -fx-background-color: #0E2D5F;
+    -fx-text-fill: rgba(255,255,255,0.95);
+}
+
+.pubs-feed .outline-btn{
+    -fx-background-color: rgba(22,85,178,0.28);
+    -fx-text-fill: rgba(255,255,255,0.95);
+    -fx-border-color: rgba(22,85,178,0.65);
+}
+
+.pubs-feed .outline-btn:hover{
+    -fx-background-color: rgba(22,85,178,0.38);
+    -fx-border-color: rgba(22,85,178,0.85);
+}
+
+.pubs-feed .outline-btn:pressed{
+    -fx-background-color: rgba(22,85,178,0.20);
+    -fx-border-color: rgba(22,85,178,0.55);
+}

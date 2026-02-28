@@ -1,0 +1,180 @@
+package Services.evenement.ticket;
+
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class TicketHtmlService {
+
+    public Path generateHtmlTicket(String ticketId, String userName, String userEmail,
+                                   String eventTitle, String eventType,
+                                   String date, String lieu,
+                                   Path outputPath) throws Exception {
+        if (outputPath == null) throw new IllegalArgumentException("outputPath is required");
+
+        Path parent = outputPath.getParent();
+        if (parent != null) Files.createDirectories(parent);
+
+        String html = buildHtml(ticketId, userName, userEmail, eventTitle, eventType, date, lieu);
+        Files.writeString(outputPath, html, StandardCharsets.UTF_8);
+        return outputPath;
+    }
+
+    private String buildHtml(String ticketId, String name, String email,
+                             String eventTitle, String type, String date, String lieu) {
+        return "<!DOCTYPE html>\n"
+                + "<html lang=\"fr\">\n"
+                + "<head>\n"
+                + "<meta charset=\"UTF-8\">\n"
+                + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+                + "<title>Ticket - " + esc(eventTitle) + "</title>\n"
+                + "<link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap\" rel=\"stylesheet\">\n"
+                + "<style>\n"
+                + "  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\n"
+                + "  body {\n"
+                + "    min-height: 100vh;\n"
+                + "    background: #0a0a0f;\n"
+                + "    display: flex;\n"
+                + "    align-items: center;\n"
+                + "    justify-content: center;\n"
+                + "    font-family: 'DM Sans', sans-serif;\n"
+                + "    padding: 24px;\n"
+                + "    background-image:\n"
+                + "      radial-gradient(ellipse at 20% 50%, rgba(120,40,200,0.15) 0%, transparent 60%),\n"
+                + "      radial-gradient(ellipse at 80% 20%, rgba(20,100,255,0.1) 0%, transparent 50%);\n"
+                + "  }\n"
+                + "  .ticket {\n"
+                + "    width: 100%; max-width: 520px;\n"
+                + "    background: #13131a;\n"
+                + "    border: 1px solid rgba(255,255,255,0.08);\n"
+                + "    border-radius: 24px;\n"
+                + "    overflow: hidden;\n"
+                + "    box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);\n"
+                + "    animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) both;\n"
+                + "  }\n"
+                + "  @keyframes rise {\n"
+                + "    from { opacity: 0; transform: translateY(32px); }\n"
+                + "    to   { opacity: 1; transform: translateY(0); }\n"
+                + "  }\n"
+                + "  .header {\n"
+                + "    background: linear-gradient(135deg, #1a0a2e 0%, #0d1b4b 50%, #0a2a1a 100%);\n"
+                + "    padding: 36px 36px 28px;\n"
+                + "    position: relative;\n"
+                + "    overflow: hidden;\n"
+                + "  }\n"
+                + "  .header::before {\n"
+                + "    content: '';\n"
+                + "    position: absolute; top: -60px; right: -60px;\n"
+                + "    width: 200px; height: 200px;\n"
+                + "    background: radial-gradient(circle, rgba(120,60,220,0.3) 0%, transparent 70%);\n"
+                + "    border-radius: 50%;\n"
+                + "  }\n"
+                + "  .badge-label {\n"
+                + "    display: inline-block;\n"
+                + "    background: rgba(255,255,255,0.1);\n"
+                + "    border: 1px solid rgba(255,255,255,0.15);\n"
+                + "    color: rgba(255,255,255,0.7);\n"
+                + "    font-size: 11px; font-weight: 500;\n"
+                + "    letter-spacing: 2px; text-transform: uppercase;\n"
+                + "    padding: 5px 12px; border-radius: 100px;\n"
+                + "    margin-bottom: 16px;\n"
+                + "  }\n"
+                + "  .event-title {\n"
+                + "    font-family: 'Playfair Display', serif;\n"
+                + "    font-size: 32px; font-weight: 900;\n"
+                + "    color: #fff; line-height: 1.15; margin-bottom: 8px;\n"
+                + "  }\n"
+                + "  .event-type { color: rgba(255,255,255,0.45); font-size: 13px; font-weight: 300; }\n"
+                + "  .divider {\n"
+                + "    display: flex; align-items: center;\n"
+                + "    border-top: 1px solid rgba(255,255,255,0.07);\n"
+                + "  }\n"
+                + "  .body { padding: 28px 36px 32px; }\n"
+                + "  .fields-grid {\n"
+                + "    display: grid; grid-template-columns: 1fr 1fr;\n"
+                + "    gap: 20px 24px; margin-bottom: 28px;\n"
+                + "  }\n"
+                + "  .field-label {\n"
+                + "    font-size: 10px; font-weight: 500;\n"
+                + "    letter-spacing: 1.8px; text-transform: uppercase;\n"
+                + "    color: rgba(255,255,255,0.3); margin-bottom: 4px;\n"
+                + "  }\n"
+                + "  .field-value { font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.88); }\n"
+                + "  .ticket-id-box {\n"
+                + "    background: rgba(255,255,255,0.04);\n"
+                + "    border: 1px solid rgba(255,255,255,0.08);\n"
+                + "    border-radius: 12px; padding: 14px 18px;\n"
+                + "    display: flex; align-items: center; justify-content: space-between;\n"
+                + "  }\n"
+                + "  .ticket-id-label {\n"
+                + "    font-size: 10px; letter-spacing: 1.8px;\n"
+                + "    text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px;\n"
+                + "  }\n"
+                + "  .ticket-id-value {\n"
+                + "    font-family: 'Playfair Display', serif;\n"
+                + "    font-size: 18px; color: #c084fc; letter-spacing: 1px;\n"
+                + "  }\n"
+                + "  .valid-badge {\n"
+                + "    background: rgba(34,197,94,0.12);\n"
+                + "    border: 1px solid rgba(34,197,94,0.25);\n"
+                + "    color: #4ade80; font-size: 11px; font-weight: 500;\n"
+                + "    letter-spacing: 1px; text-transform: uppercase;\n"
+                + "    padding: 5px 12px; border-radius: 100px;\n"
+                + "  }\n"
+                + "  .footer {\n"
+                + "    padding: 16px 36px;\n"
+                + "    border-top: 1px solid rgba(255,255,255,0.06);\n"
+                + "    color: rgba(255,255,255,0.25); font-size: 11px;\n"
+                + "    text-align: center; letter-spacing: 0.5px;\n"
+                + "  }\n"
+                + "</style>\n"
+                + "</head>\n"
+                + "<body>\n"
+                + "  <div class=\"ticket\">\n"
+                + "    <div class=\"header\">\n"
+                + "      <div class=\"badge-label\">Ticket Officiel</div>\n"
+                + "      <div class=\"event-title\">" + esc(eventTitle) + "</div>\n"
+                + "      <div class=\"event-type\">" + esc(type != null ? type : "") + "</div>\n"
+                + "    </div>\n"
+                + "    <div class=\"divider\"></div>\n"
+                + "    <div class=\"body\">\n"
+                + "      <div class=\"fields-grid\">\n"
+                + "        <div>\n"
+                + "          <div class=\"field-label\">Participant</div>\n"
+                + "          <div class=\"field-value\">" + esc(name) + "</div>\n"
+                + "        </div>\n"
+                + "        <div>\n"
+                + "          <div class=\"field-label\">Email</div>\n"
+                + "          <div class=\"field-value\">" + esc(email) + "</div>\n"
+                + "        </div>\n"
+                + "        <div>\n"
+                + "          <div class=\"field-label\">Date</div>\n"
+                + "          <div class=\"field-value\">" + esc(date) + "</div>\n"
+                + "        </div>\n"
+                + "        <div>\n"
+                + "          <div class=\"field-label\">Lieu</div>\n"
+                + "          <div class=\"field-value\">" + esc(lieu) + "</div>\n"
+                + "        </div>\n"
+                + "      </div>\n"
+                + "      <div class=\"ticket-id-box\">\n"
+                + "        <div>\n"
+                + "          <div class=\"ticket-id-label\">Ticket ID</div>\n"
+                + "          <div class=\"ticket-id-value\">" + esc(ticketId) + "</div>\n"
+                + "        </div>\n"
+                + "        <div class=\"valid-badge\">Valide</div>\n"
+                + "      </div>\n"
+                + "    </div>\n"
+                + "    <div class=\"footer\">Merci de presenter ce ticket a l'entree. Bon evenement !</div>\n"
+                + "  </div>\n"
+                + "</body>\n"
+                + "</html>";
+    }
+
+    private static String esc(String s) {
+        if (s == null) return "";
+        return s.replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+                .replace("\"", "&quot;");
+    }
+}

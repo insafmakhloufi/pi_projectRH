@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.evenement.EventAffichageBackendController"
+            stylesheets="@event_affichage_backend_premium.css"
+            styleClass="page-root">
+
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <!-- TOP BAR -->
+    <top>
+        <VBox spacing="12">
+            <HBox spacing="16" alignment="CENTER_LEFT" styleClass="topbar">
+                <padding>
+                    <Insets top="16" right="16" bottom="16" left="16"/>
+                </padding>
+
+                <VBox spacing="4" alignment="CENTER_LEFT">
+                    <Label text="Backend • Gestion des Évènements" styleClass="page-title"/>
+                    <Label fx:id="resultCount" text="0 événements" styleClass="page-counter"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <HBox spacing="12" alignment="CENTER_RIGHT">
+                    <TextField fx:id="tfSearch"
+                               prefWidth="340"
+                               promptText="Rechercher par titre / lieu / type..."
+                               styleClass="search-field"/>
+
+                    <Button fx:id="btnRefresh" text="Actualiser" styleClass="btn-outline"/>
+                    <Button fx:id="btnNew" text="+ Ajouter" styleClass="btn-primary"/>
+                </HBox>
+            </HBox>
+
+            <VBox spacing="10">
+                <HBox spacing="14" alignment="CENTER_LEFT" styleClass="ai-bar">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+
+                    <StackPane fx:id="aiAvatar" prefWidth="50" prefHeight="50" minWidth="50" minHeight="50" maxWidth="50" maxHeight="50" styleClass="ai-avatar">
+                        <ImageView fx:id="ivAiAvatar" fitWidth="28" fitHeight="28" preserveRatio="true" smooth="true"/>
+                        <Region styleClass="ai-online-dot" StackPane.alignment="BOTTOM_RIGHT"/>
+                    </StackPane>
+
+                    <TextField fx:id="tfAiCommand"
+                               promptText="Ask AI to manage events..."
+                               styleClass="ai-input"
+                               HBox.hgrow="ALWAYS"/>
+
+                    <Button fx:id="btnAiSend" text="Send" styleClass="ai-send"/>
+                </HBox>
+
+                <VBox fx:id="aiResponseContainer" spacing="6" visible="false" managed="false" styleClass="ai-response-wrap">
+                    <Label text="AI" styleClass="ai-response-title"/>
+                    <Label fx:id="lblAiResponse" text="" wrapText="true" styleClass="ai-response-bubble"/>
+                </VBox>
+            </VBox>
+        </VBox>
+    </top>
+
+    <!-- LEFT PANEL - STATISTICS -->
+    <left>
+        <VBox spacing="20" prefWidth="340" styleClass="stats-panel">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- KPI CARDS -->
+            <VBox spacing="16" styleClass="kpi-section">
+                <Label text="Statistiques" styleClass="section-title"/>
+                
+                <!-- Total Events KPI -->
+                <VBox spacing="4" styleClass="kpi-card">
+                    <Label text="Total Évènements" styleClass="kpi-title"/>
+                    <Label fx:id="kpiTotalEvents" text="0" styleClass="kpi-value"/>
+                    <Label fx:id="kpiTotalEventsTrend" text="+0 cette semaine" styleClass="kpi-trend"/>
+                </VBox>
+
+                <!-- Published Events KPI -->
+                <VBox spacing="4" styleClass="kpi-card">
+                    <Label text="Publiés" styleClass="kpi-title"/>
+                    <Label fx:id="kpiPublishedEvents" text="0" styleClass="kpi-value"/>
+                    <Label fx:id="kpiPublishedEventsTrend" text="+0 cette semaine" styleClass="kpi-trend"/>
+                </VBox>
+
+                <!-- Draft Events KPI -->
+                <VBox spacing="4" styleClass="kpi-card">
+                    <Label text="Brouillons" styleClass="kpi-title"/>
+                    <Label fx:id="kpiDraftEvents" text="0" styleClass="kpi-value"/>
+                    <Label fx:id="kpiDraftEventsTrend" text="+0 cette semaine" styleClass="kpi-trend"/>
+                </VBox>
+
+                <!-- Cancelled Events KPI -->
+                <VBox spacing="4" styleClass="kpi-card">
+                    <Label text="Annulés" styleClass="kpi-title"/>
+                    <Label fx:id="kpiCancelledEvents" text="0" styleClass="kpi-value"/>
+                    <Label fx:id="kpiCancelledEventsTrend" text="+0 cette semaine" styleClass="kpi-trend"/>
+                </VBox>
+
+                <!-- Total Capacity KPI -->
+                <VBox spacing="4" styleClass="kpi-card">
+                    <Label text="Capacité Totale" styleClass="kpi-title"/>
+                    <Label fx:id="kpiTotalCapacity" text="0" styleClass="kpi-value"/>
+                    <Label fx:id="kpiTotalCapacityTrend" text="+0 cette semaine" styleClass="kpi-trend"/>
+                </VBox>
+            </VBox>
+
+            <!-- CHARTS -->
+            <VBox spacing="16" styleClass="charts-section">
+                <Label text="Répartition" styleClass="section-title"/>
+                
+                <!-- Status Pie Chart -->
+                <VBox spacing="8" styleClass="chart-card">
+                    <Label text="Par Statut" styleClass="chart-title"/>
+                    <PieChart fx:id="pieChartStatus" 
+                              legendVisible="false" 
+                              styleClass="status-pie-chart"/>
+                </VBox>
+
+                <!-- Type Bar Chart -->
+                <VBox spacing="8" styleClass="chart-card">
+                    <Label text="Par Type" styleClass="chart-title"/>
+                    <BarChart fx:id="barChartType" 
+                              legendVisible="false"
+                              styleClass="type-bar-chart">
+                        <xAxis>
+                            <CategoryAxis styleClass="chart-axis"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis styleClass="chart-axis"/>
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- MAIN CONTENT - EVENTS GRID -->
+    <center>
+        <VBox styleClass="content-container">
+            <ScrollPane fitToWidth="true" pannable="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="events-scroll">
+                <content>
+                    <TilePane fx:id="flowEvents"
+                              prefTileWidth="320"
+                              prefTileHeight="360"
+                              hgap="16"
+                              vgap="16"
+                              alignment="TOP_LEFT"
+                              styleClass="events-grid"/>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </center>
+
+</BorderPane>

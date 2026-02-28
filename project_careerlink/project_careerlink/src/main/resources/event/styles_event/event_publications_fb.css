@@ -1,0 +1,324 @@
+/* Event Publications - Facebook-like layout (Front) */
+
+.ep-root {
+    -fx-background-color: linear-gradient(to bottom right, #0B1F44, #123B7A, #0B2E62);
+}
+
+.ep-scroll {
+    -fx-background-color: transparent;
+}
+.ep-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.ep-page {
+    -fx-padding: 22 22 28 22;
+    -fx-background-color: transparent;
+    -fx-alignment: TOP_CENTER;
+}
+
+/* =====================
+   COVER / HEADER
+   ===================== */
+.ep-cover {
+    -fx-max-width: 980px;
+    -fx-pref-width: 980px;
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.40), 22, 0.25, 0, 10);
+}
+
+.ep-cover-image {
+    -fx-arc-width: 44;
+    -fx-arc-height: 44;
+}
+
+.ep-cover-overlay {
+    -fx-background-color: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.55));
+    -fx-background-radius: 22;
+}
+
+.ep-cover-content {
+    -fx-background-color: transparent;
+}
+
+.ep-cover-title {
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-weight: 900;
+}
+
+.ep-cover-meta {
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+}
+
+.ep-tag {
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-background-radius: 999;
+    -fx-padding: 6 12;
+    -fx-text-fill: white;
+    -fx-font-weight: 800;
+    -fx-font-size: 12px;
+    -fx-border-color: rgba(255,255,255,0.25);
+    -fx-border-radius: 999;
+}
+
+/* =====================
+   BUTTONS
+   ===================== */
+.ep-btn {
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 8 14;
+    -fx-font-weight: 900;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+.ep-btn-ghost {
+    -fx-background-color: rgba(255,255,255,0.14);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255,255,255,0.22);
+    -fx-border-width: 1;
+}
+.ep-btn-ghost:hover {
+    -fx-background-color: rgba(255,255,255,0.20);
+}
+
+.ep-btn-primary {
+    -fx-background-color: linear-gradient(to bottom, #2C7DFF, #1D56D6);
+    -fx-text-fill: white;
+}
+.ep-btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #3A88FF, #1D56D6);
+}
+
+.ep-btn-danger {
+    -fx-background-color: linear-gradient(to bottom, #FF4D6D, #C81D3B);
+    -fx-text-fill: white;
+}
+.ep-btn-danger:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF5C79, #C81D3B);
+}
+
+.ep-fab {
+    -fx-background-color: linear-gradient(to bottom, #2C7DFF, #1D56D6);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-font-size: 18px;
+    -fx-background-radius: 999;
+    -fx-padding: 12 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.40), 18, 0.25, 0, 8);
+    -fx-cursor: hand;
+}
+.ep-fab:hover {
+    -fx-background-color: linear-gradient(to bottom, #3A88FF, #1D56D6);
+}
+
+/* =====================
+   FEED
+   ===================== */
+.ep-feed-wrap {
+    -fx-max-width: 980px;
+    -fx-pref-width: 980px;
+    -fx-alignment: TOP_CENTER;
+}
+
+.ep-feed {
+    -fx-max-width: 900px;
+    -fx-pref-width: 900px;
+}
+
+.ep-empty {
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-font-weight: 900;
+    -fx-font-size: 14px;
+    -fx-padding: 18 16;
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.16);
+    -fx-border-radius: 18;
+    -fx-max-width: 900px;
+}
+
+/* Card base */
+.post-card,
+.publication-card {
+    -fx-background-color: rgba(255,255,255,0.92);
+    -fx-background-radius: 20;
+    -fx-padding: 16 16 14 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.22), 18, 0.20, 0, 8);
+}
+
+.publication-card {
+    -fx-padding: 20 20 16 20;
+    -fx-spacing: 12;
+}
+
+.avatar {
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-pref-width: 40;
+    -fx-pref-height: 40;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-background-color: linear-gradient(to bottom, rgba(44,125,255,0.85), rgba(29,86,214,0.85));
+    -fx-border-color: rgba(11,31,68,0.18);
+    -fx-border-width: 1;
+}
+
+.pub-author {
+    -fx-text-fill: #0B1F44;
+    -fx-font-weight: 900;
+    -fx-font-size: 13px;
+}
+
+.pub-date {
+    -fx-text-fill: rgba(11,31,68,0.65);
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+.pub-title {
+    -fx-text-fill: #0B1F44;
+    -fx-font-weight: 900;
+    -fx-font-size: 14px;
+}
+
+.pub-content {
+    -fx-text-fill: #102A59;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-line-spacing: 2px;
+}
+
+.helper-text {
+    -fx-text-fill: rgba(11,31,68,0.70);
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+.media-thumb {
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.16), 12, 0.22, 0, 4);
+}
+
+.pub-footer {
+    -fx-padding: 8 0 0 0;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.btn-edit {
+    -fx-background-color: linear-gradient(to bottom, #2C7DFF, #1D56D6);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-font-size: 12px;
+    -fx-background-radius: 14;
+    -fx-padding: 8 14;
+    -fx-cursor: hand;
+}
+.btn-edit:hover {
+    -fx-background-color: linear-gradient(to bottom, #3A88FF, #1D56D6);
+}
+
+.danger-btn {
+    -fx-background-color: linear-gradient(to bottom, #FF4D6D, #C81D3B);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-font-size: 12px;
+    -fx-background-radius: 14;
+    -fx-padding: 8 14;
+    -fx-cursor: hand;
+}
+.danger-btn:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF5C79, #C81D3B);
+}
+
+.post-header {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.post-mini-avatar {
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(11,31,68,0.18);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.16), 10, 0.2, 0, 3);
+}
+
+.post-author {
+    -fx-text-fill: #0B1F44;
+    -fx-font-weight: 900;
+    -fx-font-size: 13px;
+}
+
+.post-date {
+    -fx-text-fill: rgba(11,31,68,0.65);
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+.post-content {
+    -fx-text-fill: #102A59;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-line-spacing: 2px;
+}
+
+.post-media {
+    -fx-padding: 6 0 2 0;
+}
+
+.post-media-img {
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.16), 12, 0.22, 0, 4);
+}
+
+.post-actions {
+    -fx-padding: 10 0 0 0;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.post-action-btn {
+    -fx-background-color: rgba(11,31,68,0.06);
+    -fx-text-fill: #0B1F44;
+    -fx-font-weight: 900;
+    -fx-font-size: 11px;
+    -fx-background-radius: 12;
+    -fx-padding: 8 12;
+    -fx-cursor: hand;
+}
+.post-action-btn:hover {
+    -fx-background-color: rgba(11,31,68,0.10);
+}
+
+.post-icon-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(11,31,68,0.75);
+    -fx-font-weight: 900;
+    -fx-font-size: 11px;
+    -fx-padding: 6 10;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+.post-icon-btn:hover {
+    -fx-background-color: rgba(11,31,68,0.08);
+}
+
+.post-icon-danger {
+    -fx-text-fill: #C81D3B;
+}
+
+/* Make scrollbars subtle */
+.ep-scroll .scroll-bar:vertical,
+.ep-scroll .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+.ep-scroll .thumb {
+    -fx-background-color: rgba(255,255,255,0.22);
+    -fx-background-radius: 999;
+}

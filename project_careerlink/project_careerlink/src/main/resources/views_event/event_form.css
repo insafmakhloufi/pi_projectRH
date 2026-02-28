@@ -1,0 +1,203 @@
+/* JavaFX CSS - Event Form Premium Theme */
+
+.root {
+    -fx-font-family: "Segoe UI", "Inter", Arial;
+    -fx-font-size: 13px;
+}
+
+.event-form-page {
+    -fx-background-color: linear-gradient(to bottom right, #F7F9FF, #EEF2FF);
+}
+
+.page-bg {
+    -fx-background-color: transparent;
+}
+
+.topbar {
+    -fx-background-color: rgba(255, 255, 255, 0.72);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(148, 163, 184, 0.22);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(17, 24, 39, 0.10), 26, 0.18, 0, 10);
+}
+
+.glass {
+    -fx-background-color: rgba(255, 255, 255, 0.72);
+}
+
+.page-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0F172A;
+}
+
+.page-subtitle {
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-text-fill: rgba(15, 23, 42, 0.60);
+}
+
+.card {
+    -fx-background-color: rgba(255, 255, 255, 0.78);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(148, 163, 184, 0.22);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(17, 24, 39, 0.10), 26, 0.16, 0, 10);
+}
+
+.section-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: 1000;
+    -fx-text-fill: #111827;
+}
+
+.field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #334155;
+}
+
+.input,
+.text-field,
+.text-area,
+.combo-box,
+.date-picker {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(148, 163, 184, 0.45);
+    -fx-border-width: 1;
+    -fx-text-fill: #0F172A;
+    -fx-prompt-text-fill: #94A3B8;
+    -fx-font-size: 13px;
+    -fx-padding: 10 12 10 12;
+}
+
+.text-field,
+.combo-box,
+.date-picker {
+    -fx-pref-height: 40;
+    -fx-min-height: 40;
+}
+
+.text-area,
+.textarea {
+    -fx-min-height: 170;
+}
+
+.textarea {
+    -fx-padding: 10 12 10 12;
+}
+
+.input:focused,
+.text-field:focused,
+.text-area:focused,
+.combo-box:focused,
+.date-picker:focused {
+    -fx-border-color: rgba(79, 70, 229, 0.80);
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.22), 18, 0.20, 0, 6);
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: rgba(148, 163, 184, 0.35);
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: rgba(238, 242, 255, 0.85);
+}
+
+.btn {
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-font-weight: 900;
+    -fx-padding: 10 14 10 14;
+    -fx-cursor: hand;
+    -fx-min-width: 130;
+}
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to bottom, #4F46E5, #4338CA);
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.35), 22, 0.20, 0, 10);
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #5B53FF, #4338CA);
+}
+
+.btn-primary:pressed {
+    -fx-translate-y: 1;
+}
+
+.btn-secondary {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-text-fill: #0F172A;
+    -fx-border-color: rgba(148, 163, 184, 0.35);
+    -fx-border-width: 1;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: rgba(241, 245, 249, 1.0);
+}
+
+.btn-secondary:pressed {
+    -fx-translate-y: 1;
+}
+
+.btn-danger {
+    -fx-background-color: rgba(239, 68, 68, 0.12);
+    -fx-text-fill: #B91C1C;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-font-weight: 1000;
+    -fx-padding: 10 14 10 14;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: rgba(239, 68, 68, 0.18);
+}
+
+.btn-danger:pressed {
+    -fx-translate-y: 1;
+}
+
+.transparent-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.transparent-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.image-preview {
+    -fx-background-color: rgba(248, 250, 252, 0.75);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(148, 163, 184, 0.22);
+    -fx-border-width: 1;
+    -fx-padding: 10;
+}
+
+.image-placeholder {
+    -fx-background-color: rgba(15, 23, 42, 0.04);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+}
+
+.placeholder-text {
+    -fx-font-weight: 900;
+    -fx-text-fill: #64748B;
+}
+
+.image-path {
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+    -fx-text-fill: rgba(15, 23, 42, 0.55);
+}

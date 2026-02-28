@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.evenement.EventPublicationsBackendController"
+            stylesheets="@event_publications_backend.css"
+            styleClass="page-bg">
+
+    <top>
+        <!-- Modern Header -->
+        <HBox alignment="CENTER_LEFT" styleClass="modern-header">
+            <padding>
+                <Insets top="16" right="24" bottom="16" left="24"/>
+            </padding>
+
+            <!-- Back Button -->
+            <Button fx:id="btnBack" text="← Retour" styleClass="btn-ghost-header"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Event Title -->
+            <VBox alignment="CENTER" styleClass="header-title-container">
+                <Label fx:id="lblTitle" text="Titre de l'événement" styleClass="header-title"/>
+                <Label fx:id="lblMeta" text="Date • Lieu" styleClass="header-meta"/>
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Add Publication Button -->
+            <Button fx:id="btnAddPost" text="+ Ajouter publication" styleClass="btn-primary-pill"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" pannable="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="thin-scroll">
+            <content>
+                <HBox maxWidth="1200" prefWidth="Infinity" alignment="TOP_CENTER" styleClass="main-content">
+                    <padding>
+                        <Insets top="24" right="24" bottom="32" left="24"/>
+                    </padding>
+
+                    <!-- Left: Event Summary Card -->
+                    <VBox prefWidth="320" minWidth="300" maxWidth="340" styleClass="event-summary-card">
+                        <padding>
+                            <Insets top="20" right="20" bottom="20" left="20"/>
+                        </padding>
+
+                        <!-- Event Image -->
+                        <StackPane styleClass="event-image-container">
+                            <ImageView fx:id="ivAvatar" fitWidth="280" fitHeight="160" preserveRatio="true" smooth="true" styleClass="event-cover"/>
+                            <StackPane fx:id="coverPlaceholder" styleClass="cover-placeholder">
+                                <VBox alignment="CENTER" spacing="8">
+                                    <Label text="📅" styleClass="placeholder-icon"/>
+                                    <Label text="Image de l'événement" styleClass="placeholder-text"/>
+                                </VBox>
+                            </StackPane>
+                        </StackPane>
+
+                        <!-- Event Info -->
+                        <VBox spacing="12" styleClass="event-info">
+                            <!-- Title -->
+                            <Label fx:id="lblTitle" text="Titre de l'événement" styleClass="event-title" wrapText="true"/>
+
+                            <!-- Status Chips -->
+                            <HBox spacing="8" styleClass="chips-row">
+                                <Label fx:id="lblHeroType" text="RÉUNION" styleClass="chip chip-type"/>
+                                <Label fx:id="lblHeroStatus" text="PUBLIÉ" styleClass="chip chip-status"/>
+                            </HBox>
+
+                            <!-- Description -->
+                            <Label fx:id="lblDesc" text="Description détaillée de l'événement avec les informations importantes et le contexte." styleClass="event-description" wrapText="true"/>
+
+                            <!-- Action Buttons -->
+                            <VBox spacing="10" styleClass="action-buttons">
+                                <Button fx:id="btnParticipate" text="Participer" styleClass="btn-participate"/>
+                                <Button fx:id="btnShare" text="Partager" styleClass="btn-share"/>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+
+                    <!-- Right: Publications Feed -->
+                    <VBox HBox.hgrow="ALWAYS" spacing="16" styleClass="feed-container">
+                        <padding>
+                            <Insets left="24"/>
+                        </padding>
+
+                        <!-- Feed Header -->
+                        <HBox alignment="CENTER_LEFT" styleClass="feed-header">
+                            <Label text="Publications" styleClass="feed-title"/>
+                            <Label fx:id="lblPostCount" text="(0)" styleClass="feed-count"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                        </HBox>
+
+                        <!-- Publications Feed -->
+                        <VBox fx:id="feedContainer" spacing="16" styleClass="publications-feed"/>
+                    </VBox>
+
+                </HBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

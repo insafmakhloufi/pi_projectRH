@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.User.LoginController">
+
+    <BorderPane styleClass="auth-root" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <left>
+            <StackPane styleClass="auth-hero" prefWidth="560" minWidth="420">
+                <Region styleClass="auth-hero-overlay" />
+                <VBox styleClass="auth-hero-inner" spacing="18" maxWidth="460">
+                    <VBox spacing="8">
+                        <Label text="CareerLink" styleClass="auth-hero-brand" />
+                        <Label text="Welcome to CareerLink" styleClass="auth-hero-title" wrapText="true" />
+                        <Label text="Connect talent to opportunity. Built for candidates and hiring teams." styleClass="auth-hero-text" wrapText="true" />
+                    </VBox>
+
+                    <VBox spacing="12" styleClass="auth-hero-list">
+                        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="auth-hero-item">
+                            <Label text="✓" styleClass="auth-hero-check" />
+                            <Label text="Employee Management" styleClass="auth-hero-item-text" />
+                        </HBox>
+                        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="auth-hero-item">
+                            <Label text="✓" styleClass="auth-hero-check" />
+                            <Label text="Attendance Tracking" styleClass="auth-hero-item-text" />
+                        </HBox>
+                        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="auth-hero-item">
+                            <Label text="✓" styleClass="auth-hero-check" />
+                            <Label text="Performance Analytics" styleClass="auth-hero-item-text" />
+                        </HBox>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="auth-hero-slogan-wrap">
+                        <Label text="Apply smarter. Hire faster." styleClass="auth-hero-slogan" wrapText="true" />
+                        <Label text="Track applications, manage candidates, and move people into the right roles—without the chaos." styleClass="auth-hero-caption" wrapText="true" />
+                    </VBox>
+                </VBox>
+            </StackPane>
+        </left>
+
+        <center>
+            <StackPane styleClass="auth-form-wrap">
+                <ScrollPane fx:id="scrollPane" fitToWidth="true" pannable="false" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="auth-form-scroll">
+                    <VBox fx:id="contentBox" alignment="CENTER" fillWidth="true" styleClass="auth-form-content">
+                        <VBox styleClass="auth-card" spacing="14" maxWidth="460" fillWidth="true">
+
+                            <VBox spacing="6">
+                                <Label text="Welcome Back" styleClass="auth-title" />
+                                <Label text="Manage your workforce efficiently" styleClass="auth-subtitle" />
+                            </VBox>
+
+                            <VBox spacing="6" fillWidth="true">
+                                <Label text="Email / Username / Phone" styleClass="field-label" />
+                                <TextField fx:id="emailField" promptText="you@company.com" maxWidth="Infinity" />
+                                <Label fx:id="emailError" styleClass="error-label" />
+                            </VBox>
+
+                            <VBox spacing="6" fillWidth="true">
+                                <Label text="Password" styleClass="field-label" />
+                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <StackPane HBox.hgrow="ALWAYS">
+                                        <PasswordField fx:id="passwordField" promptText="Enter your password" maxWidth="Infinity" />
+                                        <TextField fx:id="passwordVisibleField" promptText="Enter your password" maxWidth="Infinity" visible="false" managed="false" />
+                                    </StackPane>
+                                    <ToggleButton fx:id="showPasswordToggle" text="" styleClass="eye-toggle" focusTraversable="false" />
+                                </HBox>
+                                <Label fx:id="passwordError" styleClass="error-label" />
+                            </VBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="auth-row">
+                                <CheckBox text="Remember me" styleClass="auth-remember" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Hyperlink text="Forgot password?" styleClass="link" />
+                            </HBox>
+
+                            <Label fx:id="successMessage" styleClass="success-label" />
+
+                            <Button text="Sign In" onAction="#handleLogin" styleClass="btn-primary" maxWidth="Infinity" />
+
+                            <HBox alignment="CENTER" spacing="6">
+                                <Label text="Don't have an account?" styleClass="muted" />
+                                <Hyperlink text="Sign up" onAction="#goToSignup" styleClass="link" />
+                            </HBox>
+
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </StackPane>
+        </center>
+
+    </BorderPane>
+</AnchorPane>

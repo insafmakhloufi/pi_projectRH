@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.evenement.PublicationFormController"
+            stylesheets="@../styles/app.css"
+            styleClass="dash-root">
+
+    <top>
+        <VBox spacing="12" styleClass="form-card">
+            <padding>
+                <Insets top="24" right="32" bottom="24" left="32"/>
+            </padding>
+            <Label text="Nouvelle Publication" styleClass="form-title"/>
+            <Label text="Ajouter contenu pour cet évènement" styleClass="form-subtitle"/>
+            <Label fx:id="lblEventId" text="Event: #" styleClass="form-event-id"/>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="form-scroll">
+            <content>
+                <VBox spacing="20" styleClass="form-card">
+                    <padding>
+                        <Insets top="32" right="32" bottom="32" left="32"/>
+                    </padding>
+
+                    <VBox spacing="8">
+                        <Label text="Titre" styleClass="field-caption"/>
+                        <TextField fx:id="tfTitre" styleClass="field-input" promptText="Entrez le titre de la publication" />
+                    </VBox>
+
+                    <VBox spacing="8">
+                        <Label text="Contenu" styleClass="field-caption"/>
+                        <TextArea fx:id="taContenu" styleClass="field-input" promptText="Rédigez votre publication ici..." wrapText="true" prefHeight="120" />
+                    </VBox>
+
+                    <VBox spacing="16">
+                        <Label text="Auteur ID" styleClass="field-caption"/>
+                        <TextField fx:id="tfAuteurId" styleClass="field-input" promptText="Entrez l'ID de l'auteur (ex: 1, 2, 3...)" prefWidth="400" />
+                    </VBox>
+
+                    <VBox spacing="16">
+                        <Label text="Type de publication" styleClass="field-caption"/>
+                        <ComboBox fx:id="cbType" styleClass="field-input" prefWidth="400" />
+                    </VBox>
+
+                    <VBox spacing="16">
+                        <Label text="Visibilité" styleClass="field-caption"/>
+                        <ComboBox fx:id="cbVisibilite" styleClass="field-input" prefWidth="400" />
+                    </VBox>
+
+                    <VBox spacing="16">
+                        <Label text="Statut" styleClass="field-caption"/>
+                        <ComboBox fx:id="cbStatut" styleClass="field-input" prefWidth="400" />
+                    </VBox>
+
+                    <Separator styleClass="form-separator"/>
+
+                    <VBox spacing="12">
+                        <Label text="Image" styleClass="field-caption"/>
+                        <HBox spacing="12">
+                            <TextField fx:id="tfImageUrl" styleClass="field-input" promptText="URL de l'image" HBox.hgrow="ALWAYS" />
+                            <Button fx:id="btnChooseImage" text="Choisir" styleClass="btn-secondary" onAction="#onChooseImage"/>
+                        </HBox>
+                        <ImageView fx:id="ivPhoto" fitHeight="200" preserveRatio="true" smooth="true" styleClass="image-preview" />
+                        <Label fx:id="lblAnalysis" text="" wrapText="true" />
+                    </VBox>
+
+                    <VBox spacing="12">
+                        <Label text="Vidéo" styleClass="field-caption"/>
+                        <HBox spacing="12">
+                            <TextField fx:id="tfVideoUrl" styleClass="field-input" promptText="URL de la vidéo" HBox.hgrow="ALWAYS" />
+                            <Button fx:id="btnChooseVideo" text="Choisir" styleClass="btn-secondary" onAction="#chooseVideo"/>
+                        </HBox>
+                    </VBox>
+
+                    <VBox spacing="12">
+                        <Label text="Pièce jointe" styleClass="field-caption"/>
+                        <HBox spacing="12">
+                            <TextField fx:id="tfPieceJointeUrl" styleClass="field-input" promptText="URL de la pièce jointe" HBox.hgrow="ALWAYS" />
+                            <Button fx:id="btnChooseAttachment" text="Choisir" styleClass="btn-secondary" onAction="#chooseAttachment"/>
+                        </HBox>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <VBox styleClass="form-card">
+            <padding>
+                <Insets top="20" right="32" bottom="20" left="32"/>
+            </padding>
+            <HBox spacing="16" alignment="CENTER_RIGHT">
+                <Button fx:id="btnCancel" text="Annuler" styleClass="btn-secondary" onAction="#cancel" />
+                <Button fx:id="btnPublish" text="Publier" styleClass="btn-primary" onAction="#save" />
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

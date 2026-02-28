@@ -1,0 +1,429 @@
+/* ═══════════════════════════════════════════════════════════════════
+   EVENT AFFICHAGE — Premium Dark UI
+   Aesthetic: Luxury editorial / deep space dark
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ROOT VARIABLES */
+.events-root {
+    -fx-background-color: #080b14;
+    -color-bg: #080b14;
+    -color-surface: #0f1420;
+    -color-surface2: #151c2e;
+    -color-border: rgba(255,255,255,0.07);
+    -color-accent: #6366f1;
+    -color-accent2: #8b5cf6;
+    -color-text: #e8eaf0;
+    -color-text-muted: rgba(232,234,240,0.45);
+    -color-success: #10b981;
+    -color-danger: #ef4444;
+}
+
+/* ── TOPBAR ── */
+.events-topbar {
+    -fx-background-color: rgba(8,11,20,0.95);
+    -fx-border-color: transparent transparent rgba(255,255,255,0.06) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 16 24 16 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0, 0, 4);
+}
+
+.events-title {
+    -fx-text-fill: #e8eaf0;
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+    -fx-font-family: "Segoe UI";
+}
+
+.events-counter {
+    -fx-text-fill: rgba(99,102,241,0.9);
+    -fx-font-size: 12px;
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: 500;
+}
+
+.events-status {
+    -fx-text-fill: rgba(232,234,240,0.4);
+    -fx-font-size: 12px;
+    -fx-font-family: "Segoe UI";
+}
+
+/* ── SEARCH ── */
+.events-search-shell {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 0 14 0 14;
+}
+
+.events-search {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #e8eaf0;
+    -fx-prompt-text-fill: rgba(232,234,240,0.3);
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 10 0 10 0;
+}
+
+.events-search:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* ── STAGE ── */
+.events-stage {
+    -fx-background-color: #080b14;
+    -fx-padding: 20;
+}
+
+.events-layout {
+    -fx-background-color: transparent;
+}
+
+/* ── SIDEBAR ── */
+.events-sidebar {
+    -fx-background-color: #0f1420;
+    -fx-border-color: rgba(255,255,255,0.07);
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 16, 0, 0, 4);
+}
+
+.events-card-title {
+    -fx-text-fill: #e8eaf0;
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-font-family: "Segoe UI";
+}
+
+.events-filter-block {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-border-color: rgba(255,255,255,0.05);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 12;
+}
+
+.events-field-label {
+    -fx-text-fill: rgba(232,234,240,0.4);
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-font-family: "Segoe UI";
+}
+
+.events-field {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: #e8eaf0;
+    -fx-prompt-text-fill: rgba(232,234,240,0.3);
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 8 12 8 12;
+}
+
+.events-field:focused {
+    -fx-border-color: rgba(99,102,241,0.6);
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.2), 8, 0, 0, 0);
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #0f1420;
+    -fx-text-fill: #e8eaf0;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-padding: 8 12 8 12;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #0f1420;
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 20, 0, 0, 8);
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: rgba(99,102,241,0.15);
+}
+
+.events-filter-actions {
+    -fx-padding: 4 0 0 0;
+}
+
+/* ── SCROLL ── */
+.events-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.events-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.events-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 6;
+}
+
+.events-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(99,102,241,0.4);
+    -fx-background-radius: 3;
+}
+
+.events-scroll .scroll-bar:vertical .track {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-background-radius: 3;
+}
+
+.events-scroll .scroll-bar .increment-button,
+.events-scroll .scroll-bar .decrement-button {
+    -fx-pref-height: 0;
+    -fx-pref-width: 0;
+    -fx-opacity: 0;
+}
+
+/* ── GRID ── */
+.events-grid {
+    -fx-background-color: transparent;
+    -fx-padding: 4;
+}
+
+/* ── EVENT CARD ── */
+.event-card {
+    -fx-background-color: #0f1420;
+    -fx-border-color: rgba(255,255,255,0.07);
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 20, 0, 0, 6);
+    -fx-cursor: default;
+}
+
+.event-card:hover {
+    -fx-border-color: rgba(99,102,241,0.35);
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.2), 28, 0, 0, 8);
+    -fx-background-color: #111828;
+}
+
+.event-image-container {
+    -fx-background-radius: 14;
+    -fx-background-color: #1a2236;
+}
+
+.event-thumb {
+    -fx-background-color: #1a2236;
+}
+
+.event-thumb-placeholder {
+    -fx-fill: linear-gradient(to bottom right, #1a2236, #0f1420);
+}
+
+/* ── CARD CONTENT ── */
+.event-title {
+    -fx-text-fill: #e8eaf0;
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-font-family: "Segoe UI";
+}
+
+.event-meta {
+    -fx-text-fill: rgba(232,234,240,0.45);
+    -fx-font-size: 12px;
+    -fx-font-family: "Segoe UI";
+}
+
+/* ── BADGES ── */
+.badge {
+    -fx-background-radius: 100;
+    -fx-padding: 3 10 3 10;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-font-family: "Segoe UI";
+}
+
+.badge-type {
+    -fx-background-color: rgba(99,102,241,0.15);
+    -fx-text-fill: #818cf8;
+    -fx-border-color: rgba(99,102,241,0.25);
+    -fx-border-radius: 100;
+    -fx-border-width: 1;
+}
+
+.PUBLIE {
+    -fx-background-color: rgba(16,185,129,0.12);
+    -fx-text-fill: #34d399;
+    -fx-border-color: rgba(16,185,129,0.25);
+    -fx-border-radius: 100;
+    -fx-border-width: 1;
+}
+
+.BROUILLON {
+    -fx-background-color: rgba(245,158,11,0.12);
+    -fx-text-fill: #fbbf24;
+    -fx-border-color: rgba(245,158,11,0.25);
+    -fx-border-radius: 100;
+    -fx-border-width: 1;
+}
+
+.ANNULE {
+    -fx-background-color: rgba(239,68,68,0.12);
+    -fx-text-fill: #f87171;
+    -fx-border-color: rgba(239,68,68,0.25);
+    -fx-border-radius: 100;
+    -fx-border-width: 1;
+}
+
+.TERMINE {
+    -fx-background-color: rgba(100,116,139,0.15);
+    -fx-text-fill: #94a3b8;
+    -fx-border-color: rgba(100,116,139,0.25);
+    -fx-border-radius: 100;
+    -fx-border-width: 1;
+}
+
+/* ── CHIP ── */
+.chip {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 100;
+    -fx-background-radius: 100;
+    -fx-border-width: 1;
+    -fx-text-fill: rgba(232,234,240,0.6);
+    -fx-font-size: 11px;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 3 10 3 10;
+}
+
+/* ── BUTTONS ── */
+.btn {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-border-width: 1;
+}
+
+.btn-primary {
+    -fx-background-color: #6366f1;
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.4), 10, 0, 0, 3);
+}
+
+.btn-primary:hover {
+    -fx-background-color: #818cf8;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.6), 14, 0, 0, 4);
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #4f46e5;
+    -fx-effect: none;
+}
+
+.btn-secondary {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: rgba(232,234,240,0.5);
+    -fx-border-color: rgba(255,255,255,0.08);
+}
+
+.btn-secondary:disabled {
+    -fx-opacity: 0.5;
+}
+
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(232,234,240,0.7);
+    -fx-border-color: rgba(255,255,255,0.12);
+}
+
+.btn-outline:hover {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-border-color: rgba(255,255,255,0.2);
+}
+
+.btn-danger {
+    -fx-background-color: rgba(239,68,68,0.15);
+    -fx-text-fill: #f87171;
+    -fx-border-color: rgba(239,68,68,0.3);
+}
+
+.btn-danger:hover {
+    -fx-background-color: rgba(239,68,68,0.25);
+}
+
+.btn-glass {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: rgba(232,234,240,0.8);
+    -fx-border-color: rgba(255,255,255,0.1);
+}
+
+.btn-glass:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+}
+
+.btn-sm {
+    -fx-font-size: 12px;
+    -fx-padding: 7 16 7 16;
+}
+
+.btn-md {
+    -fx-font-size: 13px;
+    -fx-padding: 9 20 9 20;
+}
+
+/* ── EMPTY STATE ── */
+.empty-state {
+    -fx-background-color: rgba(255,255,255,0.02);
+    -fx-border-color: rgba(255,255,255,0.05);
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+    -fx-border-width: 1;
+}
+
+/* ── DATE PICKER ── */
+.date-picker {
+    -fx-background-color: transparent;
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e8eaf0;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+}
+
+.date-picker-popup {
+    -fx-background-color: #0f1420;
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 20, 0, 0, 8);
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #0f1420;
+}
+
+.date-picker-popup .day-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e8eaf0;
+    -fx-font-family: "Segoe UI";
+}
+
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: rgba(99,102,241,0.2);
+    -fx-background-radius: 6;
+}
+
+.date-picker-popup .selected {
+    -fx-background-color: #6366f1;
+    -fx-background-radius: 6;
+    -fx-text-fill: white;
+}
