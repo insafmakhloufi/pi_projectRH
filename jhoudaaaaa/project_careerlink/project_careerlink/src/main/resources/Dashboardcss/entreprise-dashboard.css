@@ -1,0 +1,479 @@
+/* Modern Enterprise Dashboard CSS */
+
+/* Root and ScrollPane */
+.entreprise-dashboard-scroll {
+    -fx-background-color: #F1F5F9;
+    -fx-background: #F1F5F9;
+}
+
+.entreprise-dashboard-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.entreprise-dashboard-root {
+    -fx-background-color: #F1F5F9;
+}
+
+/* Typography */
+.dashboard-main-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #0F172A;
+}
+
+.dashboard-subtitle {
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #64748B;
+}
+
+/* Hero Card - Modern with gradient */
+.entreprise-hero-card {
+    -fx-background-color: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 50%, #EFF6FF 100%);
+    -fx-background-radius: 24px;
+    -fx-border-radius: 24px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.08), 20, 0, 0, 4);
+}
+
+.entreprise-logo-container {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20px;
+    -fx-padding: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 12, 0, 0, 2);
+}
+
+.entreprise-logo {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 2);
+}
+
+.entreprise-name {
+    -fx-font-size: 24px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #0F172A;
+}
+
+.entreprise-email {
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #64748B;
+}
+
+.entreprise-badge {
+    -fx-background-color: #DBEAFE;
+    -fx-text-fill: #1D4ED8;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-padding: 6px 14px;
+    -fx-background-radius: 20px;
+}
+
+.entreprise-badge.secondary {
+    -fx-background-color: #F1F5F9;
+    -fx-text-fill: #475569;
+}
+
+/* Stats Cards - Modern gradient variants */
+.stat-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 16, 0, 0, 3);
+    -fx-alignment: center;
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.15), 20, 0, 0, 6);
+    -fx-translate-y: -2px;
+}
+
+.stat-card.blue {
+    -fx-background-color: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    -fx-border-color: transparent;
+}
+
+.stat-card.blue .stat-icon,
+.stat-card.blue .stat-value,
+.stat-card.blue .stat-label {
+    -fx-text-fill: #FFFFFF;
+}
+
+.stat-card.purple {
+    -fx-background-color: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    -fx-border-color: transparent;
+}
+
+.stat-card.purple .stat-icon,
+.stat-card.purple .stat-value,
+.stat-card.purple .stat-label {
+    -fx-text-fill: #FFFFFF;
+}
+
+.stat-card.green {
+    -fx-background-color: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    -fx-border-color: transparent;
+}
+
+.stat-card.green .stat-icon,
+.stat-card.green .stat-value,
+.stat-card.green .stat-label {
+    -fx-text-fill: #FFFFFF;
+}
+
+.stat-icon {
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #94A3B8;
+}
+
+.stat-value {
+    -fx-font-size: 36px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #0F172A;
+}
+
+.stat-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #64748B;
+}
+
+/* Chart Cards */
+.chart-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 16, 0, 0, 3);
+}
+
+.chart-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.16), 22, 0, 0, 8);
+    -fx-translate-y: -2px;
+}
+
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0F172A;
+}
+
+/* Chart Styling */
+.chart {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+/* Sector Area Chart (modern curve) */
+.secteur-area-chart {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.secteur-area-chart .chart-series-area-line {
+    -fx-stroke: #10B981;
+    -fx-stroke-width: 3px;
+}
+
+.secteur-area-chart .chart-series-area-fill {
+    -fx-fill: rgba(16, 185, 129, 0.18);
+}
+
+.secteur-area-chart .chart-content {
+    -fx-padding: 8 0 0 0;
+}
+
+.secteur-area-chart .axis {
+    -fx-tick-label-fill: #64748B;
+    -fx-font-size: 11px;
+}
+
+.secteur-area-chart .axis-tick-mark,
+.secteur-area-chart .axis-minor-tick-mark {
+    -fx-stroke: rgba(148, 163, 184, 0.35);
+}
+
+.secteur-area-chart .chart-legend {
+    -fx-background-color: transparent;
+}
+
+.secteur-area-chart .chart-title {
+    -fx-text-fill: #0f172a;
+}
+
+.secteur-area-chart .chart-horizontal-grid-lines,
+.secteur-area-chart .chart-vertical-grid-lines {
+    -fx-stroke: rgba(148, 163, 184, 0.25);
+}
+
+/* Filiales compact list */
+.filiale-compact {
+    -fx-padding: 8 12;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 1;
+    -fx-background-color: #ffffff;
+}
+
+.filiale-compact:hover {
+    -fx-border-color: #10b981;
+    -fx-background-color: #f0fdf4;
+}
+
+.filiale-ville {
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #0f172a;
+}
+
+.filiale-count {
+    -fx-background-color: #d1fae5;
+    -fx-text-fill: #047857;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-padding: 2 10;
+    -fx-background-radius: 12;
+}
+
+/* Filiales scroll */
+.filiales-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.filiales-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.progress-bar {
+    -fx-background-radius: 10;
+}
+
+.progress-bar .track {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 10;
+}
+
+.progress-bar .bar {
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+}
+
+/* Filiales list - Modern rows (not only colors) */
+.filiale-row {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 16px;
+    -fx-border-radius: 16px;
+    -fx-border-color: rgba(226, 232, 240, 0.9);
+    -fx-border-width: 1px;
+    -fx-padding: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 12, 0, 0, 3);
+}
+
+.filiale-row:hover {
+    -fx-border-color: rgba(16, 185, 129, 0.45);
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.18), 16, 0, 0, 6);
+}
+
+.filiale-row-icon {
+    -fx-font-size: 14px;
+    -fx-opacity: 0.85;
+}
+
+.filiale-row-name {
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #0f172a;
+}
+
+.filiale-row-badge {
+    -fx-background-color: #d1fae5;
+    -fx-text-fill: #047857;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+    -fx-padding: 4 10;
+    -fx-background-radius: 16;
+}
+
+.filiale-row-progress {
+    -fx-accent: #10b981;
+    -fx-control-inner-background: #f1f5f9;
+    -fx-background-radius: 10;
+}
+
+.filiale-row-progress .track {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 10;
+}
+
+.filiale-row-progress .bar {
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+}
+
+/* Line Chart Styling */
+.line-chart .chart-series-line {
+    -fx-stroke: #3B82F6;
+    -fx-stroke-width: 3px;
+}
+
+.line-chart .chart-series-line .chart-line-symbol {
+    -fx-background-color: #3B82F6;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px;
+}
+
+/* Donut Chart Styles */
+.secteur-donut-chart {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.secteur-donut-chart .chart-content {
+    -fx-padding: 0;
+}
+
+.secteur-donut-chart .chart-pie {
+    -fx-border-width: 0;
+    -fx-background-insets: 2;
+}
+
+.secteur-donut-chart .chart-pie-label {
+    -fx-font-size: 10px;
+    -fx-font-weight: 600;
+    -fx-fill: #475569;
+}
+
+.secteur-donut-chart .chart-pie-label-line {
+    -fx-stroke: #cbd5e1;
+    -fx-stroke-width: 1;
+}
+
+/* Center label for donut chart */
+.donut-center-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #0f172a;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 1);
+}
+
+/* Pie slice colors - modern palette */
+.secteur-donut-chart .chart-pie.default-color0 {
+    -fx-pie-color: #6366f1;
+}
+.secteur-donut-chart .chart-pie.default-color1 {
+    -fx-pie-color: #8b5cf6;
+}
+.secteur-donut-chart .chart-pie.default-color2 {
+    -fx-pie-color: #ec4899;
+}
+.secteur-donut-chart .chart-pie.default-color3 {
+    -fx-pie-color: #f43f5e;
+}
+.secteur-donut-chart .chart-pie.default-color4 {
+    -fx-pie-color: #10b981;
+}
+.secteur-donut-chart .chart-pie.default-color5 {
+    -fx-pie-color: #f59e0b;
+}
+
+/* Bar Chart Styling */
+.bar-chart .chart-bar {
+    -fx-bar-fill: linear-gradient(to bottom, #3B82F6, #2563EB);
+    -fx-background-radius: 6px 6px 0 0;
+}
+
+.bar-chart .chart-bar:hover {
+    -fx-bar-fill: linear-gradient(to bottom, #60A5FA, #3B82F6);
+}
+
+/* Axis Styling */
+.axis {
+    -fx-tick-label-fill: #64748B;
+    -fx-font-size: 11px;
+}
+
+.axis-label {
+    -fx-text-fill: #475569;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+
+/* Info Cards */
+.info-card {
+    -fx-background-color: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 70%, #ECFDF5 100%);
+    -fx-background-radius: 22px;
+    -fx-border-radius: 22px;
+    -fx-border-color: rgba(16, 185, 129, 0.20);
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.08), 18, 0, 0, 5);
+}
+
+.info-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #0F172A;
+}
+
+.info-content {
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #475569;
+    -fx-line-spacing: 4px;
+}
+
+.info-content.small {
+    -fx-font-size: 13px;
+}
+
+.info-icon {
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0F766E;
+    -fx-min-width: 60px;
+}
+
+/* Buttons */
+.btn-primary {
+    -fx-background-color: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.3), 8, 0, 0, 2);
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.4), 12, 0, 0, 4);
+    -fx-translate-y: -1px;
+}
+
+.btn-danger {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #EF4444;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 12px;
+    -fx-border-color: #FCA5A5;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #FEF2F2;
+    -fx-border-color: #EF4444;
+}

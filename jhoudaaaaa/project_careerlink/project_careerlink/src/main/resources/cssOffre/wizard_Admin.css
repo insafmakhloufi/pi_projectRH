@@ -1,0 +1,355 @@
+.admin-root{
+    -fx-font-family: "Segoe UI", "Inter", Arial;
+    -fx-background-color: linear-gradient(to bottom, #FFFFFF, #DEE8FA);
+}
+
+.admin-center{
+    -fx-background-color: transparent;
+}
+
+.admin-content{
+    -fx-background-color: transparent;
+}
+
+.admin-sidebar-rail{
+    -fx-opacity: 1;
+    -fx-background-color: #4652CE;
+    -fx-background-color: linear-gradient(to bottom, #4652CE, #6D79FF);
+    -fx-background-radius: 28;
+    -fx-border-radius: 28;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(gaussian, rgba(31,41,55,0.16), 24, 0.22, 0, 10);
+    -fx-border-color: rgba(208,218,253,0.22);
+    -fx-border-width: 1;
+    -fx-min-width: 220;
+    -fx-pref-width: 220;
+}
+
+.admin-sidebar-rail .label{
+    -fx-opacity: 1;
+    -fx-text-fill: #FFFFFF;
+}
+
+.admin-sidebar-rail.collapsed{
+    -fx-min-width: 76;
+    -fx-pref-width: 76;
+    -fx-padding: 16 10 16 10;
+}
+
+.admin-sidebar-rail.collapsed .admin-rail-text{
+    -fx-opacity: 0;
+    -fx-max-width: 0;
+    -fx-pref-width: 0;
+}
+
+.admin-sidebar-rail.collapsed .admin-rail-item{
+    -fx-alignment: CENTER;
+    -fx-padding: 10 8 10 8;
+}
+
+.admin-rail-top{
+    -fx-min-height: 34;
+    -fx-alignment: CENTER;
+}
+
+.admin-rail-dot{
+    -fx-text-fill: #EEF2FF;
+    -fx-font-weight: 900;
+    -fx-font-size: 14px;
+}
+
+.admin-rail-item{
+    -fx-background-color: transparent;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-padding: 10 12 10 12;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.admin-sidebar-rail .admin-rail-item:hover{
+    -fx-background-color: rgba(186,200,255,0.28);
+    -fx-border-color: rgba(222,232,250,0.40);
+}
+
+.admin-rail-active{
+    -fx-background-color: rgba(208,218,253,0.34);
+    -fx-border-color: rgba(151,167,215,0.65);
+    -fx-border-width: 1;
+}
+
+.admin-rail-item-graphic{
+    -fx-alignment: CENTER_LEFT;
+}
+
+.admin-rail-ico{
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-max-width: 40;
+    -fx-max-height: 40;
+    -fx-alignment: CENTER;
+    -fx-background-radius: 14;
+    -fx-text-fill: #F6F7FF;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.admin-rail-text{
+    -fx-text-fill: #F6F7FF;
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+}
+
+.admin-navbar{
+    -fx-background-color: linear-gradient(to right, #4652CE, #6D79FF);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(31,41,55,0.18), 18, 0.22, 0, 8);
+}
+
+.admin-dark-toggle{
+    -fx-background-color: rgba(255,255,255,0.14);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.26);
+    -fx-border-width: 1;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 900;
+    -fx-padding: 6 10 6 10;
+    -fx-cursor: hand;
+}
+
+.admin-dark-toggle:hover{
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-border-color: rgba(255,255,255,0.32);
+}
+
+.admin-root.dark{
+    -fx-background-color: linear-gradient(to bottom, #0B1220, #0F172A);
+}
+
+.admin-root.dark .admin-navbar{
+    -fx-background-color: linear-gradient(to right, #0F172A, #111827);
+}
+
+.admin-root.dark .admin-navbar-title,
+.admin-root.dark .admin-profile-name,
+.admin-root.dark .admin-profile-caret{
+    -fx-text-fill: #E5E7EB;
+}
+
+.admin-root.dark .admin-profile-chip,
+.admin-root.dark .admin-dark-toggle{
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-border-color: rgba(255,255,255,0.14);
+}
+
+.admin-root.dark .admin-sidebar-rail{
+    -fx-background-color: linear-gradient(to bottom, #0F172A, #111827);
+    -fx-border-color: rgba(148,163,184,0.18);
+}
+
+.admin-root.dark .admin-sidebar-rail .admin-rail-item:hover{
+    -fx-background-color: rgba(148,163,184,0.14);
+}
+
+.admin-root.dark .admin-rail-active{
+    -fx-background-color: rgba(148,163,184,0.18);
+    -fx-border-color: rgba(148,163,184,0.28);
+}
+
+.admin-root.dark .content{
+    -fx-background-color: transparent;
+}
+
+.admin-root.dark .label{
+    -fx-text-fill: #E5E7EB;
+}
+
+.admin-root.dark .add-page-title{
+    -fx-text-fill: #E5E7EB;
+}
+
+.admin-root.dark .add-page-subtitle{
+    -fx-text-fill: rgba(229,231,235,0.72);
+}
+
+.admin-root.dark .add-card,
+.admin-root.dark .wizard-card,
+.admin-root.dark .table-card,
+.admin-root.dark .table-toolbar{
+    -fx-background-color: rgba(17,24,39,0.92);
+    -fx-border-color: rgba(148,163,184,0.22);
+}
+
+.admin-root.dark .add-grid .text-field,
+.admin-root.dark .add-grid .combo-box,
+.admin-root.dark .text-field,
+.admin-root.dark .combo-box,
+.admin-root.dark .combo-box-base{
+    -fx-background-color: rgba(15,23,42,0.90);
+    -fx-border-color: rgba(148,163,184,0.28);
+    -fx-text-fill: #E5E7EB;
+}
+
+.admin-root.dark .add-grid .text-field:focused,
+.admin-root.dark .add-grid .combo-box:focused,
+.admin-root.dark .text-field:focused,
+.admin-root.dark .combo-box:focused,
+.admin-root.dark .combo-box-base:focused{
+    -fx-border-color: rgba(109,121,255,0.95);
+    -fx-effect: dropshadow(gaussian, rgba(109,121,255,0.30), 15, 0.0, 0, 8);
+}
+
+.admin-root.dark .add-grid .text-field .prompt-text,
+.admin-root.dark .add-grid .combo-box .prompt-text,
+.admin-root.dark .text-field .prompt-text,
+.admin-root.dark .combo-box .prompt-text{
+    -fx-fill: rgba(148,163,184,0.95);
+}
+
+.admin-root.dark .primary-button{
+    -fx-background-color: linear-gradient(to bottom, #4652CE, #3F4ABF);
+    -fx-text-fill: #F8FAFF;
+}
+
+.admin-root.dark .secondary-button{
+    -fx-background-color: rgba(15,23,42,0.75);
+    -fx-border-color: rgba(148,163,184,0.28);
+    -fx-text-fill: #E5E7EB;
+}
+
+.admin-root.dark .ghost-button{
+    -fx-background-color: rgba(15,23,42,0.55);
+    -fx-border-color: rgba(148,163,184,0.22);
+    -fx-text-fill: #E5E7EB;
+}
+
+.admin-root.dark .scroll-pane,
+.admin-root.dark .scroll-pane .viewport,
+.admin-root.dark .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.admin-root.dark .scroll-bar .track{
+    -fx-background-color: rgba(148,163,184,0.16);
+}
+
+.admin-root.dark .scroll-bar .thumb{
+    -fx-background-color: rgba(229,231,235,0.22);
+}
+
+.admin-root.dark .table-view{
+    -fx-background-color: rgba(15,23,42,0.65);
+}
+
+.admin-root.dark .table-view .column-header-background{
+    -fx-background-color: rgba(15,23,42,0.85);
+}
+
+.admin-root.dark .table-view .table-cell{
+    -fx-text-fill: #E5E7EB;
+}
+
+.admin-navbar-title{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 900;
+    -fx-font-size: 16px;
+}
+
+.admin-profile-chip{
+    -fx-background-color: rgba(255,255,255,0.14);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.26);
+    -fx-border-width: 1;
+    -fx-padding: 6 12 6 10;
+    -fx-cursor: hand;
+}
+
+.admin-profile-chip:hover{
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-border-color: rgba(255,255,255,0.32);
+}
+
+.admin-profile-name{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 800;
+}
+
+.admin-profile-caret{
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-font-weight: 900;
+}
+
+.admin-rail-logout:hover{
+    -fx-background-color: rgba(239,68,68,0.18);
+}
+
+.admin-topbar{
+    -fx-background-color: rgba(255,255,255,0.86);
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(151,167,215,0.55);
+    -fx-effect: dropshadow(gaussian, rgba(31,41,55,0.12), 22, 0.20, 0, 8);
+}
+
+.admin-topbar-logoWrap{
+    -fx-background-color: rgba(109,121,255,0.14);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(70,82,206,0.18);
+    -fx-border-width: 1;
+    -fx-padding: 6;
+}
+
+.admin-hello{
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0F172A;
+}
+
+.admin-subhello{
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #64748B;
+}
+
+.admin-searchWrap{
+    -fx-background-color: rgba(208,218,253,0.60);
+    -fx-border-color: rgba(151,167,215,0.55);
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+    -fx-padding: 8 12 8 12;
+    -fx-min-width: 280;
+}
+
+.admin-searchIco{
+    -fx-opacity: 0.65;
+    -fx-font-weight: 900;
+}
+
+.admin-searchField{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.admin-searchBtn{
+    -fx-background-color: linear-gradient(to bottom right, #4F46E5, #3730A3);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 16;
+    -fx-padding: 10 14 10 14;
+    -fx-cursor: hand;
+}
+
+.admin-searchBtn:hover{
+    -fx-background-color: linear-gradient(to bottom right, #4338CA, #312E81);
+}

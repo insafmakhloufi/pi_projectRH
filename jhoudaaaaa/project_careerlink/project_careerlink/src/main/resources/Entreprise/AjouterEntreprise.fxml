@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane xmlns="http://javafx.com/javafx/17.0.6"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="Controllers.Entreprise.AjouterEntrepriseController"
+           stylesheets="@entreprise-form.css"
+           styleClass="entreprise-split-root">
+
+    <HBox prefWidth="1200" prefHeight="800" maxWidth="1400" maxHeight="900">
+        <!-- Left side: Image -->
+        <StackPane HBox.hgrow="ALWAYS" styleClass="image-side" minWidth="450">
+            <Label text="CAREERLINK" styleClass="brand-logo" StackPane.alignment="TOP_LEFT">
+                <StackPane.margin>
+                    <Insets top="32" left="32"/>
+                </StackPane.margin>
+            </Label>
+            <VBox alignment="CENTER" spacing="16">
+                <ImageView fitWidth="200" fitHeight="200" preserveRatio="true" smooth="true">
+                    <image>
+                        <Image url="@../Images/2.jpg"/>
+                    </image>
+                </ImageView>
+                <Label text="Gérez votre entreprise" styleClass="image-tagline"/>
+                <Label text="Créez et personnalisez votre profil entreprise" styleClass="image-subtagline"/>
+            </VBox>
+        </StackPane>
+
+        <!-- Right side: Form -->
+        <ScrollPane styleClass="form-scroll" fitToWidth="true" fitToHeight="false" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" pannable="true">
+            <VBox styleClass="form-side" minWidth="500" prefWidth="600">
+            <padding>
+                <Insets top="40" right="50" bottom="40" left="50"/>
+            </padding>
+
+            <VBox spacing="8" alignment="CENTER">
+                <Label text="Information Entreprise" styleClass="form-title"/>
+                <Label text="Renseignez les informations de votre entreprise" styleClass="form-subtitle"/>
+            </VBox>
+
+            <VBox spacing="16" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets top="24" bottom="16"/>
+                </padding>
+
+                <!-- Logo section -->
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <StackPane styleClass="logo-placeholder">
+                        <ImageView fx:id="ivLogo" fitWidth="60" fitHeight="60" preserveRatio="true" smooth="true"/>
+                        <Label text="Logo" styleClass="logo-text" fx:id="lblLogoPlaceholder"/>
+                    </StackPane>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Button text="Choisir un fichier" onAction="#chooseLogo" styleClass="btn-link"/>
+                    </HBox>
+                </HBox>
+                <Label fx:id="errLogo" managed="false" text="" visible="false" styleClass="field-error"/>
+
+                <!-- Nom -->
+                <VBox spacing="4">
+                    <Label text="Nom entreprise *" styleClass="field-label"/>
+                    <TextField fx:id="tfNom" promptText="Nom de votre entreprise" styleClass="modern-field"/>
+                    <Label fx:id="errNom" managed="false" text="" visible="false" styleClass="field-error"/>
+                </VBox>
+
+                <!-- Adresse -->
+                <VBox spacing="4">
+                    <Label text="Adresse *" styleClass="field-label"/>
+                    <TextField fx:id="tfAdresse" promptText="Adresse complète" styleClass="modern-field"/>
+                    <Label fx:id="errAdresse" managed="false" text="" visible="false" styleClass="field-error"/>
+                </VBox>
+
+                <!-- Ville + Téléphone -->
+                <HBox spacing="16">
+                    <VBox spacing="4" HBox.hgrow="ALWAYS">
+                        <Label text="Ville *" styleClass="field-label"/>
+                        <TextField fx:id="tfVille" promptText="Ville" styleClass="modern-field"/>
+                        <Label fx:id="errVille" managed="false" text="" visible="false" styleClass="field-error"/>
+                    </VBox>
+                    <VBox spacing="4" HBox.hgrow="ALWAYS">
+                        <Label text="Téléphone *" styleClass="field-label"/>
+                        <TextField fx:id="tfTelephone" promptText="+216 XX XXX XXX" styleClass="modern-field"/>
+                        <Label fx:id="errTelephone" managed="false" text="" visible="false" styleClass="field-error"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Email -->
+                <VBox spacing="4">
+                    <Label text="Email contact *" styleClass="field-label"/>
+                    <TextField fx:id="tfEmail" promptText="contact@entreprise.com" styleClass="modern-field"/>
+                    <Label fx:id="errEmail" managed="false" text="" visible="false" styleClass="field-error"/>
+                </VBox>
+
+                <!-- Description -->
+                <VBox spacing="4">
+                    <Label text="Description *" styleClass="field-label"/>
+                    <TextArea fx:id="taDescription" promptText="Décrivez votre entreprise..." 
+                              prefRowCount="2" wrapText="true" styleClass="modern-area"/>
+                    <Label fx:id="errDescription" managed="false" text="" visible="false" styleClass="field-error"/>
+                </VBox>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+                <!-- Buttons -->
+                <HBox spacing="16" alignment="CENTER">
+                    <Button text="Annuler" onAction="#cancel" styleClass="btn-secondary-dark" prefWidth="140"/>
+                    <Button fx:id="btnSave" text="Enregistrer" onAction="#save" styleClass="btn-primary-dark" prefWidth="180"/>
+                </HBox>
+            </VBox>
+            </VBox>
+        </ScrollPane>
+    </HBox>
+</StackPane>

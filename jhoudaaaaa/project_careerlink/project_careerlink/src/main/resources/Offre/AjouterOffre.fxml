@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/17.0.6"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="Controllers.Offre.AjouterOffre"
+           stylesheets="@../Entreprise/entreprise-form.css"
+           styleClass="entreprise-split-root">
+
+    <HBox prefWidth="1400" prefHeight="900" maxWidth="1600" maxHeight="1000">
+        <!-- Left side: Branding -->
+        <StackPane HBox.hgrow="ALWAYS" styleClass="image-side" minWidth="400">
+            <Label text="CAREERLINK" styleClass="brand-logo" StackPane.alignment="TOP_LEFT">
+                <StackPane.margin>
+                    <Insets top="32" left="32"/>
+                </StackPane.margin>
+            </Label>
+            <VBox alignment="CENTER" spacing="16">
+                <Label text="Créer une offre" styleClass="image-tagline"/>
+                <Label text="Publiez votre offre d'emploi" styleClass="image-subtagline"/>
+            </VBox>
+        </StackPane>
+
+        <!-- Right side: Form -->
+        <VBox styleClass="form-side" minWidth="600" prefWidth="800">
+            <padding>
+                <Insets top="40" right="50" bottom="40" left="50"/>
+            </padding>
+
+            <VBox spacing="6" alignment="CENTER">
+                <Label fx:id="pageTitleLabel" text="Créer une offre" styleClass="form-title"/>
+                <Label fx:id="pageSubtitleLabel" text="Renseignez les détails de l'offre" styleClass="form-subtitle"/>
+            </VBox>
+
+            <!-- Enterprise info card -->
+            <HBox spacing="12" alignment="CENTER_LEFT" style="-fx-background-color: #f8fafc; -fx-padding: 12; -fx-background-radius: 10;">
+                <ImageView fx:id="entrepriseLogo" fitWidth="44" fitHeight="44" preserveRatio="true" smooth="true" />
+                <VBox spacing="2">
+                    <Label fx:id="entrepriseNameLabel" text="Entreprise" style="-fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+                    <Label text="Votre entreprise" style="-fx-text-fill: #64748b; -fx-font-size: 12px;"/>
+                </VBox>
+            </HBox>
+
+            <VBox spacing="8" styleClass="coord-card" style="-fx-background-insets: 0;">
+                <Label text="Coordonnées entreprise" styleClass="coord-title" />
+                <Label fx:id="entrepriseAddressLabel" text="—" styleClass="coord-address" />
+                <HBox spacing="8">
+                    <Label fx:id="entrepriseCityLabel" text="Ville: —" styleClass="coord-chip" />
+                    <Label fx:id="entreprisePhoneLabel" text="Tél: —" styleClass="coord-chip" />
+                    <Label fx:id="entrepriseEmailLabel" text="Email: —" styleClass="coord-chip" />
+                </HBox>
+            </VBox>
+
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+                <VBox spacing="20">
+                    <padding>
+                        <Insets top="20" bottom="20"/>
+                    </padding>
+
+                    <GridPane hgap="20" vgap="16">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                            <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                        </columnConstraints>
+
+                        <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <Label styleClass="field-label" text="Titre *" />
+                            <TextField fx:id="titreid" promptText="Titre de l'offre" styleClass="modern-field"/>
+                            <Label fx:id="errTitre" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                            <Label styleClass="field-label" text="Status *" />
+                            <ComboBox fx:id="statusid" promptText="Sélectionnez un statut" maxWidth="Infinity" styleClass="modern-field"/>
+                            <Label fx:id="errStatus" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <Label styleClass="field-label" text="Type d'emploi *" />
+                            <ComboBox fx:id="typeEmploiid" promptText="Sélectionnez un type" maxWidth="Infinity" styleClass="modern-field"/>
+                            <Label fx:id="errTypeEmploi" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <Label styleClass="field-label" text="Type de contrat *" />
+                            <ComboBox fx:id="typeContratid" promptText="Sélectionnez un type" maxWidth="Infinity" styleClass="modern-field"/>
+                            <Label fx:id="errTypeContrat" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                            <Label styleClass="field-label" text="Localisation * (Obligatoire: Utilisez la carte)" />
+                            <VBox spacing="10">
+                                <!-- ComboBox caché - la valeur sera définie par la carte -->
+                                <ComboBox fx:id="localisationid" promptText="Sélectionnez une localisation" maxWidth="Infinity" styleClass="modern-field" visible="false" managed="false"/>
+
+                                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="coord-card">
+                                    <VBox spacing="4" HBox.hgrow="ALWAYS">
+                                        <Label text="Coordonnées GPS" styleClass="coord-title" />
+                                        <Label fx:id="coordAddressLabel" text="⚠️ Cliquez sur '🗺 Choisir sur la carte' pour définir la localisation" styleClass="coord-address" />
+                                        <HBox spacing="8">
+                                            <Label fx:id="coordLatLabel" text="Lat: —" styleClass="coord-chip" />
+                                            <Label fx:id="coordLonLabel" text="Lon: —" styleClass="coord-chip" />
+                                        </HBox>
+                                    </VBox>
+                                    <Button fx:id="pickMapBtn" mnemonicParsing="false" onAction="#pickLocationOnMap" text="🗺 Choisir sur la carte" styleClass="btn-primary-dark" />
+                                </HBox>
+                            </VBox>
+                            <Label fx:id="errLocalisation" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <Label styleClass="field-label" text="Secteur d'activité *" />
+                            <ComboBox fx:id="secteurid" promptText="Sélectionnez un secteur" maxWidth="Infinity" styleClass="modern-field"/>
+                            <Label fx:id="errSecteur" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                            <Label styleClass="field-label" text="Niveau d'expérience *" />
+                            <TextField fx:id="niveauExperienceField" promptText="Junior / Confirmé / Senior" styleClass="modern-field"/>
+                            <Label fx:id="errNiveauExperience" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <Label styleClass="field-label" text="Niveau d'études *" />
+                            <TextField fx:id="niveauEtudesField" promptText="Bac+3, Bac+5" styleClass="modern-field"/>
+                            <Label fx:id="errNiveauEtudes" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                            <Label styleClass="field-label" text="Langues requises *" />
+                            <TextField fx:id="languesRequisesField" promptText="Français, Anglais" styleClass="modern-field"/>
+                            <Label fx:id="errLanguesRequises" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                            <Label styleClass="field-label" text="Nombre de postes *" />
+                            <TextField fx:id="nombrePosteField" promptText="Ex: 1" styleClass="modern-field"/>
+                            <Label fx:id="errNombrePoste" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                            <Label styleClass="field-label" text="Date limite *" />
+                            <DatePicker fx:id="dateLimitePicker" promptText="Choisir une date" maxWidth="Infinity" styleClass="modern-field"/>
+                            <Label fx:id="errDateLimite" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                            <Label styleClass="field-label" text="Télétravail" />
+                            <CheckBox fx:id="teletravailCheck" text="Autorisé" />
+                            <Label fx:id="errTeletravail" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+
+                        <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2">
+                            <Label styleClass="field-label" text="Description *" />
+                            <TextField fx:id="descriptionid" promptText="Décrivez l'offre" styleClass="modern-field"/>
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Button fx:id="aiGenerateBtn" mnemonicParsing="false" onAction="#generateOfferWithAi" text="✨ Générer avec IA" styleClass="btn-link-accent"/>
+                                <Button fx:id="aiImproveBtn" mnemonicParsing="false" onAction="#improveTextWithAi" text="✏️ Améliorer" styleClass="btn-link"/>
+                            </HBox>
+                            <Label fx:id="errDescription" managed="false" text="" visible="false" styleClass="field-error" />
+                        </VBox>
+                    </GridPane>
+                </VBox>
+            </ScrollPane>
+
+            <!-- Buttons -->
+            <HBox spacing="16" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+                <Button mnemonicParsing="false" onAction="#resetForm" text="Réinitialiser" styleClass="btn-secondary-dark" prefWidth="140"/>
+                <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelEdit" text="Annuler" styleClass="btn-secondary-dark" prefWidth="140"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="submitBtn" mnemonicParsing="false" onAction="#ajouterOffre" text="Enregistrer" styleClass="btn-primary-dark" prefWidth="180"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</StackPane>

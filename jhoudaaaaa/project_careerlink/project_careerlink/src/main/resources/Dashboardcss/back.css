@@ -1,0 +1,205 @@
+/* =========================
+   SIDEBAR (RAIL) — PRO
+   ========================= */
+
+.admin-sidebar-rail{
+    -fx-background-color: linear-gradient(to bottom, #4F46E5, #4338CA);
+    -fx-background-radius: 28;
+    -fx-border-radius: 28;
+    -fx-effect: dropshadow(gaussian, rgba(31,41,55,0.16), 24, 0.22, 0, 10);
+
+    -fx-min-width: 72;
+    -fx-pref-width: 72;
+}
+
+/* Tous les boutons de la sidebar */
+.admin-sidebar-rail > .button{
+    -fx-min-width: 100%;
+    -fx-pref-width: 100%;
+    -fx-max-width: 100%;
+
+    -fx-min-height: 52;
+    -fx-pref-height: 52;
+    -fx-max-height: 52;
+
+    -fx-padding: 0 12 0 12;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 16;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-border-radius: 16;
+
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Supprimer l'overlay focus */
+.admin-sidebar-rail > .button > .focus-indicator{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+}
+
+/* Hover / Pressed */
+.admin-sidebar-rail > .button:hover{
+    -fx-background-color: rgba(255,255,255,0.12);
+}
+.admin-sidebar-rail > .button:pressed,
+.admin-sidebar-rail > .button:armed{
+    -fx-background-color: rgba(255,255,255,0.18);
+}
+
+/* Contenu interne (souvent un HBox) : icône + texte */
+.admin-rail-item-graphic{
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 10;
+}
+
+/* Icône carré */
+.admin-rail-ico{
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-max-width: 40;
+    -fx-max-height: 40;
+
+    -fx-alignment: CENTER;
+    -fx-background-radius: 14;
+
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+/* Texte */
+.admin-rail-text{
+    -fx-text-fill: rgba(255,255,255,0.90);
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+
+    /* si tu veux le masquer en mode collapsed, mets opacity 0 et managed false */
+    -fx-opacity: 1;
+    -fx-managed: true;
+}
+
+/* ACTIVE */
+.admin-sidebar-rail > .button.admin-rail-active{
+    -fx-background-color: rgba(255,255,255,0.20);
+    -fx-border-color: rgba(255,255,255,0.38);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 18, 0.20, 0, 6);
+}
+.admin-sidebar-rail > .button.admin-rail-active .admin-rail-ico{
+    -fx-background-color: rgba(255,255,255,0.22);
+    -fx-text-fill: white;
+}
+.admin-sidebar-rail > .button.admin-rail-active .admin-rail-text{
+    -fx-text-fill: white;
+}
+
+/* LOGOUT special */
+.admin-sidebar-rail > .button.admin-rail-logout:hover{
+    -fx-background-color: rgba(239,68,68,0.18);
+}
+.admin-sidebar-rail > .button.admin-rail-logout:hover .admin-rail-ico{
+    -fx-background-color: rgba(239,68,68,0.25);
+}
+
+/* EXPANDED (si tu ajoutes la classe expanded au VBox) */
+.admin-sidebar-rail.expanded{
+    -fx-pref-width: 220;
+    -fx-min-width: 220;
+}
+
+
+
+/* =========================
+   NAVBAR / TOPBAR — PRO
+   ========================= */
+
+.admin-topbar{
+    -fx-background-color: rgba(255,255,255,0.82);
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(79,70,229,0.10);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(2,6,23,0.10), 22, 0.22, 0, 10);
+}
+
+/* Logo / icône en capsule (optionnel) */
+.admin-topbar-logoWrap{
+    -fx-background-color: rgba(79,70,229,0.10);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(79,70,229,0.12);
+    -fx-border-width: 1;
+    -fx-padding: 6;
+}
+
+/* Titres */
+.admin-hello{
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0F172A;
+}
+.admin-subhello{
+    -fx-font-size: 12px;
+    -fx-font-weight: 650;
+    -fx-text-fill: #64748B;
+}
+
+/* Search wrap (HBox : icône + TextField) */
+.admin-searchWrap{
+    -fx-background-color: rgba(79,70,229,0.07);
+    -fx-border-color: rgba(79,70,229,0.16);
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+    -fx-padding: 8 12 8 12;
+    -fx-min-width: 340;
+}
+
+/* Icône search */
+.admin-searchIco{
+    -fx-opacity: 0.65;
+    -fx-font-weight: 900;
+}
+
+/* Champ search */
+.admin-searchField{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0F172A;
+    -fx-prompt-text-fill: rgba(100,116,139,0.85);
+}
+
+/* Bouton action (ex: Search) */
+.admin-searchBtn{
+    -fx-background-color: linear-gradient(to bottom right, #4F46E5, #3730A3);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 16;
+    -fx-padding: 10 14 10 14;
+    -fx-cursor: hand;
+}
+.admin-searchBtn:hover{
+    -fx-background-color: linear-gradient(to bottom right, #4338CA, #312E81);
+}
+
+/* Bouton rond (optionnel) */
+.admin-round-btn{
+    -fx-background-color: linear-gradient(to bottom right, #4F46E5, #4338CA);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 999;
+    -fx-padding: 9 12 9 12;
+}
+.admin-round-btn:hover{
+    -fx-background-color: linear-gradient(to bottom right, #4338CA, #3730A3);
+}

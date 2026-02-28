@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ListView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.Offre.AfficherOffre"
+            stylesheets="@../cssOffre/backoffice_dashboard.css"
+            styleClass="dash-root">
+
+   <center>
+      <StackPane fx:id="dashCenter" styleClass="dash-center">
+         <padding>
+            <Insets top="22" right="22" bottom="22" left="22"/>
+         </padding>
+
+         <ScrollPane fitToWidth="true"
+                     pannable="true"
+                     styleClass="center-scroll dash-scroll"
+                     hbarPolicy="NEVER">
+            <content>
+               <StackPane styleClass="dash-scroll-wrap" alignment="TOP_CENTER">
+                  <VBox styleClass="dash-content-card" minWidth="0">
+                     <padding>
+                        <Insets top="22" right="22" bottom="22" left="22"/>
+                     </padding>
+
+                     <VBox styleClass="dash-content-area" spacing="16">
+                        <HBox styleClass="wizard-card" alignment="CENTER_LEFT" spacing="12">
+                           <padding>
+                              <Insets top="16" right="18" bottom="16" left="18"/>
+                           </padding>
+                           <VBox spacing="4">
+                              <Label text="Gestion des Offres" styleClass="hero-title" />
+                              <Label text="Liste complète des offres" styleClass="hero-subtitle" />
+                           </VBox>
+                           <Region HBox.hgrow="ALWAYS" />
+                           <ComboBox fx:id="secteurFilter" prefWidth="180.0" promptText="Filtrer par secteur" styleClass="simple-filter" />
+                           <HBox spacing="8.0" alignment="CENTER">
+                              <children>
+                                 <Button fx:id="addBtn" mnemonicParsing="false" onAction="#openAjouterOffre" styleClass="simple-btn" text="＋" />
+                                 <Button fx:id="refreshBtn" mnemonicParsing="false" onAction="#refresh" styleClass="simple-btn" text="↺" />
+                                 <Button fx:id="editBtn" mnemonicParsing="false" onAction="#editSelected" styleClass="simple-btn" text="✎" />
+                                 <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteSelected" styleClass="simple-btn" text="🗑" />
+                              </children>
+                           </HBox>
+                        </HBox>
+
+                        <VBox styleClass="wizard-card" spacing="0" minWidth="0">
+                           <padding>
+                              <Insets top="8" right="8" bottom="8" left="8"/>
+                           </padding>
+                           <HBox spacing="14" alignment="TOP_LEFT" VBox.vgrow="ALWAYS">
+                              <children>
+                                 <VBox spacing="10" minWidth="0" HBox.hgrow="ALWAYS">
+                                    <ScrollPane fitToHeight="true" fitToWidth="false" pannable="true" hbarPolicy="AS_NEEDED" vbarPolicy="NEVER" styleClass="pos-selector-scroll">
+                                       <content>
+                                          <HBox fx:id="positionChipsBox" spacing="10" styleClass="pos-selector" minHeight="44" />
+                                       </content>
+                                    </ScrollPane>
+
+                                    <ListView fx:id="offersListView" styleClass="offers-list-view" VBox.vgrow="ALWAYS" />
+                                 </VBox>
+
+                                 <VBox prefWidth="380" minWidth="380" maxWidth="380" spacing="12" styleClass="charts-panel">
+                                    <padding>
+                                       <Insets top="12" right="12" bottom="12" left="12"/>
+                                    </padding>
+                                    <Label text="Statistiques" styleClass="charts-title" />
+
+                                    <VBox spacing="8" styleClass="charts-card">
+                                       <Label text="Par status" styleClass="charts-card-title" />
+                                       <HBox spacing="12" alignment="CENTER_LEFT">
+                                          <StackPane styleClass="donut-wrap">
+                                             <PieChart fx:id="statusChart" styleClass="charts-pie" />
+                                             <Region styleClass="donut-hole" />
+                                             <Label fx:id="statusTotalLabel" text="Total\n0" styleClass="donut-center" />
+                                          </StackPane>
+                                          <VBox fx:id="statusLegendBox" spacing="8" styleClass="charts-legend" />
+                                       </HBox>
+                                    </VBox>
+
+                                    <VBox spacing="8" styleClass="charts-card">
+                                       <Label text="Carte des localisations" styleClass="charts-card-title" />
+                                       <StackPane styleClass="loc-map-wrap">
+                                          <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="loc-list-scroll">
+                                             <content>
+                                                <VBox fx:id="locationListBox" spacing="10" minHeight="220" prefHeight="220" styleClass="loc-list" />
+                                             </content>
+                                          </ScrollPane>
+                                       </StackPane>
+                                    </VBox>
+
+                                    <VBox spacing="8" styleClass="charts-card">
+                                       <Label text="Par secteur" styleClass="charts-card-title" />
+                                       <HBox spacing="12" alignment="CENTER_LEFT">
+                                          <StackPane styleClass="donut-wrap">
+                                             <PieChart fx:id="secteurChart" styleClass="charts-pie" />
+                                             <Region styleClass="donut-hole" />
+                                             <Label fx:id="secteurTotalLabel" text="Total\n0" styleClass="donut-center" />
+                                          </StackPane>
+                                          <VBox fx:id="secteurLegendBox" spacing="8" styleClass="charts-legend" />
+                                       </HBox>
+                                    </VBox>
+
+                                    <VBox spacing="8" styleClass="charts-card">
+                                       <Label text="Par type de contrat" styleClass="charts-card-title" />
+                                       <HBox spacing="12" alignment="CENTER_LEFT">
+                                          <StackPane styleClass="donut-wrap">
+                                             <PieChart fx:id="typeContratChart" styleClass="charts-pie" />
+                                             <Region styleClass="donut-hole" />
+                                             <Label fx:id="contratTotalLabel" text="Total\n0" styleClass="donut-center" />
+                                          </StackPane>
+                                          <VBox fx:id="contratLegendBox" spacing="8" styleClass="charts-legend" />
+                                       </HBox>
+                                    </VBox>
+
+                                 </VBox>
+                              </children>
+                           </HBox>
+                        </VBox>
+                     </VBox>
+                  </VBox>
+               </StackPane>
+            </content>
+         </ScrollPane>
+      </StackPane>
+   </center>
+
+</BorderPane>

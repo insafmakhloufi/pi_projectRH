@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.Offre.ComparerOffresController"
+            style="-fx-background-color: #f8fafc; -fx-background: #f8fafc;"
+            fitToWidth="true" fitToHeight="true">
+
+    <StackPane alignment="TOP_CENTER" style="-fx-background-color: #f8fafc; -fx-padding: 22 26 26 26;">
+
+        <VBox spacing="14" alignment="TOP_CENTER"
+              style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 18 22 18 22; -fx-border-color: #e2e8f0; -fx-border-radius: 16; -fx-border-width: 1;"
+              maxWidth="Infinity">
+            <effect>
+                <DropShadow color="rgba(15, 23, 42, 0.1)" radius="20" spread="0.03" offsetY="6"/>
+            </effect>
+
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="12" maxWidth="Infinity" style="-fx-background-color: linear-gradient(to right, #f8fafc, #ffffff); -fx-padding: 12 16; -fx-background-radius: 10;">
+                <VBox spacing="4">
+                    <Label text="Comparaison d'offres"
+                           style="-fx-font-size: 22px; -fx-font-weight: 800; -fx-text-fill: #0f172a;"/>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label fx:id="subtitleLabel" text="Comparez les offres sélectionnées"
+                               style="-fx-font-size: 13px; -fx-text-fill: #64748b; -fx-font-weight: 500;"/>
+                        <Label text="2-3 offres max" 
+                               style="-fx-font-size: 10px; -fx-text-fill: #4f46e5; -fx-font-weight: 700; -fx-background-color: #eef2ff; -fx-padding: 4 10; -fx-background-radius: 999;"/>
+                    </HBox>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="✕" onAction="#fermer"
+                        style="-fx-background-color: white; -fx-text-fill: #0f172a; -fx-font-weight: 700; -fx-font-size: 13px; -fx-padding: 8 12; -fx-background-radius: 10; -fx-border-color: #e2e8f0; -fx-border-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 3, 0, 0, 1);"/>
+            </HBox>
+
+            <Separator style="-fx-opacity: 0.55;"/>
+
+            <!-- Conteneur de comparaison -->
+            <HBox fx:id="comparisonContainer" spacing="14" alignment="TOP_CENTER" VBox.vgrow="ALWAYS" style="-fx-padding: 8 0 0 0;">
+        
+        <!-- Offre 1 -->
+        <VBox fx:id="offre1Card" HBox.hgrow="ALWAYS"
+              style="-fx-background-color: white; -fx-background-radius: 12; -fx-border-color: #e5e7eb; -fx-border-radius: 12; -fx-border-width: 1;"
+              prefWidth="240" spacing="8">
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16"/>
+            </padding>
+            <effect>
+                <DropShadow color="rgba(0,0,0,0.04)" radius="12" spread="0.01" offsetY="2"/>
+            </effect>
+            
+            <!-- Badge Offre -->
+            <Label text="Offre 1" 
+                   style="-fx-font-size: 10px; -fx-text-fill: white; -fx-font-weight: 700; -fx-background-color: #4f46e5; -fx-padding: 3 10; -fx-background-radius: 999;"/>
+            
+            <!-- Titre -->
+            <Label fx:id="titre1" text="-" wrapText="true"
+                   style="-fx-font-size: 15px; -fx-font-weight: 700; -fx-text-fill: #111827;"/>
+            
+            <!-- Entreprise -->
+            <Label fx:id="entreprise1" text="-"
+                   style="-fx-font-size: 12px; -fx-text-fill: #4f46e5; -fx-font-weight: 600;"/>
+            
+            <Region prefHeight="4"/>
+            <Separator style="-fx-opacity: 0.4;"/>
+            <Region prefHeight="4"/>
+            
+            <!-- Détails -->
+            <VBox spacing="6">
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="📍" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="localisation1" text="-" style="-fx-font-size: 11px; -fx-text-fill: #374151; -fx-font-weight: 500;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="📋" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="contrat1" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="⭐" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="experience1" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🎓" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="etudes1" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🌐" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="langues1" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🏢" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="secteur1" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="👥" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="postes1" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="📅" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="dateLimite1" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🏠" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="teletravail1" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+            </VBox>
+            
+            <Region VBox.vgrow="ALWAYS"/>
+            <Region prefHeight="6"/>
+            
+            <!-- Bouton Estimer Salaire -->
+            <Button fx:id="btnEstimerSalaire1" text="💰 Estimer salaire" onAction="#estimerSalaire1"
+                    style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: 700; -fx-font-size: 11px; -fx-padding: 6 12; -fx-background-radius: 8;"
+                    maxWidth="Infinity"/>
+            
+            <!-- Salaire Estimé par IA -->
+            <Label fx:id="salaire1" text="" alignment="CENTER"
+                   style="-fx-background-radius: 6; -fx-padding: 6 12; -fx-font-weight: 700; -fx-font-size: 11px; -fx-text-fill: #059669; -fx-background-color: #ecfdf5;"
+                   maxWidth="Infinity" visible="false" managed="false"/>
+            
+            <!-- Status -->
+            <Label fx:id="status1" text="-" alignment="CENTER"
+                   style="-fx-background-radius: 6; -fx-padding: 6 12; -fx-font-weight: 700; -fx-font-size: 10px;"
+                   maxWidth="Infinity"/>
+        </VBox>
+        
+        <!-- VS -->
+        <VBox alignment="CENTER" spacing="8" style="-fx-padding: 0 8;" HBox.hgrow="NEVER">
+            <Label text="VS" 
+                   style="-fx-font-size: 18px; -fx-font-weight: 800; -fx-text-fill: #94a3b8; 
+                          -fx-background-color: #f1f5f9; -fx-background-radius: 50; 
+                          -fx-padding: 14 18; -fx-min-width: 54; -fx-alignment: center;
+                          -fx-border-color: #e2e8f0; -fx-border-radius: 50; -fx-border-width: 2;"/>
+        </VBox>
+        
+        <!-- Offre 2 -->
+        <VBox fx:id="offre2Card" HBox.hgrow="ALWAYS"
+              style="-fx-background-color: white; -fx-background-radius: 12; -fx-border-color: #e5e7eb; -fx-border-radius: 12; -fx-border-width: 1;"
+              prefWidth="240" spacing="8">
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16"/>
+            </padding>
+            <effect>
+                <DropShadow color="rgba(0,0,0,0.04)" radius="12" spread="0.01" offsetY="2"/>
+            </effect>
+            
+            <Label text="Offre 2" 
+                   style="-fx-font-size: 10px; -fx-text-fill: white; -fx-font-weight: 700; -fx-background-color: #7c3aed; -fx-padding: 3 10; -fx-background-radius: 999;"/>
+            
+            <Label fx:id="titre2" text="-" wrapText="true"
+                   style="-fx-font-size: 15px; -fx-font-weight: 700; -fx-text-fill: #111827;"/>
+            
+            <Label fx:id="entreprise2" text="-"
+                   style="-fx-font-size: 12px; -fx-text-fill: #4f46e5; -fx-font-weight: 600;"/>
+            
+            <Region prefHeight="4"/>
+            <Separator style="-fx-opacity: 0.4;"/>
+            <Region prefHeight="4"/>
+            
+            <VBox spacing="6">
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="📍" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="localisation2" text="-" style="-fx-font-size: 11px; -fx-text-fill: #374151; -fx-font-weight: 500;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="📋" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="contrat2" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="⭐" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="experience2" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🎓" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="etudes2" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🌐" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="langues2" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🏢" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="secteur2" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="👥" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="postes2" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="📅" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="dateLimite2" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🏠" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="teletravail2" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+            </VBox>
+            
+            <Region VBox.vgrow="ALWAYS"/>
+            <Region prefHeight="6"/>
+            
+            <!-- Bouton Estimer Salaire -->
+            <Button fx:id="btnEstimerSalaire2" text="💰 Estimer salaire" onAction="#estimerSalaire2"
+                    style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: 700; -fx-font-size: 11px; -fx-padding: 6 12; -fx-background-radius: 8;"
+                    maxWidth="Infinity"/>
+            
+            <!-- Salaire Estimé par IA -->
+            <Label fx:id="salaire2" text="" alignment="CENTER"
+                   style="-fx-background-radius: 6; -fx-padding: 6 12; -fx-font-weight: 700; -fx-font-size: 11px; -fx-text-fill: #059669; -fx-background-color: #ecfdf5;"
+                   maxWidth="Infinity" visible="false" managed="false"/>
+            
+            <Label fx:id="status2" text="-" alignment="CENTER"
+                   style="-fx-background-radius: 6; -fx-padding: 6 12; -fx-font-weight: 700; -fx-font-size: 10px;"
+                   maxWidth="Infinity"/>
+        </VBox>
+        
+        <!-- Offre 3 (Optionnelle) -->
+        <VBox fx:id="offre3Card" HBox.hgrow="ALWAYS"
+              style="-fx-background-color: white; -fx-background-radius: 12; -fx-border-color: #e5e7eb; -fx-border-radius: 12; -fx-border-width: 1;"
+              prefWidth="240" spacing="8" visible="false" managed="false">
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16"/>
+            </padding>
+            <effect>
+                <DropShadow color="rgba(0,0,0,0.04)" radius="12" spread="0.01" offsetY="2"/>
+            </effect>
+            
+            <Label text="Offre 3" 
+                   style="-fx-font-size: 10px; -fx-text-fill: white; -fx-font-weight: 700; -fx-background-color: #059669; -fx-padding: 3 10; -fx-background-radius: 999;"/>
+            
+            <Label fx:id="titre3" text="-" wrapText="true"
+                   style="-fx-font-size: 15px; -fx-font-weight: 700; -fx-text-fill: #111827;"/>
+            
+            <Label fx:id="entreprise3" text="-"
+                   style="-fx-font-size: 12px; -fx-text-fill: #4f46e5; -fx-font-weight: 600;"/>
+            
+            <Region prefHeight="4"/>
+            <Separator style="-fx-opacity: 0.4;"/>
+            <Region prefHeight="4"/>
+            
+            <VBox spacing="6">
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="📍" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="localisation3" text="-" style="-fx-font-size: 11px; -fx-text-fill: #374151; -fx-font-weight: 500;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="📋" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="contrat3" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="⭐" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="experience3" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🎓" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="etudes3" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🌐" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="langues3" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🏢" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="secteur3" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="👥" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="postes3" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="📅" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="dateLimite3" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="🏠" style="-fx-font-size: 12px; -fx-min-width: 16;"/>
+                    <Label fx:id="teletravail3" text="-" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;"/>
+                </HBox>
+            </VBox>
+            
+            <Region VBox.vgrow="ALWAYS"/>
+            <Region prefHeight="6"/>
+            
+            <!-- Bouton Estimer Salaire -->
+            <Button fx:id="btnEstimerSalaire3" text="💰 Estimer salaire" onAction="#estimerSalaire3"
+                    style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: 700; -fx-font-size: 11px; -fx-padding: 6 12; -fx-background-radius: 8;"
+                    maxWidth="Infinity"/>
+            
+            <!-- Salaire Estimé par IA -->
+            <Label fx:id="salaire3" text="" alignment="CENTER"
+                   style="-fx-background-radius: 6; -fx-padding: 6 12; -fx-font-weight: 700; -fx-font-size: 11px; -fx-text-fill: #059669; -fx-background-color: #ecfdf5;"
+                   maxWidth="Infinity" visible="false" managed="false"/>
+            
+            <Label fx:id="status3" text="-" alignment="CENTER"
+                   style="-fx-background-radius: 6; -fx-padding: 6 12; -fx-font-weight: 700; -fx-font-size: 10px;"
+                   maxWidth="Infinity"/>
+        </VBox>
+    </HBox>
+    
+            <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-padding: 6 0 0 0;">
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="annulerBtn" text="Annuler" onAction="#annuler"
+                        style="-fx-background-color: transparent; -fx-text-fill: #0f172a; 
+                               -fx-font-weight: 800; -fx-font-size: 13px; -fx-padding: 10 18;
+                               -fx-background-radius: 12; -fx-border-color: #e2e8f0; -fx-border-radius: 12;"/>
+                <Button fx:id="ajouterOffreBtn" text="Ajouter une offre" onAction="#ajouterOffre"
+                        style="-fx-background-color: #0f172a; -fx-text-fill: white; 
+                               -fx-font-weight: 900; -fx-font-size: 13px; -fx-padding: 10 18;
+                               -fx-background-radius: 12;"/>
+                <Button fx:id="fermerBtn" text="Fermer" onAction="#fermer"
+                        style="-fx-background-color: #f1f5f9; -fx-text-fill: #0f172a; 
+                               -fx-font-weight: 900; -fx-font-size: 13px; -fx-padding: 10 18;
+                               -fx-background-radius: 12; -fx-border-color: #e2e8f0; -fx-border-radius: 12;"/>
+            </HBox>
+
+        </VBox>
+    </StackPane>
+</ScrollPane>

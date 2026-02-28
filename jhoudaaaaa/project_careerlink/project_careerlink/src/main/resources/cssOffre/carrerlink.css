@@ -1,0 +1,898 @@
+.root {
+    -fx-font-family: "Segoe UI Variable", "Segoe UI", "Inter", "Arial";
+    -fx-background-color: #F6F8FC;
+}
+
+.nav-sub {
+    -fx-padding: 10 12 10 26;
+    -fx-font-weight: bold;
+}
+
+.app-header {
+    -fx-background-color: linear-gradient(to right, #1E3A8A, #2563EB);
+    -fx-padding: 0 24;
+    -fx-alignment: center-left;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 12, 0.0, 0, 6);
+}
+
+.label {
+    -fx-text-fill: #0F172A;
+}
+
+.app-logo {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 12, 0.0, 0, 6);
+    -fx-smooth: true;
+    -fx-cursor: hand;
+}
+
+.profile-chip {
+    -fx-background-color: rgba(255, 255, 255, 0.16);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255, 255, 255, 0.26);
+    -fx-border-width: 1;
+    -fx-padding: 6 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.20), 16, 0.20, 0, 6);
+}
+
+.profile-chip:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.22);
+    -fx-border-color: rgba(255, 255, 255, 0.38);
+}
+
+.profile-chip:pressed {
+    -fx-scale-x: 0.99;
+    -fx-scale-y: 0.99;
+}
+
+.profile-chip-content {
+    -fx-padding: 0;
+}
+
+.profile-avatar {
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255, 255, 255, 0.42);
+    -fx-border-width: 1;
+}
+
+.profile-name {
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-font-size: 13px;
+}
+
+.profile-caret {
+    -fx-text-fill: rgba(255, 255, 255, 0.92);
+    -fx-font-size: 12px;
+    -fx-font-weight: 900;
+    -fx-padding: 0 0 0 2;
+}
+
+.sidebar-logo-container {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 16;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0.0, 0, 4);
+}
+
+.sidebar-logo {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.3), 8, 0.0, 0, 4);
+    -fx-smooth: true;
+}
+
+.sidebar-title {
+    -fx-text-fill: #0A66FF;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.sidebar {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E7EEF9;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 18 14;
+    -fx-spacing: 8;
+}
+
+.sidebar-section {
+    -fx-text-fill: #64748B;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 10 10 10;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0F172A;
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+    -fx-padding: 10 12;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-pref-width: 9999;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(10, 102, 255, 0.08);
+}
+
+.nav-selected {
+    -fx-background-color: rgba(10, 102, 255, 0.16);
+    -fx-text-fill: #0A66FF;
+    -fx-border-color: transparent transparent transparent #0A66FF;
+    -fx-border-width: 0 0 0 4;
+}
+
+.modern-table {
+    -fx-background-insets: 0;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .track {
+    -fx-background-color: rgba(231, 238, 249, 0.7);
+    -fx-background-radius: 999;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(100, 116, 139, 0.35);
+    -fx-background-radius: 999;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(100, 116, 139, 0.55);
+}
+
+.nav-danger {
+    -fx-text-fill: #B91C1C;
+}
+
+.nav-danger:hover {
+    -fx-background-color: rgba(225, 29, 72, 0.08);
+}
+
+.content {
+    -fx-padding: 22;
+}
+
+.table-card {
+    -fx-padding: 6;
+}
+
+.table-toolbar {
+    -fx-alignment: center-left;
+    -fx-padding: 10 10 12 10;
+    -fx-background-color: linear-gradient(to right, rgba(10, 102, 255, 0.10), rgba(10, 102, 255, 0.03));
+    -fx-background-radius: 16;
+}
+
+.table-title {
+    -fx-text-fill: #0F172A;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.icon-button {
+    -fx-min-width: 48;
+    -fx-alignment: center;
+    -fx-padding: 10 0;
+}
+
+.page-root {
+    -fx-background-color: transparent;
+}
+
+.add-page {
+    -fx-background-color: transparent;
+}
+
+.add-page-header {
+    -fx-background-color: transparent;
+}
+
+.add-page-title {
+    -fx-text-fill: #0A66FF;
+    -fx-font-size: 28px;
+    -fx-font-weight: 900;
+}
+
+.add-page-subtitle {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+}
+
+.add-wrap {
+    -fx-background-color: transparent;
+}
+
+.add-hero {
+    -fx-background-color: linear-gradient(to right, #0A66FF, #6D28D9);
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(13, 40, 94, 0.22), 26, 0.0, 0, 10);
+}
+
+.add-hero-title {
+    -fx-text-fill: rgba(255, 255, 255, 0.98);
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.add-hero-logo {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 12, 0.0, 0, 6);
+    -fx-smooth: true;
+    -fx-cursor: hand;
+}
+
+.add-card {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-border-color: rgba(10, 102, 255, 0.12);
+}
+
+/* Ensure card container style exists even if used without backoffice_dashboard.css */
+.wizard-card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(15, 23, 42, 0.08);
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.10), 22, 0.25, 0, 10);
+}
+
+.add-grid {
+    -fx-background-color: transparent;
+}
+
+.add-grid .text-field, .add-grid .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #D7DFEB;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-padding: 10 12;
+    -fx-font-size: 14px;
+}
+
+.add-grid .text-field:focused, .add-grid .combo-box:focused {
+    -fx-border-color: #0A66FF;
+    -fx-effect: dropshadow(gaussian, rgba(10, 102, 255, 0.30), 15, 0.0, 0, 8);
+}
+
+.add-grid .text-field .text-field, .add-grid .combo-box .list-cell {
+    -fx-text-fill: #0F172A;
+}
+
+.add-grid .text-field .prompt-text, .add-grid .combo-box .prompt-text {
+    -fx-text-fill: #94A3B8;
+    -fx-font-size: 13px;
+}
+
+.add-actions {
+    -fx-padding: 24 32 8 32;
+    -fx-background-color: transparent;
+    -fx-alignment: center-left;
+}
+
+.ghost-button {
+    -fx-background-color: rgba(255, 255, 255, 0.65);
+    -fx-border-color: rgba(15, 23, 42, 0.14);
+    -fx-text-fill: #0F172A;
+}
+
+.ghost-button:hover {
+    -fx-background-color: rgba(10, 102, 255, 0.08);
+    -fx-border-color: rgba(10, 102, 255, 0.55);
+}
+
+.header {
+    -fx-background-color: linear-gradient(to right, #0A66FF, #0B5ED7);
+    -fx-padding: 14 18;
+}
+
+.header-title {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.header-subtitle {
+    -fx-text-fill: rgba(255, 255, 255, 0.85);
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.text-field, .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #D7DFEB;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 10 12;
+    -fx-effect: dropshadow(gaussian, rgba(16, 24, 40, 0.06), 10, 0.0, 0, 2);
+}
+
+.combo-box:hover {
+    -fx-border-color: #B6CCFF;
+}
+
+.combo-box:focused {
+    -fx-border-color: #0A66FF;
+    -fx-border-width: 1.2;
+}
+
+.table-toolbar .secondary-button {
+    -fx-padding: 10 14;
+}
+
+.error {
+    -fx-border-color: #E11D48;
+    -fx-border-width: 1.6;
+    -fx-background-color: rgba(225, 29, 72, 0.06);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(225, 29, 72, 0.20), 14, 0.0, 0, 6);
+}
+
+.error:focused {
+    -fx-border-color: #BE123C;
+}
+
+/* Modern alerts (validation/success/errors) */
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(15, 23, 42, 0.10);
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.20), 26, 0.25, 0, 12);
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: linear-gradient(to right, #0A66FF, #084CFF);
+    -fx-background-radius: 16 16 0 0;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+}
+
+.dialog-pane .content.label {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-radius: 10;
+    -fx-font-weight: 900;
+    -fx-padding: 10 16;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-cursor: hand;
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #0A66FF, #084CFF);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 999;
+    -fx-padding: 11 20;
+    -fx-min-height: 44;
+    -fx-font-size: 13.5px;
+    -fx-effect: dropshadow(gaussian, rgba(10, 102, 255, 0.42), 18, 0.0, 0, 8);
+}
+
+.primary-button:hover {
+    -fx-background-color: #0B5ED7;
+}
+
+.secondary-button {
+    -fx-background-color: white;
+    -fx-text-fill: #0A66FF;
+    -fx-font-weight: bold;
+    -fx-border-color: rgba(10, 102, 255, 0.75);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 999;
+    -fx-background-radius: 999;
+    -fx-padding: 11 20;
+    -fx-min-height: 44;
+    -fx-font-size: 13.5px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 12, 0.0, 0, 3);
+}
+
+.secondary-button:hover {
+    -fx-background-color: rgba(10, 102, 255, 0.08);
+    -fx-border-color: rgba(10, 102, 255, 1.0);
+}
+
+.stats-card {
+    -fx-padding: 18;
+}
+
+.stats-header {
+    -fx-alignment: center-left;
+    -fx-padding: 6 6 10 6;
+}
+
+.stats-title {
+    -fx-text-fill: #0F172A;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.chart {
+    -fx-padding: 10;
+}
+
+.chart-title {
+    -fx-text-fill: #0F172A;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.chart-legend-item {
+    -fx-text-fill: #0F172A;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: bold;
+}
+
+.header-button {
+    -fx-background-color: rgba(255, 255, 255, 0.16);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: rgba(255, 255, 255, 0.35);
+    -fx-border-radius: 999;
+    -fx-background-radius: 999;
+    -fx-padding: 10 16;
+    -fx-font-size: 13px;
+}
+
+.header-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-border-color: #E3EAF5;
+    -fx-border-radius: 18;
+    -fx-padding: 18;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.10), 22, 0.0, 0, 8);
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #E3EAF5;
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+}
+
+.table-view:focused {
+    -fx-border-color: #B6CCFF;
+    -fx-border-width: 1.2;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #F3F6FF;
+    -fx-background-radius: 16 16 0 0;
+    -fx-padding: 6 0 6 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 46px;
+    -fx-border-color: transparent transparent #E7EEF9 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #1f2a37;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-cell {
+    -fx-padding: 12 10;
+    -fx-text-fill: #0F172A;
+    -fx-border-color: transparent transparent rgba(231, 238, 249, 0.75) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: rgba(10, 102, 255, 0.08);
+}
+
+.table-row-cell:hover {
+    -fx-background-color: rgba(10, 102, 255, 0.06);
+}
+
+/* Styles pour la vue en cartes */
+.offers-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.offers-flow-pane {
+    -fx-background-color: transparent;
+}
+
+.offer-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-color: #E3EAF5;
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.08), 20, 0.0, 0, 6);
+    -fx-pref-width: 280;
+    -fx-min-width: 280;
+    -fx-max-width: 280;
+    -fx-pref-height: 240;
+    -fx-min-height: 200;
+}
+
+.offer-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(10, 102, 255, 0.15), 24, 0.0, 0, 8);
+    -fx-border-color: rgba(10, 102, 255, 0.25);
+    -fx-cursor: hand;
+}
+
+.offer-card.selected {
+    -fx-border-color: #0A66FF;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(10, 102, 255, 0.25), 24, 0.0, 0, 8);
+}
+
+.offer-card-header {
+    -fx-background-color: linear-gradient(to right, #0A66FF, #6D28D9);
+    -fx-background-radius: 16 16 0 0;
+    -fx-padding: 12 16;
+    -fx-alignment: center-left;
+}
+
+
+.error {
+    -fx-border-color: #E11D48;
+    -fx-border-width: 1.2;
+}
+
+.error:focused {
+    -fx-border-color: #BE123C;
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #0A66FF, #084CFF);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 999;
+    -fx-padding: 11 20;
+    -fx-min-height: 44;
+    -fx-font-size: 13.5px;
+    -fx-effect: dropshadow(gaussian, rgba(10, 102, 255, 0.42), 18, 0.0, 0, 8);
+}
+
+.primary-button:hover {
+    -fx-background-color: #0B5ED7;
+}
+
+.secondary-button {
+    -fx-background-color: white;
+    -fx-text-fill: #0A66FF;
+    -fx-font-weight: bold;
+    -fx-border-color: rgba(10, 102, 255, 0.75);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 999;
+    -fx-background-radius: 999;
+    -fx-padding: 11 20;
+    -fx-min-height: 44;
+    -fx-font-size: 13.5px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 12, 0.0, 0, 3);
+}
+
+.secondary-button:hover {
+    -fx-background-color: rgba(10, 102, 255, 0.08);
+    -fx-border-color: rgba(10, 102, 255, 1.0);
+}
+
+.stats-card {
+    -fx-padding: 18;
+}
+
+.stats-header {
+    -fx-alignment: center-left;
+    -fx-padding: 6 6 10 6;
+}
+
+.stats-title {
+    -fx-text-fill: #0F172A;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.chart {
+    -fx-padding: 10;
+}
+
+.chart-title {
+    -fx-text-fill: #0F172A;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.chart-legend-item {
+    -fx-text-fill: #0F172A;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: bold;
+}
+
+.header-button {
+    -fx-background-color: rgba(255, 255, 255, 0.16);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: rgba(255, 255, 255, 0.35);
+    -fx-border-radius: 999;
+    -fx-background-radius: 999;
+    -fx-padding: 10 16;
+    -fx-font-size: 13px;
+}
+
+.header-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-border-color: #E3EAF5;
+    -fx-border-radius: 18;
+    -fx-padding: 18;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.10), 22, 0.0, 0, 8);
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #E3EAF5;
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+}
+
+.table-view:focused {
+    -fx-border-color: #B6CCFF;
+    -fx-border-width: 1.2;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #F3F6FF;
+    -fx-background-radius: 16 16 0 0;
+    -fx-padding: 6 0 6 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 46px;
+    -fx-border-color: transparent transparent #E7EEF9 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #1f2a37;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-cell {
+    -fx-padding: 12 10;
+    -fx-text-fill: #0F172A;
+    -fx-border-color: transparent transparent rgba(231, 238, 249, 0.75) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: rgba(10, 102, 255, 0.08);
+}
+
+.table-row-cell:hover {
+    -fx-background-color: rgba(10, 102, 255, 0.06);
+}
+
+/* Styles pour la vue en cartes */
+.offers-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.offers-flow-pane {
+    -fx-background-color: transparent;
+}
+
+.offer-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #d1d5db;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 8, 0.0, 0, 4);
+    -fx-pref-width: 280;
+    -fx-min-width: 280;
+    -fx-max-width: 280;
+    -fx-pref-height: 220;
+    -fx-min-height: 200;
+    -fx-cursor: hand;
+}
+
+.offer-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.15), 12, 0.0, 0, 6);
+    -fx-border-color: #3b82f6;
+    -fx-translate-y: -2;
+}
+
+.offer-card.selected {
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.25), 12, 0.0, 0, 6);
+}
+
+.offer-card-header {
+    -fx-background-color: linear-gradient(to right, #3b82f6, #6366f1);
+    -fx-background-radius: 12 12 0 0;
+    -fx-padding: 16 20;
+    -fx-alignment: center-left;
+}
+
+.offer-card-title {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-max-width: 200;
+}
+
+.offer-card-status {
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-padding: 4 10;
+    -fx-background-radius: 8;
+}
+
+.offer-card-content {
+    -fx-padding: 18 20;
+    -fx-spacing: 14;
+}
+
+.offer-card-description {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 13px;
+    -fx-wrap-text: true;
+    -fx-max-height: 45;
+}
+
+.offer-card-details {
+    -fx-spacing: 10;
+}
+
+.offer-card-detail {
+    -fx-alignment: center-left;
+    -fx-spacing: 10;
+}
+
+.offer-card-icon {
+    -fx-text-fill: #3b82f6;
+    -fx-font-size: 14px;
+}
+
+.offer-card-value {
+    -fx-text-fill: #111827;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-wrap-text: true;
+    -fx-max-width: 200;
+}
+
+.offer-card-footer {
+    -fx-padding: 0 20 18 20;
+    -fx-alignment: center-left;
+    -fx-spacing: 8;
+}
+
+.offer-card-tag {
+    -fx-background-color: #eff6ff;
+    -fx-text-fill: #1e40af;
+    -fx-font-size: 10px;
+    -fx-font-weight: 600;
+    -fx-padding: 4 10;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+}
+
+/* Styles pour les boutons visibles */
+.simple-btn {
+    -fx-background-color: #0A66FF;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-pref-width: 36;
+    -fx-pref-height: 36;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(10, 102, 255, 0.28), 4, 0.0, 0, 2);
+}
+
+.simple-btn:hover {
+    -fx-background-color: #0B5ED7;
+    -fx-effect: dropshadow(gaussian, rgba(10, 102, 255, 0.38), 6, 0.0, 0, 3);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Styles pour l'interface améliorée */
+.offers-container {
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 0;
+}
+
+.simple-header {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 8, 0.0, 0, 4);
+    -fx-alignment: center-left;
+}
+
+.simple-title {
+    -fx-text-fill: #111827;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.simple-subtitle {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+}
+
+.simple-filter {
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.03), 2, 0.0, 0, 1);
+}
+
+.simple-filter:hover {
+    -fx-border-color: #9ca3af;
+}
+
+.simple-filter:focused {
+    -fx-border-color: #0A66FF;
+    -fx-effect: dropshadow(gaussian, rgba(10, 102, 255, 0.20), 4, 0.0, 0, 2);
+}

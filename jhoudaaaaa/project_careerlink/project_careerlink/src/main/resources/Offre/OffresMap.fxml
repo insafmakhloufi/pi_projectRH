@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<BorderPane fx:id="rootPane" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/17"
+            fx:controller="Controllers.Offre.OffresMapController"
+            prefWidth="1000" prefHeight="700">
+
+    <!-- Barre supérieure avec filtres -->
+    <top>
+        <HBox spacing="15" style="-fx-padding: 10 15; -fx-background-color: #f8fafc; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1 0;">
+            <Label text="🗺️ Carte des Offres" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label text="Rayon:"/>
+            <ComboBox fx:id="rayonCombo" prefWidth="100"/>
+
+            <Label text="km" style="-fx-text-fill: #64748b;"/>
+
+            <Button text="🔄 Afficher tout" onAction="#forceRefreshMarkers" 
+                    style="-fx-background-color: #3b82f6; -fx-text-fill: white;"/>
+
+            <Button text="❌ Fermer" onAction="#handleClose" 
+                    style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- Zone centrale avec la carte -->
+    <center>
+        <WebView fx:id="mapWebView" prefWidth="1000" prefHeight="600"/>
+    </center>
+
+    <!-- Barre d'état en bas -->
+    <bottom>
+        <HBox spacing="10" style="-fx-padding: 8 15; -fx-background-color: #f1f5f9;">
+            <Label fx:id="statusLabel" text="Chargement..." style="-fx-text-fill: #475569;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="countLabel" text="" style="-fx-text-fill: #64748b;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
