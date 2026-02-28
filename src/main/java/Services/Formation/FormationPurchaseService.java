@@ -29,7 +29,7 @@ public class FormationPurchaseService {
     public FormationPurchaseService() {
         con = Mydatabase.getInstance().getConnection();
         // TODO: Move API key to server-side configuration
-        Stripe.apiKey = "sk_test_51SffoJGlRq5Z61v4UbHZhBfvCoWmSXxalM7rSfXQFLleQ9f0ZwDNsXkYespALEPgVQYYKKv1RCbApxDlKA9Pk1f900WGymFYTR"; // Replace with your actual Stripe secret key
+
 
         successUrlBase = getenvOrDefault("STRIPE_SUCCESS_URL_BASE", "https://clever-cannoli-c18ecb.netlify.app/stripe-success.html");
         cancelUrlBase = getenvOrDefault("STRIPE_CANCEL_URL_BASE", "https://clever-cannoli-c18ecb.netlify.app/stripe-cancel.html");
