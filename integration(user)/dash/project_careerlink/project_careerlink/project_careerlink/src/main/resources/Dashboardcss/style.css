@@ -1,0 +1,281 @@
+/* Global Colors */
+* {
+    -primary-color: #001D39;
+    -secondary-color: #001D39;
+    -background-color: #001D39;
+    -text-color: #333333;
+    -text-secondary: #757575;
+    -card-background: #FFFFFF;
+    -sidebar-bg: #001D39;
+    /* Full Green Background */
+    -sidebar-text: #FFFFFF;
+}
+
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-background-color: #001D39;
+    /* Root is green now */
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #001D39;
+    /* Transparent to show root green */
+    -fx-padding: 20 12 20 10;
+    /* Top Right Bottom Left - Right must be 0 for seamless merge */
+    -fx-spacing: 20;
+    -fx-alignment: TOP_CENTER;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -sidebar-text;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+    /* More padding */
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    /* Tab shape on left */
+    -fx-graphic-text-gap: 15;
+}
+
+.sidebar-button:hover,
+.sidebar-button.active {
+    -fx-background-color: #F4F6F8;
+    /* White/Grey to match content area */
+    -fx-text-fill: -primary-color;
+    /* Green text */
+    -fx-background-radius: 999;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-border-radius: 999;
+    -fx-border-insets: 0;
+    -fx-scale-x: 1.05;
+    /* Grow effect */
+    -fx-scale-y: 1.05;
+}
+
+.sidebar-button:hover .sidebar-icon,
+.sidebar-button.active .sidebar-icon {
+    -fx-fill: -primary-color;
+    /* Green icon on hover */
+}
+
+.sidebar-icon {
+    -fx-fill: -sidebar-text;
+    /* White icon default */
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+/* Dashboard Content Area - The "Floating" White Card */
+.content-area {
+    -fx-background-color: #F4F6F8;
+    /* Light Grey background for the content area */
+    -fx-background-radius: 30;
+    /* Round top-left and bottom-left to match cap2 */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 20, 0, -5, 0);
+    /* Subtle shadow on the left */
+    -fx-padding: 0;
+    /* Padding handled by inner containers */
+}
+
+.floating-nav {
+    -fx-max-width: 560px;
+}
+
+.floating-nav-content {
+    -fx-background-color: #001D39;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-min-height: 56px;
+    -fx-pref-height: 56px;
+    -fx-max-height: 56px;
+    -fx-max-width: 560px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.35), 18, 0, 0, 8);
+}
+
+.floating-nav-notch {
+    -fx-fill: #F4F6F8;
+    -fx-translate-x: 22px;
+    -fx-translate-y: -14px;
+}
+
+.floating-search {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.55);
+    -fx-padding: 8 14;
+    -fx-pref-width: 240px;
+}
+
+.floating-nav-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 8;
+    -fx-cursor: hand;
+}
+
+.floating-nav-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-translate-y: -2px;
+    -fx-scale-x: 1.06;
+    -fx-scale-y: 1.06;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.25), 8, 0, 0, 3);
+}
+
+.floating-nav-icon {
+    -fx-fill: rgba(255, 255, 255, 0.92);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Dashboard Specifics */
+.dashboard-container {
+    -fx-background-color: transparent;
+    -fx-padding: 30;
+}
+
+.dashboard-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-color;
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-color;
+}
+
+.subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: -text-secondary;
+}
+
+/* Cards */
+.card {
+    -fx-background-color: -card-background;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.05), 10, 0, 0, 5);
+    -fx-padding: 20;
+}
+
+.card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 15, 0, 0, 8);
+}
+
+/* Charts */
+.chart {
+    -fx-padding: 10;
+    -fx-background-color: transparent;
+}
+
+.chart-content {
+    -fx-padding: 10;
+}
+
+.chart-title {
+    -fx-text-fill: -text-color;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.axis-label {
+    -fx-text-fill: -text-secondary;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+/* Specific component styling */
+.search-bar {
+    -fx-background-color: -card-background;
+    -fx-background-radius: 20;
+    -fx-padding: 5 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.05), 5, 0, 0, 2);
+}
+
+.search-field {
+    -fx-background-color: transparent;
+    -fx-prompt-text-fill: -text-secondary;
+}
+
+.task-item {
+    -fx-background-color: -secondary-color;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-border-color: transparent;
+}
+
+.task-item:hover {
+    -fx-background-color: #C8E6C9;
+}
+
+.button-primary {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.button-primary:hover {
+    -fx-background-color: #388E3C;
+}
+
+.progress-bar {
+    -fx-accent: -primary-color;
+}
+
+/* Shared Profile page helpers */
+.input{
+    -fx-background-color: rgba(0, 29, 57, 0.06);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(0, 29, 57, 0.12);
+    -fx-padding: 10 12;
+    -fx-font-size: 12px;
+}
+
+.btn-secondary{
+    -fx-background-color: rgba(0, 29, 57, 0.10);
+    -fx-text-fill: -primary-color;
+    -fx-font-weight: bold;
+    -fx-background-radius: 14;
+    -fx-padding: 9 14;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover{
+    -fx-background-color: rgba(0, 29, 57, 0.16);
+}
+
+.btn-danger{
+    -fx-background-color: rgba(239, 68, 68, 0.16);
+    -fx-text-fill: #B91C1C;
+    -fx-font-weight: bold;
+    -fx-background-radius: 14;
+    -fx-padding: 9 14;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover{
+    -fx-background-color: rgba(239, 68, 68, 0.24);
+}
+
+.scroll-pane{
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport{
+    -fx-background-color: transparent;
+}

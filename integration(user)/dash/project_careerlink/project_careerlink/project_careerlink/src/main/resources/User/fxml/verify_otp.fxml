@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="Controllers.User.VerifyOtpController">
+
+    <BorderPane styleClass="auth-root" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <center>
+            <StackPane styleClass="auth-bg">
+                <Region styleClass="auth-bg-overlay" />
+                <StackPane styleClass="auth-form-wrap">
+                    <ScrollPane fx:id="scrollPane" fitToWidth="true" pannable="false" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="auth-form-scroll">
+                        <VBox fx:id="contentBox" alignment="CENTER" fillWidth="true" styleClass="auth-form-content">
+                            <VBox styleClass="auth-card" spacing="14" maxWidth="460" fillWidth="true">
+
+                            <VBox spacing="6">
+                                <Label text="Verify Code" styleClass="auth-title" />
+                                <Label fx:id="hintLabel" text="Enter the code we sent you" styleClass="auth-subtitle" wrapText="true" />
+                            </VBox>
+
+                            <VBox spacing="6" fillWidth="true">
+                                <Label text="OTP" styleClass="field-label" />
+                                <HBox spacing="10" alignment="CENTER">
+                                    <TextField fx:id="otp1" prefWidth="40" prefHeight="44" maxWidth="40" styleClass="otp-digit" />
+                                    <TextField fx:id="otp2" prefWidth="40" prefHeight="44" maxWidth="40" styleClass="otp-digit" />
+                                    <TextField fx:id="otp3" prefWidth="40" prefHeight="44" maxWidth="40" styleClass="otp-digit" />
+                                    <TextField fx:id="otp4" prefWidth="40" prefHeight="44" maxWidth="40" styleClass="otp-digit" />
+                                    <TextField fx:id="otp5" prefWidth="40" prefHeight="44" maxWidth="40" styleClass="otp-digit" />
+                                    <TextField fx:id="otp6" prefWidth="40" prefHeight="44" maxWidth="40" styleClass="otp-digit" />
+                                </HBox>
+                                <Label fx:id="otpError" styleClass="error-label" />
+                            </VBox>
+
+                            <VBox spacing="6" fillWidth="true">
+                                <Label text="New password" styleClass="field-label" />
+                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <StackPane HBox.hgrow="ALWAYS">
+                                        <PasswordField fx:id="newPasswordField" promptText="Create a new password" maxWidth="Infinity" />
+                                        <TextField fx:id="newPasswordVisibleField" promptText="Create a new password" maxWidth="Infinity" visible="false" managed="false" />
+                                    </StackPane>
+                                    <ToggleButton fx:id="showNewPasswordToggle" text="" styleClass="eye-toggle" focusTraversable="false" />
+                                </HBox>
+                                <Label fx:id="passwordError" styleClass="error-label" />
+                            </VBox>
+
+                            <Label fx:id="statusLabel" styleClass="success-label" />
+
+                            <Button text="Reset password" onAction="#handleResetPassword" styleClass="btn-primary" maxWidth="Infinity" />
+
+                            <HBox alignment="CENTER" spacing="6">
+                                <Label text="Back" styleClass="muted" />
+                                <Hyperlink text="Forgot password" onAction="#goToForgot" styleClass="link" />
+                            </HBox>
+
+                            </VBox>
+                        </VBox>
+                    </ScrollPane>
+                </StackPane>
+            </StackPane>
+        </center>
+
+    </BorderPane>
+</AnchorPane>
