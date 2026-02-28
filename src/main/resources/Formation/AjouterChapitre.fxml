@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="620.0" prefWidth="980.0"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.Formation.AjouterChapitre"
+            stylesheets="@../Formation/appAdmin.css"
+            styleClass="page">
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="cards-scroll">
+            <content>
+                <VBox spacing="14" styleClass="main-card" maxWidth="720">
+                    <BorderPane.margin>
+                        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0" />
+                    </BorderPane.margin>
+
+                    <HBox spacing="12" alignment="CENTER_LEFT" styleClass="topbar">
+                        <Button fx:id="btnRetour" mnemonicParsing="false" text="← Retour" styleClass="btn-retour" />
+                        <VBox spacing="3" HBox.hgrow="ALWAYS">
+                            <Label text="Ajouter un chapitre" styleClass="page-title" />
+                            <Label text="Renseignez les informations du chapitre" styleClass="page-subtitle" />
+                        </VBox>
+                    </HBox>
+
+                    <VBox spacing="10" styleClass="formation-body">
+                        <Label text="Titre" />
+                        <TextField fx:id="tfTitre" promptText="Titre du chapitre" />
+
+                        <Label text="Contenu" />
+                        <TextArea fx:id="taContenu" prefRowCount="6" wrapText="true" promptText="Texte ou chemin PDF" />
+
+                        <HBox spacing="10">
+                            <Button fx:id="btnChoisirPdf" text="Choisir PDF" styleClass="btn-secondary" />
+                        </HBox>
+
+                        <Label fx:id="lblMessage" text="" />
+
+                        <HBox spacing="10">
+                            <Button fx:id="btnEnregistrer" text="Enregistrer" styleClass="btn-primary" />
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

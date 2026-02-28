@@ -1,0 +1,5 @@
+mysql-connector-python
+numpy
+scikit-learn
+skl2onnx
+onnx

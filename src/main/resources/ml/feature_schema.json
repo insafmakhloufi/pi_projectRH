@@ -1,0 +1,26 @@
+{
+  "input_name": "input",
+  "features": [
+    "nb_chapters",
+    "pdf_count",
+    "text_count",
+    "total_text_len",
+    "avg_text_len",
+    "estimated_text_minutes",
+    "estimated_total_minutes"
+  ],
+  "classes": [
+    "Facile",
+    "Moyen",
+    "Complexe"
+  ],
+  "logic": "Linear classifier (manual ONNX)",
+  "params": {
+    "min_per_pdf": 20,
+    "chars_per_min": 900,
+    "thresholds": {
+      "easy_max": 30,
+      "medium_max": 90
+    }
+  }
+}

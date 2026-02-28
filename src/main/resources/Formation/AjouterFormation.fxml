@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.Formation.AjouterFormation"
+            stylesheets="@../Formation/appAdmin.css"
+            styleClass="page add-page"
+            prefHeight="620.0" prefWidth="760.0">
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" style="-fx-background-color: transparent;" styleClass="cards-scroll">
+            <content>
+                <StackPane alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets top="24.0" right="24.0" bottom="24.0" left="24.0" />
+                    </BorderPane.margin>
+
+                    <VBox fx:id="cardAdd" spacing="0" styleClass="add-card" maxWidth="680">
+
+                <!-- ══ HEADER ══ -->
+                <VBox spacing="4" styleClass="add-header">
+                    <Label text="Ajouter une Formation" styleClass="add-title"/>
+                    <Label text="Remplissez les informations ci-dessous" styleClass="subtitle"/>
+                </VBox>
+
+                <!-- Séparateur -->
+                <Region styleClass="add-divider" />
+
+                <!-- ══ FORM GRID ══ -->
+                <GridPane fx:id="formGrid" hgap="14" vgap="18" styleClass="add-grid">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" minWidth="130" prefWidth="148" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+
+                    <!-- LIEU -->
+                    <Label text="Lieu" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                    <HBox spacing="10" alignment="CENTER_LEFT" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                        <TextField fx:id="tfLieu" promptText="ex: Tunis" HBox.hgrow="ALWAYS" styleClass="add-input"/>
+                        <Button fx:id="btnCarte" text="📍 Carte" styleClass="btn-map"/>
+                    </HBox>
+
+                    <!-- TITRE -->
+                    <Label text="Titre" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                    <TextField fx:id="tfTitre" promptText="ex: Java Spring Boot" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="add-input"/>
+
+                    <!-- DESCRIPTION -->
+                    <Label text="Description" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.valignment="TOP">
+                        <GridPane.margin>
+                            <Insets top="14" />
+                        </GridPane.margin>
+                    </Label>
+                    <TextArea fx:id="tfDescription" promptText="Décrivez la formation, ses objectifs, son contenu..." prefRowCount="4" wrapText="true" GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="add-input"/>
+
+                    <!-- DOMAINE -->
+                    <Label text="Domaine" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                    <TextField fx:id="tfDomaine" promptText="ex: Informatique" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="add-input"/>
+
+                    <!-- DATE DÉBUT -->
+                    <Label text="Date début" styleClass="form-label" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                    <DatePicker fx:id="dpDateDebut" GridPane.rowIndex="4" GridPane.columnIndex="1" styleClass="add-input" maxWidth="Infinity"/>
+
+                    <!-- DATE FIN -->
+                    <Label text="Date fin" styleClass="form-label" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                    <DatePicker fx:id="dpDateFin" GridPane.rowIndex="5" GridPane.columnIndex="1" styleClass="add-input" maxWidth="Infinity"/>
+
+                    <!-- PAYANTE -->
+                    <Label text="Payante" styleClass="form-label" GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                    <CheckBox fx:id="cbPayante" text="Formation payante" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+
+                    <!-- PRIX -->
+                    <Label text="Prix" styleClass="form-label" GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                    <TextField fx:id="tfPrix" promptText="ex: 49.99" GridPane.rowIndex="7" GridPane.columnIndex="1" styleClass="add-input"/>
+
+                </GridPane>
+
+                <!-- ══ SÉPARATEUR ACTIONS ══ -->
+                <Region styleClass="add-divider" />
+
+                <!-- ══ BARRE D'ACTIONS ══ -->
+                <HBox fx:id="actionBar" spacing="10" alignment="CENTER_RIGHT" styleClass="action-bar">
+                    <Button fx:id="btnAjouterCour"  text="＋ Ajouter cours"       styleClass="btn-secondary"/>
+                    <Button fx:id="btnAfficher"      text="☰ Afficher Formations"  styleClass="btn-secondary"/>
+                    <Button fx:id="btnAnnuler"       text="✕ Annuler"              styleClass="btn-cancel"/>
+                    <Button fx:id="btnAjouter"       text="💾 Enregistrer"          styleClass="btn-save"/>
+                </HBox>
+
+                <!-- Message retour -->
+                <Label fx:id="lblMessage" styleClass="message-success" text="" />
+
+                    </VBox>
+                </StackPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
