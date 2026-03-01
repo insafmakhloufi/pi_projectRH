@@ -1,0 +1,190 @@
+.cd-root {
+    -primary-color: #2D82B5;
+    -primary-dark: #015C92;
+    -primary-mid: #53A7D8;
+    -primary-soft: #88CDF6;
+    -primary-ice: #BCE6FF;
+
+    -fx-background-color: transparent;
+}
+
+.cd-navbar-spacer {
+    -fx-min-height: 86;
+    -fx-pref-height: 86;
+    -fx-max-height: 86;
+}
+
+.cd-top {
+    -fx-padding: 0;
+}
+
+.cd-banner {
+    -fx-background-color:
+            rgba(255,255,255,0.42),
+            linear-gradient(to bottom right, rgba(188,230,255,0.46), rgba(45,130,181,0.20));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.70);
+    -fx-effect: dropshadow(gaussian, rgba(17,24,39,0.10), 26, 0.18, 0, 12);
+}
+
+.cd-banner > .image-view {
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+}
+
+.cd-banner-overlay {
+    -fx-padding: 16 18 16 18;
+}
+
+.cd-back {
+    -fx-background-color: rgba(255,255,255,0.66);
+    -fx-text-fill: rgba(1,92,146,0.98);
+    -fx-border-color: rgba(45,130,181,0.28);
+    -fx-font-weight: 900;
+    -fx-font-size: 14px;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 6 12;
+    -fx-cursor: hand;
+}
+
+.cd-back:hover {
+    -fx-background-color: rgba(255,255,255,0.78);
+}
+
+.cd-banner-title {
+    -fx-text-fill: rgba(1,92,146,0.96);
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.cd-banner-sub {
+    -fx-text-fill: rgba(15,23,42,0.72);
+    -fx-font-weight: 700;
+}
+
+.cd-scroll,
+.cd-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.cd-shell {
+    -fx-background-color: transparent;
+}
+
+.cd-head {
+    -fx-background-color:
+            rgba(255,255,255,0.42),
+            linear-gradient(to bottom right, rgba(255,255,255,0.58), rgba(188,230,255,0.14));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.65);
+    -fx-effect: dropshadow(gaussian, rgba(17,24,39,0.08), 20, 0.16, 0, 10);
+    -fx-padding: 14;
+}
+
+.cd-avatar {
+    -fx-min-width: 56;
+    -fx-min-height: 56;
+    -fx-background-color: rgba(45,130,181,0.16);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(45,130,181,0.18);
+}
+
+.cd-avatar-text {
+    -fx-text-fill: rgba(1,92,146,0.96);
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+}
+
+.cd-name {
+    -fx-text-fill: rgba(15,23,42,0.95);
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+}
+
+.cd-kpi {
+    -fx-text-fill: rgba(15,23,42,0.78);
+    -fx-font-weight: 800;
+}
+
+.cd-chip {
+    -fx-background-color: rgba(255,255,255,0.55);
+    -fx-text-fill: rgba(1,92,146,0.92);
+    -fx-border-color: rgba(45,130,181,0.18);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 4 10;
+    -fx-font-weight: 800;
+}
+
+.cd-card {
+    -fx-background-color:
+            rgba(255,255,255,0.40),
+            linear-gradient(to bottom right, rgba(255,255,255,0.56), rgba(188,230,255,0.14));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.60);
+    -fx-effect: dropshadow(gaussian, rgba(17,24,39,0.08), 22, 0.16, 0, 10);
+}
+
+.cd-card-title {
+    -fx-text-fill: rgba(1,92,146,0.96);
+    -fx-font-weight: 900;
+}
+
+.cd-muted {
+    -fx-text-fill: rgba(15,23,42,0.62);
+    -fx-font-weight: 700;
+}
+
+.cd-value {
+    -fx-text-fill: rgba(15,23,42,0.86);
+    -fx-font-weight: 800;
+}
+
+.cd-longtext {
+    -fx-text-fill: rgba(15,23,42,0.86);
+    -fx-line-spacing: 2px;
+}
+
+.cd-tabs {
+    -fx-background-color: rgba(255,255,255,0.40);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(45,130,181,0.14);
+    -fx-padding: 3;
+}
+
+.cd-tab-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(1,92,146,0.86);
+    -fx-font-weight: 900;
+    -fx-background-radius: 999;
+    -fx-padding: 6 10;
+    -fx-cursor: hand;
+}
+
+.cd-tab-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.44);
+}
+
+.cd-tab-btn.cd-tab-btn-active {
+    -fx-background-color: rgba(45,130,181,0.92);
+    -fx-text-fill: white;
+}
+
+.cd-btn {
+    -fx-background-color: rgba(45,130,181,0.92);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 12;
+    -fx-padding: 8 12;
+    -fx-cursor: hand;
+}
+
+.cd-btn:hover {
+    -fx-background-color: rgba(1,92,146,0.92);
+}

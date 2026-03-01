@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.User.AjouterController">
+
+    <BorderPane styleClass="auth-root" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+        <left>
+            <StackPane minWidth="420" prefWidth="560" styleClass="auth-hero">
+                <Region styleClass="auth-hero-overlay" />
+                <VBox maxWidth="460" spacing="18" styleClass="auth-hero-inner">
+                    <VBox spacing="8">
+                        <Label styleClass="auth-hero-brand" text="CareerLink" />
+                        <Label styleClass="auth-hero-title" text="Welcome to CareerLink" wrapText="true" />
+                        <Label styleClass="auth-hero-text" text="Create your account and start organizing your recruiting workflow in one place." wrapText="true" />
+                    </VBox>
+
+                    <VBox spacing="12" styleClass="auth-hero-list">
+                        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="auth-hero-item">
+                            <Label styleClass="auth-hero-check" text="✓" />
+                            <Label styleClass="auth-hero-item-text" text="User Management" />
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="auth-hero-item">
+                            <Label styleClass="auth-hero-check" text="✓" />
+                            <Label styleClass="auth-hero-item-text" text="Secure Authentication" />
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="auth-hero-item">
+                            <Label styleClass="auth-hero-check" text="✓" />
+                            <Label styleClass="auth-hero-item-text" text="Dark &amp; Light Mode" />
+                        </HBox>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="auth-hero-slogan-wrap">
+                        <Label styleClass="auth-hero-slogan" text="Build careers. Build teams." wrapText="true" />
+                        <Label styleClass="auth-hero-caption" text="From first application to final offer, CareerLink keeps every step clear, secure, and fast." wrapText="true" />
+                    </VBox>
+                </VBox>
+            </StackPane>
+        </left>
+
+        <center>
+            <StackPane styleClass="auth-form-wrap">
+                <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" pannable="false" styleClass="auth-form-scroll" vbarPolicy="AS_NEEDED">
+                    <VBox fx:id="contentBox" alignment="CENTER" fillWidth="true" styleClass="auth-form-content">
+                        <VBox fillWidth="true" maxWidth="460" spacing="14" styleClass="auth-card">
+
+                            <VBox spacing="6">
+                                <Label styleClass="auth-title" text="Create Account" />
+                                <Label styleClass="auth-subtitle" text="Sign up to manage your HR workflow" />
+                            </VBox>
+
+                            <VBox fillWidth="true" spacing="6">
+                                <Label styleClass="field-label" text="Full Name" />
+                                <TextField fx:id="nameField" maxWidth="Infinity" promptText="Enter full name" />
+                                <Label fx:id="nameError" styleClass="error-label" />
+                            </VBox>
+
+                            <VBox fillWidth="true" spacing="6">
+                                <Label styleClass="field-label" text="Email" />
+                                <TextField fx:id="emailField" maxWidth="Infinity" promptText="you@company.com" />
+                                <Label fx:id="emailError" styleClass="error-label" />
+                            </VBox>
+
+                            <VBox fillWidth="true" spacing="6">
+                                <Label styleClass="field-label" text="Phone" />
+                                <TextField fx:id="phoneField" maxWidth="Infinity" promptText="Enter phone number" />
+                                <Label fx:id="phoneError" styleClass="error-label" />
+                            </VBox>
+
+                            <VBox fillWidth="true" spacing="6">
+                                <Label styleClass="field-label" text="Password" />
+                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                    <StackPane HBox.hgrow="ALWAYS">
+                                        <PasswordField fx:id="passwordField" maxWidth="Infinity" promptText="Create a password" />
+                                        <TextField fx:id="passwordVisibleField" managed="false" maxWidth="Infinity" promptText="Create a password" visible="false" />
+                                    </StackPane>
+                                    <ToggleButton fx:id="showPasswordToggle" focusTraversable="false" styleClass="eye-toggle" text="" />
+                                </HBox>
+                                <Label fx:id="passwordError" styleClass="error-label" />
+                            </VBox>
+
+                            <VBox fillWidth="true" spacing="8">
+                                <Label styleClass="field-label" text="Profile photo" />
+                                <HBox alignment="CENTER_LEFT" spacing="10">
+                                    <Button onAction="#handleChoosePhoto" styleClass="btn-secondary" text="Choose photo" />
+                                    <Label fx:id="photoLabel" styleClass="photo-label" text="No file selected" />
+                                </HBox>
+                                <ImageView fx:id="photoPreview" fitHeight="72" fitWidth="72" preserveRatio="true" styleClass="avatar" />
+                            </VBox>
+
+                            <VBox fillWidth="true" spacing="6">
+                                <Label styleClass="field-label" text="Role" />
+                                <ComboBox fx:id="roleComboBox" maxWidth="Infinity" promptText="Select role" />
+                                <Label fx:id="roleError" styleClass="error-label" />
+                            </VBox>
+
+                            <Label fx:id="successMessage" styleClass="success-label" />
+
+                            <Button maxWidth="Infinity" onAction="#handleSignup" styleClass="btn-primary" text="Create Account" />
+
+                            <HBox alignment="CENTER" spacing="6">
+                                <Label styleClass="muted" text="Already have an account?" />
+                                <Hyperlink onAction="#goToLogin" styleClass="link" text="Login" />
+                            </HBox>
+
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </StackPane>
+        </center>
+
+    </BorderPane>
+   <BorderPane prefHeight="200.0" prefWidth="200.0" />
+</AnchorPane>

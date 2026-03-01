@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.candidature.RH_CandidaturesController"
+            stylesheets="@../csscandidature/wizard_Admin.css"
+            styleClass="rh-page">
+
+    <top>
+        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="rh-topbar">
+            <padding>
+                <Insets top="14" right="18" bottom="14" left="18"/>
+            </padding>
+
+            <Label text="Candidatures" styleClass="rh-page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="tfSearch" promptText="Rechercher (nom, email, ville...)" styleClass="rh-search" prefWidth="340"/>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="14" styleClass="rh-cand-shell">
+            <padding>
+                <Insets top="18" right="18" bottom="18" left="18"/>
+            </padding>
+
+            <VBox prefWidth="360" minWidth="340" spacing="14">
+                <VBox styleClass="rh-cand-detail-card" maxWidth="Infinity" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets top="18" right="18" bottom="18" left="18"/>
+                    </padding>
+
+                    <StackPane maxWidth="Infinity" VBox.vgrow="ALWAYS">
+                        <VBox fx:id="candDetailBox" spacing="14" maxWidth="Infinity">
+                            <VBox spacing="10" maxWidth="Infinity" styleClass="rh-cand-detail-header">
+                                <HBox spacing="12" alignment="CENTER_LEFT">
+                                    <StackPane styleClass="rh-cand-detail-avatar-wrap">
+                                        <Label fx:id="lblDetInitials" text="" styleClass="rh-cand-detail-avatar"/>
+                                    </StackPane>
+                                    <VBox spacing="3" alignment="CENTER_LEFT" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                                        <HBox spacing="8" alignment="CENTER_LEFT">
+                                            <Label text="👤" styleClass="rh-cand-detail-type-ico"/>
+                                            <Label text="Candidat" styleClass="rh-cand-detail-type"/>
+                                        </HBox>
+                                        <Label fx:id="lblDetName" text="" styleClass="rh-cand-detail-name"/>
+                                        <Label fx:id="lblDetRole" text="" styleClass="rh-cand-detail-role"/>
+                                    </VBox>
+                                </HBox>
+                            </VBox>
+
+                            <VBox spacing="10" styleClass="rh-cand-detail-meta">
+                                <Label fx:id="lblDetEmail" text="" styleClass="rh-cand-detail-line" wrapText="true"/>
+                                <Label fx:id="lblDetPhone" text="" styleClass="rh-cand-detail-line" wrapText="true"/>
+                            </VBox>
+
+                            <VBox spacing="8" styleClass="rh-cand-detail-desc">
+                                <Label fx:id="lblDetDesc" text="" wrapText="true" styleClass="rh-cand-detail-desc-text"/>
+                            </VBox>
+
+                            <Region VBox.vgrow="ALWAYS" />
+
+                            <HBox spacing="12" alignment="CENTER_LEFT" styleClass="rh-cand-detail-bottombar">
+                                <HBox spacing="4" alignment="CENTER_LEFT" styleClass="rh-cand-detail-stars">
+                                    <Label text="★" styleClass="rh-star"/>
+                                    <Label text="★" styleClass="rh-star"/>
+                                    <Label text="★" styleClass="rh-star"/>
+                                    <Label text="★" styleClass="rh-star"/>
+                                    <Label text="☆" styleClass="rh-star-off"/>
+                                </HBox>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <HBox spacing="10" alignment="CENTER" styleClass="rh-cand-detail-actions" HBox.hgrow="ALWAYS">
+                                    <Button fx:id="btnDetDetails" text="Voir plus" onAction="#openSelectedDetails" styleClass="rh-btn-secondary" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                                    <Button fx:id="btnDetEntretien" text="Entretien" onAction="#openSelectedEntretien" styleClass="rh-btn-primary" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                                </HBox>
+                            </HBox>
+                        </VBox>
+
+                        <VBox fx:id="candDetailPlaceholder" alignment="CENTER" spacing="12" maxWidth="Infinity" maxHeight="Infinity" styleClass="rh-cand-detail-placeholder">
+                            <StackPane styleClass="rh-cand-detail-placeholder-icon-wrap">
+                                <Label text="👤" styleClass="rh-cand-detail-placeholder-icon"/>
+                            </StackPane>
+                            <Label text="Sélectionnez une candidature&#10;pour voir les détails" styleClass="rh-cand-detail-placeholder-text" wrapText="true"/>
+                        </VBox>
+                    </StackPane>
+                </VBox>
+            </VBox>
+
+            <ScrollPane fx:id="scroll" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="rh-scroll" HBox.hgrow="ALWAYS">
+                <content>
+                    <StackPane styleClass="rh-cards-frame" maxWidth="Infinity">
+                        <GridPane fx:id="cardsGrid" hgap="18" vgap="18" styleClass="rh-cards-wrap" maxWidth="Infinity">
+                            <padding>
+                                <Insets top="18" right="18" bottom="18" left="18"/>
+                            </padding>
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="50" hgrow="ALWAYS" fillWidth="true"/>
+                                <ColumnConstraints percentWidth="50" hgrow="ALWAYS" fillWidth="true"/>
+                            </columnConstraints>
+                        </GridPane>
+                    </StackPane>
+                </content>
+            </ScrollPane>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="14" alignment="CENTER_LEFT" styleClass="rh-cand-stats">
+            <padding>
+                <Insets top="0" right="18" bottom="18" left="18"/>
+            </padding>
+
+            <HBox spacing="12" styleClass="rh-stat-card" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                <Label text="👥" styleClass="rh-stat-ico"/>
+                <VBox spacing="2">
+                    <Label fx:id="lblStatTotal" text="0" styleClass="rh-stat-num"/>
+                    <Label text="Candidatures" styleClass="rh-stat-label"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="12" styleClass="rh-stat-card" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                <Label text="🔎" styleClass="rh-stat-ico"/>
+                <VBox spacing="2">
+                    <Label fx:id="lblStatShown" text="0" styleClass="rh-stat-num"/>
+                    <Label text="Affichées" styleClass="rh-stat-label"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="12" styleClass="rh-stat-card" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                <Label text="✅" styleClass="rh-stat-ico"/>
+                <VBox spacing="2">
+                    <Label fx:id="lblStatConfirmed" text="0" styleClass="rh-stat-num"/>
+                    <Label text="Confirmées" styleClass="rh-stat-label"/>
+                </VBox>
+            </HBox>
+        </HBox>
+    </bottom>
+
+</BorderPane>

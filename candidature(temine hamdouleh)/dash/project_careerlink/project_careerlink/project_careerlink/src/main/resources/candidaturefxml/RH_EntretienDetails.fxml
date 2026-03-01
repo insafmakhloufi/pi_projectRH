@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controllers.candidature.RH_EntretienDetailsController"
+      stylesheets="@../csscandidature/wizard_Admin.css"
+      spacing="14"
+      styleClass="rh-form-shell">
+
+    <padding>
+        <Insets top="18" right="18" bottom="18" left="18"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="rh-cap-header">
+        <padding>
+            <Insets top="16" right="16" bottom="16" left="16"/>
+        </padding>
+        <Label text="▣" styleClass="rh-cap-header-icon"/>
+        <Label text="Détails de l’entretien" styleClass="rh-cap-header-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Retour" onAction="#back" styleClass="rh-btn-ghost"/>
+    </HBox>
+
+    <VBox spacing="14" styleClass="rh-cap-card" maxWidth="Infinity">
+        <padding>
+            <Insets top="18" right="18" bottom="18" left="18"/>
+        </padding>
+
+        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="rh-cap-person-card">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <StackPane prefWidth="46" prefHeight="46" minWidth="46" minHeight="46" maxWidth="46" maxHeight="46" styleClass="rh-cap-avatar">
+                <Circle radius="23" styleClass="rh-cap-avatar-bg"/>
+                <Label fx:id="lblAvatar" text="" styleClass="rh-cap-avatar-text"/>
+            </StackPane>
+
+            <VBox spacing="2" HBox.hgrow="ALWAYS">
+                <Label fx:id="lblCandidat" text="" styleClass="rh-cap-person-name"/>
+                <Label fx:id="lblRole" text="" styleClass="rh-cap-person-role"/>
+            </VBox>
+
+            <HBox spacing="6" alignment="CENTER_RIGHT">
+                <Label fx:id="lblStars" text="★★★★★" styleClass="rh-cap-rating-stars"/>
+                <Label fx:id="lblRating" text="5" styleClass="rh-cap-rating-num"/>
+            </HBox>
+        </HBox>
+
+        <VBox spacing="10" maxWidth="Infinity">
+            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="rh-cap-info-row">
+                <Label text="📅" styleClass="rh-cap-info-ico"/>
+                <Label fx:id="lblDateHeure" text="" styleClass="rh-cap-info-text" wrapText="true"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="rh-cap-info-row">
+                <Label text="🕒" styleClass="rh-cap-info-ico"/>
+                <Label fx:id="lblDuration" text="" styleClass="rh-cap-info-text"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="rh-cap-info-row">
+                <StackPane fx:id="platformIconWrap" styleClass="rh-cap-platform-ico-wrap">
+                    <ImageView fx:id="imgPlatform" fitWidth="16" fitHeight="16" preserveRatio="true" smooth="true" styleClass="rh-cap-platform-ico"/>
+                </StackPane>
+                <Label fx:id="lblPlatform" text="" styleClass="rh-cap-info-text" wrapText="true"/>
+            </HBox>
+        </VBox>
+
+        <VBox spacing="8" maxWidth="Infinity">
+            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="rh-cap-link-row">
+                <TextField fx:id="tfLink" editable="false" focusTraversable="false" promptText="https://..." styleClass="rh-cap-link-field" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btnCopy" text="⧉" onAction="#copyLink" styleClass="rh-cap-link-copy"/>
+            </HBox>
+        </VBox>
+
+        <VBox spacing="8" styleClass="rh-cap-message" maxWidth="Infinity">
+            <Label text="Message" styleClass="rh-cap-section-title"/>
+            <Label fx:id="lblNotes" text="" styleClass="rh-cap-message-text" wrapText="true"/>
+        </VBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="rh-cap-footer">
+            <Button text="Supprimer" onAction="#delete" styleClass="rh-cap-btn-danger" fx:id="btnDelete"/>
+            <Button text="Modifier" onAction="#edit" styleClass="rh-cap-btn-secondary" fx:id="btnEdit"/>
+            <Button text="Fermer" onAction="#back" styleClass="rh-cap-btn-primary" fx:id="btnClose"/>
+        </HBox>
+    </VBox>
+
+</VBox>

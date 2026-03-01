@@ -1,0 +1,1312 @@
+
+/*
+.root {
+    -fx-font-family: "Segoe UI", "Inter", Arial;
+    -fx-background-color: linear-gradient(to bottom right, #0B1F44, #123B7A, #0B2E62);
+}
+*/
+.dash-root, .dash-center, .dash-content-area {
+    -fx-background-color: transparent;
+}
+
+/*xzsxzxdz*/
+.scroll-pane, .scroll-pane .viewport, .scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+.center-wrap{
+    -fx-padding: 18;
+}
+.center-scroll{
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.center-scroll .viewport{
+    -fx-background-color: transparent;
+}
+
+/* NAVBAR */
+.nav-bar{
+    -fx-background-color: white;
+    -fx-border-color: rgba(0,0,0,0.06);
+    -fx-border-width: 0 0 1 0;
+}
+.app-title{
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0F172A;
+}
+.nav-search{
+    -fx-pref-width: 280;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #E2E8F0;
+    -fx-padding: 8 12 8 12;
+    -fx-background-color: #FFFFFF;
+}
+.nav-icon-btn{
+    -fx-background-color: #F1F5F9;
+    -fx-background-radius: 12;
+    -fx-font-weight: 800;
+    -fx-padding: 8 12 8 12;
+}
+
+/* SIDEBAR */
+.side-bar{
+    -fx-background-color: white;
+    -fx-border-color: rgba(0,0,0,0.06);
+    -fx-border-width: 0 1 0 0;
+    -fx-pref-width: 240;
+}
+.side-title{
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748B;
+    -fx-font-weight: 800;
+}
+.side-btn{
+    -fx-background-color: transparent;
+    -fx-text-fill: #0F172A;
+    -fx-font-weight: 700;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 12 10 12;
+    -fx-background-radius: 12;
+}
+.side-btn:hover{ -fx-background-color: #EFF6FF; }
+.side-btn-active{
+    -fx-background-color: #DBEAFE;
+    -fx-text-fill: #1D4ED8;
+}
+.side-btn.danger{ -fx-text-fill: #DC2626; }
+
+/* ==== WIZARD SHELL ==== */
+.wizard-shell{
+    -fx-background-color:
+            radial-gradient(center 22% 18%, radius 70%, rgba(37,99,235,0.18), transparent),
+            radial-gradient(center 82% 20%, radius 60%, rgba(14,165,233,0.14), transparent),
+            linear-gradient(to bottom right, #F6FAFF, #F0F7FF, #EDF3FF);
+    -fx-background-radius: 24;
+    -fx-border-radius: 24;
+    -fx-border-color: rgba(15,23,42,0.06);
+}
+
+/* Force wizard theme even if other stylesheets override generic classes */
+.wizard-shell .wizard-card{
+    -fx-background-color:
+            rgba(255,255,255,0.94),
+            linear-gradient(to bottom right, rgba(255,255,255,0.96), rgba(219,234,254,0.60));
+    -fx-border-color: rgba(15,23,42,0.08);
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.12), 22, 0.20, 0, 10);
+}
+.wizard-shell .form-card{
+    -fx-background-color:
+            rgba(255,255,255,0.96),
+            linear-gradient(to bottom right, rgba(255,255,255,0.98), rgba(219,234,254,0.55));
+    -fx-border-color: rgba(15,23,42,0.08);
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.12), 26, 0.20, 0, 12);
+}
+.wizard-shell .field-input{
+    -fx-background-color: rgba(255,255,255,0.98);
+    -fx-border-color: rgba(15,23,42,0.12);
+    -fx-text-fill: rgba(15,23,42,0.92);
+    -fx-prompt-text-fill: rgba(15,23,42,0.40);
+}
+.wizard-shell .field-input:focused{
+    -fx-border-color: rgba(59,130,246,0.55);
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.18), 18, 0.25, 0, 6);
+}
+.wizard-shell .hero-title,
+.wizard-shell .form-title{
+    -fx-text-fill: #0F172A;
+}
+.wizard-shell .hero-subtitle,
+.wizard-shell .form-subtitle{
+    -fx-text-fill: rgba(15,23,42,0.66);
+}
+.wizard-shell .field-caption{
+    -fx-text-fill: rgba(15,23,42,0.72);
+}
+
+/* ==== DASHBOARD (floating) ==== */
+.dash-root{
+    -fx-background-color: linear-gradient(to bottom right, #0B1F44, #123B7A, #0B2E62);
+}
+
+.dash-center{
+    -fx-background-color: transparent;
+}
+
+.dash-scroll{
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.dash-scroll .viewport{
+    -fx-background-color: transparent;
+}
+
+.dash-scroll .corner{
+    -fx-background-color: transparent;
+}
+
+.dash-scroll .scroll-bar{
+    -fx-background-color: transparent;
+}
+
+/*.dash-content-card{
+    -fx-background-color: rgba(11, 31, 68, 0.45);
+    -fx-background-radius: 26;
+    -fx-border-radius: 26;
+    -fx-border-color: rgba(255,255,255,0.16);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 34, 0.28, 0, 16);
+}
+*/
+.dash-content-card{
+    -fx-background-color: transparent;   /* plus de rectangle */
+    -fx-border-color: transparent;
+    -fx-effect: null;
+    -fx-padding: 0;                      /* important */
+}
+
+.dash-content-area{
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.side-bar-float{
+    -fx-background-color: rgba(255,255,255,0.14);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.22);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 26, 0.25, 0, 12);
+    -fx-min-width: 70;
+    -fx-pref-width: 70;
+}
+
+.side-ico-btn{
+    -fx-min-width: 44;
+    -fx-min-height: 44;
+    -fx-max-width: 44;
+    -fx-max-height: 44;
+    -fx-background-radius: 14;
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.side-ico-btn:hover{
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-border-color: rgba(255,255,255,0.28);
+}
+
+.side-ico-active{
+    -fx-background-color: rgba(78,168,255,0.30);
+    -fx-border-color: rgba(78,168,255,0.55);
+    -fx-effect: dropshadow(gaussian, rgba(78,168,255,0.25), 18, 0.25, 0, 8);
+}
+
+.side-ico-danger{
+    -fx-background-color: rgba(239,68,68,0.18);
+    -fx-border-color: rgba(239,68,68,0.35);
+}
+
+/* Generic card */
+.wizard-card{
+    -fx-background-color:
+            rgba(255,255,255,0.94),
+            linear-gradient(to bottom right, rgba(255,255,255,0.96), rgba(219,234,254,0.60));
+    -fx-background-radius: 18, 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(15,23,42,0.08);
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.12), 22, 0.20, 0, 10);
+}
+
+/* Header styles */
+.hero-icon{
+    -fx-min-width: 56;
+    -fx-min-height: 56;
+    -fx-max-width: 56;
+    -fx-max-height: 56;
+    -fx-background-radius: 16;
+    -fx-background-color: rgba(241,245,249,0.95);
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(15,23,42,0.08);
+}
+.hero-icon-text{ -fx-font-size: 20px; }
+.hero-title{
+    -fx-font-size: 26px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0F172A;
+}
+.hero-subtitle{
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(15,23,42,0.66);
+    -fx-font-weight: 600;
+}
+
+/* Runner bar */
+.track-line-2{
+    -fx-background-radius: 999;
+    -fx-background-color: rgba(15,23,42,0.10);
+}
+.progress-line-2{
+    -fx-background-radius: 999;
+    -fx-background-color: linear-gradient(to right, #0EA5E9, #3B82F6, #2563EB);
+}
+
+/* Steps */
+.steps-card{
+    -fx-background-color:
+            rgba(255,255,255,0.94),
+            linear-gradient(to bottom right, rgba(255,255,255,0.96), rgba(226,232,240,0.55));
+}
+.step-icon{
+    -fx-min-width: 54;
+    -fx-min-height: 54;
+    -fx-max-width: 54;
+    -fx-max-height: 54;
+    -fx-background-radius: 18;
+    -fx-background-color: rgba(241,245,249,0.95);
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(15,23,42,0.10);
+}
+.step-icon-text{
+    -fx-font-size: 18px;
+    -fx-text-fill: rgba(15,23,42,0.86);
+    -fx-font-weight: 900;
+}
+.step-label{
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(15,23,42,0.56);
+    -fx-font-weight: 700;
+}
+.step-item.active .step-icon{
+    -fx-background-color: rgba(219,234,254,0.95);
+    -fx-border-color: rgba(37,99,235,0.38);
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.16), 18, 0.24, 0, 8);
+}
+.step-item.active .step-label{
+    -fx-text-fill: rgba(15,23,42,0.90);
+}
+
+/* ==== FORM CARD ==== */
+.form-card{
+    -fx-background-color:
+            rgba(255,255,255,0.96),
+            linear-gradient(to bottom right, rgba(255,255,255,0.98), rgba(219,234,254,0.55));
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(15,23,42,0.08);
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.12), 26, 0.20, 0, 12);
+}
+
+
+
+/* inside form header */
+.form-badge{
+    -fx-min-width: 44;
+    -fx-min-height: 44;
+    -fx-max-width: 44;
+    -fx-max-height: 44;
+    -fx-background-radius: 999;
+    -fx-background-color: rgba(219,234,254,0.90);
+}
+.form-badge-text{
+    -fx-text-fill: rgba(30,64,175,0.92);
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+.form-title{
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0F172A;
+}
+.form-subtitle{
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(15,23,42,0.64);
+    -fx-font-weight: 600;
+}
+
+.field-caption{
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(15,23,42,0.72);
+    -fx-font-weight: 700;
+}
+
+/* inputs */
+.field-input{
+    -fx-background-color: rgba(255,255,255,0.98);
+    -fx-border-color: rgba(15,23,42,0.12);
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+    -fx-padding: 12 14 12 14;
+    -fx-text-fill: rgba(15,23,42,0.92);
+    -fx-prompt-text-fill: rgba(15,23,42,0.40);
+}
+.text-area .content{
+    -fx-background-color: rgba(255,255,255,0.98);
+    -fx-background-radius: 14;
+}
+.field-input:focused{
+    -fx-border-color: rgba(59,130,246,0.55);
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.18), 18, 0.25, 0, 6);
+}
+
+.field-invalid{
+    -fx-border-color: #EF4444;
+    -fx-effect: dropshadow(gaussian, rgba(239,68,68,0.25), 14, 0.22, 0, 3);
+}
+
+.validation-tooltip{
+    -fx-background-color: rgba(15, 23, 42, 0.96);
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 12px;
+}
+
+/* buttons */
+.btn-primary{
+    -fx-background-color: linear-gradient(to right, #0EA5E9, #3B82F6, #2563EB);
+    -fx-text-fill: white;
+    -fx-font-weight: 800;
+    -fx-background-radius: 12;
+    -fx-padding: 10 18 10 18;
+}
+.btn-primary:hover{
+    -fx-background-color: linear-gradient(to right, #0284C7, #2563EB, #1D4ED8);
+}
+.btn-primary:pressed{
+    -fx-background-color: linear-gradient(to right, #0369A1, #1D4ED8, #1E40AF);
+}
+.btn-primary:disabled{
+    -fx-opacity: 0.65;
+}
+.btn-secondary{
+    -fx-background-color: rgba(241,245,249,0.95);
+    -fx-text-fill: rgba(15,23,42,0.88);
+    -fx-font-weight: 800;
+    -fx-background-radius: 12;
+    -fx-padding: 10 18 10 18;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(15,23,42,0.10);
+}
+.btn-secondary:hover{
+    -fx-background-color: rgba(226,232,240,0.95);
+    -fx-border-color: rgba(15,23,42,0.14);
+}
+.btn-secondary:pressed{
+    -fx-background-color: rgba(203,213,225,0.95);
+}
+.btn-secondary:disabled{
+    -fx-opacity: 0.65;
+}
+
+.review-text{
+    -fx-font-size: 13px;
+    -fx-text-fill: rgba(15,23,42,0.72);
+}
+.exp-card{
+    -fx-background-color:
+            rgba(255,255,255,0.96),
+            linear-gradient(to bottom right, rgba(255,255,255,0.98), rgba(219,234,254,0.50));
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(15,23,42,0.08);
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.10), 18, 0.20, 0, 8);
+}
+
+.exp-title{
+    -fx-font-size: 13px;
+    -fx-font-weight: 900;
+    -fx-text-fill: rgba(15,23,42,0.86);
+}
+
+.exp-remove{
+    -fx-background-color: transparent;
+    -fx-text-fill: #DC2626;
+    -fx-font-weight: 800;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(220,38,38,0.25);
+    -fx-padding: 6 10 6 10;
+}
+
+.exp-remove:hover{
+    -fx-background-color: rgba(220,38,38,0.08);
+}
+
+.btn-outline-add{
+    -fx-background-color: transparent;
+    -fx-text-fill: #10B981;
+    -fx-font-weight: 900;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(16,185,129,0.65);
+    -fx-padding: 10 18 10 18;
+}
+.btn-outline-add:hover{
+    -fx-background-color: rgba(16,185,129,0.08);
+}
+/* ===== Upload box ===== */
+.upload-box{
+    -fx-background-color:
+            rgba(255,255,255,0.96),
+            linear-gradient(to bottom right, rgba(255,255,255,0.98), rgba(219,234,254,0.50));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(15,23,42,0.08);
+    -fx-padding: 18;
+}
+
+.upload-text{
+    -fx-font-size: 14px;
+    -fx-font-weight: 800;
+    -fx-text-fill: rgba(15,23,42,0.86);
+}
+
+.upload-hint{
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(15,23,42,0.62);
+    -fx-font-weight: 600;
+}
+.phone-code{
+    -fx-pref-width: 170;
+}
+.separator .line{
+    -fx-background-color: rgba(15,23,42,0.10);
+}
+.date-picker .arrow-button{
+    -fx-background-color: rgba(241,245,249,0.95);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(15,23,42,0.10);
+}
+.date-picker .arrow-button:hover{
+    -fx-background-color: rgba(226,232,240,0.95);
+}
+.combo-box .arrow-button{
+    -fx-background-color: rgba(241,245,249,0.95);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(15,23,42,0.10);
+}
+.combo-box .arrow-button:hover{
+    -fx-background-color: rgba(226,232,240,0.95);
+}
+.date-picker-popup, .context-menu{
+    -fx-background-color: rgba(255,255,255,0.98);
+    -fx-border-color: rgba(15,23,42,0.10);
+}
+.radio-button .text {
+    -fx-opacity: 1;
+    -fx-fill: rgba(15,23,42,0.86);
+}
+.check-box .text {
+    -fx-opacity: 1;
+    -fx-fill: rgba(15,23,42,0.86);
+}
+/* ===== Mes candidatures cards ===== */
+/* ====== CANDIDATURE CARDS (pro) ====== */
+.cand-card{
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(15,23,42,0.08);
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 20, 0.22, 0, 8);
+}
+
+.cand-card:hover{
+    -fx-border-color: rgba(16,185,129,0.35);
+    -fx-effect: dropshadow(gaussian, rgba(16,185,129,0.20), 22, 0.25, 0, 10);
+}
+
+.cand-header{
+    -fx-alignment: CENTER_LEFT;
+}
+
+.cand-avatar{
+    -fx-min-width: 44;
+    -fx-min-height: 44;
+    -fx-max-width: 44;
+    -fx-max-height: 44;
+    -fx-alignment: CENTER;
+    -fx-background-radius: 14;
+    -fx-background-color: #EEF2FF;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(0,0,0,0.06);
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+}
+
+.cand-title{
+    -fx-font-size: 15px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0F172A;
+}
+
+.cand-subtitle{
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748B;
+    -fx-font-weight: 600;
+}
+
+.cand-muted{
+    -fx-font-size: 12px;
+    -fx-text-fill: #475569;
+    -fx-font-weight: 600;
+}
+
+.cand-pills{
+    -fx-alignment: CENTER_LEFT;
+}
+
+.cand-pill{
+    -fx-background-color: #F1F5F9;
+    -fx-text-fill: #0F172A;
+    -fx-font-weight: 800;
+    -fx-font-size: 11px;
+    -fx-padding: 8 10 8 10;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(0,0,0,0.08);
+}
+
+/* ====== Icon buttons (edit/delete) ====== */
+.icon-btn{
+    -fx-background-color: #F1F5F9;
+    -fx-background-radius: 12;
+    -fx-font-weight: 900;
+    -fx-padding: 8 10 8 10;
+    -fx-cursor: hand;
+}
+
+.icon-btn:hover{
+    -fx-background-color: #E2E8F0;
+}
+
+.icon-btn-edit:hover{
+    -fx-background-color: rgba(16,185,129,0.12);
+}
+
+.icon-btn-danger{
+    -fx-background-color: rgba(220,38,38,0.10);
+    -fx-text-fill: #DC2626;
+}
+
+.icon-btn-danger:hover{
+    -fx-background-color: rgba(220,38,38,0.16);
+}
+
+/* ====== Details button same theme ====== */
+.cand-btn{
+    -fx-background-color: #10B981;
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 14;
+    -fx-padding: 10 14 10 14;
+}
+
+.cand-btn:hover{
+    -fx-effect: dropshadow(gaussian, rgba(16,185,129,0.25), 18, 0.25, 0, 6);
+}
+
+
+.admin-rail-text{
+    -fx-max-width: Infinity;
+    -fx-text-overrun: clip;  /* pas ... */
+}
+
+.mes-cand-page{
+    -fx-background-color:
+            linear-gradient(to bottom right, #0B1F44, #123B7A, #0B2E62),
+            linear-gradient(from 10% 20% to 80% 90%, rgba(78,168,255,0.14), rgba(78,168,255,0.00));
+    -fx-background-insets: 0, 0;
+}
+
+.mes-cand-page .wizard-card{
+    -fx-background-color:
+            rgba(11,31,68,0.55),
+            linear-gradient(to bottom right, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 18, 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.14);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.34), 26, 0.26, 0, 12);
+}
+
+.mes-cand-page .hero-title{
+    -fx-text-fill: rgba(255,255,255,0.95);
+}
+
+.mes-cand-page .field-input{
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-prompt-text-fill: rgba(255,255,255,0.55);
+}
+
+.mes-cand-page .field-input:focused{
+    -fx-border-color: rgba(78,168,255,0.85);
+    -fx-effect: dropshadow(gaussian, rgba(78,168,255,0.22), 18, 0.25, 0, 6);
+}
+
+ .mes-cand-page .mes-cand-search-wrap{
+     -fx-alignment: CENTER_RIGHT;
+ }
+
+ .mes-cand-page .mes-cand-search{
+     -fx-background-radius: 999;
+     -fx-border-radius: 999;
+     -fx-padding: 10 16 10 16;
+ }
+
+ .mes-cand-page .mes-cand-search-btn{
+     -fx-min-width: 38;
+     -fx-min-height: 38;
+     -fx-max-width: 38;
+     -fx-max-height: 38;
+     -fx-background-radius: 999;
+     -fx-border-radius: 999;
+     -fx-background-color:
+             linear-gradient(to bottom, #2E9BFF, #1E6BFF);
+     -fx-text-fill: white;
+     -fx-font-weight: 900;
+     -fx-cursor: hand;
+     -fx-effect:
+             dropshadow(gaussian, rgba(46,155,255,0.35), 18, 0.28, 0, 0),
+             dropshadow(gaussian, rgba(0,0,0,0.28), 14, 0.25, 0, 6);
+ }
+
+ .mes-cand-page .mes-cand-search-btn:hover{
+     -fx-background-color:
+             linear-gradient(to bottom, #3AA8FF, #1F74FF);
+ }
+
+.mes-cand-page .center-scroll,
+.mes-cand-page .center-scroll .viewport,
+.mes-cand-page .scroll-pane,
+.mes-cand-page .scroll-pane .viewport{
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.mes-cand-page .cand-card{
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255,255,255,0.16);
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.32), 22, 0.25, 0, 10);
+}
+
+.mes-cand-page .mes-cand-card{
+    -fx-background-color:
+            rgba(12,30,70,0.68),
+            linear-gradient(to bottom right, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 20, 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(120,190,255,0.55);
+    -fx-padding: 16;
+    -fx-effect:
+            dropshadow(gaussian, rgba(100,170,255,0.34), 26, 0.28, 0, 0),
+            dropshadow(gaussian, rgba(0,0,0,0.40), 24, 0.26, 0, 12);
+    -fx-min-height: 160;
+}
+
+.mes-cand-page .cand-card:hover{
+    -fx-border-color: rgba(78,168,255,0.40);
+    -fx-effect: dropshadow(gaussian, rgba(78,168,255,0.20), 24, 0.25, 0, 12);
+}
+
+.mes-cand-page .mes-cand-card:hover{
+    -fx-border-color: rgba(120,200,255,0.75);
+    -fx-effect:
+            dropshadow(gaussian, rgba(120,200,255,0.44), 30, 0.30, 0, 0),
+            dropshadow(gaussian, rgba(0,0,0,0.42), 26, 0.28, 0, 12);
+}
+
+.mes-cand-page .cand-avatar{
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-text-fill: rgba(255,255,255,0.92);
+}
+
+.mes-cand-page .mes-cand-avatar{
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-text-fill: rgba(255,255,255,0.92);
+}
+
+.mes-cand-page .cand-title{
+    -fx-text-fill: rgba(255,255,255,0.96);
+}
+
+.mes-cand-page .mes-cand-title{
+    -fx-text-fill: rgba(255,255,255,0.96);
+    -fx-font-size: 15px;
+    -fx-font-weight: 900;
+}
+
+.mes-cand-page .cand-subtitle,
+.mes-cand-page .cand-muted{
+    -fx-text-fill: rgba(255,255,255,0.72);
+}
+
+.mes-cand-page .mes-cand-subtitle,
+.mes-cand-page .mes-cand-muted{
+    -fx-text-fill: rgba(255,255,255,0.72);
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+
+.mes-cand-page .mes-cand-value{
+    -fx-text-fill: rgba(255,255,255,0.95);
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.mes-cand-page .cand-pill{
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-border-color: rgba(255,255,255,0.16);
+    -fx-text-fill: rgba(255,255,255,0.88);
+}
+
+.mes-cand-page .mes-cand-pill{
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-border-color: rgba(255,255,255,0.14);
+    -fx-text-fill: rgba(255,255,255,0.90);
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+    -fx-padding: 8 10 8 10;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+.mes-cand-page .mes-cand-status-pill{
+    -fx-padding: 7 10 7 10;
+}
+
+.mes-cand-page .mes-cand-status-traite{
+    -fx-background-color: rgba(40,190,140,0.18);
+    -fx-border-color: rgba(80,230,175,0.55);
+    -fx-text-fill: rgba(210,255,240,0.96);
+}
+
+.mes-cand-page .mes-cand-status-non{
+    -fx-background-color: rgba(255,180,40,0.16);
+    -fx-border-color: rgba(255,205,80,0.55);
+    -fx-text-fill: rgba(255,244,210,0.96);
+}
+
+ .mes-cand-page .center-scroll .scroll-bar:vertical{
+     -fx-background-color: transparent;
+     -fx-pref-width: 10;
+ }
+
+ .mes-cand-page .center-scroll .scroll-bar:vertical .track{
+     -fx-background-color: rgba(255,255,255,0.08);
+     -fx-background-radius: 999;
+ }
+
+ .mes-cand-page .center-scroll .scroll-bar:vertical .thumb{
+     -fx-background-color: rgba(255,255,255,0.28);
+     -fx-background-radius: 999;
+ }
+
+ .mes-cand-page .center-scroll .scroll-bar:vertical .thumb:hover{
+     -fx-background-color: rgba(255,255,255,0.36);
+ }
+
+ .mes-cand-page .center-scroll .scroll-bar .increment-button,
+ .mes-cand-page .center-scroll .scroll-bar .decrement-button{
+     -fx-padding: 0;
+     -fx-background-color: transparent;
+ }
+
+.mes-cand-page .icon-btn{
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-border-color: rgba(255,255,255,0.14);
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.mes-cand-page .mes-cand-icon-btn{
+    -fx-background-color:
+            rgba(255,255,255,0.92),
+            linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(225,232,245,0.92));
+    -fx-background-insets: 0, 0;
+    -fx-text-fill: rgba(10,20,40,0.92);
+    -fx-border-color: rgba(160,175,205,0.55);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 6 10 6 10;
+    -fx-font-weight: 900;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 10, 0.22, 0, 3);
+}
+
+.mes-cand-page .mes-cand-icon-btn:hover{
+    -fx-background-color:
+            rgba(255,255,255,0.96),
+            linear-gradient(to bottom, rgba(255,255,255,1.00), rgba(215,228,250,0.95));
+    -fx-border-color: rgba(120,190,255,0.65);
+}
+
+.mes-cand-page .mes-cand-icon-btn-edit:hover{
+    -fx-border-color: rgba(120,190,255,0.75);
+    -fx-effect:
+            dropshadow(gaussian, rgba(120,190,255,0.28), 14, 0.25, 0, 3),
+            dropshadow(gaussian, rgba(0,0,0,0.16), 10, 0.22, 0, 3);
+}
+
+.mes-cand-page .mes-cand-icon-btn-danger{
+    -fx-background-color:
+            rgba(255,235,235,0.96),
+            linear-gradient(to bottom, rgba(255,245,245,1.00), rgba(255,220,220,0.95));
+    -fx-text-fill: rgba(140,25,25,0.92);
+    -fx-border-color: rgba(240,120,120,0.55);
+}
+
+.mes-cand-page .mes-cand-icon-btn-danger:hover{
+    -fx-border-color: rgba(255,140,140,0.70);
+    -fx-effect:
+            dropshadow(gaussian, rgba(255,140,140,0.22), 14, 0.25, 0, 3),
+            dropshadow(gaussian, rgba(0,0,0,0.16), 10, 0.22, 0, 3);
+}
+
+.mes-cand-page .mes-cand-actions{
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.mes-cand-page .icon-btn:hover{
+    -fx-background-color: rgba(255,255,255,0.16);
+}
+
+.mes-cand-page .icon-btn-danger{
+    -fx-background-color: rgba(239,68,68,0.18);
+    -fx-text-fill: rgba(255,255,255,0.92);
+}
+
+.mes-cand-page .icon-btn-danger:hover{
+    -fx-background-color: rgba(239,68,68,0.24);
+}
+
+.mes-cand-page .cand-btn{
+    -fx-background-color: #4EA8FF;
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 14;
+}
+
+.mes-cand-page .mes-cand-btn{
+    -fx-background-color:
+            rgba(255,255,255,0.30),
+            linear-gradient(to bottom, rgba(245,248,255,0.92), rgba(205,216,240,0.92));
+    -fx-background-insets: 0, 0;
+    -fx-text-fill: rgba(10,20,45,0.88);
+    -fx-font-weight: 900;
+    -fx-background-radius: 12, 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(140,170,225,0.55);
+    -fx-padding: 10 14 10 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.26), 16, 0.24, 0, 6);
+}
+
+.mes-cand-page .cand-btn:hover{
+    -fx-background-color: #3C9CFF;
+    -fx-effect: dropshadow(gaussian, rgba(78,168,255,0.25), 18, 0.25, 0, 6);
+}
+
+.mes-cand-page .mes-cand-btn:hover{
+    -fx-border-color: rgba(140,190,255,0.75);
+    -fx-effect:
+            dropshadow(gaussian, rgba(130,190,255,0.20), 18, 0.25, 0, 2),
+            dropshadow(gaussian, rgba(0,0,0,0.28), 16, 0.24, 0, 6);
+}
+
+.content-area .wizard-shell,
+.content-area .page-root,
+.content-area .mes-cand-page,
+.content-area .center-shell,
+.content-area .center-panel {
+    -fx-background-color: transparent;
+}
+
+.content-area .wizard-card,
+.content-area .form-card,
+.content-area .mes-cand-card,
+.content-area .center-panel-head {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: rgba(0,0,0,0.06);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.05), 12, 0, 0, 6);
+}
+
+.content-area .hero-title,
+.content-area .mes-cand-title,
+.content-area .panel-title,
+.content-area .form-title {
+    -fx-text-fill: #111827;
+}
+
+.content-area .hero-subtitle,
+.content-area .mes-cand-muted,
+.content-area .field-caption,
+.content-area .form-subtitle {
+    -fx-text-fill: #6b7280;
+}
+
+.content-area .mes-cand-value,
+.content-area .mes-cand-line {
+    -fx-text-fill: #374151;
+}
+
+.content-area .btn-primary,
+.content-area .panel-add-btn {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.content-area .btn-secondary,
+.content-area .mes-cand-btn,
+.content-area .mes-cand-icon-btn {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #111827;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI Emoji";
+    -fx-font-size: 14px;
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(0,0,0,0.10);
+    -fx-border-radius: 20;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-effect: null;
+}
+
+.content-area .field-input,
+.content-area .panel-search {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: rgba(0,0,0,0.12);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10 12;
+    -fx-text-fill: #111827;
+    -fx-prompt-text-fill: #9ca3af;
+}
+
+.content-area .text-field,
+.content-area .text-area,
+.content-area .combo-box-base,
+.content-area .date-picker,
+.content-area .password-field {
+    -fx-text-fill: #111827;
+    -fx-prompt-text-fill: #9ca3af;
+}
+
+.content-area .text-area .content {
+    -fx-background-color: transparent;
+}
+
+.content-area .panel-scroll,
+.content-area .panel-scroll > .viewport,
+.content-area .panel-scroll .content,
+.content-area .scroll-pane,
+.content-area .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ===== DETAILS: tabs + textarea (motivation / skills) ===== */
+.mes-cand-page .details-tab{
+    -fx-background-color:
+            rgba(10,22,52,0.65),
+            linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    -fx-background-insets: 0, 0;
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-weight: 900;
+    -fx-padding: 8 12 8 12;
+    -fx-border-color: rgba(120,190,255,0.35);
+    -fx-border-width: 1.1;
+    -fx-cursor: hand;
+}
+
+.mes-cand-page .details-tab-left{
+    -fx-background-radius: 12 0 0 12, 12 0 0 12;
+    -fx-border-radius: 12 0 0 12;
+}
+
+.mes-cand-page .details-tab-right{
+    -fx-background-radius: 0 12 12 0, 0 12 12 0;
+    -fx-border-radius: 0 12 12 0;
+}
+
+.mes-cand-page .details-tab:hover{
+    -fx-border-color: rgba(140,200,255,0.65);
+    -fx-effect: dropshadow(gaussian, rgba(120,200,255,0.18), 16, 0.25, 0, 2);
+}
+
+.mes-cand-page .details-tab:selected{
+    -fx-background-color:
+            rgba(46,155,255,0.22),
+            linear-gradient(to bottom, rgba(46,155,255,0.42), rgba(30,107,255,0.22));
+    -fx-text-fill: rgba(255,255,255,0.96);
+    -fx-border-color: rgba(120,200,255,0.90);
+    -fx-effect:
+            dropshadow(gaussian, rgba(46,155,255,0.22), 18, 0.25, 0, 0),
+            dropshadow(gaussian, rgba(0,0,0,0.28), 12, 0.25, 0, 6);
+}
+
+.mes-cand-page .details-textarea{
+    -fx-background-color: transparent;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(120,190,255,0.40);
+    -fx-border-width: 1.1;
+    -fx-padding: 10;
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-prompt-text-fill: rgba(255,255,255,0.55);
+    -fx-font-weight: 600;
+}
+
+.mes-cand-page .details-textarea,
+.mes-cand-page .details-textarea .scroll-pane,
+.mes-cand-page .details-textarea .viewport{
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.mes-cand-page .details-textarea .content{
+    -fx-background-color:
+            rgba(8,18,40,0.50),
+            linear-gradient(to bottom right, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 14, 14;
+}
+
+.mes-cand-page .details-textarea .scroll-pane .content{
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.mes-cand-page .details-textarea:focused{
+    -fx-border-color: rgba(120,200,255,0.80);
+    -fx-effect: dropshadow(gaussian, rgba(120,200,255,0.20), 18, 0.25, 0, 4);
+}
+/* ===== CENTER PANEL (like the capture) ===== */
+.center-shell{
+    -fx-background-color: transparent;
+}
+
+.center-panel{
+    -fx-background-color:
+            rgba(12,30,70,0.62),
+            linear-gradient(to bottom right, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 26, 26;
+    -fx-border-radius: 26;
+    -fx-border-color: rgba(120,190,255,0.26);
+    -fx-border-width: 1.1;
+    -fx-effect:
+            dropshadow(gaussian, rgba(120,200,255,0.12), 28, 0.28, 0, 0),
+            dropshadow(gaussian, rgba(0,0,0,0.45), 34, 0.28, 0, 18);
+    -fx-padding: 18;
+}
+
+/* header inside panel */
+.center-panel-head{
+    -fx-background-color:
+            rgba(255,255,255,0.06),
+            linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 18, 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-padding: 14 16 14 16;
+}
+
+.panel-title{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(255,255,255,0.95);
+}
+
+/* search */
+.panel-search{
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-border-color: rgba(255,255,255,0.16);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 10 16 10 16;
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-prompt-text-fill: rgba(255,255,255,0.55);
+}
+
+.panel-search:focused{
+    -fx-border-color: rgba(120,200,255,0.70);
+    -fx-effect: dropshadow(gaussian, rgba(120,200,255,0.22), 18, 0.25, 0, 6);
+}
+
+.panel-search-btn{
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-max-width: 40;
+    -fx-max-height: 40;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-background-color: linear-gradient(to bottom, #2E9BFF, #1E6BFF);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect:
+            dropshadow(gaussian, rgba(46,155,255,0.30), 18, 0.28, 0, 0),
+            dropshadow(gaussian, rgba(0,0,0,0.30), 14, 0.25, 0, 6);
+}
+
+.panel-search-btn:hover{
+    -fx-background-color: linear-gradient(to bottom, #3AA8FF, #1F74FF);
+}
+
+.panel-add-btn{
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 10 14 10 14;
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-weight: 900;
+    -fx-cursor: hand;
+}
+
+.panel-add-btn:hover{
+    -fx-background-color: rgba(46,155,255,0.22);
+    -fx-border-color: rgba(120,200,255,0.50);
+    -fx-effect: dropshadow(gaussian, rgba(120,200,255,0.20), 16, 0.25, 0, 6);
+}
+
+/* scroll inside panel */
+.panel-scroll,
+.panel-scroll .viewport{
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+.panel-scroll .corner{
+    -fx-background-color: transparent;
+}
+/* ===== CARD GLASS (exact look) ===== */
+.mes-cand-card{
+    -fx-background-color:
+            rgba(12,30,70,0.68),
+            linear-gradient(to bottom right, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 20, 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(120,190,255,0.55);
+    -fx-padding: 16;
+    -fx-min-height: 165;
+    -fx-effect:
+            dropshadow(gaussian, rgba(100,170,255,0.34), 26, 0.28, 0, 0),
+            dropshadow(gaussian, rgba(0,0,0,0.40), 24, 0.26, 0, 12);
+}
+
+.mes-cand-card:hover{
+    -fx-border-color: rgba(120,200,255,0.75);
+    -fx-effect:
+            dropshadow(gaussian, rgba(120,200,255,0.44), 30, 0.30, 0, 0),
+            dropshadow(gaussian, rgba(0,0,0,0.42), 26, 0.28, 0, 12);
+}
+
+/* avatar */
+.mes-cand-avatar{
+    -fx-min-width: 44;
+    -fx-min-height: 44;
+    -fx-max-width: 44;
+    -fx-max-height: 44;
+    -fx-alignment: CENTER;
+    -fx-background-radius: 14;
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+}
+
+/* texts */
+.mes-cand-title{
+    -fx-text-fill: rgba(255,255,255,0.96);
+    -fx-font-size: 15px;
+    -fx-font-weight: 900;
+}
+.mes-cand-subtitle{
+    -fx-text-fill: rgba(255,255,255,0.72);
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+.mes-cand-line{
+    -fx-text-fill: rgba(255,255,255,0.78);
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+
+/* small icon used in lines */
+.mes-cand-ico{
+    -fx-text-fill: rgba(255,255,255,0.82);
+    -fx-font-size: 12px;
+}
+
+/* actions buttons (edit/delete) */
+.mes-cand-icon-btn{
+    -fx-background-color: rgba(255,255,255,0.92);
+    -fx-text-fill: black;   /* ðŸ”¥ IMPORTANT */
+    -fx-border-color: rgba(160,175,205,0.55);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-font-weight: 900;
+}
+
+.mes-cand-icon-btn:hover{
+    -fx-border-color: rgba(120,190,255,0.65);
+}
+.mes-cand-icon-btn-danger{
+    -fx-background-color:
+            rgba(255,235,235,0.96),
+            linear-gradient(to bottom, rgba(255,245,245,1.00), rgba(255,220,220,0.95));
+    -fx-text-fill: rgba(140,25,25,0.92);
+    -fx-border-color: rgba(240,120,120,0.55);
+}
+.mes-cand-icon-btn-danger:hover{
+    -fx-border-color: rgba(255,140,140,0.70);
+}
+
+/* details button (glass like capture) */
+.mes-cand-btn{
+    -fx-background-color:
+            rgba(255,255,255,0.30),
+            linear-gradient(to bottom, rgba(245,248,255,0.92), rgba(205,216,240,0.92));
+    -fx-background-insets: 0, 0;
+    -fx-text-fill: rgba(10,20,45,0.88);
+    -fx-font-weight: 900;
+    -fx-background-radius: 12, 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(140,170,225,0.55);
+    -fx-padding: 10 14 10 14;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.26), 16, 0.24, 0, 6);
+}
+.mes-cand-btn:hover{
+    -fx-border-color: rgba(140,190,255,0.75);
+    -fx-effect:
+            dropshadow(gaussian, rgba(130,190,255,0.20), 18, 0.25, 0, 2),
+            dropshadow(gaussian, rgba(0,0,0,0.28), 16, 0.24, 0, 6);
+}

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.Dashboard.Dashboard_Front"
+            stylesheets="@../Dashboardcss/style.css"
+            prefWidth="1200.0" prefHeight="800.0" style="-fx-background-color: #001D39;">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox fx:id="sidebar" styleClass="sidebar" prefWidth="80.0" maxWidth="250.0" minWidth="80.0" alignment="TOP_CENTER" spacing="15.0"
+              onMouseEntered="#handleSidebarEntered" onMouseExited="#handleSidebarExited">
+            <padding>
+                <Insets top="30.0" bottom="30.0" left="10.0" />
+            </padding>
+
+            <!-- Logo -->
+            <Circle radius="20.0" fill="WHITE" opacity="0.9" />
+
+            <VBox spacing="10.0" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+                <!-- Dashboard Icon -->
+                <Button fx:id="btnDashboard" styleClass="sidebar-button" text="Home" maxWidth="Infinity" onAction="#handleDashboard">
+                    <graphic>
+                        <SVGPath content="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" styleClass="sidebar-icon"/>
+                    </graphic>
+                </Button>
+
+                <!-- Candidature Icon -->
+                <Button fx:id="btnCandidature" styleClass="sidebar-button" text="Candidature" maxWidth="Infinity" onAction="#handleCandidature">
+                    <graphic>
+                        <SVGPath content="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" styleClass="sidebar-icon"/>
+                    </graphic>
+                </Button>
+
+                <!-- Offre Icon -->
+                <Button fx:id="btnOffre" styleClass="sidebar-button" text="Offre" maxWidth="Infinity" onAction="#handleOffre">
+                    <graphic>
+                        <SVGPath content="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h18c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" styleClass="sidebar-icon"/>
+                    </graphic>
+                </Button>
+
+                <!-- Evenement Icon -->
+                <Button fx:id="btnEvenement" styleClass="sidebar-button" text="Evenement" maxWidth="Infinity" onAction="#handleEvenement">
+                    <graphic>
+                        <SVGPath content="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z" styleClass="sidebar-icon"/>
+                    </graphic>
+                </Button>
+
+                <!-- Formations Icon -->
+                <Button fx:id="btnFormations" styleClass="sidebar-button" text="Formations" maxWidth="Infinity" onAction="#handleFormations">
+                    <graphic>
+                        <SVGPath content="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" styleClass="sidebar-icon"/>
+                    </graphic>
+                </Button>
+                
+                <!-- Test Icon -->
+                 <Button fx:id="btnTest" styleClass="sidebar-button" text="Test" maxWidth="Infinity" onAction="#handleTest">
+                    <graphic>
+                        <SVGPath content="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" styleClass="sidebar-icon"/>
+                    </graphic>
+                </Button>
+            </VBox>
+
+            <!-- Bottom User Profile / Logout -->
+            <VBox spacing="10.0" alignment="BOTTOM_CENTER">
+                 <!-- Log Out Icon -->
+                 <Button fx:id="btnLogout" styleClass="sidebar-button" text="Log out" maxWidth="Infinity" onAction="#handleLogout">
+                    <graphic>
+                        <SVGPath content="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" styleClass="sidebar-icon"/>
+                    </graphic>
+                </Button>
+            </VBox>
+
+        </VBox>
+    </left>
+
+    <!-- Center Content -->
+    <center>
+        <StackPane fx:id="contentArea" id="contentArea" styleClass="content-area">
+            <BorderPane.margin>
+                <Insets top="10.0" right="10.0" bottom="10.0" left="0.0"/>
+            </BorderPane.margin>
+
+            <StackPane fx:id="pageContainer" id="pageContainer" />
+
+            <StackPane styleClass="floating-nav" StackPane.alignment="TOP_CENTER"
+                       pickOnBounds="false"
+                       minHeight="56.0" prefHeight="56.0" maxHeight="56.0">
+                <StackPane.margin>
+                    <Insets top="18.0" />
+                </StackPane.margin>
+
+                <Circle radius="26.0" styleClass="floating-nav-notch"
+                        StackPane.alignment="TOP_LEFT" mouseTransparent="true" />
+
+                <HBox styleClass="floating-nav-content" alignment="CENTER_LEFT"
+                      spacing="14.0" prefWidth="560.0" prefHeight="56.0"
+                      minHeight="56.0" maxHeight="56.0" StackPane.alignment="TOP_CENTER">
+                    <padding>
+                        <Insets top="12.0" right="16.0" bottom="12.0" left="18.0" />
+                    </padding>
+                    <TextField fx:id="navSearch" promptText="Search..." styleClass="floating-search" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnNavNotif" styleClass="floating-nav-btn" text="" focusTraversable="false">
+                        <graphic>
+                            <SVGPath content="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6V11c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5S10.5 3.17 10.5 4v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" styleClass="floating-nav-icon"/>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="btnNavSettings" styleClass="floating-nav-btn" text="" focusTraversable="false">
+                        <graphic>
+                            <SVGPath content="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.11-.2-.36-.28-.57-.2l-2.39.96c-.5-.38-1.04-.69-1.63-.93L14.5 2h-4l-.38 2.38c-.59.24-1.13.55-1.63.93l-2.39-.96c-.21-.08-.46 0-.57.2L3.61 7.87c-.11.2-.06.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.73 14.52c-.18.14-.23.41-.12.61l1.92 3.32c.11.2.36.28.57.2l2.39-.96c.5.38 1.04.69 1.63.93L10.5 22h4l.38-2.38c.59-.24 1.13-.55 1.63-.93l2.39.96c.21.08.46 0 .57-.2l1.92-3.32c.11-.2.06-.47-.12-.61l-2.03-1.58zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" styleClass="floating-nav-icon"/>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="btnNavProfile" styleClass="floating-nav-btn" text="" focusTraversable="false">
+                        <graphic>
+                            <SVGPath content="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" styleClass="floating-nav-icon"/>
+                        </graphic>
+                    </Button>
+                </HBox>
+            </StackPane>
+
+            <!-- COPILOTE VOCAL - en bas à gauche -->
+            <fx:include fx:id="copiloteVocal"
+                        source="/candidaturefxml/CopiloteVocal.fxml"
+                        StackPane.alignment="BOTTOM_RIGHT"/>
+
+        </StackPane>
+    </center>
+
+</BorderPane>

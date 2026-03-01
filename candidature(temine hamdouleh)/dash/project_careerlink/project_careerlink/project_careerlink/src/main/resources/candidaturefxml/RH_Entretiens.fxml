@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.candidature.RH_EntretiensController"
+            stylesheets="@../csscandidature/wizard_Admin.css"
+            styleClass="rh-page">
+
+    <top>
+        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="rh-topbar">
+            <padding>
+                <Insets top="14" right="18" bottom="14" left="18"/>
+            </padding>
+            <Label text="Planning hebdomadaire" styleClass="rh-page-title"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fx:id="centerScroll" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="rh-scroll">
+            <content>
+                <HBox spacing="10" styleClass="rh-week-shell">
+                    <padding>
+                        <Insets top="18" right="18" bottom="18" left="18"/>
+                    </padding>
+
+                    <VBox spacing="14" prefWidth="320" minWidth="300" styleClass="rh-week-left">
+                        <VBox spacing="14" styleClass="rh-week-left-card">
+                            <padding>
+                                <Insets top="18" right="18" bottom="18" left="18"/>
+                            </padding>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label fx:id="lblMonth" text="" styleClass="rh-week-month"/>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Button text="‹" onAction="#prevMonth" styleClass="rh-week-nav"/>
+                                <Button text="›" onAction="#nextMonth" styleClass="rh-week-nav"/>
+                            </HBox>
+
+                            <GridPane fx:id="calendarGrid" hgap="8" vgap="8" maxWidth="Infinity" styleClass="rh-mini-cal"/>
+
+                            <DatePicker fx:id="dpFilter" styleClass="rh-field" maxWidth="Infinity"/>
+                        </VBox>
+
+                        <VBox spacing="14" styleClass="rh-week-left-card">
+                            <padding>
+                                <Insets top="18" right="18" bottom="18" left="18"/>
+                            </padding>
+
+                            <Label text="Entretien" styleClass="rh-week-section-title"/>
+
+                            <StackPane maxWidth="Infinity" VBox.vgrow="ALWAYS">
+                                <VBox fx:id="entretienDetailsBox" spacing="14" maxWidth="Infinity">
+                                    <VBox spacing="6">
+                                        <Label fx:id="lblSelName" text="Sélectionnez un entretien" styleClass="rh-week-person"/>
+                                        <Label fx:id="lblSelSub" text="" styleClass="rh-week-role" wrapText="true"/>
+                                    </VBox>
+
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label text="⏱" styleClass="rh-muted"/>
+                                        <Label fx:id="lblSelTime" text="" styleClass="rh-week-time"/>
+                                    </HBox>
+
+                                    <Button fx:id="btnSelDetails" text="👁  Voir détails" onAction="#openSelectedDetails" styleClass="rh-week-btn" maxWidth="Infinity"/>
+                                    <Button fx:id="btnSelEdit" text="✎  Modifier" onAction="#editSelected" styleClass="rh-week-btn" maxWidth="Infinity"/>
+                                    <Button fx:id="btnSelDelete" text="🗑  Supprimer" onAction="#deleteSelected" styleClass="rh-week-btn-danger" maxWidth="Infinity"/>
+                                </VBox>
+
+                                <VBox fx:id="entretienPlaceholder" alignment="CENTER" spacing="12" maxWidth="Infinity" maxHeight="Infinity" styleClass="rh-ent-placeholder">
+                                    <StackPane styleClass="rh-ent-placeholder-icon-wrap">
+                                        <Label text="⏱" styleClass="rh-ent-placeholder-icon"/>
+                                    </StackPane>
+                                    <Label text="Sélectionnez un entretien&#10;pour voir les détails" styleClass="rh-ent-placeholder-text" wrapText="true"/>
+                                </VBox>
+                            </StackPane>
+                        </VBox>
+                    </VBox>
+
+                    <VBox spacing="14" prefWidth="780" minWidth="520" maxWidth="Infinity" VBox.vgrow="ALWAYS">
+                        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="rh-week-header">
+                            <padding>
+                                <Insets top="18" right="18" bottom="18" left="18"/>
+                            </padding>
+                            <Button text="‹" onAction="#prevWeek" styleClass="rh-week-nav"/>
+                            <Label fx:id="lblWeekRange" text="" styleClass="rh-week-range"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Button text="›" onAction="#nextWeek" styleClass="rh-week-nav"/>
+                        </HBox>
+
+
+                        <!-- <GridPane fx:id="weekGrid" hgap="12" vgap="12" styleClass="rh-week-grid" maxWidth="Infinity"/> -->
+                         <StackPane maxWidth="Infinity">
+                             <GridPane fx:id="weekGrid" hgap="12" vgap="12" styleClass="rh-week-grid" maxWidth="Infinity"/>
+
+                             <Label fx:id="lblBlueTitle"
+                                    text="Planning de la semaine"
+                                    styleClass="rh-week-grid-title"
+                                    StackPane.alignment="TOP_CENTER"
+                                    translateY="18"/>
+                         </StackPane>
+
+                         <VBox fx:id="listBox" managed="false" visible="false"/>
+                         <Label fx:id="lblSummary" managed="false" visible="false"/>
+                         <ComboBox fx:id="cbCandidat" managed="false" visible="false"/>
+                     </VBox>
+                 </HBox>
+             </content>
+         </ScrollPane>
+     </center>
+
+ </BorderPane>

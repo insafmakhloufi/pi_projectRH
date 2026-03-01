@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.candidature.RH_CandidatureDetailsController"
+            stylesheets="@../csscandidature/wizard_Admin.css"
+            styleClass="rh-page rh-cand-details-page">
+
+    <top>
+        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="rh-topbar">
+            <padding>
+                <Insets top="14" right="18" bottom="14" left="18"/>
+            </padding>
+
+            <Button text="←" onAction="#goBack" styleClass="rh-btn-ghost"/>
+            <VBox spacing="2" HBox.hgrow="ALWAYS">
+                <Label fx:id="lblTitle" text="Détails candidature" styleClass="rh-page-title"/>
+                <Label fx:id="lblSubtitle" text="" styleClass="rh-muted"/>
+            </VBox>
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="btnOpenFiles" text="Pièces jointes" onAction="#openPieces" styleClass="rh-btn-secondary"/>
+                <Button fx:id="btnOpenVideo" text="Vidéo" onAction="#openVideo" styleClass="rh-btn-secondary"/>
+                <Button fx:id="btnEntretien" text="Entretien" onAction="#openEntretien" styleClass="rh-btn-primary"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="rh-scroll rh-cand-details-scroll">
+            <content>
+                <VBox spacing="14" styleClass="rh-cand-details-shell" maxWidth="1200" alignment="TOP_CENTER">
+                    <padding>
+                        <Insets top="18" right="18" bottom="18" left="18"/>
+                    </padding>
+
+                    <HBox spacing="14" styleClass="rh-cand-details-head" maxWidth="Infinity">
+                        <StackPane styleClass="rh-cand-details-avatar">
+                            <Label fx:id="lblInitials" text="" styleClass="rh-cand-details-avatar-text"/>
+                        </StackPane>
+
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label fx:id="lblName" text="" styleClass="rh-cand-details-name"/>
+                            <HBox spacing="8" alignment="CENTER_LEFT">
+                                <Label fx:id="chipConfirmed" text="Infos confirmées" styleClass="rh-chip-neutral"/>
+                                <Label fx:id="chipPrivacy" text="Privacy acceptée" styleClass="rh-chip-neutral"/>
+                            </HBox>
+                        </VBox>
+
+                        <VBox spacing="6" alignment="CENTER_RIGHT">
+                            <Label fx:id="lblEmail" text="" styleClass="rh-cand-details-kpi"/>
+                            <Label fx:id="lblPhone" text="" styleClass="rh-cand-details-kpi"/>
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="14" maxWidth="Infinity">
+                        <VBox spacing="12" prefWidth="380" minWidth="340" styleClass="rh-card" VBox.vgrow="NEVER">
+                            <padding>
+                                <Insets top="16" right="16" bottom="16" left="16"/>
+                            </padding>
+
+                            <Label text="Profil" styleClass="rh-card-title"/>
+
+                            <GridPane hgap="12" vgap="10" styleClass="rh-cand-details-grid" maxWidth="Infinity">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="42"/>
+                                    <ColumnConstraints percentWidth="58"/>
+                                </columnConstraints>
+
+                                <Label text="Adresse" styleClass="rh-muted" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <Label fx:id="lblAdresse" text="" wrapText="true" styleClass="rh-cand-details-value" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Ville" styleClass="rh-muted" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <Label fx:id="lblVille" text="" wrapText="true" styleClass="rh-cand-details-value" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Naissance" styleClass="rh-muted" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <Label fx:id="lblBirth" text="" wrapText="true" styleClass="rh-cand-details-value" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="Diplôme" styleClass="rh-muted" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                <Label fx:id="lblDegree" text="" wrapText="true" styleClass="rh-cand-details-value" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                                <Label text="Institution" styleClass="rh-muted" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                                <Label fx:id="lblInstitution" text="" wrapText="true" styleClass="rh-cand-details-value" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                            </GridPane>
+                        </VBox>
+
+                        <VBox spacing="12" styleClass="rh-card" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                            <padding>
+                                <Insets top="16" right="16" bottom="16" left="16"/>
+                            </padding>
+
+                            <TabPane styleClass="rh-cand-details-tabs" tabClosingPolicy="UNAVAILABLE" maxWidth="Infinity">
+                                <tabs>
+                                    <Tab text="Lettre de motivation">
+                                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="rh-scroll">
+                                            <content>
+                                                <Label fx:id="lblMotivation" text="" wrapText="true" styleClass="rh-cand-details-longtext"/>
+                                            </content>
+                                        </ScrollPane>
+                                    </Tab>
+                                    <Tab text="Compétences">
+                                        <VBox spacing="10">
+                                            <FlowPane fx:id="skillsWrap" hgap="8" vgap="8"/>
+                                            <Label fx:id="lblSkillsRaw" text="" wrapText="true" styleClass="rh-muted"/>
+                                        </VBox>
+                                    </Tab>
+                                </tabs>
+                            </TabPane>
+                        </VBox>
+                    </HBox>
+
+                    <VBox spacing="12" styleClass="rh-card" maxWidth="Infinity">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16"/>
+                        </padding>
+                        <Label text="Expériences" styleClass="rh-card-title"/>
+                        <VBox fx:id="experiencesBox" spacing="10"/>
+                        <Label fx:id="lblNoExperiences" text="Aucune expérience." styleClass="rh-muted"/>
+                    </VBox>
+
+                    <VBox spacing="12" styleClass="rh-card" maxWidth="Infinity">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16"/>
+                        </padding>
+                        <Label text="Certifications" styleClass="rh-card-title"/>
+                        <VBox fx:id="certificationsBox" spacing="10"/>
+                        <Label fx:id="lblNoCertifications" text="Aucune certification." styleClass="rh-muted"/>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,155 @@
+/* =====================================================================
+   analyse-ia.css  –  JavaFX Stylesheet
+   Placer dans : src/main/resources/csscandidature/analyse-ia.css
+   ===================================================================== */
+
+.root {
+    -fx-background-color: #F0F2F5;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ── Top bar ─── */
+.top-bar {
+    -fx-background-color: white;
+    -fx-padding: 12 24 12 24;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 0 0 1 0;
+}
+.top-bar-title { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #111827; }
+
+/* ── Boutons ─── */
+.btn-retour {
+    -fx-background-color: white;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 8; -fx-background-radius: 8;
+    -fx-font-size: 14px; -fx-cursor: hand;
+    -fx-padding: 8 16 8 16; -fx-text-fill: #374151;
+}
+.btn-retour:hover { -fx-background-color: #F9FAFB; -fx-border-color: #9CA3AF; }
+
+.btn-telecharger {
+    -fx-background-color: #EFF6FF; -fx-text-fill: #3B82F6;
+    -fx-border-color: #BFDBFE;
+    -fx-border-radius: 8; -fx-background-radius: 8;
+    -fx-font-size: 13px; -fx-cursor: hand; -fx-padding: 10 16 10 16;
+}
+.btn-telecharger:hover { -fx-background-color: #DBEAFE; }
+
+ .btn-link {
+     -fx-background-color: transparent;
+     -fx-text-fill: #3B82F6;
+     -fx-font-weight: bold;
+     -fx-padding: 0 6;
+     -fx-cursor: hand;
+ }
+ .btn-link:hover { -fx-underline: true; }
+
+/* ── Cards ─── */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 12, 0, 0, 2);
+}
+
+/* ── Titres ─── */
+.section-title { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #111827; }
+.card-title    { -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #374151; }
+
+/* ── Score ─── */
+.score-value { -fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #111827; }
+.score-check { -fx-font-size: 24px; -fx-text-fill: #10B981; }
+
+/* ── Labels ─── */
+.label-muted  { -fx-font-size: 13px; -fx-text-fill: #6B7280; }
+.label-body   { -fx-font-size: 13px; -fx-text-fill: #374151; }
+.label-bold   { -fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #374151; }
+.label-green  { -fx-text-fill: #10B981; }
+.label-orange { -fx-text-fill: #F59E0B; }
+.label-red    { -fx-text-fill: #EF4444; }
+
+/* ── Pourcentages ─── */
+.pct-green  { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #10B981; }
+.pct-orange { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #F59E0B; }
+.pct-red    { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #EF4444; }
+
+/* ── Progress bars VERT ─── */
+.progress-bar-green { -fx-pref-height: 10px; }
+.progress-bar-green .bar {
+    -fx-background-color: linear-gradient(to right, #34D399, #10B981);
+    -fx-background-radius: 8; -fx-background-insets: 0;
+}
+.progress-bar-green .track {
+    -fx-background-color: #E5E7EB;
+    -fx-background-radius: 8; -fx-background-insets: 0;
+}
+
+/* ── Progress bars ORANGE ─── */
+.progress-bar-orange { -fx-pref-height: 10px; }
+.progress-bar-orange .bar {
+    -fx-background-color: linear-gradient(to right, #FCD34D, #F59E0B);
+    -fx-background-radius: 8; -fx-background-insets: 0;
+}
+.progress-bar-orange .track {
+    -fx-background-color: #E5E7EB;
+    -fx-background-radius: 8; -fx-background-insets: 0;
+}
+
+/* ── Progress bars ROUGE ─── */
+.progress-bar-red { -fx-pref-height: 10px; }
+.progress-bar-red .bar {
+    -fx-background-color: linear-gradient(to right, #FCA5A5, #EF4444);
+    -fx-background-radius: 8; -fx-background-insets: 0;
+}
+.progress-bar-red .track {
+    -fx-background-color: #E5E7EB;
+    -fx-background-radius: 8; -fx-background-insets: 0;
+}
+
+/* ── Badge manquant ─── */
+.badge-missing {
+    -fx-background-color: #FEE2E2; -fx-text-fill: #EF4444;
+    -fx-font-size: 11px; -fx-background-radius: 6; -fx-padding: 2 8 2 8;
+}
+
+/* ── Candidat ─── */
+.candidat-nom         { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #111827; }
+.candidat-prenom      { -fx-font-size: 15px; -fx-text-fill: #6B7280; }
+.candidat-avatar-bg   { -fx-fill: #DBEAFE; }
+.candidat-avatar-text { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #3B82F6; }
+
+/* ── Divers ─── */
+.link-analyse         { -fx-font-size: 13px; -fx-text-fill: #3B82F6; -fx-font-weight: bold; }
+.legend-label         { -fx-font-size: 12px; -fx-text-fill: #6B7280; }
+.recommandation-arrow { -fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #374151; }
+.point-ameliorer-text { -fx-font-size: 13px; -fx-text-fill: #374151; }
+.top3-label           { -fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #111827; }
+.top3-sub             { -fx-font-size: 12px; -fx-text-fill: #6B7280; }
+.separator            { -fx-opacity: 0.4; }
+
+/* ── Listes DB (Expérience / Certifications) ─── */
+.db-row {
+    -fx-padding: 2 0 2 0;
+}
+
+/* ── Compétences ✓/✗ ─── */
+.competence-sign {
+    -fx-min-width: 18px;
+    -fx-alignment: CENTER;
+}
+
+/* ── ScrollPane ─── */
+.scroll-pane { -fx-background-color: transparent; -fx-background: #F0F2F5; }
+.scroll-pane > .viewport { -fx-background-color: transparent; }
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent; -fx-pref-width: 6px;
+}
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #D1D5DB; -fx-background-radius: 4;
+}
+.scroll-pane .scroll-bar:vertical .track,
+.scroll-pane .scroll-bar:vertical .increment-button,
+.scroll-pane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent; -fx-pref-height: 0; -fx-opacity: 0;
+}
+.scroll-pane .scroll-bar:horizontal { -fx-opacity: 0; -fx-pref-height: 0; }

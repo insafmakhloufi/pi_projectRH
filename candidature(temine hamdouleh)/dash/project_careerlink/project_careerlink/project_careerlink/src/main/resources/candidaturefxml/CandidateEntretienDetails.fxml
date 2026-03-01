@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.candidature.CandidateEntretienDetailsController"
+            stylesheets="@../csscandidature/candidate_entretien_details.css"
+            styleClass="ced-root">
+
+    <top>
+        <Region styleClass="ced-navbar-spacer" />
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="ced-scroll">
+            <content>
+                <StackPane alignment="TOP_CENTER">
+                    <VBox spacing="14" styleClass="ced-shell" maxWidth="1100" alignment="TOP_CENTER" fillWidth="true">
+                        <padding>
+                            <Insets top="18" right="0" bottom="18" left="0" />
+                        </padding>
+
+                        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="ced-header" minWidth="1100" prefWidth="1100" maxWidth="1100">
+                            <Button text="←" onAction="#onBack" styleClass="ced-back" />
+                            <VBox spacing="2" HBox.hgrow="ALWAYS">
+                                <Label text="Détails de l’entretien" styleClass="ced-title" />
+                                <Label fx:id="lblSubtitle" text="" styleClass="ced-subtitle" wrapText="true" />
+                            </VBox>
+                            <Label fx:id="chipStatus" text="" styleClass="ced-chip" />
+                        </HBox>
+
+                        <HBox spacing="14" minWidth="1100" prefWidth="1100" maxWidth="1100">
+                            <VBox spacing="12" styleClass="ced-card" HBox.hgrow="ALWAYS">
+                                <Label text="Planning" styleClass="ced-card-title" />
+
+                                <HBox spacing="10" alignment="CENTER_LEFT" styleClass="ced-row">
+                                    <Label text="📅" styleClass="ced-ico" />
+                                    <Label fx:id="lblDate" text="-" styleClass="ced-val" wrapText="true" />
+                                </HBox>
+
+                                <HBox spacing="10" alignment="CENTER_LEFT" styleClass="ced-row">
+                                    <Label text="🕒" styleClass="ced-ico" />
+                                    <Label fx:id="lblTime" text="-" styleClass="ced-val" />
+                                </HBox>
+
+                                <Separator />
+
+                                <HBox spacing="10" alignment="CENTER_LEFT" styleClass="ced-row">
+                                    <Label text="🧭" styleClass="ced-ico" />
+                                    <Label fx:id="lblMode" text="-" styleClass="ced-val" wrapText="true" />
+                                </HBox>
+
+                                <HBox spacing="10" alignment="CENTER_LEFT" styleClass="ced-row">
+                                    <Label text="📍" styleClass="ced-ico" />
+                                    <Label fx:id="lblPlace" text="-" styleClass="ced-val" wrapText="true" />
+                                </HBox>
+                            </VBox>
+
+                            <VBox spacing="12" styleClass="ced-card" HBox.hgrow="ALWAYS">
+                                <Label text="Lien" styleClass="ced-card-title" />
+
+                                <HBox spacing="10" alignment="CENTER_LEFT" styleClass="ced-row">
+                                    <TextField fx:id="tfLink" editable="false" focusTraversable="false" promptText="Aucun lien" styleClass="ced-link" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="btnCopy" text="⧉" onAction="#onCopyLink" styleClass="ced-copy" />
+                                </HBox>
+
+                                <Label text="Notes" styleClass="ced-card-title" />
+                                <TextArea fx:id="taNotes" editable="false" wrapText="true" styleClass="ced-notes" />
+                            </VBox>
+                        </HBox>
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT" minWidth="1100" prefWidth="1100" maxWidth="1100">
+                            <Button text="Fermer" onAction="#onBack" styleClass="ced-primary" />
+                        </HBox>
+
+                    </VBox>
+                </StackPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

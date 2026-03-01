@@ -1,0 +1,224 @@
+/* ============================================
+   CONTRAT FORM - CSS
+   Thème : Bleu/Violet matching sidebar
+   ============================================ */
+
+/* Background général */
+.main-scroll {
+    -fx-background: #f1f5f9;
+    -fx-background-color: #f1f5f9;
+}
+
+.main-scroll > .viewport {
+    -fx-background-color: #f1f5f9;
+}
+
+.scroll-pane {
+    -fx-background: #f1f5f9;
+    -fx-background-color: #f1f5f9;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #f1f5f9;
+}
+
+/* ---- SECTIONS CARDS ---- */
+.form-section {
+    -fx-background-color: white;
+    -fx-background-radius: 16px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 16px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 24px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 12, 0, 0, 3);
+}
+
+/* ---- TITRES SECTIONS ---- */
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3730a3;
+    -fx-border-color: transparent transparent #e0e7ff transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-padding: 0 0 10 0;
+}
+
+/* ---- LABELS ---- */
+.field-caption {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+    -fx-padding: 0 0 2 0;
+}
+
+/* ---- INPUTS TEXTE ---- */
+.field-input {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1e293b;
+    -fx-pref-height: 40px;
+}
+
+.field-input:focused {
+    -fx-border-color: #4f46e5;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(79,70,229,0.18), 8, 0, 0, 0);
+}
+
+.field-input:disabled {
+    -fx-background-color: #f1f5f9;
+    -fx-border-color: #e2e8f0;
+    -fx-text-fill: #475569;
+    -fx-opacity: 1;
+}
+
+/* ---- COMBOBOX ---- */
+.combo-box.field-input {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 1.5px;
+    -fx-pref-height: 40px;
+}
+
+.combo-box.field-input:focused {
+    -fx-border-color: #4f46e5;
+}
+
+.combo-box.field-input .list-cell {
+    -fx-font-size: 13px;
+    -fx-text-fill: #1e293b;
+    -fx-background-color: transparent;
+    -fx-padding: 6 10;
+}
+
+.combo-box.field-input .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box.field-input .arrow {
+    -fx-background-color: #64748b;
+}
+
+/* ---- DATEPICKER ---- */
+.date-picker.field-input {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 1.5px;
+    -fx-pref-height: 40px;
+}
+
+.date-picker.field-input:focused {
+    -fx-border-color: #4f46e5;
+}
+
+.date-picker.field-input .date-picker-display-node {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1e293b;
+    -fx-padding: 8 10;
+}
+
+.date-picker.field-input .arrow-button {
+    -fx-background-color: transparent;
+}
+
+/* ---- BOUTON RETOUR ---- */
+.btn-retour {
+    -fx-background-color: white;
+    -fx-border-color: #c7d2fe;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-width: 1.5px;
+    -fx-text-fill: #4f46e5;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+}
+
+.btn-retour:hover {
+    -fx-background-color: #ede9fe;
+    -fx-border-color: #a5b4fc;
+}
+
+/* ---- BOUTON GENERER ---- */
+.btn-generer {
+    -fx-background-color: #4f46e5;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 28;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(79,70,229,0.4), 10, 0, 0, 4);
+}
+
+.btn-generer:hover {
+    -fx-background-color: #4338ca;
+    -fx-effect: dropshadow(gaussian, rgba(79,70,229,0.55), 14, 0, 0, 5);
+}
+
+.btn-generer:pressed {
+    -fx-background-color: #3730a3;
+    -fx-effect: none;
+}
+
+/* ---- LABEL ERREUR ---- */
+.error-label {
+    -fx-text-fill: #ef4444;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* ---- HEADER TITLE ---- */
+.header-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+/* ---- BARRE DE SCROLL ---- */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: #f1f5f9;
+    -fx-pref-width: 8px;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #c7d2fe;
+    -fx-background-radius: 4px;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #a5b4fc;
+}
+
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .increment-button,
+.scroll-pane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-pref-height: 0;
+}
+
+/* REMPLACE PAR */
+.date-picker:disabled .arrow-button {
+    -fx-opacity: 0.4;
+}
+
+.date-picker .arrow-button {
+    -fx-cursor: hand;
+    -fx-opacity: 1.0;
+}

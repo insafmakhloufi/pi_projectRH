@@ -1,0 +1,109 @@
+/* ============================================
+   COPILOTE VOCAL - CSS
+   ============================================ */
+
+/* Bouton flottant */
+.copilote-fab {
+    -fx-cursor: hand;
+}
+
+.copilote-fab-circle {
+    -fx-effect: dropshadow(gaussian, rgba(79,70,229,0.5), 16, 0, 0, 4);
+}
+
+.copilote-fab:hover .copilote-fab-circle {
+    -fx-fill: #4338ca;
+    -fx-effect: dropshadow(gaussian, rgba(79,70,229,0.7), 20, 0, 0, 6);
+}
+
+/* Popup */
+.copilote-popup {
+    -fx-background-color: white;
+    -fx-background-radius: 16px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 16px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 16px;
+    -fx-pref-width: 320px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0, 0, 6);
+}
+
+/* Header popup */
+.copilote-popup-header {
+    -fx-border-color: transparent transparent #e2e8f0 transparent;
+    -fx-border-width: 0 0 1.5 0;
+    -fx-padding: 0 0 10 0;
+}
+
+.copilote-popup-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.copilote-close-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-padding: 2 6;
+}
+
+.copilote-close-btn:hover {
+    -fx-text-fill: #ef4444;
+}
+
+/* Zone transcript */
+.copilote-transcript-box {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 10px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+}
+
+.copilote-transcript-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #1e293b;
+    -fx-font-style: italic;
+}
+
+/* Statut */
+.copilote-statut {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4f46e5;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+/* Bouton micro dans popup */
+.copilote-mic-wrapper {
+    -fx-cursor: hand;
+}
+
+.copilote-mic-circle {
+    -fx-effect: dropshadow(gaussian, rgba(79,70,229,0.4), 10, 0, 0, 3);
+}
+
+.copilote-mic-wrapper:hover .copilote-mic-circle {
+    -fx-fill: #4338ca;
+}
+
+/* Exemples */
+.copilote-examples {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+}
+
+.copilote-label-small {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+}
+
+.copilote-example-item {
+    -fx-font-size: 11px;
+    -fx-text-fill: #475569;
+}
