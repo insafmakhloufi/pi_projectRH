@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane prefHeight="703.0" prefWidth="1147.0" styleClass="page" stylesheets="@../Formation/appAdmin.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Formation.AfficherFormation">
+
+    <center>
+        <HBox spacing="20">
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </BorderPane.margin>
+
+            <!-- ══ MAIN CARD ══ -->
+            <VBox styleClass="main-card" HBox.hgrow="ALWAYS">
+
+                <!-- TOP BAR -->
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="topbar">
+                    <Button fx:id="btnRetour" mnemonicParsing="false" styleClass="btn-icon-pill">
+                        <tooltip><Tooltip text="Retour" /></tooltip>
+                        <graphic>
+                            <SVGPath content="M15 18l-6-6 6-6" styleClass="icon-svg" />
+                        </graphic>
+                    </Button>
+                    <VBox spacing="3" HBox.hgrow="ALWAYS">
+                        <Label styleClass="page-title" text="Liste des formations" />
+                        <Label styleClass="page-subtitle" text="Toutes les formations enregistrées" />
+                    </VBox>
+                    <HBox alignment="CENTER_RIGHT" spacing="10">
+                        <Button fx:id="btnTous" mnemonicParsing="false" styleClass="btn-icon-pill">
+                            <tooltip><Tooltip text="Tous" /></tooltip>
+                            <graphic>
+                                <SVGPath content="M4 6h16M4 12h16M4 18h16" styleClass="icon-svg" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="btnSortDate" mnemonicParsing="false" styleClass="btn-icon-pill">
+                            <tooltip><Tooltip text="Trier par date" /></tooltip>
+                            <graphic>
+                                <SVGPath content="M7 6h2v12H7V6zm4 6h2v6h-2v-6zm4-4h2v10h-2V8z" styleClass="icon-svg" />
+                            </graphic>
+                        </Button>
+                        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="search-bar">
+                            <StackPane prefHeight="32" prefWidth="32" styleClass="search-icon">
+                                <SVGPath content="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" styleClass="search-svg" />
+                            </StackPane>
+                            <TextField fx:id="tfSearchDomaine" prefWidth="170" promptText="Rechercher par domaine..." styleClass="search-field" />
+                        </HBox>
+                    </HBox>
+                </HBox>
+
+                <!-- CHIPS -->
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="52" styleClass="chips-scroll" vbarPolicy="NEVER">
+                    <content>
+                        <FlowPane fx:id="chipsFlow" hgap="8" styleClass="chips-bar" vgap="8" />
+                    </content>
+                </ScrollPane>
+
+                <!-- CARDS FLOW -->
+                <ScrollPane fx:id="cardsScroll" fitToWidth="true" prefHeight="460.0" styleClass="cards-scroll" HBox.hgrow="ALWAYS">
+                    <content>
+                        <FlowPane fx:id="cardsFlow" hgap="18" styleClass="cards-flow" vgap="18" />
+                    </content>
+                </ScrollPane>
+
+            </VBox>
+
+            <!-- ══ STATS PANEL ══ -->
+            <VBox prefWidth="260" spacing="10" styleClass="stats-panel">
+                <Label styleClass="stats-title" text="Statistiques" />
+                <Label styleClass="stats-subtitle" text="Payantes vs gratuites" />
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Button fx:id="btnShowPaidPurchases" mnemonicParsing="false" styleClass="btn-pdf-export" text="Exporter Rapport PDF" />
+                </HBox>
+                <Label fx:id="lblPaidPurchases" styleClass="page-subtitle" text="" />
+
+                <StackPane prefHeight="240" styleClass="stats-chart">
+                    <PieChart fx:id="chartPayanteStats" labelsVisible="true" legendVisible="false" styleClass="stats-pie" />
+                </StackPane>
+
+                <VBox fx:id="statsLegendBox" spacing="8" styleClass="stats-legend" />
+            </VBox>
+
+        </HBox>
+    </center>
+</BorderPane>
