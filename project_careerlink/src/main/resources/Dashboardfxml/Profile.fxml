@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.Dashboard.ProfileController"
+            fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+
+    <VBox spacing="14" styleClass="dashboard-container">
+
+        <padding>
+            <Insets top="28" right="28" bottom="28" left="28"/>
+        </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox spacing="2">
+            <Label styleClass="dashboard-title" text="Profile" />
+            <Label styleClass="subtitle" text="Manage your account information" />
+        </VBox>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#saveProfile" styleClass="button-primary" text="Save Changes" />
+    </HBox>
+
+    <HBox spacing="14">
+        <VBox prefWidth="320" spacing="12" styleClass="card">
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <StackPane>
+                    <Circle fx:id="avatarCircle" radius="28" />
+                    <ImageView fx:id="avatarImage" fitHeight="56" fitWidth="56" pickOnBounds="true" preserveRatio="false" />
+                </StackPane>
+                <VBox spacing="2">
+                    <Label fx:id="namePreviewLabel" styleClass="section-title" text="" />
+                    <Label fx:id="rolePreviewLabel" styleClass="subtitle" text="" />
+                </VBox>
+            </HBox>
+            <Label fx:id="statusLabel" styleClass="subtitle" text="" />
+        </VBox>
+
+        <VBox spacing="12" styleClass="card" HBox.hgrow="ALWAYS">
+            <Label styleClass="section-title" text="Personal Information" />
+
+            <GridPane hgap="12" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                </columnConstraints>
+
+                <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label styleClass="subtitle" text="Full name" />
+                    <TextField fx:id="fullNameField" styleClass="input" promptText="Full name" />
+                </VBox>
+
+                <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label styleClass="subtitle" text="Titre" />
+                    <TextField fx:id="titreField" styleClass="input" promptText="Enter title (optional)" />
+                </VBox>
+
+                <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label styleClass="subtitle" text="Email" />
+                    <TextField fx:id="emailField" styleClass="input" promptText="Email" />
+                </VBox>
+
+                <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label styleClass="subtitle" text="Phone" />
+                    <TextField fx:id="phoneField" styleClass="input" promptText="Phone" />
+                </VBox>
+
+                <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2">
+                    <Label styleClass="subtitle" text="Profile photo" />
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <StackPane minHeight="92" minWidth="92">
+                            <ImageView fx:id="photoPreview" fitHeight="92" fitWidth="92" pickOnBounds="true" preserveRatio="true" />
+                        </StackPane>
+                        <VBox spacing="6" HBox.hgrow="ALWAYS">
+                            <Label fx:id="photoHintLabel" styleClass="subtitle" text="No file selected" />
+                            <HBox spacing="10">
+                                <Button onAction="#choosePhoto" styleClass="btn-secondary" text="Choose file" />
+                                <Button onAction="#clearPhoto" styleClass="btn-danger" text="Remove" />
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                    <TextField fx:id="photoPathField" managed="false" visible="false" />
+                </VBox>
+            </GridPane>
+        </VBox>
+    </HBox>
+
+    <VBox spacing="12" styleClass="card">
+        <Label styleClass="section-title" text="Security" />
+
+        <HBox spacing="14">
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="section-title" text="2FA (Authenticator)" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Label fx:id="totpStatusLabel" styleClass="subtitle" text="" />
+                </HBox>
+
+                <HBox spacing="14" alignment="CENTER_LEFT">
+                    <ImageView fx:id="totpQrImage" fitHeight="120" fitWidth="120" preserveRatio="true" />
+                    <VBox spacing="8" HBox.hgrow="ALWAYS">
+                        <Label styleClass="subtitle" text="Scan the QR code with Google Authenticator / Authy." wrapText="true" />
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <TextField fx:id="totpCodeField" styleClass="input" promptText="6-digit code" prefWidth="160" />
+                            <Button fx:id="totpEnableButton" onAction="#enableTotp" styleClass="button-primary" text="Enable" />
+                            <Button fx:id="totpDisableButton" onAction="#disableTotp" styleClass="btn-danger" text="Disable" />
+                            <Button fx:id="totpRefreshQrButton" onAction="#refreshTotpQr" styleClass="btn-secondary" text="Refresh" />
+                        </HBox>
+                        <Label fx:id="totpErrorLabel" styleClass="subtitle" text="" />
+                        <Label fx:id="totpActionStatusLabel" styleClass="subtitle" text="" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <Separator orientation="VERTICAL" />
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="section-title" text="Face Login" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Label fx:id="faceStatusLabel" styleClass="subtitle" text="" />
+                </HBox>
+
+                <Label styleClass="subtitle" text="Register your face to login faster." wrapText="true" />
+
+                <HBox spacing="10">
+                    <Button fx:id="faceRegisterButton" onAction="#openFaceEnroll" styleClass="button-primary" text="Register" />
+                    <Button fx:id="faceDisableButton" onAction="#disableFaceLogin" styleClass="btn-danger" text="Disable" />
+                </HBox>
+            </VBox>
+        </HBox>
+    </VBox>
+
+    </VBox>
+
+</ScrollPane>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controllers.testQuiz.PropositionFormController"
+      stylesheets="@../css/style.css"
+      spacing="12" styleClass="tq-root">
+
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <Label text="Formulaire Proposition" styleClass="tq-title"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="tests-form-scroll">
+        <content>
+            <GridPane hgap="10" vgap="10" styleClass="tq-card">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="25"/>
+                    <ColumnConstraints percentWidth="75"/>
+                </columnConstraints>
+
+                <Label text="contenu:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextArea fx:id="contenuArea" promptText="Texte de la proposition" prefRowCount="4" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label fx:id="contenuValidationLabel" text="" styleClass="validation-text" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="estCorrect:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <CheckBox fx:id="estCorrectCheckBox" text="Proposition correcte" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label fx:id="correctValidationLabel" text="" styleClass="validation-text" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+        </content>
+    </ScrollPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="saveButton" text="Enregistrer" styleClass="btn-primary" onAction="#handleEnregistrer"/>
+        <Button text="Annuler" styleClass="btn-secondary" onAction="#handleAnnuler"/>
+    </HBox>
+
+</VBox>

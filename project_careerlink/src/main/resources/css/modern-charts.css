@@ -1,0 +1,213 @@
+/* Modern Dashboard Charts - TilesFX Style */
+
+.chart-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 20, 0, 0, 4);
+    -fx-padding: 20px;
+}
+
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1e293b;
+    -fx-font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* Pie Chart Modern Styling */
+.modern-pie-chart {
+    -fx-background-color: transparent;
+    -fx-pref-width: 280;
+    -fx-pref-height: 280;
+}
+
+.modern-pie-chart .chart-content {
+    -fx-background-color: transparent;
+}
+
+.modern-pie-chart .chart-pie {
+    -fx-background-color: transparent;
+    -fx-border-width: 2px;
+    -fx-border-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+.modern-pie-chart .chart-pie:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 12, 0, 0, 4);
+}
+
+.modern-pie-chart .chart-pie-label {
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-text-fill: white;
+    -fx-font-family: "Inter", sans-serif;
+}
+
+.modern-pie-chart .chart-pie-label-line {
+    -fx-stroke: #64748b;
+    -fx-stroke-width: 1px;
+}
+
+.modern-pie-chart .chart-legend {
+    -fx-background-color: transparent;
+    -fx-padding: 10px 0 0 0;
+}
+
+.modern-pie-chart .chart-legend-item {
+    -fx-font-size: 11px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #64748b;
+    -fx-font-family: "Inter", sans-serif;
+}
+
+.modern-pie-chart .chart-legend-item-symbol {
+    -fx-background-radius: 50%;
+    -fx-pref-width: 10px;
+    -fx-pref-height: 10px;
+}
+
+/* Bar Chart Modern Styling */
+.modern-bar-chart {
+    -fx-background-color: transparent;
+    -fx-pref-width: 280;
+    -fx-pref-height: 280;
+}
+
+.modern-bar-chart .chart-content {
+    -fx-background-color: transparent;
+    -fx-padding: 0 10px 0 0;
+}
+
+.modern-bar-chart .chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1e293b;
+}
+
+.modern-bar-chart .axis {
+    -fx-tick-label-font-size: 11px;
+    -fx-tick-label-fill: #64748b;
+    -fx-tick-label-font-family: "Inter", sans-serif;
+}
+
+.modern-bar-chart .axis-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #64748b;
+}
+
+.modern-bar-chart .chart-bar {
+    -fx-background-color: #6366f1;
+    -fx-background-radius: 6px 6px 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.3), 8, 0, 0, 2);
+}
+
+.modern-bar-chart .chart-bar:hover {
+    -fx-background-color: #4f46e5;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.4), 12, 0, 0, 4);
+}
+
+.modern-bar-chart .chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.modern-bar-chart .chart-vertical-grid-lines {
+    -fx-stroke: #f1f5f9;
+    -fx-stroke-width: 1px;
+}
+
+.modern-bar-chart .chart-horizontal-grid-lines {
+    -fx-stroke: #f1f5f9;
+    -fx-stroke-width: 1px;
+}
+
+.modern-bar-chart .chart-alternative-column-fill {
+    -fx-fill: transparent;
+}
+
+.modern-bar-chart .chart-alternative-row-fill {
+    -fx-fill: transparent;
+}
+
+/* Category Axis Styling */
+.modern-bar-chart .axis:bottom {
+    -fx-tick-mark-visible: false;
+    -fx-minor-tick-visible: false;
+    -fx-tick-length: 0;
+}
+
+.modern-bar-chart .axis:left {
+    -fx-tick-mark-visible: false;
+    -fx-minor-tick-visible: false;
+}
+
+/* Data Label Styling */
+.chart-data-label {
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1e293b;
+    -fx-font-family: "Inter", sans-serif;
+}
+
+/* Stats Cards Styling */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 12, 0, 0, 2);
+    -fx-padding: 16px;
+    -fx-alignment: center;
+}
+
+.stat-icon {
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #64748b;
+    -fx-font-family: "Inter", sans-serif;
+    -fx-text-transform: uppercase;
+    -fx-letter-spacing: 0.5px;
+}
+
+.stat-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1e293b;
+    -fx-font-family: "Inter", sans-serif;
+}
+
+.stat-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #94a3b8;
+    -fx-font-family: "Inter", sans-serif;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    -fx-background-color: #f8f9fb;
+    -fx-padding: 24px;
+}
+
+/* Section Headers */
+.section-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1e293b;
+    -fx-font-family: "Inter", sans-serif;
+}
+
+/* Modern Scrollbar */
+.dashboard-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 6px;
+}
+
+.dashboard-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 3px;
+}
+
+.dashboard-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #94a3b8;
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.testQuiz.PropositionListController"
+            fx:id="rootPane"
+            stylesheets="@../css/style.css"
+            styleClass="tq-root">
+
+    <top>
+        <VBox spacing="10" styleClass="tq-card">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <Label text="Gestion Propositions" styleClass="tq-title"/>
+            <Label fx:id="questionInfoLabel" text="Propositions de la question" styleClass="tq-subtitle"/>
+
+            <HBox spacing="10">
+                <Button text="Ajouter" styleClass="btn-primary" onAction="#handleAjouter"/>
+                <Button text="Modifier" styleClass="btn-secondary" onAction="#handleModifier"/>
+                <Button text="Supprimer" styleClass="btn-danger" onAction="#handleSupprimer"/>
+                <Button text="Retour vers Questions" styleClass="btn-secondary" onAction="#handleRetourQuestions"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox styleClass="tq-card" VBox.vgrow="ALWAYS">
+            <BorderPane.margin>
+                <Insets top="10" right="0" bottom="0" left="0"/>
+            </BorderPane.margin>
+            <TableView fx:id="propositionTable" VBox.vgrow="ALWAYS" styleClass="tq-table">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="90"/>
+                    <TableColumn fx:id="colQuestionID" text="QuestionID" prefWidth="120"/>
+                    <TableColumn fx:id="colContenu" text="Contenu" prefWidth="520"/>
+                    <TableColumn fx:id="colEstCorrect" text="Est Correct" prefWidth="140"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+</BorderPane>

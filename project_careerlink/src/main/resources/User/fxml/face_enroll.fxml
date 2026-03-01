@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="Controllers.User.FaceEnrollController">
+    <BorderPane styleClass="auth-root" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <center>
+            <StackPane styleClass="auth-form-wrap">
+                <VBox alignment="CENTER" spacing="14" maxWidth="520" styleClass="auth-card">
+                    <VBox spacing="6">
+                        <Label text="Register Face" styleClass="auth-title" />
+                        <Label text="Capture at least 5 samples. Make sure your face is centered and well-lit." styleClass="auth-subtitle" wrapText="true" />
+                    </VBox>
+
+                    <StackPane styleClass="drop-zone" minHeight="280" minWidth="420">
+                        <ImageView fx:id="cameraView" fitHeight="260" fitWidth="400" preserveRatio="true" />
+                    </StackPane>
+
+                    <Label fx:id="statusLabel" styleClass="muted" text="" />
+                    <Label fx:id="errorLabel" styleClass="error-label" text="" />
+
+                    <HBox spacing="10" alignment="CENTER">
+                        <Button text="Start Camera" onAction="#startCamera" styleClass="btn-secondary" />
+                        <Button text="Capture Sample" onAction="#captureSample" styleClass="btn-primary" />
+                        <Button text="Save" onAction="#saveModel" styleClass="btn-primary" />
+                        <Button text="Close" onAction="#close" styleClass="btn-secondary" />
+                    </HBox>
+                </VBox>
+            </StackPane>
+        </center>
+    </BorderPane>
+</AnchorPane>

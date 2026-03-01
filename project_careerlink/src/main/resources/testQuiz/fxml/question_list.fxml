@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.testQuiz.QuestionListController"
+            fx:id="rootPane"
+            stylesheets="@../../Dashboardcss/style.css,@../css/style.css"
+            styleClass="admin-root">
+
+    <padding>
+        <Insets top="18" right="18" bottom="18" left="18"/>
+    </padding>
+
+    <top>
+        <VBox spacing="14">
+            <Label text="Gestion Questions" styleClass="headline tests-page-title"/>
+            <Label fx:id="testInfoLabel" text="Questions du test" styleClass="tests-page-subtitle"/>
+
+            <VBox spacing="10" styleClass="card tests-search-card">
+                <padding>
+                    <Insets top="14" right="14" bottom="14" left="14"/>
+                </padding>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Recherche" styleClass="tests-card-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="langFrButton" text="FR" styleClass="btn-secondary lang-btn" onAction="#handleLangFr"/>
+                    <Button fx:id="langEnButton" text="EN" styleClass="btn-secondary lang-btn" onAction="#handleLangEn"/>
+                    <Button fx:id="langArButton" text="AR" styleClass="btn-secondary lang-btn" onAction="#handleLangAr"/>
+                </HBox>
+                <HBox spacing="10">
+                    <TextField fx:id="searchQuestionField" promptText="Filtre question (contains)" styleClass="input"/>
+                    <TextField fx:id="searchReponseField" promptText="Filtre reponse (contains)" styleClass="input"/>
+                    <TextField fx:id="searchPointsField" promptText="Filtre points (equals)" styleClass="input"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="14" styleClass="tests-body-split" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="14" right="0" bottom="0" left="0"/>
+            </BorderPane.margin>
+
+            <VBox fx:id="leftBlock" styleClass="card tests-table-card tests-left-block interactive-block" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="8">
+                    <Label text="Affichage Questions (Cards)" styleClass="tests-card-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button styleClass="btn-secondary btn-with-icon btn-icon-only" onAction="#handleRafraichir" text="Rafraichir">
+                        <graphic>
+                            <SVGPath styleClass="btn-icon-path" content="M17.65 6.35A7.95 7.95 0 0 0 12 4V1L7 6l5 5V7a5 5 0 1 1-5 5H5a7 7 0 1 0 12.65-5.65z"/>
+                        </graphic>
+                    </Button>
+                </HBox>
+                <Label fx:id="emptyStateLabel" text="Aucune question trouvee." styleClass="tests-empty-state" visible="false" managed="false"/>
+
+                <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS" styleClass="tests-scroll">
+                    <content>
+                        <FlowPane fx:id="questionsFlow" hgap="12" vgap="12" prefWrapLength="880" styleClass="tests-flow"/>
+                    </content>
+                </ScrollPane>
+            </VBox>
+
+            <Region styleClass="tests-split-separator"/>
+
+            <VBox fx:id="rightBlock" spacing="10" styleClass="card tests-form-card tests-right-block interactive-block" prefWidth="430">
+                <padding>
+                    <Insets top="14" right="14" bottom="14" left="14"/>
+                </padding>
+
+                <Label text="Formulaire Question" styleClass="tests-card-title"/>
+                <Label fx:id="formModeLabel" text="Mode: Ajout" styleClass="tests-form-mode"/>
+
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="tests-form-scroll">
+                    <content>
+                        <VBox spacing="10" styleClass="tests-form-content">
+                            <TextArea fx:id="formQuestionArea" promptText="Question" styleClass="input" prefRowCount="4" wrapText="true"/>
+                            <Label fx:id="questionValidationLabel" text="" styleClass="validation-text"/>
+
+                            <VBox fx:id="nonQcmResponseBox" spacing="6">
+                                <TextField fx:id="formReponseField" promptText="Reponse (optionnel)" styleClass="input"/>
+                            </VBox>
+
+                            <VBox fx:id="qcmPropositionsBox" spacing="8" visible="false" managed="false">
+                                <Label text="Propositions QCM" styleClass="tests-form-mode"/>
+                                <TextField fx:id="formProp1Field" promptText="Proposition 1" styleClass="input"/>
+                                <TextField fx:id="formProp2Field" promptText="Proposition 2" styleClass="input"/>
+                                <TextField fx:id="formProp3Field" promptText="Proposition 3 (optionnel)" styleClass="input"/>
+                                <TextField fx:id="formProp4Field" promptText="Proposition 4 (optionnel)" styleClass="input"/>
+                                <ComboBox fx:id="formCorrectPropCombo" promptText="Proposition correcte" styleClass="input"/>
+                                <Label fx:id="propositionsValidationLabel" text="" styleClass="validation-text"/>
+                            </VBox>
+
+                            <TextField fx:id="formPointsField" promptText="Points" styleClass="input"/>
+                            <Label fx:id="pointsValidationLabel" text="" styleClass="validation-text"/>
+
+                            <VBox spacing="8" styleClass="image-card">
+                                <Label text="Image de la question" styleClass="tests-form-mode"/>
+                                <StackPane prefHeight="170" styleClass="image-preview-wrap">
+                                    <ImageView fx:id="formQuestionImageView" fitHeight="160" fitWidth="360" preserveRatio="true" smooth="true"/>
+                                    <Label fx:id="formImagePlaceholderLabel" text="Aucune image" styleClass="image-placeholder"/>
+                                </StackPane>
+                                <HBox spacing="8">
+                                    <Button text="Importer..." styleClass="btn-secondary" onAction="#handleImporterImage"/>
+                                    <Button text="Supprimer image" styleClass="btn-danger" onAction="#handleSupprimerImage"/>
+                                </HBox>
+                                <TextArea fx:id="formImagePromptArea" promptText="Prompt image (optionnel)" styleClass="input" prefRowCount="2" wrapText="true"/>
+                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <Button fx:id="btnGenerateImage" text="Generer (IA)" styleClass="btn-primary" onAction="#handleGenererImage"/>
+                                    <ProgressIndicator fx:id="imageGenerationProgress" prefWidth="22" prefHeight="22" visible="false" managed="false"/>
+                                </HBox>
+                                <Label fx:id="imageValidationLabel" text="" styleClass="validation-text"/>
+                            </VBox>
+
+                            <HBox spacing="10">
+                                <Button text="Annuler" styleClass="btn-secondary btn-with-icon" onAction="#handleAnnulerForm">
+                                    <graphic>
+                                        <SVGPath styleClass="btn-icon-path" content="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                                    </graphic>
+                                </Button>
+                            </HBox>
+
+                            <HBox spacing="10">
+                                <Button fx:id="btnAjouter" text="Ajouter" styleClass="btn-primary" onAction="#handleAjouter"/>
+                                <Button fx:id="btnModifier" text="Modifier" styleClass="btn-secondary" onAction="#handleModifier"/>
+                                <Button text="Supprimer" styleClass="btn-danger" onAction="#handleSupprimer"/>
+                            </HBox>
+
+                            <HBox spacing="10">
+                                <Button text="Retour Tests" styleClass="btn-secondary" onAction="#handleRetourTests"/>
+                            </HBox>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </VBox>
+        </HBox>
+    </center>
+
+</BorderPane>
