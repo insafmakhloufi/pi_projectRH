@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.evenement.EventFormController"
+            fx:id="rootPane"
+            stylesheets="@/css/event_form.css"
+            styleClass="event-form-page">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="topbar card">
+            <padding>
+                <Insets top="14" right="14" bottom="14" left="14"/>
+            </padding>
+
+            <Button fx:id="btnBack" text="← Retour" onAction="#handleBack" styleClass="btn btn-secondary"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <VBox spacing="2" alignment="CENTER_RIGHT">
+                <Label fx:id="lblFormTitle" text="Créer un Évènement" styleClass="page-title"/>
+                <Label text="Formulaire" styleClass="page-subtitle"/>
+            </VBox>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="transparent-scroll">
+            <content>
+                <VBox alignment="CENTER" spacing="24" maxWidth="1400" fillWidth="true" styleClass="page-content">
+                    <padding>
+                        <Insets top="22" right="22" bottom="22" left="22"/>
+                    </padding>
+
+                    <StackPane maxWidth="1200" prefWidth="Infinity" styleClass="content-card">
+                        <padding>
+                            <Insets top="26" right="26" bottom="26" left="26"/>
+                        </padding>
+
+                        <HBox spacing="28" alignment="TOP_LEFT" fillHeight="true" maxWidth="1200" prefWidth="Infinity" styleClass="mainLayout">
+
+                            <VBox spacing="16" maxWidth="Infinity" prefWidth="0" HBox.hgrow="ALWAYS" styleClass="form-card">
+                                <padding>
+                                    <Insets top="22" right="22" bottom="22" left="22"/>
+                                </padding>
+
+                                <Label text="Informations de l'évènement" styleClass="section-title"/>
+
+                                <GridPane hgap="14" vgap="18" maxWidth="Infinity" styleClass="form-grid">
+                                    <columnConstraints>
+                                        <ColumnConstraints minWidth="160" prefWidth="250" maxWidth="250" hgrow="NEVER"/>
+                                        <ColumnConstraints prefWidth="250" hgrow="ALWAYS"/>
+                                    </columnConstraints>
+
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="54" prefHeight="54"/>
+                                        <RowConstraints minHeight="54" prefHeight="54"/>
+                                        <RowConstraints minHeight="54" prefHeight="54"/>
+                                        <RowConstraints minHeight="54" prefHeight="54"/>
+                                        <RowConstraints minHeight="54" prefHeight="54"/>
+                                        <RowConstraints minHeight="54" prefHeight="54"/>
+                                    </rowConstraints>
+
+                                    <Label text="Titre" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                                    <TextField fx:id="tfTitre" minHeight="42" promptText="Titre de l'évènement" styleClass="input" prefWidth="250" maxWidth="Infinity" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+                                    <Label text="Lieu" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                                    <TextField fx:id="tfLieu" minHeight="42" promptText="Ex: Salle A, Tunis..." styleClass="input" prefWidth="250" maxWidth="Infinity" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+                                    <Label text="Type" styleClass="field-label" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                                    <ComboBox fx:id="tfType" editable="true" minHeight="42" prefHeight="42" promptText="Ex: REUNION, FORMATION..." prefWidth="250" maxWidth="Infinity" styleClass="input combo" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+                                    <Label text="Capacité max" styleClass="field-label" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                                    <TextField fx:id="tfCapacite" minHeight="42" promptText="Ex: 50" styleClass="input numeric" prefWidth="250" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+                                    <Label text="Statut" styleClass="field-label" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                                    <ComboBox fx:id="cbStatut" minHeight="42" prefWidth="250" maxWidth="Infinity" styleClass="input combo" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+                                    <Label text="Dates" styleClass="field-label" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.valignment="CENTER"/>
+                                    <HBox spacing="12" alignment="CENTER_LEFT" GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+                                        <DatePicker fx:id="dpDateDebut" minHeight="42" minWidth="0" prefWidth="250" maxWidth="Infinity" styleClass="input date" HBox.hgrow="ALWAYS"/>
+                                        <DatePicker fx:id="dpDateFin" minHeight="42" minWidth="0" prefWidth="250" maxWidth="Infinity" styleClass="input date" HBox.hgrow="ALWAYS"/>
+                                    </HBox>
+                                </GridPane>
+
+                                <VBox spacing="8" maxWidth="Infinity">
+                                    <HBox alignment="CENTER_LEFT" spacing="12">
+                                        <Label text="Description" styleClass="field-label"/>
+                                        <Region HBox.hgrow="ALWAYS"/>
+                                        <Button fx:id="btnGenerateDescription" text="Générer" onAction="#handleGenerateDescription" styleClass="btn btn-secondary"/>
+                                    </HBox>
+                                    <TextArea fx:id="taDescription" minHeight="200" promptText="Décrivez l'évènement..." wrapText="true" styleClass="input textarea"/>
+                                </VBox>
+                            </VBox>
+
+                            <VBox spacing="14" prefWidth="280" minWidth="280" maxWidth="280" styleClass="image-card">
+                                <padding>
+                                    <Insets top="20" right="20" bottom="20" left="20"/>
+                                </padding>
+
+                                <Label text="Image" styleClass="section-title"/>
+
+                                <StackPane styleClass="image-preview" prefHeight="200" maxWidth="Infinity">
+                                    <ImageView fx:id="imgPreview" fitHeight="200" fitWidth="210" preserveRatio="true" smooth="true"/>
+                                    <VBox fx:id="boxImagePlaceholder" alignment="CENTER" spacing="6" styleClass="image-placeholder">
+                                        <Label text="Aucune image" styleClass="placeholder-text"/>
+                                    </VBox>
+
+                                    <clip>
+                                        <Rectangle arcWidth="18" arcHeight="18" width="210" height="200"/>
+                                    </clip>
+                                </StackPane>
+
+                                <HBox spacing="12">
+                                    <Button fx:id="btnChooseImage" text="Choisir une image" onAction="#handleChooseImage" styleClass="btn btn-primary" HBox.hgrow="ALWAYS"/>
+                                    <Button fx:id="btnRemoveImage" text="Supprimer" onAction="#handleRemoveImage" styleClass="btn btn-danger"/>
+                                </HBox>
+
+                                <Label fx:id="lblImagePath" text="" wrapText="true" styleClass="image-path"/>
+                            </VBox>
+                        </HBox>
+                    </StackPane>
+
+                    <HBox alignment="CENTER_RIGHT" spacing="12" styleClass="footer-actions">
+                        <Button fx:id="btnCancel" text="Annuler" onAction="#handleCancel" styleClass="btn btn-secondary"/>
+                        <Button fx:id="btnSave" text="Enregistrer" onAction="#handleSave" styleClass="btn btn-primary"/>
+                    </HBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

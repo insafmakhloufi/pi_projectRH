@@ -1,0 +1,154 @@
+/* ROOT */
+.root-candidat {
+    -fx-background-color: #f0f2f5;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar-conversations {
+    -fx-background-color: #1a2332;
+    -fx-padding: 0;
+}
+.sidebar-header {
+    -fx-padding: 20 15 15 15;
+    -fx-spacing: 10;
+    -fx-background-color: #1a2332;
+}
+.sidebar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.search-conv {
+    -fx-background-color: #2a3547;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #8899aa;
+    -fx-background-radius: 20;
+    -fx-padding: 8 12;
+    -fx-border-width: 0;
+}
+.scroll-conv {
+    -fx-background-color: #1a2332;
+    -fx-background: #1a2332;
+    -fx-border-width: 0;
+}
+.conv-list {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 5 0;
+}
+.conv-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ccd6e0;
+    -fx-padding: 12 15;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+.conv-list .list-cell:hover {
+    -fx-background-color: #2a3547;
+    -fx-background-radius: 10;
+}
+.conv-list .list-cell:selected {
+    -fx-background-color: #2d6a9f;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+}
+
+/* CHAT ZONE */
+.chat-zone {
+    -fx-background-color: #f0f2f5;
+}
+.chat-header {
+    -fx-background-color: white;
+    -fx-padding: 15 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 5, 0, 0, 2);
+}
+.nom-interlocuteur {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a2332;
+}
+.role-interlocuteur {
+    -fx-font-size: 12px;
+    -fx-text-fill: #2d6a9f;
+}
+
+/* MESSAGES */
+.scroll-messages {
+    -fx-background-color: #f0f2f5;
+    -fx-background: #f0f2f5;
+    -fx-border-width: 0;
+}
+.messages-container {
+    -fx-background-color: transparent;
+}
+.message-moi {
+    -fx-background-color: #2d6a9f;
+    -fx-background-radius: 18 18 4 18;
+    -fx-padding: 10 15;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-max-width: 420px;
+    -fx-wrap-text: true;
+}
+.message-autre {
+    -fx-background-color: white;
+    -fx-background-radius: 18 18 18 4;
+    -fx-padding: 10 15;
+    -fx-text-fill: #1a2332;
+    -fx-font-size: 13px;
+    -fx-max-width: 420px;
+    -fx-wrap-text: true;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 4, 0, 0, 1);
+}
+.message-ia {
+    -fx-background-color: #e8f4fd;
+    -fx-background-radius: 18 18 18 4;
+    -fx-padding: 10 15;
+    -fx-text-fill: #1a2332;
+    -fx-font-size: 13px;
+    -fx-max-width: 420px;
+    -fx-wrap-text: true;
+    -fx-border-color: #2d6a9f;
+    -fx-border-width: 1;
+    -fx-border-radius: 18 18 18 4;
+}
+.heure-message {
+    -fx-font-size: 10px;
+    -fx-text-fill: #99aabb;
+}
+
+/* IA BADGE */
+.ia-badge-zone {
+    -fx-background-color: #e8f4fd;
+    -fx-padding: 6 15;
+}
+.ia-badge {
+    -fx-text-fill: #2d6a9f;
+    -fx-font-size: 11px;
+}
+
+/* INPUT ZONE */
+.input-zone {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 5, 0, 0, -2);
+}
+.input-message {
+    -fx-background-color: #f0f2f5;
+    -fx-background-radius: 20;
+    -fx-border-width: 0;
+    -fx-padding: 10 15;
+    -fx-font-size: 13px;
+}
+.btn-envoyer {
+    -fx-background-color: #2d6a9f;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+.btn-envoyer:hover {
+    -fx-background-color: #1a5080;
+}

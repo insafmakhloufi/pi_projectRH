@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.evenement.EventAffichageController"
+            stylesheets="@/styles/app.css,@/styles/wizard.css,@/views_event/event_affichage.css"
+            styleClass="page-bg">
+
+    <top>
+        <VBox>
+            <!-- Clean Top Bar -->
+            <HBox alignment="CENTER_LEFT" spacing="20" styleClass="topbar">
+                <padding>
+                    <Insets top="20" right="24" bottom="20" left="24"/>
+                </padding>
+
+                <!-- Left: Title + Count -->
+                <VBox spacing="4" alignment="CENTER_LEFT">
+                    <Label text="Gestion des Évènements" styleClass="topbar-title"/>
+                    <Label fx:id="resultCount" text="0 événements" styleClass="topbar-counter"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- Center: Search -->
+                <HBox alignment="CENTER" styleClass="search-container">
+                    <TextField fx:id="tfSearch"
+                               promptText="Rechercher par titre, lieu, type..."
+                               prefWidth="480"
+                               styleClass="search-bar"/>
+                </HBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- Right: Status + Refresh -->
+                <HBox alignment="CENTER_RIGHT" spacing="12">
+                    <Label fx:id="statusLabel" text="" styleClass="status-label"/>
+                    <Button fx:id="btnRefresh" text="Actualiser" styleClass="btn btn-primary"/>
+                </HBox>
+            </HBox>
+            
+            <!-- Subtle shadow separator -->
+            <StackPane styleClass="topbar-shadow" prefHeight="1"/>
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane styleClass="page-container">
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16"/>
+            </padding>
+
+            <HBox spacing="18" styleClass="main-layout">
+                <!-- Left: Filter Card -->
+                <VBox spacing="16" prefWidth="290" minWidth="290" maxWidth="290" styleClass="filter-card panel-card filters-card">
+                    <padding>
+                        <Insets top="18" right="16" bottom="18" left="16"/>
+                    </padding>
+
+                    <!-- Filter Header -->
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Label text="Filtres" styleClass="filter-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+
+                    <!-- Filter Fields -->
+                    <VBox spacing="12" styleClass="filter-fields">
+                        <VBox spacing="8">
+                            <Label text="Statut" styleClass="field-label"/>
+                            <ComboBox fx:id="cbStatut" prefWidth="Infinity" styleClass="field-input"/>
+                        </VBox>
+
+                        <VBox spacing="8">
+                            <Label text="Type" styleClass="field-label"/>
+                            <ComboBox fx:id="cbType" prefWidth="Infinity" styleClass="field-input"/>
+                        </VBox>
+
+                        <VBox spacing="8">
+                            <Label text="Date début" styleClass="field-label"/>
+                            <DatePicker fx:id="dpFrom" prefWidth="Infinity" styleClass="field-input"/>
+                        </VBox>
+
+                        <VBox spacing="8">
+                            <Label text="Date fin" styleClass="field-label"/>
+                            <DatePicker fx:id="dpTo" prefWidth="Infinity" styleClass="field-input"/>
+                        </VBox>
+
+                        <VBox spacing="8">
+                            <Label text="Capacité min" styleClass="field-label"/>
+                            <Spinner fx:id="spCapacity" prefWidth="Infinity" styleClass="field-input modern-input"/>
+                        </VBox>
+                    </VBox>
+
+                    <!-- Filter Actions -->
+                    <VBox spacing="12" styleClass="filter-actions">
+                        <Button fx:id="btnApplyFilter" text="Appliquer" prefWidth="Infinity" styleClass="btn btn-primary"/>
+                        <Button fx:id="btnResetFilter" text="Réinitialiser" prefWidth="Infinity" styleClass="btn btn-ghost"/>
+                    </VBox>
+                </VBox>
+
+                <!-- Right: Events Grid -->
+                <VBox HBox.hgrow="ALWAYS" styleClass="content-area">
+                    <ScrollPane fx:id="spGrid"
+                                fitToWidth="true"
+                                pannable="true"
+                                hbarPolicy="NEVER"
+                                vbarPolicy="AS_NEEDED"
+                                styleClass="thin-scroll">
+                        <content>
+                            <TilePane fx:id="flowEvents"
+                                      prefTileWidth="320"
+                                      prefTileHeight="360"
+                                      hgap="16"
+                                      vgap="16"
+                                      alignment="TOP_LEFT"
+                                      styleClass="events-grid"/>
+                        </content>
+                    </ScrollPane>
+                </VBox>
+            </HBox>
+        </StackPane>
+    </center>
+
+</BorderPane>

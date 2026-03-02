@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controllers.candidature.InterviewResultatsController"
+      spacing="0"
+      style="-fx-background-color: #0d1117;">
+
+    <!-- ── HEADER ── -->
+    <VBox alignment="CENTER" spacing="8"
+          style="-fx-background-color: #161b22;
+                 -fx-padding: 25 30 20 30;
+                 -fx-border-color: #30363d;
+                 -fx-border-width: 0 0 1 0;">
+
+        <Label text="📊 Résultats de votre entretien"
+               style="-fx-text-fill: white;
+                      -fx-font-size: 22px;
+                      -fx-font-weight: bold;"/>
+
+        <!-- Score global -->
+        <HBox alignment="CENTER" spacing="15">
+            <Label text="Score global :"
+                   style="-fx-text-fill: #8b949e; -fx-font-size: 15px;"/>
+            <Label fx:id="scoreGlobalLabel"
+                   text="--"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+            <Label text="/ 100"
+                   style="-fx-text-fill: #8b949e; -fx-font-size: 15px;"/>
+        </HBox>
+
+        <!-- Barre de score global -->
+        <ProgressBar fx:id="scoreGlobalBar"
+                     prefWidth="400" prefHeight="12"
+                     progress="0"
+                     style="-fx-accent: #52b788;"/>
+    </VBox>
+
+    <!-- ── CONTENU SCROLLABLE ── -->
+    <ScrollPane fitToWidth="true" style="-fx-background-color: #0d1117;"
+                VBox.vgrow="ALWAYS">
+
+        <VBox fx:id="resultsContainer" spacing="16"
+              style="-fx-padding: 20 30;">
+
+            <!-- Les cartes de résultats seront ajoutées ici dynamiquement -->
+
+        </VBox>
+    </ScrollPane>
+
+    <!-- ── BOUTONS BAS ── -->
+    <HBox alignment="CENTER" spacing="15"
+          style="-fx-padding: 15 20;
+                 -fx-background-color: #161b22;
+                 -fx-border-color: #30363d;
+                 -fx-border-width: 1 0 0 0;">
+
+        <Button text="🔄  Nouvel entretien"
+                onAction="#onNouvelEntretien"
+                style="-fx-background-color: #0f3460;
+                       -fx-text-fill: white; -fx-font-size: 13px;
+                       -fx-font-weight: bold; -fx-padding: 10 20;
+                       -fx-border-color: #a0c4ff; -fx-border-radius: 20;
+                       -fx-background-radius: 20; -fx-cursor: hand;"/>
+
+        <Button text="📄  Télécharger PDF"
+                onAction="#onTelechargerPDF"
+                style="-fx-background-color: #2d6a4f;
+                       -fx-text-fill: white; -fx-font-size: 13px;
+                       -fx-font-weight: bold; -fx-padding: 10 20;
+                       -fx-border-color: #52b788; -fx-border-radius: 20;
+                       -fx-background-radius: 20; -fx-cursor: hand;"/>
+    </HBox>
+
+</VBox>

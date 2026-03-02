@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.evenement.PublicationDetailsController"
+            fitToWidth="true" hbarPolicy="NEVER" styleClass="fb-page-root"
+            stylesheets="@../styles/backend.css">
+    <content>
+        <VBox spacing="14" styleClass="fb-page-root">
+            <padding>
+                <Insets top="18" right="18" bottom="22" left="18"/>
+            </padding>
+
+            <HBox spacing="12" styleClass="page-header" alignment="CENTER_LEFT">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label fx:id="lblTitle" text="Titre" styleClass="page-title" wrapText="true"/>
+                    <Label fx:id="lblMeta" text="Type • Statut • Visibilité" styleClass="page-meta" wrapText="true"/>
+                    <Label fx:id="lblSubMeta" text="date • auteur" styleClass="page-desc" wrapText="true"/>
+                </VBox>
+                <Button fx:id="btnBack" text="Retour" styleClass="btn-outline" onAction="#back"/>
+            </HBox>
+
+            <VBox spacing="12" styleClass="post-card">
+                <Label text="Contenu" styleClass="info-title"/>
+                <Label fx:id="lblContent" text="..." styleClass="post-content" wrapText="true"/>
+            </VBox>
+
+            <VBox spacing="12" styleClass="post-card">
+                <Label text="Média" styleClass="info-title"/>
+                <ImageView fx:id="ivImage" fitHeight="320" preserveRatio="true" smooth="true" styleClass="post-media-img"/>
+                <Hyperlink fx:id="lnkVideo" text="Ouvrir la vidéo"/>
+                <Hyperlink fx:id="lnkAttachment" text="Ouvrir la pièce jointe"/>
+            </VBox>
+
+        </VBox>
+    </content>
+</ScrollPane>

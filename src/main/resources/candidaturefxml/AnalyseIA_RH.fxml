@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.candidature.AnalyseIAController_RH"
+            stylesheets="@../csscandidature/analyse-ia.css"
+            styleClass="root">
+
+    <!-- ══ TOP BAR ══════════════════════════════════════════ -->
+    <top>
+        <HBox alignment="CENTER_LEFT" styleClass="top-bar">
+            <Button fx:id="btnRetour" text="← Retour"
+                    onAction="#handleRetour" styleClass="btn-retour"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Analyse IA" styleClass="top-bar-title"/>
+        </HBox>
+    </top>
+
+    <!-- ══ MAIN ═════════════════════════════════════════════ -->
+    <center>
+        <StackPane>
+
+            <!-- SCROLL PRINCIPAL -->
+            <ScrollPane fitToWidth="true" styleClass="scroll-pane"
+                        hbarPolicy="NEVER" BorderPane.alignment="CENTER">
+                <HBox spacing="20" style="-fx-padding: 24;"
+                      maxWidth="1.7976931348623157E308">
+
+                    <!-- ─── COLONNE GAUCHE ──────────────────────────── -->
+                    <VBox spacing="16" HBox.hgrow="ALWAYS"
+                          maxWidth="1.7976931348623157E308">
+
+                        <!-- CARTE CANDIDAT -->
+                        <VBox styleClass="card" spacing="0">
+                            <HBox spacing="16" alignment="CENTER_LEFT">
+                                <StackPane>
+                                    <Circle radius="32" styleClass="candidat-avatar-bg"/>
+                                    <Label fx:id="lblInitiales" text="??"
+                                           styleClass="candidat-avatar-text"/>
+                                </StackPane>
+                                <VBox spacing="4">
+                                    <Label fx:id="lblNom"   text="—"
+                                           styleClass="candidat-nom"/>
+                                    <Label fx:id="lblOffre" text="—"
+                                           styleClass="candidat-prenom"/>
+                                </VBox>
+                            </HBox>
+                            <VBox.margin><Insets bottom="12"/></VBox.margin>
+                            <Separator styleClass="separator"/>
+                            <VBox spacing="8" style="-fx-padding: 12 0 0 0;">
+                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <Label text="- Compatibilité"
+                                           styleClass="label-muted"/>
+                                    <Label fx:id="lblCompatibilite" text="—"
+                                           styleClass="label-bold"/>
+                                </HBox>
+                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <Label text="- Recommandation"
+                                           styleClass="label-muted"/>
+                                    <Label fx:id="lblRecommandation" text="—"
+                                           styleClass="label-body"/>
+                                </HBox>
+                            </VBox>
+                            <Separator style="-fx-padding: 8 0; -fx-opacity:0.5;"/>
+                            <HBox spacing="12" alignment="CENTER_LEFT"
+                                  style="-fx-padding: 8 0 0 0;">
+                                <Label text="📊 Analyse détaillée"
+                                       styleClass="link-analyse"/>
+                                <Button fx:id="btnVoirAnalyseDetaillee" text="Voir"
+                                        onAction="#handleVoirAnalyseDetaillee"
+                                        styleClass="btn-link"/>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <HBox spacing="10" alignment="CENTER">
+                                    <HBox spacing="4" alignment="CENTER">
+                                        <Circle radius="5" fill="#10B981"/>
+                                        <Label text="> 80%"
+                                               styleClass="legend-label"/>
+                                    </HBox>
+                                    <HBox spacing="4" alignment="CENTER">
+                                        <Circle radius="5" fill="#F59E0B"/>
+                                        <Label text="60-79%"
+                                               styleClass="legend-label"/>
+                                    </HBox>
+                                    <HBox spacing="4" alignment="CENTER">
+                                        <Circle radius="5" fill="#EF4444"/>
+                                        <Label text="&lt; 60%"
+                                               styleClass="legend-label"/>
+                                    </HBox>
+                                </HBox>
+                            </HBox>
+                        </VBox>
+
+                        <!-- TITRE SECTION -->
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                            <Rectangle width="4" height="20" fill="#3B82F6"
+                                       arcWidth="4" arcHeight="4"/>
+                            <Label text="Analyse détaillée"
+                                   styleClass="section-title"/>
+                        </HBox>
+
+                        <!-- GRILLE 2×2 -->
+                        <GridPane hgap="16" vgap="16">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="50"/>
+                                <ColumnConstraints percentWidth="50"/>
+                            </columnConstraints>
+
+                            <!-- ┌─ COMPÉTENCES TECHNIQUES col=0 row=0 ─┐ -->
+                            <VBox GridPane.columnIndex="0" GridPane.rowIndex="0"
+                                  styleClass="card" spacing="0">
+                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                    <Label text="⚙"
+                                           style="-fx-font-size:18;-fx-text-fill:#3B82F6;"/>
+                                    <Label text="Compétences Techniques"
+                                           styleClass="card-title"/>
+                                    <Region HBox.hgrow="ALWAYS"/>
+                                    <Label fx:id="lblPctCompetences" text="—%"
+                                           styleClass="pct-green"/>
+                                </HBox>
+                                <VBox.margin><Insets bottom="10"/></VBox.margin>
+                                <ProgressBar fx:id="pbCompetences" progress="0"
+                                             prefWidth="10000"
+                                             styleClass="progress-bar-green"/>
+                                <!-- Items générés par le controller -->
+                                <VBox fx:id="vboxCompetenceItems" spacing="8"
+                                      style="-fx-padding: 14 0 0 0;"/>
+                                <Label fx:id="lblTauxCouverture" text=""
+                                       styleClass="label-muted" wrapText="true"
+                                       style="-fx-padding: 12 0 0 0;"/>
+                                <Label fx:id="lblCompetencesCommentaire" text=""
+                                       styleClass="label-muted" wrapText="true"
+                                       style="-fx-padding: 8 0 0 0;"/>
+                            </VBox>
+
+                            <!-- ┌─ EXPÉRIENCE gauche col=0 row=1 ─┐ -->
+                            <VBox GridPane.columnIndex="0" GridPane.rowIndex="1"
+                                  styleClass="card" spacing="0">
+                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                    <Label text="💼" style="-fx-font-size:16;"/>
+                                    <Label text="Expérience" styleClass="card-title"/>
+                                    <Region HBox.hgrow="ALWAYS"/>
+                                    <Label fx:id="lblPctExperience" text="—%"
+                                           styleClass="pct-orange"/>
+                                </HBox>
+                                <VBox.margin><Insets bottom="10"/></VBox.margin>
+                                <ProgressBar fx:id="pbExperience" progress="0"
+                                             prefWidth="10000"
+                                             styleClass="progress-bar-orange"/>
+                                <VBox spacing="8" style="-fx-padding: 14 0 14 0;">
+                                    <HBox spacing="6" alignment="CENTER_LEFT">
+                                        <Circle radius="5" fill="#10B981"/>
+                                        <Label fx:id="lblAnneesCandidat" text="—"
+                                               styleClass="label-bold"/>
+                                        <Label fx:id="lblAnneesRequis" text=""
+                                               styleClass="label-muted"/>
+                                    </HBox>
+                                    <HBox spacing="6" alignment="CENTER_LEFT">
+                                        <Circle radius="5" fill="#10B981"/>
+                                        <Label fx:id="lblTypeExperience" text="—"
+                                               styleClass="label-muted" wrapText="true"/>
+                                    </HBox>
+                                    <VBox fx:id="vboxExperienceDb" spacing="6"/>
+                                </VBox>
+                                <Label fx:id="lblExperienceCommentaire" text=""
+                                       styleClass="label-muted" wrapText="true"
+                                       style="-fx-padding: 0 0 12 0;"/>
+                                <Button text="Télécharger le rapport  →"
+                                        onAction="#handleTelecharger"
+                                        styleClass="btn-telecharger"
+                                        maxWidth="10000"/>
+                            </VBox>
+
+                            <!-- ┌─ EXPÉRIENCE droite col=1 row=0 ─┐ -->
+                            <VBox GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                  styleClass="card" spacing="0">
+                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                    <Label text="�" style="-fx-font-size:16;"/>
+                                    <Label text="Probabilité de réussite" styleClass="card-title"/>
+                                    <Region HBox.hgrow="ALWAYS"/>
+                                    <Label fx:id="lblPctExperienceR" text="—%"
+                                           styleClass="pct-orange"/>
+                                </HBox>
+                                <VBox spacing="12" style="-fx-padding: 14 0 0 0;">
+                                    <HBox spacing="12" alignment="CENTER_LEFT">
+                                        <PieChart fx:id="chartProbReussite" prefWidth="220" prefHeight="180" legendVisible="false" labelsVisible="false"/>
+                                        <VBox spacing="6">
+                                            <Label text="Probabilité de réussite" styleClass="label-bold"/>
+                                            <Label fx:id="lblProbReussite" text="—" styleClass="label-muted"/>
+                                            <Label fx:id="lblProbRisque" text="—" styleClass="label-muted"/>
+                                        </VBox>
+                                    </HBox>
+
+                                    <LineChart fx:id="chartCourbeReussite" prefHeight="170" animated="false" legendVisible="false" createSymbols="false">
+                                        <xAxis>
+                                            <NumberAxis autoRanging="false" lowerBound="0" upperBound="100" tickUnit="20"/>
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis autoRanging="false" lowerBound="0" upperBound="100" tickUnit="20"/>
+                                        </yAxis>
+                                    </LineChart>
+                                </VBox>
+                            </VBox>
+
+                            <!-- ┌─ DIPLÔME + SOFT SKILLS col=1 row=1 ─┐ -->
+                            <VBox GridPane.columnIndex="1" GridPane.rowIndex="1"
+                                  styleClass="card" spacing="0">
+
+                                <!-- Diplôme & Certifications -->
+                                <HBox alignment="CENTER_LEFT" spacing="8">
+                                    <Label text="🎓" style="-fx-font-size:16;"/>
+                                    <Label text="Diplôme &amp; Certifications"
+                                           styleClass="card-title"/>
+                                    <Region HBox.hgrow="ALWAYS"/>
+                                    <Label fx:id="lblPctDiplome" text="—%"
+                                           styleClass="pct-green"/>
+                                </HBox>
+                                <VBox.margin><Insets bottom="10"/></VBox.margin>
+                                <ProgressBar fx:id="pbDiplome" progress="0"
+                                             prefWidth="10000"
+                                             styleClass="progress-bar-green"/>
+                                <VBox spacing="8" style="-fx-padding: 14 0 0 0;">
+                                    <HBox spacing="6" alignment="TOP_LEFT">
+                                        <Circle fx:id="circleDiplome" radius="5"
+                                                fill="#10B981"/>
+                                        <VBox spacing="2">
+                                            <Label fx:id="lblDiplome" text="—"
+                                                   styleClass="label-bold"/>
+                                            <Label fx:id="lblNiveauRequis" text=""
+                                                   styleClass="label-muted"/>
+                                        </VBox>
+                                    </HBox>
+                                    <!-- Certifications (générées dynamiquement) -->
+                                    <VBox fx:id="vboxCertifications" spacing="6"/>
+                                </VBox>
+
+                                <Label fx:id="lblDiplomeCommentaire" text=""
+                                       styleClass="label-muted" wrapText="true"
+                                       style="-fx-padding: 10 0 0 0;"/>
+
+                                <Separator styleClass="separator"
+                                           style="-fx-padding: 14 0;"/>
+
+                                <!-- Soft Skills -->
+                                <HBox alignment="CENTER_LEFT" spacing="8"
+                                      style="-fx-padding: 4 0 0 0;">
+                                    <Label text="👤" style="-fx-font-size:16;"/>
+                                    <Label text="Soft Skills" styleClass="card-title"/>
+                                    <Region HBox.hgrow="ALWAYS"/>
+                                    <Label fx:id="lblPctSoftSkills" text="—%"
+                                           styleClass="pct-orange"/>
+                                </HBox>
+                                <VBox.margin><Insets bottom="10"/></VBox.margin>
+                                <ProgressBar fx:id="pbSoftSkills" progress="0"
+                                             prefWidth="10000"
+                                             styleClass="progress-bar-orange"/>
+                                <!-- Soft skills (générés dynamiquement) -->
+                                <VBox fx:id="vboxSoftSkills" spacing="6"
+                                      style="-fx-padding: 10 0 0 0;"/>
+                                <Label fx:id="lblSoftSkillsCommentaire" text=""
+                                       styleClass="label-muted" wrapText="true"
+                                       style="-fx-padding: 8 0 0 0;"/>
+                            </VBox>
+
+                        </GridPane>
+                    </VBox>
+
+                    <!-- ─── COLONNE DROITE ──────────────────────────── -->
+                    <VBox spacing="16" prefWidth="320" minWidth="260" maxWidth="360">
+
+                        <!-- SCORE CARD -->
+                        <VBox styleClass="card" spacing="0">
+                            <HBox alignment="CENTER_LEFT" spacing="12">
+                                <VBox spacing="0">
+                                    <Label text="Score Global"
+                                           styleClass="label-muted"/>
+                                    <HBox alignment="CENTER_LEFT" spacing="8">
+                                        <Label fx:id="lblScoreGlobal" text="—%"
+                                               styleClass="score-value"/>
+                                        <Label fx:id="lblScoreCheck" text=""
+                                               styleClass="score-check"/>
+                                    </HBox>
+                                </VBox>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Label text="🤖" style="-fx-font-size:52;"/>
+                            </HBox>
+
+                            <!-- Badge compatibilité (couleur dynamique) -->
+                            <HBox fx:id="hboxBadge"
+                                  style="-fx-background-color:#D1FAE5;-fx-background-radius:20;-fx-padding:6 16 6 16;"
+                                  alignment="CENTER_LEFT" spacing="6">
+                                <VBox.margin>
+                                    <Insets top="12"/>
+                                </VBox.margin>
+                                <Label text="Compatibilité"
+                                       style="-fx-font-size:13;-fx-text-fill:#065F46;"/>
+                                <Label fx:id="lblBadgeCompatibilite" text="—"
+                                       style="-fx-font-size:13;-fx-font-weight:bold;-fx-text-fill:#065F46;"/>
+                            </HBox>
+
+                            <Label fx:id="lblRecommandationDroite" text="→ —"
+                                   styleClass="recommandation-arrow"
+                                   style="-fx-padding: 12 0 0 0;"/>
+
+                            <Separator styleClass="separator"
+                                       style="-fx-padding: 12 0;"/>
+
+                            <HBox alignment="CENTER_LEFT" spacing="8"
+                                  style="-fx-padding: 8 0 0 0;">
+                                <Label text="🔍" style="-fx-font-size:14;"/>
+                                <Label fx:id="lblOffreTitre" text="—"
+                                       styleClass="label-muted" wrapText="true"/>
+                            </HBox>
+                        </VBox>
+
+                        <!-- POINTS FORTS -->
+                        <VBox styleClass="card">
+                            <Label text="Points Forts" styleClass="section-title"/>
+                            <VBox fx:id="vboxPointsForts" spacing="12"
+                                  style="-fx-padding: 14 0 0 0;"/>
+                        </VBox>
+
+                        <!-- POINTS À AMÉLIORER -->
+                        <VBox styleClass="card">
+                            <Label text="Points à Améliorer"
+                                   styleClass="section-title"/>
+                            <VBox fx:id="vboxPointsAmeliorer" spacing="12"
+                                  style="-fx-padding: 14 0 0 0;"/>
+                            <Separator styleClass="separator"
+                                       style="-fx-padding: 10 0;"/>
+                            <VBox spacing="4" style="-fx-padding: 8 0 0 0;">
+                                <Label fx:id="lblClassement" text="→ —"
+                                       styleClass="top3-label"/>
+                                <Label fx:id="lblClassementSub" text=""
+                                       styleClass="top3-sub" wrapText="true"/>
+                            </VBox>
+                        </VBox>
+
+                    </VBox>
+                </HBox>
+            </ScrollPane>
+
+            <!-- OVERLAY CHARGEMENT IA -->
+            <VBox fx:id="loadingOverlay" alignment="CENTER" spacing="20"
+                  style="-fx-background-color: rgba(240,242,245,0.93);"
+                  visible="false" managed="false">
+                <Label text="🤖" style="-fx-font-size: 64;"/>
+                <Label text="Analyse IA en cours..."
+                       style="-fx-font-size:20;-fx-font-weight:bold;-fx-text-fill:#111827;"/>
+                <ProgressBar fx:id="pbLoading" prefWidth="320"
+                             style="-fx-accent:#3B82F6;" progress="-1"/>
+                <Label fx:id="lblLoadingStatus" text="Connexion à l'agent..."
+                       styleClass="label-muted"/>
+            </VBox>
+
+        </StackPane>
+    </center>
+
+</BorderPane>

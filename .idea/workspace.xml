@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30038d15-ab75-4177-ac06-b4f907cdb49d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/Formation/FormationPurchaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/Formation/FormationPurchaseService.java" afterDir="false" />
-    </list>
+    <list default="true" id="30038d15-ab75-4177-ac06-b4f907cdb49d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,9 +17,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -39,16 +33,15 @@
     &quot;Application.MainBackendFx.executor&quot;: &quot;Run&quot;,
     &quot;Application.Mainfx.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.EvenementServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.project_careerlink [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.project_careerlink [javafx:run].executor&quot;: &quot;Run&quot;,
     &quot;Maven.project_careerlink [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.project_careerlink [test].executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;gestion__formation&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/amirs/pi_projectRH&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/project_careerlink&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -58,7 +51,6 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -91,10 +83,82 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="delegateBuildToMaven" value="false" />
+            <option name="environmentProperties">
+              <map>
+                <entry key="GMAIL_SMTP_APP_PASSWORD" value="bxjc aipg ehdy tebq" />
+                <entry key="GMAIL_SMTP_HOST" value="smtp.gmail.com" />
+                <entry key="GMAIL_SMTP_PORT" value="587" />
+                <entry key="GMAIL_SMTP_USER" value="lynamoujahed600@gmail.com" />
+                <entry key="GREEN_API_INSTANCE_ID" value="7103531199" />
+                <entry key="GREEN_API_TOKEN" value="4a2fc698e4324e80966c153a813041a52caae2b88a2d41e29c" />
+                <entry key="GREEN_API_URL" value="https://7103.api.greenapi.com" />
+                <entry key="WHATSAPP_ACCESS_TOKEN" value="EAAm1JGlMVK0BQ1EAyjLD86xN9iHi756QNHA6IzAjzQwQj3gSWfIgt1oAaQrJocZANcAzjoFPbYqn8nzMwNEwNz3cJi3R6ZAoFMI66EidZCyxNDFwHg8BZBB7XRj5ENZBWKyRzq9yuenj9LzcZBBXZBNKqqqNirm4nu182dEvEbTAEfAdNgkLYahQyaZASDyhMiZB8ZCDpFw3AUZANTrZBynMcd0fdp3FPQyl1iwyMlBs9v0Sew1NrEJQG6ZApBaErLgl8D1WIezfX9kZArAEZCnlVvY6JYuTydx " />
+                <entry key="WHATSAPP_PHONE_NUMBER_ID" value="1004235936109421 " />
+                <entry key="WHATSAPP_TEMPLATE_LANGUAGE" value="en_US" />
+                <entry key="WHATSAPP_TEMPLATE_NAME" value="hello_world" />
+                <entry key="WHATSAPP_TEMPLATE_PARAM_MODE" value="none" />
+              </map>
+            </option>
+            <option name="jreName" value="#USE_PROJECT_JDK" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="passParentEnv" value="true" />
+            <option name="skipTests" value="false" />
+            <option name="vmOptions" value="" />
+          </MavenRunnerSettings>
+        </option>
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="project_careerlink [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="delegateBuildToMaven" value="false" />
+            <option name="environmentProperties">
+              <map>
+                <entry key="OPENAI_API_KEY" value="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" />
+                <entry key="OPENAI_MODEL" value="gpt-4o-mini" />
+              </map>
+            </option>
+            <option name="jreName" value="#USE_PROJECT_JDK" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="passParentEnv" value="true" />
+            <option name="skipTests" value="false" />
+            <option name="vmOptions" value="" />
+          </MavenRunnerSettings>
+        </option>
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
             <option name="cmdOptions" />
@@ -121,6 +185,11 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.EvenementServiceTest" />
+      <item itemvalue="Maven.project_careerlink [javafx:run]" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Maven.project_careerlink [javafx:run]" />
@@ -162,8 +231,12 @@
       <workItem from="1771368456325" duration="45000" />
       <workItem from="1771368527609" duration="104000" />
       <workItem from="1771368649519" duration="3475000" />
-      <workItem from="1772319728950" duration="37000" />
-      <workItem from="1772319880020" duration="21000" />
+      <workItem from="1772218323752" duration="3014000" />
+      <workItem from="1772276288357" duration="1239000" />
+      <workItem from="1772279144896" duration="9361000" />
+      <workItem from="1772365667776" duration="26000" />
+      <workItem from="1772367911015" duration="2178000" />
+      <workItem from="1772370365529" duration="11000000" />
     </task>
     <servers />
   </component>

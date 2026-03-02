@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Map Picker</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    html, body, #map { height: 100%; margin: 0; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    const map = L.map('map', {
+      zoomControl: true
+    }).setView([36.8065, 10.1815], 11);
+
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      updateWhenIdle: false,
+      updateWhenZooming: false,
+      keepBuffer: 4,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    let marker = null;
+
+    function notifyJava(lat, lng) {
+      try {
+        if (window.javaConnector && window.javaConnector.setLocation) {
+          window.javaConnector.setLocation(lat, lng);
+        }
+      } catch (e) {
+      }
+    }
+
+    map.on('click', function(e) {
+      const lat = e.latlng.lat;
+      const lng = e.latlng.lng;
+
+      if (marker) {
+        marker.setLatLng(e.latlng);
+      } else {
+        marker = L.marker(e.latlng).addTo(map);
+      }
+      notifyJava(lat, lng);
+    });
+
+    function fixTiles() {
+      try {
+        map.invalidateSize(true);
+        tiles.redraw();
+      } catch (e) {
+      }
+    }
+
+    window.fixTiles = fixTiles;
+
+    window.addEventListener('load', function() {
+      setTimeout(fixTiles, 150);
+      setTimeout(fixTiles, 600);
+    });
+
+    window.addEventListener('resize', function() {
+      setTimeout(fixTiles, 100);
+    });
+
+    // Retry tiles on error (helps JavaFX WebView)
+    let retryTimer = null;
+    tiles.on('tileerror', function(e) {
+      try {
+        if (window.javaConnector && window.javaConnector.log) {
+          const src = (e && e.tile && e.tile.src) ? e.tile.src : '(unknown)';
+          window.javaConnector.log('tileerror: ' + src);
+        }
+      } catch (e) {}
+      if (retryTimer) {
+        return;
+      }
+      retryTimer = setTimeout(function() {
+        retryTimer = null;
+        fixTiles();
+      }, 500);
+    });
+
+    tiles.on('tileload', function() {
+      // uncomment for verbose logging
+      // if (window.javaConnector && window.javaConnector.log) window.javaConnector.log('tileload');
+    });
+
+    // Periodic refresh (sometimes WebView leaves gaps)
+    setInterval(function() {
+      fixTiles();
+    }, 2500);
+  </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controllers.candidature.RH_EntretienFormController"
+      stylesheets="@../csscandidature/wizard_Admin.css"
+      spacing="16"
+      styleClass="rh-form-shell">
+
+    <padding>
+        <Insets top="18" right="18" bottom="18" left="18"/>
+    </padding>
+
+    <BorderPane styleClass="rh-ent-form-shell" maxWidth="Infinity">
+        <padding>
+            <Insets top="18" right="18" bottom="18" left="18"/>
+        </padding>
+
+        <center>
+            <VBox spacing="18" styleClass="rh-ent-form-surface" maxWidth="Infinity">
+                <padding>
+                    <Insets top="18" right="18" bottom="18" left="18"/>
+                </padding>
+
+                <HBox spacing="12" alignment="CENTER_LEFT" styleClass="rh-ent-title-row">
+                    <StackPane styleClass="rh-ent-title-ico">
+                        <Label text="📅" styleClass="rh-ent-title-ico-label"/>
+                    </StackPane>
+                    <Label fx:id="title" text="Entretien" styleClass="rh-ent-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Retour" onAction="#back" styleClass="rh-btn-ghost"/>
+                </HBox>
+
+                <GridPane hgap="18" vgap="18" maxWidth="Infinity">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="58" hgrow="ALWAYS"/>
+                        <ColumnConstraints percentWidth="42" hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <VBox spacing="14" GridPane.columnIndex="0" styleClass="rh-ent-card" maxWidth="Infinity">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16"/>
+                        </padding>
+
+                        <VBox spacing="6" maxWidth="Infinity">
+                            <Label text="Candidat" styleClass="rh-field-caption"/>
+                            <Label fx:id="lblCandidateName" text="" styleClass="rh-subtitle" wrapText="true"/>
+                        </VBox>
+
+                        <VBox spacing="6" maxWidth="Infinity">
+                            <Label text="Sélectionnez une date" styleClass="rh-field-caption"/>
+                            <DatePicker fx:id="dpDate" styleClass="rh-field" maxWidth="Infinity"/>
+                            <Label fx:id="errDate" text="" styleClass="rh-field-error" wrapText="true" visible="false" managed="false"/>
+                        </VBox>
+
+                        <VBox spacing="8" maxWidth="Infinity">
+                            <Label text="Heure du RDV" styleClass="rh-field-caption"/>
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <ComboBox fx:id="cbHour" styleClass="rh-field rh-ent-time"/>
+                                <ComboBox fx:id="cbMinute" styleClass="rh-field rh-ent-time"/>
+                            </HBox>
+                            <Label fx:id="errTime" text="" styleClass="rh-field-error" wrapText="true" visible="false" managed="false"/>
+                        </VBox>
+
+                        <VBox spacing="6" maxWidth="Infinity">
+                            <Label text="Mode" styleClass="rh-field-caption"/>
+                            <ComboBox fx:id="cbMode" styleClass="rh-field" maxWidth="Infinity"/>
+                            <Label fx:id="errMode" text="" styleClass="rh-field-error" wrapText="true" visible="false" managed="false"/>
+                        </VBox>
+
+                        <VBox spacing="6" maxWidth="Infinity">
+                            <Label text="Message" styleClass="rh-field-caption"/>
+                            <TextArea fx:id="taNotes" promptText="Saisissez un message..." prefRowCount="4" wrapText="true" styleClass="rh-field" maxWidth="Infinity"/>
+                            <Label fx:id="errNotes" text="" styleClass="rh-field-error" wrapText="true" visible="false" managed="false"/>
+                        </VBox>
+                    </VBox>
+
+                    <VBox spacing="14" GridPane.columnIndex="1" styleClass="rh-ent-card" maxWidth="Infinity">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16"/>
+                        </padding>
+
+                        <Label fx:id="lblRightTitle" text="Planifier la réunion" styleClass="rh-ent-right-title"/>
+
+                        <VBox fx:id="boxPlatform" spacing="10" maxWidth="Infinity" visible="false" managed="false">
+                            <Label text="Plateforme" styleClass="rh-field-caption"/>
+                            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="rh-ent-meet-row">
+                                <ToggleButton fx:id="tbMeet" text="Google Meet" styleClass="rh-ent-meet-btn" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                                <ToggleButton fx:id="tbTeams" text="Microsoft Teams" styleClass="rh-ent-meet-btn" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                                <ToggleButton fx:id="tbZoom" text="Zoom" styleClass="rh-ent-meet-btn" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                            </HBox>
+                            <Label fx:id="errPlatform" text="" styleClass="rh-field-error" wrapText="true" visible="false" managed="false"/>
+
+                            <VBox spacing="6" maxWidth="Infinity">
+                                <Label text="Lien / Path" styleClass="rh-field-caption"/>
+                                <TextField fx:id="tfMeetingLink" promptText="Collez ici le lien du meeting..." styleClass="rh-field" maxWidth="Infinity"/>
+                                <Label fx:id="errLink" text="" styleClass="rh-field-error" wrapText="true" visible="false" managed="false"/>
+                            </VBox>
+
+                            <Button fx:id="btnOpenPlatform" text="Ouvrir" onAction="#openPlatform" styleClass="rh-ent-manual-link"/>
+
+                            <StackPane styleClass="rh-ent-illus">
+                                <ImageView fitWidth="260" preserveRatio="true" opacity="0.98">
+                                    <image>
+                                        <Image url="@../images/ordi.png"/>
+                                    </image>
+                                </ImageView>
+                            </StackPane>
+                        </VBox>
+
+                        <VBox fx:id="boxLieu" spacing="6" maxWidth="Infinity" visible="false" managed="false">
+                            <Label text="Lieu" styleClass="rh-field-caption"/>
+                            <TextField fx:id="tfLieu" promptText="Salle / adresse..." styleClass="rh-field" maxWidth="Infinity"/>
+                            <Label fx:id="errLieu" text="" styleClass="rh-field-error" wrapText="true" visible="false" managed="false"/>
+
+                            <StackPane styleClass="rh-ent-illus">
+                                <ImageView fitWidth="260" preserveRatio="true" opacity="0.98">
+                                    <image>
+                                        <Image url="@../images/ordi.png"/>
+                                    </image>
+                                </ImageView>
+                            </StackPane>
+                        </VBox>
+                    </VBox>
+
+                </GridPane>
+            </VBox>
+        </center>
+
+        <bottom>
+            <HBox spacing="10" alignment="CENTER_RIGHT" styleClass="rh-ent-footer">
+                <padding>
+                    <Insets top="12" right="18" bottom="12" left="18"/>
+                </padding>
+                <Button text="Annuler" onAction="#back" styleClass="rh-ent-cancel"/>
+                <Button fx:id="btnSave" text="Ajouter" onAction="#save" styleClass="rh-btn-primary"/>
+            </HBox>
+        </bottom>
+    </BorderPane>
+
+</VBox>

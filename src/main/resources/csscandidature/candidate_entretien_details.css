@@ -1,0 +1,146 @@
+.ced-root {
+    -fx-background-color: transparent;
+    -primary-color: #2D82B5;
+    -primary-dark: #015C92;
+}
+
+.ced-navbar-spacer {
+    -fx-min-height: 86;
+    -fx-pref-height: 86;
+    -fx-max-height: 86;
+}
+
+.ced-scroll,
+.ced-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.ced-shell {
+    -fx-background-color: transparent;
+}
+
+.ced-header {
+    -fx-padding: 14 14 14 14;
+    -fx-background-color:
+            rgba(255,255,255,0.46),
+            linear-gradient(to bottom right, rgba(255,255,255,0.56), rgba(188,230,255,0.14));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.70);
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.10), 18, 0.16, 0, 8);
+}
+
+.ced-back {
+    -fx-background-color: rgba(255,255,255,0.60);
+    -fx-text-fill: rgba(1,92,146,0.92);
+    -fx-font-weight: 900;
+    -fx-background-radius: 999;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+    -fx-pref-width: 32;
+    -fx-pref-height: 32;
+    -fx-cursor: hand;
+}
+
+.ced-back:hover {
+    -fx-background-color: rgba(255,255,255,0.78);
+}
+
+.ced-title {
+    -fx-text-fill: rgba(1,92,146,0.96);
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.ced-subtitle {
+    -fx-text-fill: rgba(15,23,42,0.55);
+    -fx-font-weight: 700;
+}
+
+.ced-chip {
+    -fx-background-color: rgba(45,130,181,0.14);
+    -fx-text-fill: rgba(1,92,146,0.92);
+    -fx-font-weight: 900;
+    -fx-background-radius: 999;
+    -fx-padding: 6 10;
+}
+
+.ced-card {
+    -fx-background-color:
+            rgba(255,255,255,0.44),
+            linear-gradient(to bottom right, rgba(255,255,255,0.56), rgba(188,230,255,0.14));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.58);
+    -fx-padding: 14;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.10), 24, 0.18, 0, 12);
+}
+
+.ced-card-title {
+    -fx-text-fill: rgba(15,23,42,0.72);
+    -fx-font-weight: 900;
+}
+
+.ced-row {
+    -fx-padding: 2 0 2 0;
+}
+
+.ced-ico {
+    -fx-text-fill: rgba(1,92,146,0.92);
+    -fx-font-weight: 900;
+}
+
+.ced-val {
+    -fx-text-fill: rgba(15,23,42,0.78);
+    -fx-font-weight: 800;
+}
+
+.ced-link {
+    -fx-background-color: rgba(255,255,255,0.72);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(45,130,181,0.18);
+    -fx-padding: 8 10;
+}
+
+.ced-copy {
+    -fx-background-color: rgba(45,130,181,0.92);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 12;
+    -fx-min-width: 34;
+    -fx-min-height: 34;
+    -fx-pref-width: 34;
+    -fx-pref-height: 34;
+    -fx-cursor: hand;
+}
+
+.ced-copy:hover {
+    -fx-background-color: rgba(1,92,146,0.92);
+}
+
+.ced-notes {
+    -fx-background-color: rgba(255,255,255,0.72);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.70);
+    -fx-padding: 10;
+    -fx-pref-row-count: 6;
+}
+
+.ced-notes .content {
+    -fx-background-color: transparent;
+}
+
+.ced-primary {
+    -fx-background-color: rgba(45,130,181,0.92);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 14;
+    -fx-padding: 10 14;
+    -fx-cursor: hand;
+}
+
+.ced-primary:hover {
+    -fx-background-color: rgba(1,92,146,0.92);
+}

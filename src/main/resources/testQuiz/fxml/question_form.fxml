@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controllers.testQuiz.QuestionFormController"
+      stylesheets="@../css/style.css"
+      spacing="12" styleClass="tq-root">
+
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <Label text="Formulaire Question" styleClass="tq-title"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="tests-form-scroll">
+        <content>
+            <GridPane hgap="10" vgap="10" styleClass="tq-card">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="25"/>
+                    <ColumnConstraints percentWidth="75"/>
+                </columnConstraints>
+
+                <Label text="question:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextArea fx:id="questionArea" promptText="Texte de la question" prefRowCount="4" styleClass="input" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label fx:id="questionValidationLabel" text="" styleClass="validation-text" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="reponse:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="reponseField" promptText="Optionnel" styleClass="input" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="points:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="pointsField" promptText="Entier >= 1" styleClass="input" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <Label fx:id="pointsValidationLabel" text="" styleClass="validation-text" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            </GridPane>
+        </content>
+    </ScrollPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="saveButton" text="Enregistrer" styleClass="btn-primary" onAction="#handleEnregistrer"/>
+        <Button text="Annuler" styleClass="btn-secondary" onAction="#handleAnnuler"/>
+    </HBox>
+
+</VBox>

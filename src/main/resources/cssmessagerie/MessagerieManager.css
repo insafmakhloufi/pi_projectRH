@@ -1,0 +1,157 @@
+/* ROOT */
+.root-manager {
+    -fx-background-color: #f5f5ff;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar-conversations {
+    -fx-background-color: #5b5fc7;
+    -fx-padding: 0;
+}
+.sidebar-header {
+    -fx-padding: 20 15 15 15;
+    -fx-spacing: 8;
+    -fx-background-color: #5b5fc7;
+}
+.sidebar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.count-conv {
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font-size: 12px;
+}
+.search-conv {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.6);
+    -fx-background-radius: 20;
+    -fx-padding: 8 12;
+    -fx-border-width: 0;
+}
+.scroll-conv {
+    -fx-background-color: #5b5fc7;
+    -fx-background: #5b5fc7;
+    -fx-border-width: 0;
+}
+.conv-list {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 5 0;
+}
+.conv-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-padding: 12 15;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+.conv-list .list-cell:hover {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-background-radius: 10;
+}
+.conv-list .list-cell:selected {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-text-fill: #5b5fc7;
+    -fx-font-weight: bold;
+}
+
+/* CHAT ZONE */
+.chat-zone {
+    -fx-background-color: #f5f5ff;
+}
+.chat-header {
+    -fx-background-color: white;
+    -fx-padding: 15 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 5, 0, 0, 2);
+}
+.nom-interlocuteur {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d2d7a;
+}
+.role-interlocuteur {
+    -fx-font-size: 12px;
+    -fx-text-fill: #5b5fc7;
+}
+.btn-voir-profil {
+    -fx-background-color: #5b5fc7;
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-padding: 6 16;
+    -fx-cursor: hand;
+    -fx-font-size: 12px;
+}
+
+/* MESSAGES */
+.scroll-messages {
+    -fx-background-color: #f5f5ff;
+    -fx-background: #f5f5ff;
+    -fx-border-width: 0;
+}
+.messages-container {
+    -fx-background-color: transparent;
+}
+.message-moi {
+    -fx-background-color: #5b5fc7;
+    -fx-background-radius: 18 18 4 18;
+    -fx-padding: 10 15;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-max-width: 420px;
+    -fx-wrap-text: true;
+}
+.message-autre {
+    -fx-background-color: white;
+    -fx-background-radius: 18 18 18 4;
+    -fx-padding: 10 15;
+    -fx-text-fill: #2d2d7a;
+    -fx-font-size: 13px;
+    -fx-max-width: 420px;
+    -fx-wrap-text: true;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 4, 0, 0, 1);
+}
+.message-ia {
+    -fx-background-color: #eeeefc;
+    -fx-background-radius: 18 18 18 4;
+    -fx-padding: 10 15;
+    -fx-text-fill: #2d2d7a;
+    -fx-font-size: 13px;
+    -fx-max-width: 420px;
+    -fx-wrap-text: true;
+    -fx-border-color: #5b5fc7;
+    -fx-border-width: 1;
+    -fx-border-radius: 18 18 18 4;
+}
+.heure-message {
+    -fx-font-size: 10px;
+    -fx-text-fill: #99aabb;
+}
+
+/* INPUT ZONE */
+.input-zone {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 5, 0, 0, -2);
+}
+.input-message {
+    -fx-background-color: #f5f5ff;
+    -fx-background-radius: 20;
+    -fx-border-width: 0;
+    -fx-padding: 10 15;
+    -fx-font-size: 13px;
+}
+.btn-envoyer {
+    -fx-background-color: #5b5fc7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+.btn-envoyer:hover {
+    -fx-background-color: #4545a0;
+}

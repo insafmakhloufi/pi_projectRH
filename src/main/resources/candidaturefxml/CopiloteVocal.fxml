@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controllers.candidature.CopiloteVocalController"
+      fx:id="copiloteRoot"
+      stylesheets="@../csscandidature/copilote.css"
+      alignment="BOTTOM_RIGHT"
+      pickOnBounds="false"
+      spacing="8"
+      maxWidth="340"
+      style="-fx-padding: 0 16 90 0;">
+
+    <!-- Popup conversation - visible seulement quand ouvert -->
+    <VBox fx:id="popupCopilote" styleClass="copilote-popup"
+          spacing="12" visible="false" managed="false">
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="10"
+              styleClass="copilote-popup-header">
+            <Circle radius="6" fill="#4f46e5"/>
+            <Label text="🎙 Copilote CareerLink"
+                   styleClass="copilote-popup-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="✕" styleClass="copilote-close-btn"
+                    onAction="#togglePopup"/>
+        </HBox>
+
+        <!-- Zone texte transcrit -->
+        <VBox styleClass="copilote-transcript-box" spacing="4">
+            <Label text="Ce que j'ai compris :"
+                   styleClass="copilote-label-small"/>
+            <Label fx:id="lblTexte" text=""
+                   wrapText="true"
+                   styleClass="copilote-transcript-text"/>
+        </VBox>
+
+        <!-- Statut -->
+        <Label fx:id="lblStatut"
+               text="Cliquez sur le micro pour parler"
+               wrapText="true"
+               styleClass="copilote-statut"/>
+
+        <!-- Bouton micro DANS le popup -->
+        <HBox alignment="CENTER">
+            <StackPane onMouseClicked="#toggleRecording"
+                       style="-fx-cursor: hand;">
+                <Circle fx:id="btnMicro" radius="26" fill="#4f46e5"
+                        style="-fx-effect: dropshadow(gaussian,
+                        rgba(79,70,229,0.4), 10, 0, 0, 3);"/>
+                <Label text="🎤" style="-fx-font-size:18px;"/>
+            </StackPane>
+        </HBox>
+
+        <!-- Exemples -->
+        <VBox styleClass="copilote-examples" spacing="3">
+            <Label text="Exemples :" styleClass="copilote-label-small"/>
+            <Label text="• Navigue vers mes candidatures"
+                   styleClass="copilote-example-item"/>
+            <Label text="• Ouvre le formulaire d'ajout"
+                   styleClass="copilote-example-item"/>
+            <Label text="• Dans le champ nom écris Ahmed"
+                   styleClass="copilote-example-item"/>
+        </VBox>
+
+    </VBox>
+
+    <!-- Bouton flottant FAB - toujours visible -->
+    <HBox alignment="CENTER_RIGHT">
+        <StackPane onMouseClicked="#togglePopup"
+                   style="-fx-cursor: hand;">
+            <Circle radius="28" fill="#4f46e5"
+                    style="-fx-effect: dropshadow(gaussian,
+                    rgba(79,70,229,0.5), 14, 0, 0, 3);"/>
+            <Label text="🎙" style="-fx-font-size:20px;"/>
+        </StackPane>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,666 @@
+/* Mes Candidatures - dashboard friendly */
+
+.mes-cand-root {
+    -fx-background-color: transparent;
+    -primary-color: #2D82B5;
+    -primary-dark: #015C92;
+    -primary-mid: #53A7D8;
+    -primary-soft: #88CDF6;
+    -primary-ice: #BCE6FF;
+}
+
+.mc-navbar-spacer {
+    -fx-min-height: 86;
+    -fx-pref-height: 86;
+    -fx-max-height: 86;
+}
+
+.mc-shell {
+    -fx-padding: 18;
+    -fx-background-color:
+            linear-gradient(to bottom right, rgba(255,255,255,0.70), rgba(188,230,255,0.22));
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(255,255,255,0.60);
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.12), 30, 0.16, 0, 14);
+}
+
+.mc-topbar {
+    -fx-padding: 14 14 14 14;
+    -fx-background-color:
+            rgba(255,255,255,0.22),
+            linear-gradient(to bottom right, rgba(188,230,255,0.18), rgba(255,255,255,0.10));
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.48);
+    -fx-effect: dropshadow(gaussian, rgba(17,24,39,0.10), 22, 0.18, 0, 10);
+}
+
+.mc-top-title {
+    -fx-text-fill: rgba(15,23,42,0.92);
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+}
+
+.mc-top-add {
+    -fx-background-color: rgba(255,255,255,0.35);
+    -fx-text-fill: rgba(1,92,146,0.92);
+    -fx-font-weight: 900;
+    -fx-background-radius: 999;
+    -fx-padding: 4 12;
+    -fx-cursor: hand;
+}
+
+.mc-top-add:hover {
+    -fx-background-color: rgba(255,255,255,0.46);
+}
+
+.mc-top-search {
+    -fx-background-color: rgba(255,255,255,0.38);
+    -fx-text-fill: rgba(15,23,42,0.92);
+    -fx-prompt-text-fill: rgba(15,23,42,0.42);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(45,130,181,0.16);
+    -fx-padding: 4 12;
+    -fx-pref-width: 280;
+}
+
+.mc-top-searchbtn {
+    -fx-background-color: rgba(45,130,181,0.92);
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 999;
+    -fx-min-width: 30;
+    -fx-min-height: 30;
+    -fx-pref-width: 30;
+    -fx-pref-height: 30;
+    -fx-cursor: hand;
+}
+
+.mc-top-searchbtn:hover {
+    -fx-background-color: rgba(1,92,146,0.92);
+}
+
+.mc-board {
+    -fx-padding: 4;
+    -fx-background-color:
+            rgba(255,255,255,0.40),
+            linear-gradient(to bottom right, rgba(255,255,255,0.52), rgba(188,230,255,0.14));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.58);
+    -fx-effect: dropshadow(gaussian, rgba(17,24,39,0.10), 26, 0.18, 0, 12);
+}
+
+.mc-board-topbar {
+    -fx-background-color:
+            rgba(255,255,255,0.46),
+            linear-gradient(to bottom right, rgba(255,255,255,0.56), rgba(188,230,255,0.14));
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.70);
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.10), 18, 0.16, 0, 8);
+    -fx-padding: 10 14 10 14;
+}
+
+.mc-board-title {
+    -fx-text-fill: rgba(1,92,146,0.96);
+    -fx-font-size: 14px;
+    -fx-font-weight: 900;
+}
+
+.mc-scroll,
+.mc-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.mc-grid {
+    -fx-padding: 8;
+}
+
+.mc-card {
+    -fx-background-color: rgba(9, 24, 44, 0.45);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-effect: dropshadow(three-pass-box, rgba(2, 6, 23, 0.18), 18, 0, 0, 8);
+}
+
+.mc-avatar {
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-text-fill: white;
+    -fx-background-radius: 999;
+    -fx-padding: 6 10;
+}
+
+.mc-name {
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+}
+
+.mc-email {
+    -fx-text-fill: rgba(255,255,255,0.75);
+}
+
+.mc-status {
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-font-weight: 900;
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-background-radius: 999;
+    -fx-padding: 6 10;
+}
+
+.mc-icon-btn {
+    -fx-background-color: rgba(255,255,255,0.90);
+    -fx-text-fill: rgba(0, 29, 57, 0.95);
+    -fx-font-weight: 900;
+    -fx-background-radius: 8;
+    -fx-min-width: 30;
+    -fx-min-height: 30;
+    -fx-pref-width: 30;
+    -fx-pref-height: 30;
+    -fx-cursor: hand;
+}
+
+.mc-icon-danger {
+    -fx-background-color: rgba(248, 113, 113, 0.95);
+    -fx-text-fill: #0b1220;
+}
+
+.mc-line {
+    -fx-text-fill: rgba(255,255,255,0.82);
+}
+
+.mc-wide-btn {
+    -fx-background-color: rgba(255,255,255,0.90);
+    -fx-text-fill: rgba(0, 29, 57, 0.95);
+    -fx-font-weight: 900;
+    -fx-background-radius: 10;
+    -fx-padding: 10 12;
+    -fx-cursor: hand;
+}
+
+.mc-empty {
+    -fx-padding: 10 14;
+    -fx-text-fill: rgba(15,23,42,0.60);
+}
+
+/* --- Cards design (cap3) used in cap1 layout --- */
+
+.mes-cand-card {
+    -fx-background-color:
+            rgba(255,255,255,0.56),
+            linear-gradient(to bottom right, rgba(255,255,255,0.62), rgba(188,230,255,0.18));
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 20, 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255,255,255,0.58);
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.10), 26, 0.18, 0, 12);
+}
+
+.mes-cand-card:hover {
+    -fx-border-color: rgba(45,130,181,0.26);
+    -fx-effect: dropshadow(gaussian, rgba(45,130,181,0.14), 28, 0.18, 0, 12);
+}
+
+.mes-cand-card:selected {
+    -fx-background-color:
+            rgba(45,130,181,0.08),
+            linear-gradient(to bottom right, rgba(255,255,255,0.62), rgba(136,205,246,0.22));
+    -fx-background-insets: 0, 0;
+    -fx-border-color: rgba(45,130,181,0.48);
+    -fx-effect: dropshadow(gaussian, rgba(45,130,181,0.22), 30, 0.18, 0, 12);
+}
+
+.mes-cand-card-title {
+    -fx-text-fill: #111827;
+    -fx-font-weight: 900;
+}
+
+.mes-cand-card-sub {
+    -fx-text-fill: rgba(17,24,39,0.55);
+    -fx-font-weight: 800;
+}
+
+.mes-cand-card-note {
+    -fx-text-fill: rgba(17,24,39,0.58);
+}
+
+.mes-cand-card-ico {
+    -fx-background-color: rgba(188,230,255,0.58);
+    -fx-text-fill: rgba(17,24,39,0.82);
+    -fx-font-weight: 900;
+    -fx-background-radius: 12;
+    -fx-min-width: 28;
+    -fx-min-height: 28;
+    -fx-pref-width: 28;
+    -fx-pref-height: 28;
+}
+
+.mes-cand-card-ico-entretien {
+    -fx-background-color: rgba(45,130,181,0.92);
+    -fx-text-fill: white;
+}
+
+.mes-cand-card-decision {
+    -fx-background-color: rgba(255,255,255,0.65);
+    -fx-text-fill: rgba(17,24,39,0.86);
+}
+
+.mes-cand-card-decision-pending {
+    -fx-background-color: rgba(245,158,11,0.16);
+    -fx-text-fill: rgba(180,83,9,0.96);
+}
+
+.mes-cand-card-decision-accept {
+    -fx-background-color: rgba(16,185,129,0.18);
+    -fx-text-fill: rgba(5,150,105,0.96);
+}
+
+.mes-cand-card-decision-refuse {
+    -fx-background-color: rgba(239,68,68,0.18);
+    -fx-text-fill: rgba(220,38,38,0.96);
+}
+
+.mes-cand-card-del {
+    -fx-background-color: rgba(248, 113, 113, 0.95);
+    -fx-text-fill: #0b1220;
+}
+
+.mes-cand-pill {
+    -fx-background-color: rgba(188,230,255,0.55);
+    -fx-background-radius: 999;
+    -fx-padding: 5 10;
+}
+
+.mes-cand-pill-ico {
+    -fx-text-fill: rgba(17,24,39,0.70);
+}
+
+.mes-cand-pill-text {
+    -fx-text-fill: rgba(17,24,39,0.70);
+}
+
+.mes-cand-card-wide {
+    -fx-background-color: rgba(255,255,255,0.82);
+    -fx-text-fill: rgba(0, 29, 57, 0.95);
+    -fx-font-weight: 900;
+    -fx-background-radius: 10;
+    -fx-padding: 8 12;
+    -fx-cursor: hand;
+}
+
+.mes-cand-shell {
+    -fx-background-color: transparent;
+    -fx-padding: 12 12 12 12;
+}
+
+.mes-cand-head {
+    -fx-padding: 8 8 14 8;
+}
+
+.mes-cand-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #0f172a;
+}
+
+.mes-cand-subtitle {
+    -fx-text-fill: #64748b;
+}
+
+.mes-cand-toolbar {
+    -fx-spacing: 12;
+}
+
+.mes-cand-search {
+    -fx-background-color: #ffffff;
+    -fx-border-color: rgba(15, 23, 42, 0.12);
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 10 12;
+    -fx-text-fill: #0f172a;
+    -fx-prompt-text-fill: #94a3b8;
+    -fx-pref-width: 240;
+}
+
+.mes-cand-btn-primary {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-font-weight: 800;
+    -fx-background-radius: 14;
+    -fx-padding: 10 14;
+    -fx-cursor: hand;
+}
+
+.mes-cand-btn-primary:hover {
+    -fx-background-color: derive(-primary-color, 12%);
+}
+
+.mes-cand-icon-pill {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-background-radius: 999;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-pref-width: 40;
+    -fx-pref-height: 40;
+    -fx-cursor: hand;
+}
+
+.mes-cand-icon-pill:hover {
+    -fx-background-color: derive(-primary-color, 12%);
+}
+
+.mes-cand-content {
+    -fx-background-color: transparent;
+    -fx-padding: 8;
+}
+
+.mes-cand-board {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(2, 6, 23, 0.06);
+    -fx-effect: dropshadow(three-pass-box, rgba(2, 6, 23, 0.10), 18, 0, 0, 8);
+}
+
+.mes-cand-scroll,
+.mes-cand-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.mes-cand-cards-row {
+    -fx-padding: 14;
+}
+
+.mes-cand-card {
+    -fx-background-color:
+            linear-gradient(to right, rgba(0, 29, 57, 0.12), rgba(0, 29, 57, 0.04));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(15, 23, 42, 0.08);
+    -fx-padding: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(2, 6, 23, 0.08), 14, 0, 0, 6);
+}
+
+.mes-cand-card:hover {
+    -fx-border-color: rgba(0, 29, 57, 0.25);
+    -fx-effect: dropshadow(three-pass-box, rgba(2, 6, 23, 0.10), 16, 0, 0, 8);
+}
+
+.mes-cand-card-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-weight: 800;
+    -fx-font-size: 15px;
+}
+
+.mes-cand-card-meta {
+    -fx-text-fill: #64748b;
+}
+
+.mes-cand-card-sub {
+    -fx-text-fill: #64748b;
+}
+
+.mes-cand-card-note {
+    -fx-text-fill: #334155;
+    -fx-font-size: 12px;
+}
+
+.mes-cand-card-ico {
+    -fx-background-color: rgba(255,255,255,0.75);
+    -fx-text-fill: rgba(0, 29, 57, 0.95);
+    -fx-background-radius: 999;
+    -fx-min-width: 34;
+    -fx-min-height: 34;
+    -fx-pref-width: 34;
+    -fx-pref-height: 34;
+    -fx-font-weight: 900;
+}
+
+.mes-cand-card-ico.mes-cand-card-ico-entretien {
+    -fx-background-color: rgba(45,130,181,0.92);
+    -fx-text-fill: white;
+}
+
+.mes-cand-card-ico.mes-cand-card-decision {
+    -fx-background-color: rgba(255,255,255,0.65);
+    -fx-text-fill: rgba(17,24,39,0.86);
+}
+
+.mes-cand-card-ico.mes-cand-card-decision-pending {
+    -fx-background-color: rgba(245,158,11,0.16);
+    -fx-text-fill: rgba(180,83,9,0.96);
+}
+
+.mes-cand-card-ico.mes-cand-card-decision-accept {
+    -fx-background-color: rgba(16,185,129,0.18);
+    -fx-text-fill: rgba(5,150,105,0.96);
+}
+
+.mes-cand-card-ico.mes-cand-card-decision-refuse {
+    -fx-background-color: rgba(239,68,68,0.18);
+    -fx-text-fill: rgba(220,38,38,0.96);
+}
+
+.mes-cand-card-del {
+    -fx-background-color: rgba(239, 68, 68, 0.16);
+    -fx-text-fill: #b91c1c;
+    -fx-background-radius: 999;
+    -fx-min-width: 34;
+    -fx-min-height: 34;
+    -fx-pref-width: 34;
+    -fx-pref-height: 34;
+    -fx-font-weight: 900;
+}
+
+.mes-cand-card-actions {
+    -fx-padding: 6 0 0 0;
+}
+
+.mes-cand-card-action {
+    -fx-background-color: rgba(255, 255, 255, 0.80);
+    -fx-text-fill: rgba(0, 29, 57, 0.95);
+    -fx-font-weight: 800;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(0, 29, 57, 0.10);
+    -fx-padding: 7 10;
+    -fx-cursor: hand;
+}
+
+.mes-cand-card-action:hover {
+    -fx-border-color: rgba(0, 29, 57, 0.22);
+}
+
+.mes-cand-card-action-primary {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+.mes-cand-card-action-primary:hover {
+    -fx-background-color: derive(-primary-color, 12%);
+}
+
+.mes-cand-pill {
+    -fx-background-color: rgba(255,255,255,0.55);
+    -fx-background-radius: 999;
+    -fx-padding: 6 10;
+}
+
+.mes-cand-pill-ico {
+    -fx-text-fill: rgba(15, 23, 42, 0.75);
+}
+
+.mes-cand-pill-text {
+    -fx-text-fill: rgba(15, 23, 42, 0.78);
+}
+
+.mes-cand-left {
+    -fx-background-color:
+            rgba(255,255,255,0.44),
+            linear-gradient(to bottom right, rgba(255,255,255,0.56), rgba(188,230,255,0.14));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.58);
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.10), 24, 0.18, 0, 12);
+}
+
+.mes-cand-left-stack {
+    -fx-background-color:
+            rgba(255,255,255,0.24),
+            linear-gradient(to bottom right, rgba(255,255,255,0.34), rgba(136,205,246,0.14));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.50);
+    -fx-padding: 10;
+}
+
+.mes-cand-left-placeholder {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.mes-cand-left-ph-card {
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(255,255,255,0.30);
+    -fx-padding: 14;
+    -fx-min-height: 0;
+    -fx-pref-height: 9999;
+    -fx-max-width: Infinity;
+}
+
+.mes-cand-left-ph-pill {
+    -fx-background-color: rgba(255,255,255,0.14);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.28);
+    -fx-padding: 18 16;
+    -fx-max-width: Infinity;
+}
+
+.mes-cand-left-ph-icon {
+    -fx-min-width: 54;
+    -fx-min-height: 54;
+    -fx-pref-width: 54;
+    -fx-pref-height: 54;
+    -fx-background-color: rgba(188,230,255,0.28);
+    -fx-background-radius: 999;
+}
+
+.mes-cand-left-ph-icon-text {
+    -fx-font-size: 18px;
+    -fx-text-fill: rgba(15,23,42,0.55);
+}
+
+.mes-cand-left-ph-text {
+    -fx-text-fill: rgba(15,23,42,0.60);
+    -fx-font-weight: 800;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-max-width: 220;
+}
+
+.mes-cand-left-content {
+    -fx-background-color: transparent;
+}
+
+.mes-cand-left-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-weight: 900;
+}
+
+.mes-cand-left-name {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+}
+
+.mes-cand-left-sub {
+    -fx-text-fill: #64748b;
+}
+
+.mes-cand-left-card {
+    -fx-background-color: rgba(244, 246, 248, 0.85);
+    -fx-background-radius: 14;
+    -fx-padding: 12;
+    -fx-border-color: rgba(15, 23, 42, 0.06);
+    -fx-border-radius: 14;
+}
+
+.mes-cand-left-ico {
+    -fx-text-fill: rgba(15, 23, 42, 0.75);
+}
+
+.mes-cand-left-val {
+    -fx-text-fill: #0f172a;
+    -fx-font-weight: 700;
+}
+
+.mes-cand-left-key {
+    -fx-text-fill: #64748b;
+}
+
+.mes-cand-left-notes {
+    -fx-text-fill: #334155;
+}
+
+.mes-cand-side {
+    -fx-padding: 18;
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 0 18 18 0;
+    -fx-border-color: rgba(2, 6, 23, 0.06);
+    -fx-border-width: 0 0 0 1;
+}
+
+.mes-cand-side-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.mes-cand-kv-key {
+    -fx-text-fill: #64748b;
+}
+
+.mes-cand-kv-val {
+    -fx-text-fill: #0f172a;
+    -fx-font-weight: 700;
+}
+
+.mes-cand-action-row {
+    -fx-spacing: 10;
+}
+
+.mes-cand-btn {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #0f172a;
+    -fx-font-weight: 800;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(45,130,181,0.18);
+    -fx-padding: 10 12;
+    -fx-cursor: hand;
+}
+
+.mes-cand-btn:hover {
+    -fx-border-color: rgba(83,167,216,0.65);
+}
+
+.mes-cand-btn-danger {
+    -fx-background-color: rgba(239, 68, 68, 0.12);
+    -fx-text-fill: #991b1b;
+    -fx-border-color: rgba(239, 68, 68, 0.25);
+}
+
+.mes-cand-empty {
+    -fx-text-fill: #94a3b8;
+}

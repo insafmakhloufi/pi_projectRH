@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.candidature.AjouterCandidature"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            vbarPolicy="AS_NEEDED"
+            stylesheets="@../csscandidature/wizard.css"
+            styleClass="center-scroll">
+
+    <content>
+        <VBox spacing="18"
+              fillWidth="true"
+              styleClass="wizard-shell">
+
+            <padding>
+                <!-- Top padding to stay below the floating navbar -->
+                <Insets top="96" right="18" bottom="18" left="18"/>
+            </padding>
+
+    <HBox spacing="0" alignment="CENTER" styleClass="wizard-card">
+        <padding>
+            <Insets top="18" right="18" bottom="18" left="18"/>
+        </padding>
+
+        <VBox spacing="8" alignment="CENTER">
+            <StackPane styleClass="hero-icon">
+                <Label text="🧳" styleClass="hero-icon-text"/>
+            </StackPane>
+            <Label fx:id="heroTitle" text="Nouvelle Candidature" styleClass="hero-title"/>
+            <Label fx:id="heroSubtitle" text="Remplissez le formulaire pour postuler" styleClass="hero-subtitle"/>
+        </VBox>
+    </HBox>
+
+    <AnchorPane fx:id="stepperPane" prefHeight="80" minHeight="80" styleClass="wizard-card">
+        <padding>
+            <Insets top="18" right="18" bottom="18" left="18"/>
+        </padding>
+
+        <Region fx:id="trackLine" styleClass="track-line-2"
+                prefHeight="8"
+                AnchorPane.leftAnchor="22"
+                AnchorPane.rightAnchor="22"
+                AnchorPane.topAnchor="32"/>
+
+        <Region fx:id="progressLine" styleClass="progress-line-2"
+                prefHeight="8"
+                prefWidth="0"
+                AnchorPane.leftAnchor="22"
+                AnchorPane.topAnchor="32"/>
+
+        <ImageView fx:id="runner"
+                   fitHeight="44"
+                   preserveRatio="true"
+                   AnchorPane.topAnchor="6"/>
+    </AnchorPane>
+
+    <HBox spacing="18" alignment="CENTER" styleClass="wizard-card steps-card">
+        <padding>
+            <Insets top="22" right="18" bottom="22" left="18"/>
+        </padding>
+
+        <VBox fx:id="stepItem0" alignment="CENTER" spacing="8" styleClass="step-item active" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="step-icon">
+                <Label text="👤" styleClass="step-icon-text"/>
+            </StackPane>
+            <Label fx:id="label0" text="Informations personnelles" styleClass="step-label"/>
+        </VBox>
+
+        <VBox fx:id="stepItem1" alignment="CENTER" spacing="8" styleClass="step-item" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="step-icon">
+                <Label text="💼" styleClass="step-icon-text"/>
+            </StackPane>
+            <Label fx:id="label1" text="Expérience professionnelle" styleClass="step-label"/>
+        </VBox>
+
+        <VBox fx:id="stepItem2" alignment="CENTER" spacing="8" styleClass="step-item" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="step-icon">
+                <Label text="🎓" styleClass="step-icon-text"/>
+            </StackPane>
+            <Label fx:id="label2" text="Formation académique" styleClass="step-label"/>
+        </VBox>
+
+        <VBox fx:id="stepItem3" alignment="CENTER" spacing="8" styleClass="step-item" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="step-icon">
+                <Label text="📄" styleClass="step-icon-text"/>
+            </StackPane>
+            <Label fx:id="label3" text="Motivation &amp; Documents" styleClass="step-label"/>
+        </VBox>
+
+        <VBox fx:id="stepItem4" alignment="CENTER" spacing="8" styleClass="step-item" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="step-icon">
+                <Label text="✓" styleClass="step-icon-text"/>
+            </StackPane>
+            <Label fx:id="label4" text="Review" styleClass="step-label"/>
+        </VBox>
+    </HBox>
+
+    <VBox spacing="16" styleClass="form-card" maxWidth="Infinity">
+        <padding>
+            <Insets top="22" right="22" bottom="22" left="22"/>
+        </padding>
+
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <StackPane styleClass="form-badge">
+                <Label text="👤" styleClass="form-badge-text"/>
+            </StackPane>
+            <VBox spacing="2">
+                <Label fx:id="formTitle" text="Informations personnelles" styleClass="form-title"/>
+                <Label fx:id="formSubtitle" text="Renseignez vos coordonnées" styleClass="form-subtitle"/>
+            </VBox>
+        </HBox>
+
+        <VBox fx:id="step0" spacing="14" maxWidth="Infinity">
+            <VBox spacing="14" maxWidth="Infinity" styleClass="exp-card">
+                <HBox alignment="CENTER_RIGHT" spacing="10">
+                    <Button fx:id="btnFillFromAccount"
+                            text="Remplir depuis mon compte"
+                            onAction="#fillFromConnectedUser"
+                            styleClass="btn-secondary"/>
+                </HBox>
+                <GridPane hgap="16" vgap="12" maxWidth="Infinity">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                    </columnConstraints>
+
+                    <VBox spacing="6" GridPane.columnIndex="0">
+                        <Label text="Prénom" styleClass="field-caption"/>
+                        <TextField fx:id="tfPrenom" promptText="Jean" styleClass="field-input" maxWidth="Infinity"/>
+                    </VBox>
+
+                    <VBox spacing="6" GridPane.columnIndex="1">
+                        <Label text="Nom" styleClass="field-caption"/>
+                        <TextField fx:id="tfNom" promptText="Dupont" styleClass="field-input" maxWidth="Infinity"/>
+                    </VBox>
+                </GridPane>
+
+                <VBox spacing="6">
+                    <Label text="Email" styleClass="field-caption"/>
+                    <TextField fx:id="tfEmail" promptText="jean.dupont@email.com" styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+
+                <HBox spacing="12" alignment="CENTER_LEFT" maxWidth="Infinity">
+                    <VBox spacing="6">
+                        <Label text="Indicatif" styleClass="field-caption"/>
+                        <ComboBox fx:id="cbIndicatif" styleClass="field-input phone-code" prefWidth="170"/>
+                    </VBox>
+
+                    <VBox spacing="6" HBox.hgrow="ALWAYS">
+                        <Label text="Téléphone" styleClass="field-caption"/>
+                        <TextField fx:id="tfTelLocal" promptText="12 345 678" styleClass="field-input" maxWidth="Infinity"/>
+                    </VBox>
+                </HBox>
+
+                <VBox spacing="6">
+                    <Label text="Adresse" styleClass="field-caption"/>
+                    <TextField fx:id="tfAdresse" promptText="123 Rue de la Paix" styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+
+                <GridPane hgap="16" vgap="12" maxWidth="Infinity">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                    </columnConstraints>
+
+                    <VBox spacing="6" GridPane.columnIndex="0">
+                        <Label text="Ville" styleClass="field-caption"/>
+                        <TextField fx:id="tfVille" promptText="Paris" styleClass="field-input" maxWidth="Infinity"/>
+                    </VBox>
+
+                    <VBox spacing="6" GridPane.columnIndex="1">
+                        <Label text="Date de naissance" styleClass="field-caption"/>
+                        <DatePicker fx:id="dpNaissance" promptText="jj/mm/aaaa" styleClass="field-input" maxWidth="Infinity"/>
+                    </VBox>
+                </GridPane>
+            </VBox>
+        </VBox>
+
+        <VBox fx:id="step1" spacing="16" visible="false" managed="false" maxWidth="Infinity">
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label text="Expériences professionnelles :" styleClass="form-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="+ Ajouter une expérience" onAction="#addExperience" styleClass="btn-secondary"/>
+            </HBox>
+
+            <VBox fx:id="experienceContainer" spacing="12" maxWidth="Infinity"/>
+
+            <Separator/>
+
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label text="Certifications :" styleClass="form-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="+ Ajouter une certification" onAction="#addCertification" styleClass="btn-secondary"/>
+            </HBox>
+
+            <VBox fx:id="certificationContainer" spacing="12" maxWidth="Infinity"/>
+
+            <Separator/>
+
+            <VBox spacing="10" maxWidth="Infinity">
+                <Label text="Pièces jointes :" styleClass="form-title"/>
+
+                <VBox spacing="12" styleClass="wizard-card" maxWidth="Infinity">
+                    <padding>
+                        <Insets top="18" right="18" bottom="18" left="18"/>
+                    </padding>
+
+                    <Label text="Uploader un fichier (DOC, DOCX, HTML, PDF, TXT) - 1MB max" styleClass="field-caption"/>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="☁" styleClass="nav-icon-btn" disable="true"/>
+                        <Button text="⬇" styleClass="nav-icon-btn" disable="true"/>
+                        <Label text="Ou" styleClass="field-caption"/>
+                        <Button fx:id="btnSelectFile" text="Sélectionner un fichier" onAction="#chooseAttachment" styleClass="btn-secondary"/>
+                    </HBox>
+
+                    <Label fx:id="lblSelectedFile" text="Aucun fichier sélectionné" styleClass="hero-subtitle" wrapText="true"/>
+                </VBox>
+            </VBox>
+
+            <Separator/>
+
+            <VBox spacing="6" maxWidth="Infinity">
+                <Label text="Compétences (skills) :" styleClass="field-caption"/>
+                <TextField fx:id="tfSkills" promptText="Ex : Java, Spring Boot, SQL, Git, Communication…" styleClass="field-input" maxWidth="Infinity"/>
+            </VBox>
+        </VBox>
+
+        <VBox fx:id="step2" spacing="14" visible="false" managed="false" maxWidth="Infinity">
+            <VBox spacing="14" maxWidth="Infinity" styleClass="exp-card">
+                <VBox spacing="6" maxWidth="Infinity">
+                    <Label text="Quel est votre diplôme le plus élevé? *" styleClass="field-caption"/>
+                    <HBox spacing="18" alignment="CENTER_LEFT" maxWidth="Infinity">
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <RadioButton fx:id="rbBachelor"/>
+                            <Label text="Bachelor" styleClass="field-caption"/>
+                        </HBox>
+
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <RadioButton fx:id="rbEngineering"/>
+                            <Label text="Engineering" styleClass="field-caption"/>
+                        </HBox>
+
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <RadioButton fx:id="rbMasters"/>
+                            <Label text="Masters" styleClass="field-caption"/>
+                        </HBox>
+
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <RadioButton fx:id="rbPhd"/>
+                            <Label text="Ph.D." styleClass="field-caption"/>
+                        </HBox>
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="6" maxWidth="Infinity">
+                    <Label text="Dans quel établissement poursuivez-vous vos études ? *" styleClass="field-caption"/>
+                    <ComboBox fx:id="cbInstitution" promptText="Select an option" styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+
+                <VBox spacing="6" maxWidth="Infinity">
+                    <!-- Ceci est un commentaire
+                    <Label text="Lettre de motivation *" styleClass="field-caption"/>
+                    <TextArea fx:id="taMotivationLetter" promptText="Écrivez votre lettre de motivation..." prefRowCount="6" wrapText="true" styleClass="field-input" maxWidth="Infinity"/>-->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="Lettre de motivation *" styleClass="field-caption"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="btnGenerateAI"
+                                text="✨ Générer avec l'IA"
+                                onAction="#genererLettreIA"
+                                styleClass="btn-ai-generate"/>
+                    </HBox>
+                    <TextArea fx:id="taMotivationLetter"
+                              promptText="Écrivez votre lettre de motivation..."
+                              prefRowCount="6"
+                              wrapText="true"
+                              styleClass="field-input"
+                              maxWidth="Infinity"/>
+                </VBox>
+            </VBox>
+        </VBox>
+
+        <VBox fx:id="step3" spacing="14" visible="false" managed="false" maxWidth="Infinity">
+            <VBox spacing="14" maxWidth="Infinity" styleClass="exp-card">
+                <Label text="Motivation (Video)" styleClass="form-title"/>
+
+                <Label text="Record a short video (camera + microphone) or upload a video file." styleClass="field-caption" wrapText="true"/>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button fx:id="btnRecordVideo" text="🎥 Record" onAction="#startRecording" styleClass="btn-primary"/>
+                    <Button fx:id="btnStopVideo" text="⏹ Stop" onAction="#stopRecording" disable="true" styleClass="btn-secondary"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="btnUploadVideo" text="⬆ Upload video" onAction="#chooseVideo" styleClass="btn-secondary"/>
+                </HBox>
+
+                <Label fx:id="lblVideoStatus" text="No video yet" styleClass="hero-subtitle" wrapText="true"/>
+            </VBox>
+        </VBox>
+
+        <VBox fx:id="step4" spacing="16" visible="false" managed="false" maxWidth="Infinity">
+            <VBox spacing="16" maxWidth="Infinity" styleClass="exp-card">
+                <Label text="Avant d'envoyer votre candidature :" styleClass="form-title"/>
+
+                <HBox spacing="10" alignment="CENTER_LEFT" maxWidth="Infinity">
+                    <CheckBox fx:id="cbConfirmInfo"/>
+                    <Label text="Je confirme que toutes les informations fournies sont exactes." wrapText="true" styleClass="field-caption"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT" maxWidth="Infinity">
+                    <CheckBox fx:id="cbAcceptPrivacy"/>
+                    <Label text="J'accepte la politique de confidentialité et le traitement de mes données." wrapText="true" styleClass="field-caption"/>
+                </HBox>
+
+                <Separator/>
+
+                <Label text="Lorsque vous cliquez sur 'Soumettre', votre candidature sera envoyée au recruteur." wrapText="true" styleClass="field-caption"/>
+            </VBox>
+        </VBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Button fx:id="btnBack" text="Back" onAction="#back" styleClass="btn-secondary"/>
+            <Button fx:id="btnNext" text="Next" onAction="#next" styleClass="btn-primary"/>
+        </HBox>
+
+        </VBox>
+
+        </VBox>
+    </content>
+
+</ScrollPane>

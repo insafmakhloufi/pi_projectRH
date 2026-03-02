@@ -1,0 +1,495 @@
+/* EVENT AFFICHAGE - LUXURY THEME */
+
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "SF Pro Display", Arial, sans-serif;
+    -fx-font-size: 14px;
+    font-family: "Segoe UI", "Inter", "SF Pro Display", Arial, sans-serif;
+    font-size: 14px;
+}
+
+.page-bg {
+    -fx-background-color: #f6f8ff;
+    -fx-background-insets: 0;
+    background-color: #f6f8ff;
+}
+
+.page-container {
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.main-layout {
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.topbar {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    background-color: rgba(255, 255, 255, 0.92);
+}
+
+.search-container {
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.filter-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0F172A;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: rgba(15, 23, 42, 0.72);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.field-input {
+    -fx-background-color: rgba(248, 250, 252, 1.0);
+    -fx-border-color: rgba(148, 163, 184, 0.26);
+    -fx-border-width: 1;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-padding: 9 12;
+    -fx-pref-height: 42;
+    background-color: rgba(248, 250, 252, 1.0);
+    border-color: rgba(148, 163, 184, 0.26);
+    border-width: 1px;
+    border-radius: 16px;
+    padding: 9px 12px;
+}
+
+.modern-input {
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    border-radius: 16px;
+}
+
+.modern-input:focused,
+.field-input:focused,
+.filters-card .field-input:focused {
+    -fx-border-color: rgba(59, 130, 246, 0.55);
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.22), 18, 0.18, 0, 0);
+    border-color: rgba(59, 130, 246, 0.55);
+}
+
+.modern-input.spinner {
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    border-radius: 16px;
+}
+
+.panel-card {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(148, 163, 184, 0.18);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(17, 24, 39, 0.08), 28, 0.14, 0, 12);
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 22px;
+    border-color: rgba(148, 163, 184, 0.18);
+    border-width: 1px;
+}
+
+.filters-card {
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(17, 24, 39, 0.07), 20, 0.16, 0, 10);
+    border-radius: 22px;
+}
+
+.filters-card .field-input {
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-padding: 9 12;
+    -fx-pref-height: 42;
+    background-color: rgba(248, 250, 252, 1.0);
+    border-radius: 16px;
+    padding: 9px 12px;
+}
+
+.filters-card .field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.search-bar {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(148, 163, 184, 0.28);
+    -fx-border-width: 1;
+    -fx-padding: 12 18;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #0F172A;
+    -fx-prompt-text-fill: rgba(15, 23, 42, 0.45);
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 16, 0.14, 0, 6);
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    border-color: rgba(148, 163, 184, 0.28);
+    border-width: 1px;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.thin-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: -1;
+    background-color: transparent;
+    background: transparent;
+    border-color: transparent;
+    border-width: 0;
+    padding: 0;
+}
+
+.thin-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.thin-scroll .scroll-bar:vertical {
+    -fx-background-color: rgba(15, 23, 42, 0.06);
+    -fx-background-radius: 10;
+    -fx-pref-width: 8;
+    -fx-opacity: 0.85;
+    background-color: rgba(15, 23, 42, 0.06);
+    border-radius: 10px;
+    opacity: 0.85;
+}
+
+.thin-scroll .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.thin-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(15, 23, 42, 0.24);
+    -fx-background-radius: 8;
+    background-color: rgba(15, 23, 42, 0.24);
+    border-radius: 8px;
+}
+
+.thin-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: rgba(15, 23, 42, 0.34);
+    background-color: rgba(15, 23, 42, 0.34);
+}
+
+.event-card {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(148, 163, 184, 0.16);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(17, 24, 39, 0.08), 24, 0.16, 0, 12);
+    -fx-cursor: hand;
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 22px;
+    border-color: rgba(148, 163, 184, 0.16);
+    border-width: 1px;
+    cursor: pointer;
+}
+
+.event-card:hover {
+    -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+    -fx-translate-y: -2;
+    -fx-effect: dropshadow(gaussian, rgba(17, 24, 39, 0.12), 28, 0.20, 0, 14);
+}
+
+.event-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0F172A;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.event-meta {
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-text-fill: rgba(15, 23, 42, 0.65);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.event-actions {
+    -fx-padding: 2 0 0 0;
+    padding: 2px 0 0 0;
+}
+
+.event-image {
+    -fx-smooth: true;
+}
+
+.event-card-small {
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    border-radius: 22px;
+}
+
+.event-image-small {
+    -fx-background-radius: 22 22 0 0;
+    border-radius: 22px 22px 0 0;
+}
+
+.event-card-compact {
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    border-radius: 22px;
+}
+
+.event-image-compact {
+    -fx-background-radius: 22 22 0 0;
+    border-radius: 22px 22px 0 0;
+}
+
+.chip {
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+    -fx-padding: 6 12 6 12;
+    -fx-letter-spacing: 0.02em;
+    -fx-border-color: rgba(148, 163, 184, 0.26);
+    -fx-border-width: 1;
+    -fx-background-color: rgba(248, 250, 252, 1.0);
+    -fx-text-fill: rgba(15, 23, 42, 0.70);
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 6px 12px;
+    letter-spacing: 0.02em;
+    border-color: rgba(148, 163, 184, 0.26);
+    border-width: 1px;
+    background-color: rgba(248, 250, 252, 1.0);
+}
+
+.chip-type {
+    -fx-background-color: rgba(79, 70, 229, 0.12);
+    -fx-text-fill: #4338CA;
+    -fx-border-color: rgba(79, 70, 229, 0.18);
+    background-color: rgba(79, 70, 229, 0.12);
+    border-color: rgba(79, 70, 229, 0.18);
+}
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to right, #2563EB, #7C3AED);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 900;
+    -fx-padding: 10 16 10 16;
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.28), 16, 0.18, 0, 6);
+    -fx-cursor: hand;
+    background: linear-gradient(to right, #2563EB, #7C3AED);
+    background-color: #2563EB;
+    border-radius: 16px;
+    font-weight: 900;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to right, #3B82F6, #8B5CF6);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.40), 20, 0.22, 0, 8);
+    -fx-translate-y: -1;
+    background: linear-gradient(to right, #3B82F6, #8B5CF6);
+    background-color: #3B82F6;
+}
+
+.btn-primary-small {
+    -fx-padding: 8 12;
+    padding: 8px 12px;
+}
+
+.btn-ghost {
+    -fx-background-color: transparent;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-text-fill: #3B82F6;
+    -fx-border-color: #3B82F6;
+    -fx-border-width: 1.5;
+    -fx-font-weight: 900;
+    -fx-padding: 10 16 10 16;
+    -fx-cursor: hand;
+    background-color: transparent;
+    border-radius: 16px;
+    border-color: #3B82F6;
+    border-width: 1.5px;
+    font-weight: 900;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.btn-ghost:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.08);
+    -fx-text-fill: #1D4ED8;
+    -fx-border-color: #1D4ED8;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.25), 12, 0.20, 0, 6);
+    -fx-translate-y: -1;
+    background-color: rgba(59, 130, 246, 0.08);
+    border-color: #1D4ED8;
+}
+
+.btn-secondary {
+    -fx-background-color: rgba(15, 23, 42, 0.04);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(148, 163, 184, 0.26);
+    -fx-border-width: 1;
+    -fx-text-fill: rgba(15, 23, 42, 0.78);
+    -fx-font-weight: 800;
+    background-color: rgba(15, 23, 42, 0.04);
+    border-radius: 16px;
+    border-color: rgba(148, 163, 184, 0.26);
+    border-width: 1px;
+    font-weight: 800;
+}
+
+.btn-ghost-small {
+    -fx-padding: 8 12;
+    padding: 8px 12px;
+}
+
+/* ===================================================== */
+/* PREMIUM STYLES FOR SPECIFIC BUTTONS */
+/* ===================================================== */
+
+/* Actualiser Button - Top Bar Refresh */
+#btnRefresh {
+    -fx-background-color: linear-gradient(135deg, #10B981, #059669);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 900;
+    -fx-font-size: 13px;
+    -fx-padding: 10 18 10 18;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.30), 14, 0.20, 0, 6);
+    -fx-cursor: hand;
+    background: linear-gradient(135deg, #10B981, #059669);
+    background-color: #10B981;
+    border-radius: 18px;
+    font-weight: 900;
+    font-size: 13px;
+    padding: 10px 18px;
+    cursor: pointer;
+    -fx-letter-spacing: 0.02em;
+    letter-spacing: 0.02em;
+}
+
+#btnRefresh:hover {
+    -fx-background-color: linear-gradient(135deg, #059669, #047857);
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.45), 18, 0.25, 0, 8);
+    -fx-translate-y: -1.5;
+    background: linear-gradient(135deg, #059669, #047857);
+    background-color: #059669;
+    transform: translateY(-1.5px);
+}
+
+#btnRefresh:pressed {
+    -fx-translate-y: 0;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.20), 10, 0.15, 0, 4);
+    transform: translateY(0);
+}
+
+/* Appliquer Button - Filter Apply */
+#btnApplyFilter {
+    -fx-background-color: linear-gradient(135deg, #6366F1, #8B5CF6);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 900;
+    -fx-font-size: 14px;
+    -fx-padding: 12 20 12 20;
+    -fx-effect: dropshadow(gaussian, rgba(99, 102, 241, 0.35), 16, 0.22, 0, 6);
+    -fx-cursor: hand;
+    background: linear-gradient(135deg, #6366F1, #8B5CF6);
+    background-color: #6366F1;
+    border-radius: 18px;
+    font-weight: 900;
+    font-size: 14px;
+    padding: 12px 20px;
+    cursor: pointer;
+    -fx-letter-spacing: 0.01em;
+    letter-spacing: 0.01em;
+}
+
+#btnApplyFilter:hover {
+    -fx-background-color: linear-gradient(135deg, #4F46E5, #7C3AED);
+    -fx-effect: dropshadow(gaussian, rgba(99, 102, 241, 0.50), 20, 0.28, 0, 8);
+    -fx-translate-y: -2;
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
+    background-color: #4F46E5;
+    transform: translateY(-2px);
+}
+
+#btnApplyFilter:pressed {
+    -fx-translate-y: 0;
+    -fx-effect: dropshadow(gaussian, rgba(99, 102, 241, 0.25), 12, 0.18, 0, 4);
+    transform: translateY(0);
+}
+
+/* Réinitialiser Button - Filter Reset */
+#btnResetFilter {
+    -fx-background-color: rgba(239, 68, 68, 0.08);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-text-fill: #DC2626;
+    -fx-border-color: #DC2626;
+    -fx-border-width: 1.5;
+    -fx-font-weight: 900;
+    -fx-font-size: 14px;
+    -fx-padding: 12 20 12 20;
+    -fx-cursor: hand;
+    background-color: rgba(239, 68, 68, 0.08);
+    border-radius: 18px;
+    border-color: #DC2626;
+    border-width: 1.5px;
+    font-weight: 900;
+    font-size: 14px;
+    padding: 12px 20px;
+    cursor: pointer;
+    -fx-letter-spacing: 0.01em;
+    letter-spacing: 0.01em;
+}
+
+#btnResetFilter:hover {
+    -fx-background-color: rgba(239, 68, 68, 0.12);
+    -fx-text-fill: #B91C1C;
+    -fx-border-color: #B91C1C;
+    -fx-effect: dropshadow(gaussian, rgba(239, 68, 68, 0.30), 14, 0.22, 0, 6);
+    -fx-translate-y: -1.5;
+    background-color: rgba(239, 68, 68, 0.12);
+    border-color: #B91C1C;
+    transform: translateY(-1.5px);
+}
+
+#btnResetFilter:pressed {
+    -fx-translate-y: 0;
+    -fx-effect: dropshadow(gaussian, rgba(239, 68, 68, 0.20), 10, 0.15, 0, 4);
+    transform: translateY(0);
+}
+
+/* Filter Actions Container */
+.filter-actions {
+    -fx-spacing: 12;
+}
+
+/* Enhanced focus states */
+#btnRefresh:focused,
+#btnApplyFilter:focused,
+#btnResetFilter:focused {
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.40), 22, 0.30, 0, 10);
+}

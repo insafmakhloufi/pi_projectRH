@@ -1,0 +1,274 @@
+/* Modern Split-Screen Entreprise Form - Matching Screenshot Design */
+
+.entreprise-split-root {
+    -fx-background-color: #f8f9fb;
+    -fx-font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Left side - Image area */
+.image-side {
+    -fx-background-color: #1e293b;
+}
+
+.image-side ImageView {
+    -fx-opacity: 0.9;
+}
+
+.brand-logo {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-letter-spacing: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 0, 2);
+}
+
+.image-tagline {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 0, 2);
+}
+
+.image-subtagline {
+    -fx-font-size: 14px;
+    -fx-text-fill: rgba(255,255,255,0.8);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0, 0, 1);
+}
+
+/* Right side - Form area */
+.form-side {
+    -fx-background-color: #f8f9fb;
+}
+
+/* ScrollPane styles */
+.form-scroll {
+    -fx-background-color: #f8f9fb;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.form-scroll > .viewport {
+    -fx-background-color: #f8f9fb;
+}
+
+.form-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8;
+}
+
+.form-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 4;
+}
+
+.form-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #94a3b8;
+}
+
+/* Form title */
+.form-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.form-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b;
+}
+
+/* Field labels */
+.field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #374151;
+}
+
+/* Modern input fields - Light gray background like screenshot */
+.modern-field {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 12px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 12px;
+    -fx-padding: 14px 18px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1e293b;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.modern-field:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e1;
+    -fx-border-width: 1px;
+}
+
+/* Modern text area */
+.modern-area {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 12px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 12px;
+    -fx-padding: 14px 18px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1e293b;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.modern-area:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e1;
+    -fx-border-width: 1px;
+}
+
+.modern-area .content {
+    -fx-background-color: transparent;
+}
+
+/* Logo placeholder */
+.logo-placeholder {
+    -fx-min-width: 80px;
+    -fx-min-height: 80px;
+    -fx-max-width: 80px;
+    -fx-max-height: 80px;
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 12px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 12px;
+    -fx-border-width: 2px;
+    -fx-border-style: dashed;
+}
+
+.logo-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #94a3b8;
+    -fx-font-weight: 500;
+}
+
+/* Link buttons for logo actions */
+.btn-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-padding: 8px 12px;
+    -fx-cursor: hand;
+}
+
+.btn-link:hover {
+    -fx-text-fill: #334155;
+}
+
+.btn-link-accent {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3b82f6;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-padding: 8px 12px;
+    -fx-cursor: hand;
+}
+
+.btn-link-accent:hover {
+    -fx-text-fill: #2563eb;
+}
+
+/* Primary button - Dark like screenshot */
+.btn-primary-dark {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10px;
+    -fx-padding: 12px 24px;
+    -fx-cursor: hand;
+}
+
+.btn-primary-dark:hover {
+    -fx-background-color: #334155;
+}
+
+/* Secondary button */
+.btn-secondary-dark {
+    -fx-background-color: transparent;
+    -fx-text-fill: #64748b;
+    -fx-font-weight: 600;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10px;
+    -fx-padding: 12px 24px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+}
+
+.btn-secondary-dark:hover {
+    -fx-background-color: #f1f5f9;
+    -fx-text-fill: #475569;
+}
+
+/* Artistic coordinates container (white/blue) */
+.coord-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14px;
+    -fx-border-color: #dbeafe;
+    -fx-border-radius: 14px;
+    -fx-border-width: 1px;
+    -fx-padding: 12px 12px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 10, 0, 0, 2);
+}
+
+.coord-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #2563eb;
+}
+
+.coord-address {
+    -fx-font-size: 12px;
+    -fx-text-fill: #334155;
+}
+
+.coord-chip {
+    -fx-background-color: #eff6ff;
+    -fx-background-radius: 999px;
+    -fx-padding: 4px 10px;
+    -fx-font-size: 12px;
+    -fx-text-fill: #1d4ed8;
+    -fx-font-weight: 600;
+}
+
+/* Error messages */
+.field-error {
+    -fx-font-size: 12px;
+    -fx-text-fill: #ef4444;
+    -fx-padding: 4px 0 0 0;
+}
+
+/* Responsive adjustments */
+.entreprise-split-root {
+    -fx-background-color: #f8f9fb;
+    -fx-font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Ensure form fits screen and scrolls properly */
+.form-side {
+    -fx-background-color: #f8f9fb;
+    -fx-min-height: 0;
+}
+
+/* Button container at bottom - always visible */
+.form-side > HBox:last-child {
+    -fx-min-height: 60px;
+    -fx-max-height: 80px;
+}
+
+/* ScrollPane takes available space */
+ScrollPane {
+    -fx-min-height: 100px;
+}
+
+/* Responsive: hide image side on smaller screens */
+@media (max-width: 1000px) {
+    .image-side {
+        -fx-min-width: 350px;
+    }
+}

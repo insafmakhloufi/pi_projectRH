@@ -1,0 +1,46 @@
+.result-root {
+    -fx-background-color: linear-gradient(to bottom right, #eef3ff 0%, #f8fbff 58%, #f3f7ff 100%);
+}
+
+.result-card {
+    -fx-background-color: rgba(255,255,255,0.98);
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(99,102,241,0.20);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.12), 24, 0.18, 0, 10);
+}
+
+.result-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0f172a;
+}
+
+.result-score {
+    -fx-font-size: 34px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #1d4ed8;
+}
+
+.result-ratio {
+    -fx-font-size: 20px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #4f46e5;
+}
+
+.result-message {
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #334155;
+}
+
+.result-progress > .bar {
+    -fx-background-color: linear-gradient(to right, #22c55e, #06b6d4);
+    -fx-background-radius: 999;
+}
+
+.result-progress > .track {
+    -fx-background-color: rgba(148,163,184,0.34);
+    -fx-background-radius: 999;
+}

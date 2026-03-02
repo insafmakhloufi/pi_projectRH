@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.candidature.CandidatureDetailsController"
+            stylesheets="@../csscandidature/candidature_details.css"
+            styleClass="cd-root">
+
+    <top>
+        <Region styleClass="cd-navbar-spacer" />
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="cd-scroll">
+            <content>
+                <StackPane alignment="TOP_CENTER">
+                    <VBox spacing="14" styleClass="cd-shell" maxWidth="1200" alignment="TOP_CENTER" fillWidth="true">
+                        <padding>
+                            <Insets top="18" right="0" bottom="18" left="0" />
+                        </padding>
+
+                        <StackPane styleClass="cd-banner" minWidth="1200" prefWidth="1200" maxWidth="1200">
+                            <ImageView fx:id="imgBanner" fitWidth="520" fitHeight="150" preserveRatio="true" pickOnBounds="false" StackPane.alignment="CENTER_RIGHT" />
+                            <VBox spacing="6" styleClass="cd-banner-overlay" StackPane.alignment="CENTER_LEFT">
+                                <HBox spacing="10" alignment="CENTER_LEFT">
+                                    <Button text="←" onAction="#onBack" styleClass="cd-back" />
+                                    <Label text="Détails candidature" styleClass="cd-banner-title" />
+                                </HBox>
+                                <Label fx:id="lblBannerSubtitle" text="" styleClass="cd-banner-sub" />
+                            </VBox>
+                        </StackPane>
+
+                        <HBox spacing="14" styleClass="cd-head" minWidth="1200" prefWidth="1200" maxWidth="1200">
+                            <StackPane styleClass="cd-avatar">
+                                <Label fx:id="lblInitials" text="" styleClass="cd-avatar-text" />
+                            </StackPane>
+
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label fx:id="lblName" text="" styleClass="cd-name" />
+                            <HBox spacing="8" alignment="CENTER_LEFT">
+                                <Label fx:id="chipStatus" text="" styleClass="cd-chip" />
+                                <Label fx:id="chipPrivacy" text="" styleClass="cd-chip" />
+                            </HBox>
+                        </VBox>
+
+                        <VBox spacing="6" alignment="CENTER_RIGHT">
+                            <Label fx:id="lblEmail" text="" styleClass="cd-kpi" />
+                            <Label fx:id="lblPhone" text="" styleClass="cd-kpi" />
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="14" maxWidth="Infinity">
+                        <VBox spacing="12" styleClass="cd-card" prefWidth="380" minWidth="340" VBox.vgrow="NEVER">
+                            <padding>
+                                <Insets top="16" right="16" bottom="16" left="16" />
+                            </padding>
+
+                            <Label text="Profil" styleClass="cd-card-title" />
+
+                            <GridPane hgap="12" vgap="10" styleClass="cd-grid" maxWidth="Infinity">
+                                <Label text="Adresse" styleClass="cd-muted" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                                <Label fx:id="lblAdresse" text="" wrapText="true" styleClass="cd-value" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                                <Label text="Ville" styleClass="cd-muted" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                                <Label fx:id="lblVille" text="" wrapText="true" styleClass="cd-value" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                                <Label text="Naissance" styleClass="cd-muted" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                                <Label fx:id="lblBirth" text="" wrapText="true" styleClass="cd-value" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+                                <Label text="Diplôme" styleClass="cd-muted" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                                <Label fx:id="lblDegree" text="" wrapText="true" styleClass="cd-value" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+                                <Label text="Institution" styleClass="cd-muted" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                                <Label fx:id="lblInstitution" text="" wrapText="true" styleClass="cd-value" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                            </GridPane>
+
+                            <Separator />
+
+                            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="cd-actions">
+                                <Button fx:id="btnOpenFiles" text="Pièces jointes" onAction="#onOpenPieces" styleClass="cd-btn" />
+                                <Button fx:id="btnOpenVideo" text="Vidéo" onAction="#onOpenVideo" styleClass="cd-btn" />
+                            </HBox>
+                        </VBox>
+
+                        <VBox spacing="12" styleClass="cd-card" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                            <padding>
+                                <Insets top="16" right="16" bottom="16" left="16" />
+                            </padding>
+
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label fx:id="lblRightTitle" text="" styleClass="cd-card-title" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <HBox spacing="8" styleClass="cd-tabs">
+                                    <Button fx:id="btnTabMotivation" text="Lettre motivation" onAction="#showMotivation" styleClass="cd-tab-btn" />
+                                    <Button fx:id="btnTabSkills" text="Compétences" onAction="#showSkills" styleClass="cd-tab-btn" />
+                                </HBox>
+                            </HBox>
+
+                            <StackPane>
+                                <VBox fx:id="paneMotivation" spacing="10" maxWidth="Infinity">
+                                    <Label fx:id="lblMotivation" text="" wrapText="true" styleClass="cd-longtext" />
+                                </VBox>
+
+                                <VBox fx:id="paneSkills" spacing="10" maxWidth="Infinity">
+                                    <Label fx:id="lblSkillsRaw" text="" wrapText="true" styleClass="cd-longtext" />
+                                    <FlowPane fx:id="skillsWrap" hgap="8" vgap="8" />
+                                </VBox>
+                            </StackPane>
+                        </VBox>
+                        </HBox>
+
+                    </VBox>
+                </StackPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.Entreprise.MonEntrepriseController"
+            fitToWidth="true"
+            fitToHeight="false"
+            hbarPolicy="NEVER"
+            vbarPolicy="AS_NEEDED"
+            pannable="true"
+            styleClass="entreprise-dashboard-scroll">
+
+    <VBox spacing="20" styleClass="entreprise-dashboard-root" stylesheets="@../Dashboardcss/entreprise-dashboard.css">
+        <padding>
+            <Insets top="24" right="24" bottom="24" left="24"/>
+        </padding>
+
+        <!-- Header Section -->
+        <VBox spacing="4">
+            <Label text="Mon entreprise" styleClass="dashboard-main-title"/>
+            <Label text="Tableau de bord et statistiques" styleClass="dashboard-subtitle"/>
+        </VBox>
+
+        <!-- Hero Card with Large Image -->
+        <HBox spacing="20" alignment="CENTER_LEFT" styleClass="entreprise-hero-card">
+            <padding>
+                <Insets top="24" right="24" bottom="24" left="24"/>
+            </padding>
+            <StackPane styleClass="entreprise-logo-container">
+                <ImageView fx:id="ivLogo" fitWidth="120" fitHeight="120" preserveRatio="true" smooth="true" styleClass="entreprise-logo"/>
+            </StackPane>
+            <VBox spacing="8" HBox.hgrow="ALWAYS">
+                <Label fx:id="lblNom" text="Nom de l'entreprise" styleClass="entreprise-name"/>
+                <Label fx:id="lblEmail" text="email@entreprise.com" styleClass="entreprise-email"/>
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label fx:id="lblVilleBadge" text="Ville" styleClass="entreprise-badge"/>
+                    <Label fx:id="lblTelephoneBadge" text="Téléphone" styleClass="entreprise-badge secondary"/>
+                </HBox>
+            </VBox>
+            <VBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="btnEdit" text="Modifier" onAction="#edit" styleClass="btn-primary"/>
+                <Button fx:id="btnDelete" text="Supprimer" onAction="#delete" styleClass="btn-danger"/>
+            </VBox>
+        </HBox>
+
+        <!-- Stats Cards Row -->
+        <HBox spacing="16" alignment="CENTER">
+            <VBox spacing="8" styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Label text="OFFRES" styleClass="stat-icon"/>
+                <Label fx:id="lblTotalOffres" text="0" styleClass="stat-value"/>
+                <Label text="Offres publiées" styleClass="stat-label"/>
+            </VBox>
+            
+            <VBox spacing="8" styleClass="stat-card blue" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Label text="FILIALES" styleClass="stat-icon"/>
+                <Label fx:id="lblTotalFiliales" text="0" styleClass="stat-value"/>
+                <Label text="Sites actifs" styleClass="stat-label"/>
+            </VBox>
+            
+            <VBox spacing="8" styleClass="stat-card purple clickable" HBox.hgrow="ALWAYS" onMouseClicked="#showVuesDetails">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Label text="VUES" styleClass="stat-icon"/>
+                <Label fx:id="lblTotalVues" text="0" styleClass="stat-value"/>
+                <Label text="Vues totales" styleClass="stat-label"/>
+            </VBox>
+            
+            <VBox spacing="8" styleClass="stat-card green" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Label text="MARCHÉ" styleClass="stat-icon"/>
+                <Label fx:id="lblTauxMarche" text="0%" styleClass="stat-value"/>
+                <Label text="Part du marché" styleClass="stat-label"/>
+            </VBox>
+        </HBox>
+
+        <!-- Charts Section -->
+        <HBox spacing="16" alignment="CENTER">
+            <!-- Liste des Secteurs (style KPI moderne) -->
+            <VBox spacing="12" styleClass="chart-card" HBox.hgrow="ALWAYS" prefWidth="400">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Label text="Répartition par Secteur" styleClass="chart-title"/>
+                <StackPane>
+                    <PieChart fx:id="secteurPieChart" animated="true" legendVisible="false" styleClass="secteur-donut-chart" />
+                    <Label fx:id="lblSecteurPrincipal" text="" styleClass="donut-center-label" StackPane.alignment="CENTER" />
+                </StackPane>
+            </VBox>
+            
+            <!-- Filiales compact list -->
+            <VBox spacing="12" styleClass="chart-card" HBox.hgrow="ALWAYS" prefWidth="400">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Label text="Filiales par Ville" styleClass="chart-title"/>
+                <VBox fx:id="filialesListContainer" spacing="6" style="-fx-background-color: transparent;" />
+            </VBox>
+        </HBox>
+
+        <!-- Info Grid -->
+        <GridPane hgap="20" vgap="16" styleClass="info-grid">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="33.33"/>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="33.33"/>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="33.33"/>
+            </columnConstraints>
+            
+            <children>
+                <!-- Description -->
+                <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                      GridPane.columnSpan="2" styleClass="info-card">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <Label text="Description" styleClass="info-title"/>
+                    <Label fx:id="lblDescription" text="" wrapText="true" styleClass="info-content"/>
+                </VBox>
+                
+                <!-- Contact Info -->
+                <VBox spacing="12" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="info-card">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <Label text="Contact" styleClass="info-title"/>
+                    <VBox spacing="6">
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <Label text="Adresse:" styleClass="info-icon"/>
+                            <Label fx:id="lblAdresse" text="" styleClass="info-content small"/>
+                        </HBox>
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <Label text="Email:" styleClass="info-icon"/>
+                            <Label fx:id="lblEmailContact" text="" styleClass="info-content small"/>
+                        </HBox>
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <Label text="Tél:" styleClass="info-icon"/>
+                            <Label fx:id="lblTelephone" text="" styleClass="info-content small"/>
+                        </HBox>
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <Label text="Ville:" styleClass="info-icon"/>
+                            <Label fx:id="lblVille" text="" styleClass="info-content small"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </children>
+        </GridPane>
+    </VBox>
+</ScrollPane>

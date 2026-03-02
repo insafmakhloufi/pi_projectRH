@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.candidature.CvTemplatesController"
+            stylesheets="@../csscandidature/cv.css"
+            styleClass="cv-root">
+
+    <top>
+        <Region styleClass="cv-navbar-spacer" />
+    </top>
+
+    <center>
+        <VBox spacing="10" styleClass="cv-shell">
+
+            <HBox alignment="CENTER_LEFT" spacing="8" styleClass="cv-topbar">
+                <VBox spacing="2">
+                    <Label text="Choisissez votre template CV" styleClass="cv-title" />
+                    <Label text="Sélectionnez un modèle professionnel pour créer votre CV" styleClass="cv-subtitle" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Retour" onAction="#onBack" styleClass="cv-btn" />
+            </HBox>
+
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="cv-scroll" VBox.vgrow="ALWAYS">
+                <content>
+                    <VBox spacing="14" styleClass="cv-grid" maxWidth="Infinity">
+
+                        <FlowPane hgap="14" vgap="14" prefWrapLength="1100" styleClass="cv-cards">
+
+                            <VBox fx:id="card1" spacing="10" styleClass="cv-card">
+                                <StackPane styleClass="cv-card-preview">
+                                    <HBox spacing="0" styleClass="tpl-mini tpl-1" maxWidth="340" prefHeight="210">
+                                        <VBox spacing="8" styleClass="tpl-mini-sidebar" prefWidth="88" minWidth="88">
+                                            <Region styleClass="tpl-mini-avatar" />
+                                            <Region styleClass="tpl-mini-line" />
+                                            <Region styleClass="tpl-mini-line" />
+                                            <Region styleClass="tpl-mini-line" />
+                                        </VBox>
+                                        <VBox spacing="10" styleClass="tpl-mini-body" HBox.hgrow="ALWAYS">
+                                            <Region styleClass="tpl-mini-title" />
+                                            <Region styleClass="tpl-mini-subtitle" />
+                                            <Region styleClass="tpl-mini-divider" />
+                                            <Region styleClass="tpl-mini-block" />
+                                            <Region styleClass="tpl-mini-block" />
+                                        </VBox>
+                                    </HBox>
+                                    <Label fx:id="badge1" text="✓" styleClass="cv-selected-badge" visible="false" managed="false" />
+                                </StackPane>
+                                <VBox spacing="2">
+                                    <Label text="Modern Professional" styleClass="cv-template-title" />
+                                    <Label text="Un design moderne et élégant avec une sidebar colorée" styleClass="cv-template-sub" />
+                                </VBox>
+                                <HBox spacing="10" alignment="CENTER_LEFT">
+                                    <Button text="Aperçu" onAction="#onPreview1" styleClass="cv-card-btn" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="btnSelect1" text="Sélectionner" onAction="#onSelect1" styleClass="cv-card-btn-primary" />
+                                </HBox>
+                            </VBox>
+
+                            <VBox fx:id="card2" spacing="10" styleClass="cv-card">
+                                <StackPane styleClass="cv-card-preview">
+                                    <VBox spacing="10" styleClass="tpl-mini tpl-2" maxWidth="340" prefHeight="210">
+                                        <Region styleClass="tpl-mini-title" />
+                                        <Region styleClass="tpl-mini-divider" />
+                                        <Region styleClass="tpl-mini-block" />
+                                        <Region styleClass="tpl-mini-block" />
+                                        <Region styleClass="tpl-mini-block" />
+                                    </VBox>
+                                    <Label fx:id="badge2" text="✓" styleClass="cv-selected-badge" visible="false" managed="false" />
+                                </StackPane>
+                                <VBox spacing="2">
+                                    <Label text="Classic Blue" styleClass="cv-template-title" />
+                                    <Label text="Un style classique et professionnel en bleu" styleClass="cv-template-sub" />
+                                </VBox>
+                                <HBox spacing="10" alignment="CENTER_LEFT">
+                                    <Button text="Aperçu" onAction="#onPreview2" styleClass="cv-card-btn" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="btnSelect2" text="Sélectionner" onAction="#onSelect2" styleClass="cv-card-btn-primary" />
+                                </HBox>
+                            </VBox>
+
+                            <VBox fx:id="card3" spacing="10" styleClass="cv-card">
+                                <StackPane styleClass="cv-card-preview">
+                                    <HBox spacing="0" styleClass="tpl-mini tpl-3" maxWidth="340" prefHeight="210">
+                                        <VBox spacing="8" styleClass="tpl-mini-sidebar" prefWidth="92" minWidth="92">
+                                            <Region styleClass="tpl-mini-avatar" />
+                                            <Region styleClass="tpl-mini-line" />
+                                            <Region styleClass="tpl-mini-line" />
+                                        </VBox>
+                                        <VBox spacing="10" styleClass="tpl-mini-body" HBox.hgrow="ALWAYS">
+                                            <Region styleClass="tpl-mini-title" />
+                                            <Region styleClass="tpl-mini-divider" />
+                                            <Region styleClass="tpl-mini-block" />
+                                            <Region styleClass="tpl-mini-block" />
+                                        </VBox>
+                                    </HBox>
+                                    <Label fx:id="badge3" text="✓" styleClass="cv-selected-badge" visible="false" managed="false" />
+                                </StackPane>
+                                <VBox spacing="2">
+                                    <Label text="Minimal Clean" styleClass="cv-template-title" />
+                                    <Label text="Un design minimaliste et épuré" styleClass="cv-template-sub" />
+                                </VBox>
+                                <HBox spacing="10" alignment="CENTER_LEFT">
+                                    <Button text="Aperçu" onAction="#onPreview3" styleClass="cv-card-btn" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="btnSelect3" text="Sélectionner" onAction="#onSelect3" styleClass="cv-card-btn-primary" />
+                                </HBox>
+                            </VBox>
+
+                        </FlowPane>
+
+                        <HBox alignment="CENTER" styleClass="cv-continue-wrap">
+                            <Button fx:id="btnContinue" text="Continuer avec ce template" onAction="#onContinue" disable="true" styleClass="cv-continue" />
+                        </HBox>
+
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+        </VBox>
+    </center>
+
+</BorderPane>

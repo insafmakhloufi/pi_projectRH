@@ -1,0 +1,510 @@
+/* ==========================================
+   EVENT PUBLICATIONS - PREMIUM FACEBOOK FEED
+   Modern SaaS Social Feed Design
+   ========================================== */
+
+/* ===== GLOBAL THEME ===== */
+.page-root {
+    -fx-background-color: #F6F7FB;
+    background-color: #F6F7FB;
+    -fx-font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.page-container {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-max-width: 1200px;
+    max-width: 1200px;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+    -fx-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    -fx-border-color: rgba(15, 23, 42, 0.08);
+    border-color: rgba(15, 23, 42, 0.08);
+    -fx-border-width: 0 0 1px 0;
+    border-width: 0 0 1px 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.04), 8, 0, 0, 2);
+}
+
+.event-title {
+    -fx-font-size: 20px;
+    font-size: 20px;
+    -fx-font-weight: 700;
+    font-weight: 700;
+    -fx-text-fill: #0F172A;
+    color: #0F172A;
+}
+
+.topbar-divider {
+    -fx-background-color: rgba(15, 23, 42, 0.08);
+    background-color: rgba(15, 23, 42, 0.08);
+}
+
+/* ===== CONTENT WRAPPER ===== */
+.content-wrapper {
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+/* ===== EVENT INFO CARD ===== */
+.event-info-card {
+    -fx-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    -fx-background-radius: 20px;
+    border-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.06), 12, 0, 0, 4);
+    -fx-border-color: rgba(15, 23, 42, 0.08);
+    border-color: rgba(15, 23, 42, 0.08);
+    -fx-border-width: 1px;
+    border-width: 1px;
+}
+
+.event-cover {
+    -fx-background-radius: 16px;
+    border-radius: 16px;
+    -fx-background-color: #F1F5F9;
+    background-color: #F1F5F9;
+}
+
+.event-details {
+    -fx-spacing: 12;
+}
+
+.event-type {
+    -fx-font-size: 13px;
+    font-size: 13px;
+    -fx-font-weight: 600;
+    font-weight: 600;
+    -fx-text-fill: #3B82F6;
+    color: #3B82F6;
+}
+
+.event-dates {
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-font-weight: 500;
+    font-weight: 500;
+    -fx-text-fill: #64748B;
+    color: #64748B;
+}
+
+.event-location {
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-font-weight: 500;
+    font-weight: 500;
+    -fx-text-fill: #64748B;
+    color: #64748B;
+}
+
+.event-actions {
+    -fx-spacing: 8;
+}
+
+/* ===== FEED CONTAINER ===== */
+.feed-container {
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.feed-scroll {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.feed-scroll > .viewport {
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.feed-scroll > .scroll-bar:vertical {
+    -fx-background-color: #F1F5F9;
+    background-color: #F1F5F9;
+    -fx-background-radius: 8px;
+    border-radius: 8px;
+    -fx-padding: 4;
+    padding: 4px;
+    -fx-pref-width: 12px;
+}
+
+.feed-scroll > .scroll-bar:vertical .thumb {
+    -fx-background-color: #CBD5E1;
+    background-color: #CBD5E1;
+    -fx-background-radius: 6px;
+    border-radius: 6px;
+    -fx-background-insets: 0;
+}
+
+.feed-scroll > .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #94A3B8;
+    background-color: #94A3B8;
+}
+
+.feed-list {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-padding: 0;
+    padding: 0;
+}
+
+/* ===== PUBLICATION CARD (FACEBOOK STYLE) ===== */
+.publication-card {
+    -fx-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    -fx-background-radius: 20px;
+    border-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.06), 16, 0, 0, 6);
+    -fx-border-color: rgba(15, 23, 42, 0.08);
+    border-color: rgba(15, 23, 42, 0.08);
+    -fx-border-width: 1px;
+    border-width: 1px;
+    -fx-padding: 20;
+    padding: 20px;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.publication-card:hover {
+    -fx-translate-y: -2;
+    transform: translateY(-2px);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 20, 0, 0, 8);
+}
+
+/* Publication Header */
+.pub-header {
+    -fx-spacing: 12;
+}
+
+.pub-avatar {
+    -fx-fit-width: 40;
+    -fx-fit-height: 40;
+    -fx-background-radius: 20px;
+    border-radius: 20px;
+    -fx-background-color: #F1F5F9;
+    background-color: #F1F5F9;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 4, 0, 0, 2);
+}
+
+.pub-avatar ImageView {
+    -fx-fit-width: 40;
+    -fx-fit-height: 40;
+    -fx-smooth: true;
+    -fx-cache: true;
+}
+
+.pub-author-info {
+    -fx-spacing: 2;
+}
+
+.pub-author-name {
+    -fx-font-size: 15px;
+    font-size: 15px;
+    -fx-font-weight: 600;
+    font-weight: 600;
+    -fx-text-fill: #0F172A;
+    color: #0F172A;
+}
+
+.pub-time {
+    -fx-font-size: 13px;
+    font-size: 13px;
+    -fx-font-weight: 500;
+    font-weight: 500;
+    -fx-text-fill: #64748B;
+    color: #64748B;
+}
+
+.pub-menu-btn {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-text-fill: #64748B;
+    color: #64748B;
+    -fx-font-size: 16px;
+    font-size: 16px;
+    -fx-padding: 8;
+    padding: 8px;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-background-radius: 8px;
+    border-radius: 8px;
+}
+
+.pub-menu-btn:hover {
+    -fx-background-color: #F1F5F9;
+    background-color: #F1F5F9;
+}
+
+/* Publication Content */
+.pub-content {
+    -fx-spacing: 12;
+}
+
+.pub-text {
+    -fx-font-size: 15px;
+    font-size: 15px;
+    -fx-font-weight: 400;
+    font-weight: 400;
+    -fx-text-fill: #1E293B;
+    color: #1E293B;
+    /* JavaFX doesn't support line-spacing - handled in Java code or use -fx-line-spacing if available */
+    -fx-wrap-text: true;
+}
+
+.pub-media {
+    -fx-background-radius: 16px;
+    border-radius: 16px;
+    -fx-background-color: #F1F5F9;
+    background-color: #F1F5F9;
+    -fx-pref-height: 300;
+    -fx-fit-width: true;
+    -fx-fit-height: true;
+    -fx-preserve-ratio: true;
+}
+
+/* Publication Footer */
+.pub-footer {
+    -fx-spacing: 12;
+}
+
+.pub-divider {
+    -fx-background-color: rgba(15, 23, 42, 0.08);
+    background-color: rgba(15, 23, 42, 0.08);
+    -fx-pref-height: 1;
+}
+
+.pub-actions {
+    -fx-spacing: 8;
+}
+
+/* Reaction Buttons (Facebook Style) */
+.reaction-btn {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-background-radius: 20px;
+    border-radius: 20px;
+    -fx-border-color: rgba(15, 23, 42, 0.12);
+    border-color: rgba(15, 23, 42, 0.12);
+    -fx-border-width: 1px;
+    border-width: 1px;
+    -fx-text-fill: #64748B;
+    color: #64748B;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-font-weight: 500;
+    font-weight: 500;
+    -fx-padding: 8 16;
+    padding: 8px 16px;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.reaction-btn:hover {
+    -fx-background-color: #EEF2FF;
+    background-color: #EEF2FF;
+    -fx-border-color: #3B82F6;
+    border-color: #3B82F6;
+    -fx-text-fill: #3B82F6;
+    color: #3B82F6;
+}
+
+.reaction-btn.liked {
+    -fx-background-color: #EFF6FF;
+    background-color: #EFF6FF;
+    -fx-border-color: #3B82F6;
+    border-color: #3B82F6;
+    -fx-text-fill: #3B82F6;
+    color: #3B82F6;
+    -fx-font-weight: 600;
+    font-weight: 600;
+}
+
+/* ===== BUTTON DESIGN SYSTEM ===== */
+.btn-primary {
+    -fx-background-color: linear-gradient(to bottom right, #3B82F6, #2563EB);
+    background: linear-gradient(to bottom right, #3B82F6, #2563EB);
+    background-color: #3B82F6; /* Fallback for browsers that don't support gradient */
+    -fx-background-radius: 16px;
+    border-radius: 16px;
+    -fx-text-fill: #FFFFFF;
+    color: #FFFFFF;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-font-weight: 600;
+    font-weight: 600;
+    -fx-padding: 12 24;
+    padding: 12px 24px;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-border-color: transparent;
+    border-color: transparent;
+    -fx-border-width: 0;
+    border-width: 0;
+    -fx-pref-height: 40px;
+    min-height: 40px;
+    -fx-effect: dropshadow(three-pass-box, rgba(59, 130, 246, 0.25), 8, 0, 0, 4);
+    -fx-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom right, #2563EB, #1D4ED8);
+    background: linear-gradient(to bottom right, #2563EB, #1D4ED8);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-effect: dropshadow(three-pass-box, rgba(59, 130, 246, 0.35), 12, 0, 0, 6);
+}
+
+.btn-primary:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: dropshadow(three-pass-box, rgba(59, 130, 246, 0.2), 4, 0, 0, 2);
+}
+
+.btn-outline {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-background-radius: 16px;
+    border-radius: 16px;
+    -fx-text-fill: #3B82F6;
+    color: #3B82F6;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-font-weight: 600;
+    font-weight: 600;
+    -fx-padding: 12 24;
+    padding: 12px 24px;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-border-color: #3B82F6;
+    border-color: #3B82F6;
+    -fx-border-width: 1.5px;
+    border-width: 1.5px;
+    -fx-pref-height: 40px;
+    min-height: 40px;
+    -fx-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    -fx-background-color: #EFF6FF;
+    background-color: #EFF6FF;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-outline:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.btn-ghost {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-background-radius: 12px;
+    border-radius: 12px;
+    -fx-text-fill: #64748B;
+    color: #64748B;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-font-weight: 500;
+    font-weight: 500;
+    -fx-padding: 8 16;
+    padding: 8px 16px;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-border-color: transparent;
+    border-color: transparent;
+    -fx-border-width: 0;
+    border-width: 0;
+    -fx-pref-height: 36px;
+    min-height: 36px;
+    -fx-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+    -fx-background-color: #F1F5F9;
+    background-color: #F1F5F9;
+    -fx-text-fill: #0F172A;
+    color: #0F172A;
+}
+
+.btn-ghost:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.btn-small {
+    -fx-font-size: 13px;
+    font-size: 13px;
+    -fx-padding: 10 20;
+    padding: 10px 20px;
+    -fx-pref-height: 36px;
+    min-height: 36px;
+}
+
+.btn-danger {
+    -fx-background-color: linear-gradient(to bottom right, #EF4444, #DC2626);
+    background: linear-gradient(to bottom right, #EF4444, #DC2626);
+    -fx-background-radius: 16px;
+    border-radius: 16px;
+    -fx-text-fill: #FFFFFF;
+    color: #FFFFFF;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-font-weight: 600;
+    font-weight: 600;
+    -fx-padding: 12 24;
+    padding: 12px 24px;
+    -fx-cursor: hand;
+    cursor: pointer;
+    -fx-border-color: transparent;
+    border-color: transparent;
+    -fx-border-width: 0;
+    border-width: 0;
+    -fx-pref-height: 40px;
+    min-height: 40px;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 68, 68, 0.25), 8, 0, 0, 4);
+    -fx-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    -fx-background-color: linear-gradient(to bottom right, #DC2626, #B91C1C);
+    background: linear-gradient(to bottom right, #DC2626, #B91C1C);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 68, 68, 0.35), 12, 0, 0, 6);
+}
+
+.btn-danger:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 68, 68, 0.2), 4, 0, 0, 2);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Note: JavaFX doesn't support media queries - responsive design handled in Java code */
+
+/* ===== ANIMATIONS ===== */
+/* Note: JavaFX doesn't support @keyframes - animations handled in Java code with Timeline/Transition */
+
+/* ===== LEGACY COMPATIBILITY ===== */
+.btn {
+    -fx-cursor: hand;
+    cursor: pointer;
+}
+
+/* Remove any overlay blocking clicks - JavaFX specific properties */
+.stack-pane > .pane {
+    -fx-mouse-transparent: true;
+    /* JavaFX specific: mouseTransparent property has no standard CSS equivalent */
+}

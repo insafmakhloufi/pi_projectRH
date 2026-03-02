@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.candidature.CvBuilderController"
+            stylesheets="@../csscandidature/cv_builder.css"
+            styleClass="cb-root">
+
+    <top>
+        <Region styleClass="cb-navbar-spacer" />
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" pannable="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="cb-page-scroll">
+            <content>
+                <StackPane alignment="TOP_CENTER" styleClass="cb-page-inner">
+                    <VBox spacing="10" styleClass="cb-shell" maxWidth="1480">
+
+                        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="cb-topbar">
+                            <VBox spacing="2">
+                                <Label text="Création du CV" styleClass="cb-title" />
+                                <Label fx:id="lblTemplate" text="Template" styleClass="cb-subtitle" />
+                            </VBox>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Button text="Retour" onAction="#onBack" styleClass="cb-btn" />
+                            <Button fx:id="btnExportPdf" text="Exporter PDF" onAction="#onExportPdf" styleClass="cb-btn-primary" />
+                        </HBox>
+
+                        <HBox spacing="14" VBox.vgrow="ALWAYS" styleClass="cb-columns">
+
+                            <!-- ✅ LEFT : largeur fixe -->
+                            <VBox spacing="12" styleClass="cb-left"
+                                  prefWidth="340" minWidth="340" maxWidth="340"
+                                  HBox.hgrow="NEVER">
+
+                                <VBox spacing="10" styleClass="cb-card" maxWidth="340">
+                                    <Label text="Sections du CV" styleClass="cb-card-title" />
+                                    <VBox spacing="8" styleClass="cb-sections">
+                                        <Button fx:id="btnSecInfo" text="Informations" onAction="#onSectionInfo" styleClass="cb-sec" maxWidth="Infinity">
+                                            <graphic>
+                                                <Region styleClass="cb-sec-ico cb-ico-user" />
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnSecExp" text="Expérience" onAction="#onSectionExp" styleClass="cb-sec cb-sec-active" maxWidth="Infinity">
+                                            <graphic>
+                                                <Region styleClass="cb-sec-ico cb-ico-calendar" />
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnSecProjects" text="Projects" onAction="#onSectionProjects" styleClass="cb-sec" maxWidth="Infinity">
+                                            <graphic>
+                                                <Region styleClass="cb-sec-ico cb-ico-plus" />
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnSecEdu" text="Formation" onAction="#onSectionEdu" styleClass="cb-sec" maxWidth="Infinity">
+                                            <graphic>
+                                                <Region styleClass="cb-sec-ico cb-ico-book" />
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnSecSkills" text="Compétences" onAction="#onSectionSkills" styleClass="cb-sec" maxWidth="Infinity">
+                                            <graphic>
+                                                <Region styleClass="cb-sec-ico cb-ico-plus" />
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnSecHobbies" text="Hobbies" onAction="#onSectionHobbies" styleClass="cb-sec" maxWidth="Infinity">
+                                            <graphic>
+                                                <Region styleClass="cb-sec-ico cb-ico-plus" />
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnSecLang" text="Langues" onAction="#onSectionLang" styleClass="cb-sec" maxWidth="Infinity">
+                                            <graphic>
+                                                <Region styleClass="cb-sec-ico cb-ico-plus" />
+                                            </graphic>
+                                        </Button>
+                                    </VBox>
+
+                                    <!-- ===================== PROJECTS ===================== -->
+                                    <VBox fx:id="cardProjects" spacing="10" styleClass="cb-card" maxWidth="340" visible="false" managed="false">
+                                        <Label text="Modifier Projects" styleClass="cb-card-title" />
+                                        <VBox spacing="10" styleClass="cb-subcard" maxWidth="320">
+                                            <Label text="Projects" styleClass="cb-subcard-title" />
+                                            <VBox spacing="12" maxWidth="320">
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Nom du projet" />
+                                                    <TextField fx:id="tfProjectName" promptText="Ex: Minimal Icon Pack" maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Description" />
+                                                    <TextArea fx:id="taProjectDesc" promptText="Décrivez brièvement le projet..." wrapText="true" maxWidth="320" styleClass="cb-textarea" />
+                                                </VBox>
+                                            </VBox>
+
+                                            <Button fx:id="btnAddProject" text="+ Ajouter un project" onAction="#onAddProject" styleClass="cb-btn-outline" />
+                                        </VBox>
+                                    </VBox>
+                                </VBox>
+
+                                <VBox fx:id="formBox" spacing="12" styleClass="cb-form" maxWidth="340" VBox.vgrow="ALWAYS">
+
+                                    <!-- ===================== CARD INFO ===================== -->
+                                    <VBox fx:id="cardInfo" spacing="10" styleClass="cb-card" maxWidth="340" visible="false" managed="false">
+                                        <Label fx:id="lblFormTitle" text="Modifier Informations" styleClass="cb-card-title" />
+
+                                        <VBox spacing="10" styleClass="cb-subcard" maxWidth="320">
+                                            <Label text="Informations" styleClass="cb-subcard-title" />
+
+                                            <VBox spacing="12" maxWidth="320">
+
+                                                <!-- ✅ FIX FINAL : GridPane 2 colonnes (AUCUN OVERLAP) -->
+                                                <GridPane hgap="12" vgap="0" minWidth="320" prefWidth="320" maxWidth="320">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints minWidth="148" prefWidth="148" maxWidth="148"/>
+                                                        <ColumnConstraints minWidth="148" prefWidth="148" maxWidth="148"/>
+                                                    </columnConstraints>
+
+                                                    <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                        <Label text="Prénom" />
+                                                        <TextField fx:id="tfFirstName"
+                                                                   promptText="Votre Prénom"
+                                                                   minWidth="0" prefWidth="148" maxWidth="148"
+                                                                   styleClass="cb-input" />
+                                                    </VBox>
+
+                                                    <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                        <Label text="Nom" />
+                                                        <TextField fx:id="tfLastName"
+                                                                   promptText="Votre Nom"
+                                                                   minWidth="0" prefWidth="148" maxWidth="148"
+                                                                   styleClass="cb-input" />
+                                                    </VBox>
+                                                </GridPane>
+
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Titre Professionnel" />
+                                                    <TextField fx:id="tfTitle" promptText="Votre Titre Professionnel"
+                                                               maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Email" />
+                                                    <TextField fx:id="tfEmail" promptText="email@exemple.com"
+                                                               maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Téléphone" />
+                                                    <TextField fx:id="tfPhone" promptText="+33 6 12 34 56 78"
+                                                               maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Adresse" />
+                                                    <TextField fx:id="tfAddress" promptText="Votre Adresse"
+                                                               maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="À propos" />
+                                                    <TextArea fx:id="taSummary" promptText="Décrivez-vous en quelques lignes..."
+                                                              wrapText="true" maxWidth="320" styleClass="cb-textarea" />
+                                                </VBox>
+
+                                                <Button fx:id="btnChoosePhoto" text="Choisir une photo"
+                                                        onAction="#onChoosePhoto" styleClass="cb-btn-outline" />
+                                            </VBox>
+                                        </VBox>
+                                    </VBox>
+
+                                    <!-- ===================== CARD EXP ===================== -->
+                                    <VBox fx:id="cardExp" spacing="10" styleClass="cb-card" maxWidth="340">
+                                        <Label fx:id="lblFormTitleExp" text="Modifier Expérience" styleClass="cb-card-title" />
+
+                                        <VBox spacing="10" styleClass="cb-subcard" maxWidth="320">
+                                            <Label text="Expérience 1" styleClass="cb-subcard-title" />
+
+                                            <VBox spacing="12" maxWidth="320">
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Titre du poste" />
+                                                    <TextField fx:id="tfJobTitle" promptText="Titre du poste" maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Entreprise" />
+                                                    <TextField fx:id="tfCompany" promptText="Entreprise" maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+
+                                                <GridPane hgap="12" vgap="0" minWidth="320" prefWidth="320" maxWidth="320">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints minWidth="154" prefWidth="154" maxWidth="154" />
+                                                        <ColumnConstraints minWidth="154" prefWidth="154" maxWidth="154" />
+                                                    </columnConstraints>
+
+                                                    <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                        <Label text="Date début" />
+                                                        <TextField fx:id="tfStart" promptText="Date début" minWidth="0" prefWidth="154" maxWidth="154" styleClass="cb-input" />
+                                                    </VBox>
+
+                                                    <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                        <Label text="Date fin" />
+                                                        <TextField fx:id="tfEnd" promptText="Date fin" minWidth="0" prefWidth="154" maxWidth="154" styleClass="cb-input" />
+                                                    </VBox>
+                                                </GridPane>
+
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Description" />
+                                                    <TextArea fx:id="taExpDesc" promptText="Description" wrapText="true" maxWidth="320" styleClass="cb-textarea" />
+                                                </VBox>
+                                            </VBox>
+
+                                            <Button fx:id="btnAddExperience" text="+ Ajouter une expérience"
+                                                    onAction="#onAddExperience" styleClass="cb-btn-outline" />
+                                        </VBox>
+                                    </VBox>
+
+                                    <!-- ===================== CARD EDU ===================== -->
+                                    <VBox fx:id="cardEdu" spacing="10" styleClass="cb-card" maxWidth="340" visible="false" managed="false">
+                                        <Label text="Modifier Formation" styleClass="cb-card-title" />
+
+                                        <VBox spacing="10" styleClass="cb-subcard" maxWidth="320">
+                                            <Label text="Formation" styleClass="cb-subcard-title" />
+
+                                            <VBox spacing="12" maxWidth="320">
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Nom du Diplôme" />
+                                                    <TextField fx:id="tfDegree" promptText="Nom du Diplôme" maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Nom de l'École" />
+                                                    <TextField fx:id="tfSchool" promptText="Nom de l'École" maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+
+                                                <GridPane hgap="12" vgap="0" minWidth="320" prefWidth="320" maxWidth="320">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints minWidth="154" prefWidth="154" maxWidth="154" />
+                                                        <ColumnConstraints minWidth="154" prefWidth="154" maxWidth="154" />
+                                                    </columnConstraints>
+
+                                                    <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                        <Label text="Date début" />
+                                                        <TextField fx:id="tfEduStart" promptText="Date début" minWidth="0" prefWidth="154" maxWidth="154" styleClass="cb-input" />
+                                                    </VBox>
+
+                                                    <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                        <Label text="Date fin" />
+                                                        <TextField fx:id="tfEduEnd" promptText="Date fin" minWidth="0" prefWidth="154" maxWidth="154" styleClass="cb-input" />
+                                                    </VBox>
+                                                </GridPane>
+                                            </VBox>
+
+                                            <Button fx:id="btnAddEducation" text="+ Ajouter une formation"
+                                                    onAction="#onAddEducation" styleClass="cb-btn-outline" />
+                                        </VBox>
+                                    </VBox>
+
+                                    <!-- ===================== SKILLS ===================== -->
+                                    <VBox fx:id="cardSkills" spacing="10" styleClass="cb-card" maxWidth="340" visible="false" managed="false">
+                                        <Label text="Modifier Compétences" styleClass="cb-card-title" />
+                                        <VBox spacing="10" styleClass="cb-subcard" maxWidth="320">
+                                            <Label text="Compétences" styleClass="cb-subcard-title" />
+                                            <VBox spacing="12" maxWidth="320">
+                                                <VBox spacing="6" maxWidth="320">
+                                                    <Label text="Compétence" />
+                                                    <TextField fx:id="tfSkillName" promptText="Ex: Project Management" maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+
+                                                <VBox fx:id="skillPctBox" spacing="6" maxWidth="320">
+                                                    <Label text="Niveau (%)" />
+                                                    <TextField fx:id="tfSkillPct" promptText="Ex: 80" maxWidth="320" styleClass="cb-input" />
+                                                </VBox>
+                                            </VBox>
+
+                                            <Button fx:id="btnAddSkill" text="+ Ajouter une compétence"
+                                                    onAction="#onAddSkill" styleClass="cb-btn-outline" />
+                                        </VBox>
+                                    </VBox>
+
+                                    <!-- ===================== LANG ===================== -->
+                                    <VBox fx:id="cardLang" spacing="10" styleClass="cb-card" maxWidth="340" visible="false" managed="false">
+                                        <Label text="Modifier Langues" styleClass="cb-card-title" />
+                                        <VBox spacing="10" styleClass="cb-subcard" maxWidth="320">
+                                            <Label text="Langues" styleClass="cb-subcard-title" />
+                                            <TextArea fx:id="taLanguages" promptText="Ex: Français, Anglais, Espagnol..."
+                                                      wrapText="true" maxWidth="300" styleClass="cb-textarea" />
+                                            <Button fx:id="btnAddLanguage" text="+ Ajouter des langues"
+                                                    onAction="#onAddLanguages" styleClass="cb-btn-outline" />
+                                        </VBox>
+                                    </VBox>
+
+                                    <!-- ===================== HOBBIES ===================== -->
+                                    <VBox fx:id="cardHobbies" spacing="10" styleClass="cb-card" maxWidth="340" visible="false" managed="false">
+                                        <Label text="Modifier Hobbies" styleClass="cb-card-title" />
+                                        <VBox spacing="10" styleClass="cb-subcard" maxWidth="320">
+                                            <Label text="Hobbies" styleClass="cb-subcard-title" />
+                                            <TextArea fx:id="taHobbies" promptText="Ex: Music: ...\nPoetry: ...\nMiscellaneous: ..."
+                                                      wrapText="true" maxWidth="300" styleClass="cb-textarea" />
+                                            <Button fx:id="btnAddHobbies" text="Mettre à jour" onAction="#onAddHobbies" styleClass="cb-btn-outline" />
+                                        </VBox>
+                                    </VBox>
+
+                                </VBox>
+                            </VBox>
+
+                            <!-- ✅ PREVIEW : inchangé (ton code original) -->
+                            <StackPane alignment="TOP_CENTER" styleClass="cb-preview-wrap" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+                                <VBox spacing="10" styleClass="cb-preview-card" maxWidth="840">
+                                    <StackPane fx:id="previewStack" styleClass="cb-preview-stack" maxWidth="760">
+                                        <HBox fx:id="templateRoot" spacing="0" styleClass="tpl tpl-1" maxWidth="760" prefHeight="980">
+
+                                            <VBox fx:id="tplSidebar" spacing="14" styleClass="tpl-sidebar" prefWidth="250" minWidth="250">
+
+                                                <VBox spacing="10" styleClass="tpl-sidebar-top">
+                                                    <Label fx:id="lblPreviewNameSide" text="VOTRE PRÉNOM VOTRE NOM" styleClass="tpl-side-name" />
+                                                    <StackPane styleClass="tpl-photo-wrap">
+                                                        <ImageView fx:id="imgPreviewPhoto" fitWidth="96" fitHeight="96" preserveRatio="true" smooth="true" visible="false" managed="false" />
+                                                        <Label fx:id="lblPreviewInitials" text="VV" styleClass="tpl-avatar" />
+                                                    </StackPane>
+                                                </VBox>
+
+                                                <VBox spacing="6" styleClass="tpl-sidebar-block">
+                                                    <Label text="About Me" styleClass="tpl-sidebar-title" />
+                                                    <Label fx:id="lblPreviewSummary" text="Décrivez-vous en quelques lignes..." wrapText="true" styleClass="tpl-sidebar-p" />
+                                                </VBox>
+
+                                                <VBox spacing="6" styleClass="tpl-sidebar-block">
+                                                    <Label text="Contact" styleClass="tpl-sidebar-title" />
+                                                    <HBox alignment="CENTER_LEFT" spacing="8" styleClass="tpl-contact-row">
+                                                        <StackPane styleClass="tpl-contact-badge">
+                                                            <SVGPath content="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z" fill="#00796B" scaleX="0.60" scaleY="0.60" />
+                                                        </StackPane>
+                                                        <Label fx:id="lblPreviewPhone" text="+33 6 12 34 56 78" styleClass="tpl-sidebar-item" />
+                                                    </HBox>
+                                                    <HBox alignment="CENTER_LEFT" spacing="8" styleClass="tpl-contact-row">
+                                                        <StackPane styleClass="tpl-contact-badge">
+                                                            <SVGPath content="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Zm2 .5V6h12v.5l-6 4-6-4Zm12 2.9-5.45 3.63a1 1 0 0 1-1.1 0L6 9.4V18h12V9.4Z" fill="#00796B" scaleX="0.60" scaleY="0.60" />
+                                                        </StackPane>
+                                                        <Label fx:id="lblPreviewEmail" text="email@example.com" styleClass="tpl-sidebar-item" />
+                                                    </HBox>
+                                                    <HBox alignment="CENTER_LEFT" spacing="8" styleClass="tpl-contact-row">
+                                                        <StackPane styleClass="tpl-contact-badge">
+                                                            <SVGPath content="M12 22s7-4.44 7-12a7 7 0 1 0-14 0c0 7.56 7 12 7 12Zm0-9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" fill="#00796B" scaleX="0.60" scaleY="0.60" />
+                                                        </StackPane>
+                                                        <Label fx:id="lblPreviewAddress" text="Votre Adresse" wrapText="true" styleClass="tpl-sidebar-item" />
+                                                    </HBox>
+                                                </VBox>
+
+                                                <VBox spacing="8" styleClass="tpl-sidebar-block">
+                                                    <Label text="LANGUAGE" styleClass="tpl-pill" maxWidth="Infinity" />
+                                                    <VBox fx:id="previewLangList" spacing="6" styleClass="tpl-bullets">
+                                                        <Label fx:id="lblPreviewLang1" text="English" styleClass="tpl-bullet" />
+                                                        <Label fx:id="lblPreviewLang2" text="Germany (basic)" styleClass="tpl-bullet" />
+                                                    </VBox>
+                                                </VBox>
+
+                                                <VBox spacing="8" styleClass="tpl-sidebar-block">
+                                                    <Label text="EXPERTISE" styleClass="tpl-pill" maxWidth="Infinity" />
+                                                    <VBox spacing="6" styleClass="tpl-bullets">
+                                                        <Label fx:id="lblPreviewSkill1" text="Management Skills" styleClass="tpl-bullet" />
+                                                        <Label fx:id="lblPreviewSkill2" text="Creativity" styleClass="tpl-bullet" />
+                                                        <Label fx:id="lblPreviewSkill3" text="Negotiation" styleClass="tpl-bullet" />
+                                                    </VBox>
+                                                </VBox>
+
+                                                <VBox fx:id="skillsSidebarBlock" spacing="8" styleClass="tpl-sidebar-block">
+                                                    <Label text="SKILLS" styleClass="tpl-pill" maxWidth="Infinity" />
+                                                    <VBox fx:id="previewSkillsSidebarList" spacing="6" styleClass="tpl-bullets" />
+                                                </VBox>
+
+                                                <Region VBox.vgrow="ALWAYS" />
+                                            </VBox>
+
+                                            <VBox spacing="14" styleClass="tpl-body" HBox.hgrow="ALWAYS">
+                                                <VBox fx:id="tplHeader" spacing="4" styleClass="tpl-header">
+                                                    <Label fx:id="lblPreviewName" text="VOTRE PRÉNOM VOTRE NOM" styleClass="tpl-name" />
+                                                    <Label fx:id="lblPreviewTitle" text="Votre Titre Professionnel" styleClass="tpl-title" />
+
+                                                    <HBox fx:id="topContactRow" alignment="CENTER" spacing="14" styleClass="tpl-top-contact" visible="false" managed="false">
+                                                        <Label fx:id="lblPreviewPhone" text="555.555.5555" styleClass="tpl-top-contact-item" />
+                                                        <Label text="|" styleClass="tpl-top-contact-sep" />
+                                                        <Label fx:id="lblPreviewEmail" text="hello@email.com" styleClass="tpl-top-contact-item" />
+                                                        <Label text="|" styleClass="tpl-top-contact-sep" />
+                                                        <Label fx:id="lblPreviewAddress" text="U.S. Citizen" styleClass="tpl-top-contact-item" />
+                                                    </HBox>
+                                                </VBox>
+
+                                                <Label text="" styleClass="tpl-bar" />
+
+                                                <VBox spacing="10" styleClass="tpl-section">
+                                                    <Label text="EXPERIENCE" styleClass="tpl-section-h" maxWidth="Infinity" />
+                                                    <VBox fx:id="previewExpList" spacing="10">
+                                                        <VBox spacing="4" styleClass="tpl-item">
+                                                            <Label fx:id="lblPreviewJobTitle" text="Studio Showde Canberra - Australia" styleClass="tpl-item-title" />
+                                                            <Label fx:id="lblPreviewExpDates" text="2020 - 2022" styleClass="tpl-item-date" />
+                                                            <Label fx:id="lblPreviewExpDesc" text="Description de vos responsabilités et réalisations..." wrapText="true" styleClass="tpl-item-desc" />
+                                                        </VBox>
+                                                    </VBox>
+                                                </VBox>
+
+                                                <Label text="" styleClass="tpl-bar" />
+
+                                                <VBox spacing="10" styleClass="tpl-section">
+                                                    <Label text="PROJECTS" styleClass="tpl-section-h" maxWidth="Infinity" />
+                                                    <VBox fx:id="previewProjectsList" spacing="10" />
+                                                </VBox>
+
+                                                <Label text="" styleClass="tpl-bar" />
+
+                                                <VBox spacing="10" styleClass="tpl-section">
+                                                    <Label text="EDUCATION" styleClass="tpl-section-h" maxWidth="Infinity" />
+                                                    <VBox fx:id="previewEduList" spacing="10">
+                                                        <VBox spacing="4" styleClass="tpl-item">
+                                                            <Label fx:id="lblPreviewDegree" text="Nom du Diplôme" styleClass="tpl-item-title" />
+                                                            <Label fx:id="lblPreviewSchool" text="Nom de l’École" styleClass="tpl-item-sub" />
+                                                            <Label fx:id="lblPreviewEduDates" text="2014 - 2023" styleClass="tpl-item-date" />
+                                                        </VBox>
+                                                    </VBox>
+                                                </VBox>
+
+                                                <Label text="" styleClass="tpl-bar" />
+
+                                                <VBox fx:id="sectionSkillsBody" spacing="10" styleClass="tpl-section">
+                                                    <Label text="SKILLS SUMMARY" styleClass="tpl-section-h" maxWidth="Infinity" />
+                                                    <VBox fx:id="previewSkillsList" spacing="10" />
+                                                </VBox>
+
+                                                <Label text="" styleClass="tpl-bar" />
+
+                                                <VBox fx:id="sectionHobbies" spacing="10" styleClass="tpl-section">
+                                                    <Label text="HOBBIES" styleClass="tpl-section-h" maxWidth="Infinity" />
+                                                    <VBox fx:id="previewHobbiesList" spacing="6" styleClass="tpl-hobbies" />
+                                                </VBox>
+                                            </VBox>
+
+                                        </HBox>
+                                    </StackPane>
+                                </VBox>
+                            </StackPane>
+
+                        </HBox>
+
+                    </VBox>
+                </StackPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

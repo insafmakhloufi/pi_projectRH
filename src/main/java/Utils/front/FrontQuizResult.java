@@ -1,0 +1,102 @@
+package Utils.front;
+
+import Entities.testQuiz.Test;
+import java.time.LocalDateTime;
+import java.util.List;
+
+public class FrontQuizResult {
+
+    private final Test test;
+    private final int score;
+    private final int maxScore;
+    private final int correct;
+    private final int wrong;
+    private final int unanswered;
+    private final int timeSpentSeconds;
+    private final List<FrontQuizQuestion> questions;
+    private final Integer[] selectedAnswers;
+    private final String[] openAnswers;
+    private final LocalDateTime datePassed;
+
+    public FrontQuizResult(
+            Test test,
+            int score,
+            int maxScore,
+            int correct,
+            int wrong,
+            int unanswered,
+            int timeSpentSeconds,
+            List<FrontQuizQuestion> questions,
+            Integer[] selectedAnswers,
+            String[] openAnswers,
+            LocalDateTime datePassed
+    ) {
+        this.test = test;
+        this.score = score;
+        this.maxScore = maxScore;
+        this.correct = correct;
+        this.wrong = wrong;
+        this.unanswered = unanswered;
+        this.timeSpentSeconds = timeSpentSeconds;
+        this.questions = questions;
+        this.selectedAnswers = selectedAnswers;
+        this.openAnswers = openAnswers;
+        this.datePassed = datePassed;
+    }
+
+    public Test getTest() {
+        return test;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getMaxScore() {
+        return maxScore;
+    }
+
+    public int getCorrect() {
+        return correct;
+    }
+
+    public int getWrong() {
+        return wrong;
+    }
+
+    public int getUnanswered() {
+        return unanswered;
+    }
+
+    public int getTimeSpentSeconds() {
+        return timeSpentSeconds;
+    }
+
+    public List<FrontQuizQuestion> getQuestions() {
+        return questions;
+    }
+
+    public Integer[] getSelectedAnswers() {
+        return selectedAnswers;
+    }
+
+    public String[] getOpenAnswers() {
+        return openAnswers;
+    }
+
+    public LocalDateTime getDatePassed() {
+        return datePassed;
+    }
+
+    public int percent() {
+        if (maxScore <= 0) return 0;
+        return (int) Math.round((score * 100.0) / maxScore);
+    }
+
+    public String gradeMessage() {
+        int p = percent();
+        if (p >= 80) return "Excellent";
+        if (p >= 60) return "Good";
+        return "Try again";
+    }
+}

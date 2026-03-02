@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="Controllers.candidature.Interviewcontroller"
+           prefWidth="900" prefHeight="600"
+           style="-fx-background-color: #1a1a2e;">
+
+    <!-- LAYER 1 : Caméra -->
+    <ImageView fx:id="cameraView"
+               fitWidth="900" fitHeight="600"
+               preserveRatio="false"/>
+
+    <!-- LAYER 2 : Overlay sombre en haut -->
+    <VBox alignment="TOP_CENTER" pickOnBounds="false">
+        <Rectangle width="900" height="80"
+                   fill="linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0))"/>
+    </VBox>
+
+    <!-- LAYER 3 : Contenu principal -->
+    <BorderPane>
+
+        <!-- HAUT : Status + Question + Timer -->
+        <top>
+            <VBox alignment="CENTER" spacing="6" style="-fx-padding: 15 20 0 20;">
+                <Label fx:id="statusLabel"
+                       text="Prêt à commencer"
+                       style="-fx-text-fill: #a0c4ff; -fx-font-size: 13px; -fx-font-style: italic;"/>
+                <Label fx:id="questionLabel"
+                       text=""
+                       wrapText="true"
+                       maxWidth="700"
+                       style="-fx-text-fill: white;
+                              -fx-font-size: 17px;
+                              -fx-font-weight: bold;
+                              -fx-text-alignment: center;
+                              -fx-effect: dropshadow(gaussian, black, 4, 0.8, 0, 0);"/>
+                <Label fx:id="timerLabel"
+                       text=""
+                       style="-fx-text-fill: #ffd166; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+            </VBox>
+        </top>
+
+        <!-- DROITE : Avatar vidéo dans un cercle -->
+        <right>
+            <VBox alignment="BOTTOM_RIGHT" style="-fx-padding: 0 15 80 0;">
+                <StackPane prefWidth="160" prefHeight="160">
+
+                    <!-- Cercle de fond -->
+                    <Circle fx:id="avatarCircle"
+                            radius="75"
+                            fill="linear-gradient(to bottom, #16213e, #0f3460)"
+                            stroke="#a0c4ff"
+                            strokeWidth="2.5"/>
+
+                    <!-- ✅ MediaView pour la vidéo avatar -->
+                    <MediaView fx:id="avatarMediaView"
+                               fitWidth="150"
+                               fitHeight="150"
+                               preserveRatio="true"
+                               style="-fx-clip=circle(75px at 75px 75px);"/>
+
+                </StackPane>
+            </VBox>
+        </right>
+
+        <!-- BAS : Transcript + Boutons -->
+        <bottom>
+            <VBox spacing="10" style="-fx-padding: 0 20 15 20;" alignment="CENTER">
+
+                <TextArea fx:id="transcriptArea"
+                          prefHeight="70"
+                          maxWidth="860"
+                          editable="false"
+                          wrapText="true"
+                          promptText="La transcription de votre réponse apparaîtra ici..."
+                          style="-fx-background-color: rgba(0,0,0,0.6);
+                                 -fx-text-fill: #e0e0e0;
+                                 -fx-font-size: 13px;
+                                 -fx-border-color: #a0c4ff;
+                                 -fx-border-radius: 8;
+                                 -fx-background-radius: 8;
+                                 -fx-control-inner-background: transparent;"/>
+
+                <HBox spacing="12" alignment="CENTER">
+
+                    <Button fx:id="btnStart"
+                            text="▶  Démarrer l'entretien"
+                            onAction="#onStartInterview"
+                            style="-fx-background-color: #0f3460;
+                                   -fx-text-fill: white; -fx-font-size: 14px;
+                                   -fx-font-weight: bold; -fx-padding: 10 20;
+                                   -fx-border-color: #a0c4ff; -fx-border-radius: 20;
+                                   -fx-background-radius: 20; -fx-cursor: hand;"/>
+
+                    <Button fx:id="btnRecord"
+                            text="🎤  Répondre"
+                            onAction="#onRecord"
+                            disable="true"
+                            style="-fx-background-color: #533483;
+                                   -fx-text-fill: white; -fx-font-size: 14px;
+                                   -fx-font-weight: bold; -fx-padding: 10 20;
+                                   -fx-border-color: #c77dff; -fx-border-radius: 20;
+                                   -fx-background-radius: 20; -fx-cursor: hand;"/>
+
+                    <Button fx:id="btnStop"
+                            text="⏹  Stop"
+                            onAction="#onStopRecording"
+                            disable="true"
+                            style="-fx-background-color: #c1121f;
+                                   -fx-text-fill: white; -fx-font-size: 14px;
+                                   -fx-font-weight: bold; -fx-padding: 10 20;
+                                   -fx-border-color: #ff4d6d; -fx-border-radius: 20;
+                                   -fx-background-radius: 20; -fx-cursor: hand;"/>
+
+                    <Button fx:id="btnReport"
+                            text="📄  Rapport PDF"
+                            onAction="#onGenerateReport"
+                            disable="true"
+                            style="-fx-background-color: #2d6a4f;
+                                   -fx-text-fill: white; -fx-font-size: 14px;
+                                   -fx-font-weight: bold; -fx-padding: 10 20;
+                                   -fx-border-color: #52b788; -fx-border-radius: 20;
+                                   -fx-background-radius: 20; -fx-cursor: hand;"/>
+
+                    <Button fx:id="btnFinish"
+                            text="⏏  Terminer l'entretien"
+                            onAction="#onFinishInterview"
+                            style="-fx-background-color: #2b2d42;
+                                   -fx-text-fill: white; -fx-font-size: 14px;
+                                   -fx-font-weight: bold; -fx-padding: 10 20;
+                                   -fx-border-color: #8d99ae; -fx-border-radius: 20;
+                                   -fx-background-radius: 20; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+        </bottom>
+
+    </BorderPane>
+
+    <!-- LAYER 4 : Indicateur enregistrement -->
+    <VBox alignment="TOP_LEFT" pickOnBounds="false" style="-fx-padding: 15;">
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <Circle fx:id="recordingDot" radius="7" fill="#c1121f" visible="false"/>
+            <Label fx:id="recordingLabel" text="ENREGISTREMENT"
+                   visible="false"
+                   style="-fx-text-fill: #ff4d6d; -fx-font-size: 11px; -fx-font-weight: bold;"/>
+        </HBox>
+    </VBox>
+
+</StackPane>

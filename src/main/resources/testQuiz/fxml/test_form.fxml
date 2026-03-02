@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controllers.testQuiz.TestFormController"
+      stylesheets="@../css/style.css"
+      spacing="12" styleClass="tq-root">
+
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <Label text="Formulaire Test" styleClass="tq-title"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="tests-form-scroll">
+        <content>
+            <GridPane hgap="10" vgap="10" styleClass="tq-card">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="35"/>
+                    <ColumnConstraints percentWidth="65"/>
+                </columnConstraints>
+
+                <Label text="candidat:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="candidatComboBox" promptText="Nom Prenom candidat" styleClass="input" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label fx:id="candidatValidationLabel" text="" styleClass="validation-text" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="titre:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="titreField" promptText="Titre du test" styleClass="input" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label fx:id="titreValidationLabel" text="" styleClass="validation-text" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="type:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="typeComboBox" promptText="Type" styleClass="input" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                <Label fx:id="typeValidationLabel" text="" styleClass="validation-text" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <Label text="scoreMax:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <TextField fx:id="scoreMaxField" promptText="Double" styleClass="input" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                <Label fx:id="scoreValidationLabel" text="" styleClass="validation-text" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                <Label text="durationSeconds:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                <TextField fx:id="durationSecondsField" promptText="Entier" styleClass="input" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+                <Label fx:id="durationValidationLabel" text="" styleClass="validation-text" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+                <Label text="totalPoints:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+                <TextField fx:id="totalPointsField" promptText="Entier" styleClass="input" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+                <Label fx:id="totalValidationLabel" text="" styleClass="validation-text" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+            </GridPane>
+        </content>
+    </ScrollPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="saveButton" text="Enregistrer" styleClass="btn-primary" onAction="#handleEnregistrer"/>
+        <Button text="Annuler" styleClass="btn-secondary" onAction="#handleAnnuler"/>
+    </HBox>
+
+</VBox>

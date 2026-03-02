@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Circle?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controllers.testQuizFront.FrontResultViewController"
+      stylesheets="@../css/result_view.css,@../../Formation/app.css"
+      styleClass="result-root" spacing="18" alignment="CENTER">
+
+    <padding>
+        <Insets top="22" right="22" bottom="22" left="22"/>
+    </padding>
+
+    <Label fx:id="titleLabel" text="Resultat" styleClass="result-title"/>
+
+    <StackPane styleClass="result-ring-wrap">
+        <Circle radius="82" styleClass="result-ring-bg"/>
+        <Arc fx:id="scoreArc" radiusX="82" radiusY="82" startAngle="90" length="0" type="OPEN" styleClass="result-ring-fg"/>
+        <VBox alignment="CENTER" spacing="4">
+            <Label fx:id="percentLabel" text="0%" styleClass="result-percent"/>
+            <Label fx:id="scoreLabel" text="0 / 0" styleClass="result-score"/>
+        </VBox>
+    </StackPane>
+
+    <Label fx:id="messageLabel" text="Good" styleClass="result-message"/>
+
+    <HBox spacing="10" styleClass="result-stats-row">
+        <VBox styleClass="result-stat-card">
+            <Label text="Correct" styleClass="result-stat-title"/>
+            <Label fx:id="correctLabel" text="0" styleClass="result-stat-value"/>
+        </VBox>
+        <VBox styleClass="result-stat-card">
+            <Label text="Wrong" styleClass="result-stat-title"/>
+            <Label fx:id="wrongLabel" text="0" styleClass="result-stat-value"/>
+        </VBox>
+        <VBox styleClass="result-stat-card">
+            <Label text="Unanswered" styleClass="result-stat-title"/>
+            <Label fx:id="unansweredLabel" text="0" styleClass="result-stat-value"/>
+        </VBox>
+        <VBox styleClass="result-stat-card">
+            <Label text="Time" styleClass="result-stat-title"/>
+            <Label fx:id="timeLabel" text="00:00" styleClass="result-stat-value"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Rejouer" styleClass="btn-primary-front" onAction="#handleReplay"/>
+        <Button text="📄 Exporter PDF" styleClass="btn-secondary-front" onAction="#handleExportPdf"/>
+        <Button text="Retour aux tests" styleClass="btn-secondary-front" onAction="#handleBackToTests"/>
+        <Region HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <VBox fx:id="recoSection" visible="false" managed="false" spacing="14">
+        <Label text="🎯 Formations recommandées par l'IA" styleClass="reco-title"/>
+        <Label text="Sur la base de vos résultats, ces formations peuvent vous aider :"
+               styleClass="reco-subtitle" wrapText="true"/>
+        <Label fx:id="recoLoadingLabel" text="⏳ Analyse en cours..."
+               styleClass="reco-loading" visible="false" managed="false"/>
+        <FlowPane fx:id="recoCardsFlow" hgap="14" vgap="14"/>
+    </VBox>
+
+</VBox>

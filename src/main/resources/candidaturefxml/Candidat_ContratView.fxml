@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.StackPane?>
+
+<ScrollPane fitToWidth="true" styleClass="main-scroll"
+            stylesheets="@../csscandidature/contrat.css"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.candidature.Candidat_ContratViewController">
+
+    <VBox spacing="24" style="-fx-padding: 32;">
+
+        <!-- HEADER -->
+        <HBox alignment="CENTER_LEFT" spacing="16">
+            <Button fx:id="btnBack" text="← Retour" onAction="#retour"
+                    styleClass="btn-retour"/>
+            <Label text="📄 Mon Contrat de Travail"
+                   style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill:#1e293b;"/>
+        </HBox>
+
+        <!-- STATUT CONTRAT -->
+        <HBox alignment="CENTER" spacing="12">
+            <Label fx:id="lblStatutContrat"
+                   style="-fx-font-size:15px; -fx-font-weight:bold;
+                          -fx-background-color:#ede9fe; -fx-text-fill:#4f46e5;
+                          -fx-background-radius:20; -fx-padding: 8 20;"/>
+        </HBox>
+
+        <!-- SECTION : Infos Candidat -->
+        <VBox spacing="12" styleClass="form-section">
+            <Label text="👤 Informations Candidat" styleClass="section-title"/>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Nom complet" styleClass="field-caption"/>
+                    <TextField fx:id="tfNomCandidat" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Email" styleClass="field-caption"/>
+                    <TextField fx:id="tfEmailCandidat" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- SECTION : Infos Offre -->
+        <VBox spacing="12" styleClass="form-section">
+            <Label text="💼 Informations Offre" styleClass="section-title"/>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Type de contrat" styleClass="field-caption"/>
+                    <TextField fx:id="tfTypeContrat" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Type d'emploi" styleClass="field-caption"/>
+                    <TextField fx:id="tfTypeEmploi" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Entreprise" styleClass="field-caption"/>
+                    <TextField fx:id="tfEntreprise" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Secteur" styleClass="field-caption"/>
+                    <TextField fx:id="tfSecteur" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Localisation" styleClass="field-caption"/>
+                    <TextField fx:id="tfLocalisation" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Mode de travail" styleClass="field-caption"/>
+                    <TextField fx:id="tfModeTravail" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- SECTION : Détails -->
+        <VBox spacing="12" styleClass="form-section">
+            <Label text="📋 Détails du Contrat" styleClass="section-title"/>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Date début" styleClass="field-caption"/>
+                    <TextField fx:id="tfDateDebut" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Date fin" styleClass="field-caption"/>
+                    <TextField fx:id="tfDateFin" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Salaire (DT/mois)" styleClass="field-caption"/>
+                    <TextField fx:id="tfSalaire" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Horaire de travail" styleClass="field-caption"/>
+                    <TextField fx:id="tfHoraire" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Période d'essai" styleClass="field-caption"/>
+                    <TextField fx:id="tfPeriodeEssai" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Avantages" styleClass="field-caption"/>
+                    <TextField fx:id="tfAvantages" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- SECTION : Signature -->
+        <VBox fx:id="sectionSignature" spacing="12" styleClass="form-section">
+            <Label text="✍️ Signature du Contrat" styleClass="section-title"/>
+
+            <!-- Etape 1 : Bouton envoyer code -->
+            <VBox fx:id="stepEnvoyer" spacing="12">
+                <Label text="Pour signer votre contrat, nous allons envoyer un code de verification a votre email."
+                       wrapText="true" styleClass="field-caption"/>
+                <Button fx:id="btnEnvoyerCode" text="📧 Envoyer le code par email"
+                        onAction="#envoyerCode" styleClass="btn-generer"
+                        maxWidth="Infinity"/>
+            </VBox>
+
+            <!-- Etape 2 : Saisir code -->
+            <VBox fx:id="stepSaisirCode" spacing="12"
+                  visible="false" managed="false">
+                <Label fx:id="lblCodeInfo"
+                       text="Entrez le code recu par email :"
+                       styleClass="field-caption" wrapText="true"/>
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <TextField fx:id="tfCode" promptText="Ex: 123456"
+                               styleClass="field-input"
+                               prefWidth="200"/>
+                    <!-- <Button text="✅ Valider et Signer"
+                             onAction="#validerEtSigner"
+                             styleClass="btn-generer"/> -->
+
+                     <!-- APRES -->
+                    <Button text="✅ Valider le code"
+                            onAction="#validerCode"
+                            styleClass="btn-generer"/>
+                </HBox>
+                <Label fx:id="lblCodeError" styleClass="error-label" text=""/>
+            </VBox>
+
+
+
+
+            <!-- Etape 2 : Saisir code
+            <VBox fx:id="stepSaisirCode" spacing="12"
+                  visible="false" managed="false">
+                <Label fx:id="lblCodeInfo"
+                       text="Entrez le code recu par email :"
+                       styleClass="field-caption" wrapText="true"/>
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <TextField fx:id="tfCode" promptText="Ex: 123456"
+                               styleClass="field-input"
+                               prefWidth="200"/>
+                    <Button text="✅ Valider le code"
+                            onAction="#validerCode"
+                            styleClass="btn-generer"/>
+                </HBox>
+                <Label fx:id="lblCodeError" styleClass="error-label" text=""/>
+            </VBox>  -->
+
+
+
+
+            <!-- Etape 3 : Signature manuscrite -->
+            <VBox fx:id="stepSignature" spacing="16"
+                  visible="false" managed="false">
+                <Label text="✍️ Dessinez votre signature ci-dessous :"
+                       styleClass="field-caption"/>
+
+                <!--
+                <StackPane>
+                    <Canvas fx:id="signatureCanvas" width="600" height="180"
+                            style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);"/>
+                    <Rectangle fx:id="canvasBorder" width="600" height="180"
+                               fill="transparent"
+                               stroke="#c7d2fe" strokeWidth="2"
+                               arcWidth="12" arcHeight="12"/>
+                </StackPane>  -->
+
+                <!-- jdiddddddddddddd
+                <StackPane onMousePressed="#onCanvasMousePressed"
+                           onMouseDragged="#onCanvasMouseDragged"
+                           onMouseReleased="#onCanvasMouseReleased">
+                    <Canvas fx:id="signatureCanvas" width="600" height="180"
+                            style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);"/>
+                    <Rectangle width="600" height="180"
+                               fill="transparent"
+                               stroke="#c7d2fe" strokeWidth="2"
+                               arcWidth="12" arcHeight="12"
+                               mouseTransparent="true"/>
+                </StackPane>  -->
+
+
+                <Canvas fx:id="signatureCanvas" width="600" height="180"
+                        onMousePressed="#onCanvasMousePressed"
+                        onMouseDragged="#onCanvasMouseDragged"
+                        onMouseReleased="#onCanvasMouseReleased"
+                        style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);"/>
+
+
+                <!-- <Rectangle width="600" height="180"
+                            fill="transparent"
+                            stroke="#c7d2fe" strokeWidth="2"
+                            arcWidth="12" arcHeight="12"
+                            mouseTransparent="true"/>-->
+
+
+
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <Button text="🗑 Effacer"
+                            onAction="#effacerSignature"
+                            styleClass="btn-retour"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="btnConfirmerSignature"
+                            text="✅ Confirmer la Signature"
+                            onAction="#confirmerSignature"
+                            styleClass="btn-generer"/>
+                </HBox>
+                <Label fx:id="lblSignatureError" styleClass="error-label" text=""/>
+            </VBox>
+
+            <!-- Contrat signé -->
+            <VBox fx:id="stepSigne" spacing="12"
+                  visible="false" managed="false">
+                <Label text="✅ Contrat signe avec succes !"
+                       style="-fx-font-size:16px; -fx-font-weight:bold; -fx-text-fill:#16a34a;"/>
+                <Label fx:id="lblSignedAt" styleClass="field-caption"/>
+            </VBox>
+        </VBox>
+
+    </VBox>
+</ScrollPane>

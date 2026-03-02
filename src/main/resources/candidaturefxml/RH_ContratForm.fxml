@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true" stylesheets="@../csscandidature/contrat.css"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.candidature.RH_ContratFormController">
+
+    <VBox spacing="24" style="-fx-padding: 32;">
+
+        <!-- HEADER -->
+        <HBox alignment="CENTER_LEFT" spacing="16">
+            <Button fx:id="btnBack" text="← Retour" onAction="#retour"
+                    styleClass="btn-retour"/>
+            <Label text="📄 Générer Contrat de Travail"
+                   style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill:#1e293b;"/>
+        </HBox>
+
+        <!-- SECTION : Infos Candidat (readonly) -->
+        <VBox spacing="12" styleClass="form-section">
+            <Label text="👤 Informations Candidat" styleClass="section-title"/>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Nom complet" styleClass="field-caption"/>
+                    <TextField fx:id="tfNomCandidat" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Email" styleClass="field-caption"/>
+                    <TextField fx:id="tfEmailCandidat" editable="false"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- SECTION : Infos Offre -->
+        <VBox spacing="12" styleClass="form-section">
+            <Label text="💼 Informations Offre" styleClass="section-title"/>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Type de contrat" styleClass="field-caption"/>
+                    <ComboBox fx:id="cbTypeContrat" maxWidth="Infinity"
+                              styleClass="field-input"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Type d'emploi" styleClass="field-caption"/>
+                    <ComboBox fx:id="cbTypeEmploi" maxWidth="Infinity"
+                              styleClass="field-input"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Secteur" styleClass="field-caption"/>
+                    <TextField fx:id="tfSecteur" styleClass="field-input"
+                               maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Localisation" styleClass="field-caption"/>
+                    <TextField fx:id="tfLocalisation" styleClass="field-input"
+                               maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Nom entreprise" styleClass="field-caption"/>
+                    <TextField fx:id="tfNomEntreprise" styleClass="field-input"
+                               maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Mode de travail" styleClass="field-caption"/>
+                    <ComboBox fx:id="cbModeTravail" maxWidth="Infinity"
+                              styleClass="field-input"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- SECTION : Détails Contrat -->
+        <VBox spacing="12" styleClass="form-section">
+            <Label text="📋 Détails du Contrat" styleClass="section-title"/>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Date début *" styleClass="field-caption"/>
+                    <DatePicker fx:id="dpDateDebut" maxWidth="Infinity"
+                                styleClass="field-input"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Date fin (CDD/Stage)" styleClass="field-caption"/>
+                    <DatePicker fx:id="dpDateFin" maxWidth="Infinity"
+                                styleClass="field-input"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Salaire (DT/mois)" styleClass="field-caption"/>
+                    <TextField fx:id="tfSalaire" promptText="Ex: 1500.00"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Horaire de travail" styleClass="field-caption"/>
+                    <ComboBox fx:id="cbHoraire" styleClass="field-input" maxWidth="Infinity"/>
+
+                </VBox>
+            </HBox>
+            <HBox spacing="16">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Période d'essai" styleClass="field-caption"/>
+                    <TextField fx:id="tfPeriodeEssai" promptText="Ex: 3 mois"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Avantages" styleClass="field-caption"/>
+                    <TextField fx:id="tfAvantages"
+                               promptText="Ex: Mutuelle, tickets restaurant"
+                               styleClass="field-input" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- BOUTON GENERER -->
+        <HBox alignment="CENTER_RIGHT" spacing="12">
+            <Label fx:id="lblError" styleClass="error-label" text="" wrapText="true"/>
+            <Button fx:id="btnGenerer" text="📄 Générer le Contrat"
+                    onAction="#genererContrat"
+                    styleClass="btn-generer"/>
+        </HBox>
+
+    </VBox>
+</ScrollPane>

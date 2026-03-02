@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.testQuiz.TestResultatsController"
+            fx:id="rootPane"
+            stylesheets="@../../Dashboardcss/style.css,@../css/style.css"
+            styleClass="admin-root">
+
+    <padding>
+        <Insets top="18" right="18" bottom="18" left="18"/>
+    </padding>
+
+    <top>
+        <VBox spacing="10">
+            <Label text="Résultats des Tests" styleClass="headline tests-page-title"/>
+            <HBox spacing="10">
+                <Button text="← Retour" styleClass="btn-secondary" onAction="#handleBack"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Rafraichir" styleClass="btn-secondary" onAction="#handleRefresh"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="14"/>
+            </BorderPane.margin>
+
+            <TableView fx:id="resultatsTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="testCol" text="Test" prefWidth="170"/>
+                    <TableColumn fx:id="candidatCol" text="Candidat" prefWidth="170"/>
+                    <TableColumn fx:id="scoreCol" text="Score" prefWidth="110"/>
+                    <TableColumn fx:id="percentCol" text="Pct" prefWidth="70"/>
+                    <TableColumn fx:id="mentionCol" text="Mention" prefWidth="100"/>
+                    <TableColumn fx:id="correctCol" text="Correct" prefWidth="80"/>
+                    <TableColumn fx:id="wrongCol" text="Wrong" prefWidth="80"/>
+                    <TableColumn fx:id="tempsCol" text="Temps" prefWidth="90"/>
+                    <TableColumn fx:id="dateCol" text="Date" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+            <HBox alignment="CENTER_RIGHT">
+                <Button fx:id="exportPdfBtn" text="📄 Exporter PDF" styleClass="btn-primary" onAction="#handleExportPdf"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

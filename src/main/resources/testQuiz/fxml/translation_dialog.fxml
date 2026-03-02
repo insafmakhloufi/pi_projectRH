@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controllers.testQuiz.TranslationDialogController"
+      spacing="10" styleClass="tests-form-content translation-root">
+
+    <padding>
+        <Insets top="14" right="14" bottom="14" left="14"/>
+    </padding>
+
+    <Label text="Traduction" styleClass="tests-card-title"/>
+    <Label text="FR / EN / AR" styleClass="tests-form-mode"/>
+
+    <Label text="Texte source"/>
+    <TextArea fx:id="sourceTextArea" promptText="Collez votre texte..." wrapText="true" prefRowCount="7" styleClass="input translation-source"/>
+    <Label fx:id="sourceValidationLabel" styleClass="validation-text"/>
+
+    <HBox spacing="10">
+        <VBox spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Langue source"/>
+            <ComboBox fx:id="sourceLangCombo" styleClass="input" maxWidth="Infinity"/>
+        </VBox>
+        <VBox spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Langue cible"/>
+            <ComboBox fx:id="targetLangCombo" styleClass="input" maxWidth="Infinity"/>
+        </VBox>
+    </HBox>
+    <Label fx:id="targetValidationLabel" styleClass="validation-text"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="translateButton" text="Traduire" styleClass="btn-primary" onAction="#handleTranslate"/>
+        <ProgressIndicator fx:id="progressIndicator" prefWidth="26" prefHeight="26" visible="false" managed="false"/>
+        <Label fx:id="statusLabel" styleClass="tests-form-mode"/>
+    </HBox>
+
+    <Label text="Resultat"/>
+    <TextArea fx:id="resultTextArea" wrapText="true" editable="false" prefRowCount="7" styleClass="input translation-result"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="copyButton" text="Copier" styleClass="btn-secondary" onAction="#handleCopy"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="closeButton" text="Fermer" styleClass="btn-secondary" onAction="#handleClose"/>
+        <Button fx:id="applyButton" text="Appliquer" styleClass="btn-primary" onAction="#handleApply"/>
+    </HBox>
+</VBox>
